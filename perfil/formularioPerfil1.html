@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/formularioPerfil1.css">
+</head>
+
+<body>
+
+
+    <form action="registro.php" method="post">
+
+        <h2>Perfil (1/5)</h2>
+
+        <div class="input-group">
+            <label for="name">Nombre</label>
+            <input type="text" name="nombre" id="nombre" placeholder="Pon tu nombre aqui">
+
+            <label for="curso">Curso</label>
+            <select name="nombres-cursos" id="curso">
+                <option value="Comercio-internacional">Comercio internacional</option>
+                <option value="Marketing-y-publicidad">Márketing y publicidad</option>
+                <option value="Administracion-y-finanzas">Administración y finanzas</option>
+                <option value="Desarrollo-de-aplicaciones-multiplataforma">Desarrollo de aplicaciones multiplataforma</option>
+                <option value="Desarrollo-de-aplicaciones-web">Desarrollo de aplicaciones web</option>
+                <option value="Administración-de-sistemas-informáticos-en-red">Administración de Sistemas Informáticos en Red</option>
+                
+            </select>
+
+            <label for="color-pelo">Color de pelo</label>
+            <select name="color-pelo" id="color-pelo">
+                <option value="moreno">Moreno</option>
+                <option value="castaño">Castaño</option>
+                <option value="rubio">Rubio</option>
+                <option value="pelirojo">Pelirojo</option>
+               
+            </select>
+
+
+            <input class="btn" type="button" value="Enviar">
+        </div>
+    </form>
+
+</body>
+
+</html>
