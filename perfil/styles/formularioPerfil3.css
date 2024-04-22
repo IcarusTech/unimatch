@@ -44,25 +44,21 @@ input{
 
 }
 
-/* Estilos color ojos */
+/* Estilos sexo */
 
-#color-ojos{
+#sexo{
     border-radius: 5px;
     height: 50px;
     margin-bottom: 15px;
 }
 
-/* Estilos tipo musica */
-
-#tipo-musica{
+#amistad{
     border-radius: 5px;
     height: 50px;
     margin-bottom: 15px;
 }
 
-/* Estilos ejercicio */
-
-#ejercicio{
+#fumador{
     border-radius: 5px;
     height: 50px;
     margin-bottom: 15px;
