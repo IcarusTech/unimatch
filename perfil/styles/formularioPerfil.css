@@ -44,25 +44,9 @@ input{
 
 }
 
-/* Estilos color ojos */
+/* Estilos del select de curso */
 
-#color-ojos{
-    border-radius: 5px;
-    height: 50px;
-    margin-bottom: 15px;
-}
-
-/* Estilos tipo musica */
-
-#tipo-musica{
-    border-radius: 5px;
-    height: 50px;
-    margin-bottom: 15px;
-}
-
-/* Estilos ejercicio */
-
-#ejercicio{
+#select{
     border-radius: 5px;
     height: 50px;
     margin-bottom: 15px;
