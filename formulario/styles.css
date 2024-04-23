@@ -37,13 +37,12 @@ input{
     padding: 17px 25px;
     border-radius: 25px;
     margin-bottom: 20px;
-    background-color: #eeb6d7c8;
+    background-color: #fe3c72; 
     border: 2px solid #F0FAF1;
     color: #283629;
     outline: none;
 
 }
-
 /* Estilos del place holder */
 
 input::placeholder{

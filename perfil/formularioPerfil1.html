@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles/formularioPerfil.css">
+    <link rel="stylesheet" href="styles/formPerfil.css">
+    <link rel="stylesheet" href="styles/newSelect.css">
 </head>
 
 <body>
@@ -17,11 +18,11 @@
 
         <div class="input-group">
             <label for="name">Nombre</label>
-            <input type="text" name="nombre" id="nombre" placeholder="Pon tu nombre aqui">
+            <input type="text" name="nombre" id="nombre" placeholder="Pon tu nombre aquí">
 
-            <label for="curso">Curso</label>
+            <label for="curso"><strong>Curso</strong></label>
             <select name="nombres-cursos" id="select">
-                <option value="Comercio-internacional">Comercio internacional</option>
+                <option value="Comercio-internacional"><strong>Comercio internacional</strong></option>
                 <option value="Marketing-y-publicidad">Márketing y publicidad</option>
                 <option value="Administracion-y-finanzas">Administración y finanzas</option>
                 <option value="Desarrollo-de-aplicaciones-multiplataforma">Desarrollo de aplicaciones multiplataforma</option>
@@ -30,18 +31,33 @@
                 
             </select>
 
-            <label for="color-pelo">Color de pelo</label>
-            <select name="color-pelo" id="select">
-                <option value="moreno">Moreno</option>
-                <option value="castaño">Castaño</option>
-                <option value="rubio">Rubio</option>
-                <option value="pelirojo">Pelirojo</option>
+            
                
-            </select>
-
-
-            <input class="btn" type="button" value="Atras">
-            <input class="btn" type="button" value="Enviar">
+            <label><strong>Color de pelo</strong></label>
+            <div class="radio-inputs">
+                <label class="radio" id="labelPelo">
+                  <input type="radio" name="radio" checked="">
+                  <span class="name">Castaño</span>
+                </label>
+                <label class="radio" id="labelPelo">
+                  <input type="radio" name="radio">
+                  <span class="name">Pelirrojo</span>
+                </label>
+                    
+                <label class="radio" id="labelPelo">
+                  <input type="radio" name="radio">
+                  <span class="name">Moreno</span>
+                </label>
+                <label class="radio" id="labelPelo">
+                    <input type="radio" name="radio">
+                    <span class="name">Rubio</span>
+                  </label>
+            </div>
+            <div id="btns">
+                <button id="back"><strong>Atras</strong></button>
+                <button id="next"><strong>Siguiente</strong></button>
+            </div>
+            
         </div>
     </form>
 
