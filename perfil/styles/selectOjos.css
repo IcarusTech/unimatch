@@ -1,4 +1,4 @@
-.radio-inputs {
+.contenedor-ojos {
     position: relative;
     display: flex;
     margin: 0 auto;
@@ -15,21 +15,21 @@
     margin-bottom: 10px;
   }
   
-  .radio-inputs .radio {
+  .contenedor-ojos .grupo {
     flex: 1 1 auto;
     text-align: center;
   }
   
-  .radio-inputs .radio input {
+  .contenedor-ojos .grupo input {
     display: none;
   }
-  #labelPelo{
+  #labelOjos{
     margin-bottom: 0px;
   }
-  #labelPelo{
+  #labelOjos{
     margin-bottom: 0px;
   }
-  .radio-inputs .radio .name {
+  .contenedor-ojos .grupo .nombre {
     display: flex;
     cursor: pointer;
     align-items: center;
@@ -41,7 +41,7 @@
     transition: all .15s ease-in-out;
   }
   
-  .radio-inputs .radio input:checked + .name {
+  .contenedor-ojos .grupo input:checked + .nombre {
     background-color: 	#ef4a75;
     font-weight: 600;
   }
