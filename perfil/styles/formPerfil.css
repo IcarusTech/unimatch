@@ -9,7 +9,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    /*background-image: linear-gradient(144deg,#8608b4, #492fed 60%,#bd6fda);*/
+    background: #c31432; /* fallback for old browsers */
+    background: -webkit-linear-gradient(60deg, #aa112b, #300d49); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(63deg, #aa112b 50%, #300d49); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 form {
