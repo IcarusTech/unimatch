@@ -24,7 +24,9 @@
   #labelPelo{
     margin-bottom: 0px;
   }
-  
+  #labelPelo{
+    margin-bottom: 0px;
+  }
   .radio-inputs .radio .name {
     display: flex;
     cursor: pointer;
@@ -38,6 +40,6 @@
   }
   
   .radio-inputs .radio input:checked + .name {
-    background-color: 	vb#ef4a75;
+    background-color: 	#ef4a75;
     font-weight: 600;
   }

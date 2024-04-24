@@ -1,44 +1,48 @@
-*{
+* {
     margin: 0%;
     padding: 0%;
 }
-body{
+
+body {
     font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
-form{
+
+form {
     padding: 50px 55px;
     box-shadow: 0 0 20px #ef4a75;
     border-radius: 20px;
     text-align: center;
     width: 300px;
     background-color: #ffff;
-    box-shadow:  5px 0px #424242;
-    border:2px solid #424242;
+    box-shadow: 5px 0px #424242;
+    border: 2px solid #424242;
 }
-.input-group{
+
+.input-group {
     display: flex;
     flex-direction: column;
     text-align: left;
 }
-h2{
+
+h2 {
     color: #283629;
     font-size: 35px;
     margin-bottom: 40px;
 }
 
-label{
+label {
     color: #fe3c72;
     font-size: 15px;
     font-weight: 600;
     margin-bottom: 15px;
 }
 
-input{
+input {
 
     padding: 10px 15px;
     border-radius: 25px;
@@ -49,24 +53,28 @@ input{
     outline: none;
 
 }
-select{
+
+select {
     color: #424242;
     border: none;
     border-radius: 25px;
     height: 40px;
-    margin-bottom:10px;
+    margin-bottom: 10px;
     padding-left: 10px;
     box-shadow: 0 0 10px #fe3c72;
 }
-option{
+
+option {
     text-align: left;
     border-radius: 25px;
 }
-#btns{
+
+#btns {
     height: fit-content;
     margin-top: 15px;
 }
-button{
+
+button {
     color: #ef4a75;
     padding: 10px;
     margin-top: 15px;
@@ -77,14 +85,16 @@ button{
     border-radius: 10px;
     width: fit-content;
     height: 30px;
-    background-color:#ffff;
+    background-color: #ffff;
     border: 2px solid #424242;
-    box-shadow:5px 5px 0px #424242;
-    
+    box-shadow: 5px 5px 0px #424242;
+
 }
-#next{
-float: right;
+
+#next {
+    float: right;
 }
-#back{
+
+#back {
     float: left;
 }
