@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/donLimpio.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="registro.php" method="post">
+        <h2>Perfil (1/5)</h2>
+        <!------------------------------------------Página 1 --------------------------------------------->
+        <div class="input-group pagina1" id="pagina 1">
+            <!-- Campo del nombre -->
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="input-nombre" placeholder="Pon tu nombre aquí">
+            <!-- Campo del apellido -->
+            <label for="apellido">1ºApellido</label>
+            <input type="text" name="apellido" id="input-apellido" placeholder="Pon tu apellido aquí">
+            <!-- Campo de la edad -->
+            <label for="edad">Edad</label>
+            <input type="number" name="edad" id="input-edad">
+
+            <input class="btn" type="button" value="siguente">
+        </div>
+        <!------------------------------------------Página 2 --------------------------------------------->
+        <div class="input-group pagina2" id="pagina 2">
+            <!-- Campo del curso -->
+            <label for="curso"><strong>Curso</strong></label>
+            <select name="nombres-cursos" id="select curso">
+                <option value="Comercio-internacional"><strong>Comercio internacional</strong></option>
+                <option value="Marketing-y-publicidad">Márketing y publicidad</option>
+                <option value="Administracion-y-finanzas">Administración y finanzas</option>
+                <option value="Desarrollo-de-aplicaciones-multiplataforma">Desarrollo de aplicaciones multiplataforma
+                </option>
+                <option value="Desarrollo-de-aplicaciones-web">Desarrollo de aplicaciones web</option>
+                <option value="Administración-de-sistemas-informáticos-en-red">Administración de Sistemas Informáticosen
+                    Red
+                </option>
+            </select>
+            <!-- Campo del género -->
+            <label for="sexo"><strong>Género</strong></label>
+            <select name="eleccionSexo" id="select sexo">
+                <option value="Maculino&roll"><strong>Maculino</strong></option>
+                <option value="Femenino"><strong>Femenino</strong></option>
+                <option value="Otro"><strong>Otro</strong></option>
+            </select>
+            <!-- Campo de color de pelo -->
+            <label><strong>Color de pelo</strong></label>
+            <div class="radio-inputs">
+                <label class="radio" id="labelPelo">
+                    <input type="radio" name="radio" checked="">
+                    <span class="name">Castaño</span>
+                </label>
+                <label class="radio" id="labelPelo">
+                    <input type="radio" name="radio">
+                    <span class="name">Pelirrojo</span>
+                </label>
+
+                <label class="radio" id="labelPelo">
+                    <input type="radio" name="radio">
+                    <span class="name">Moreno</span>
+                </label>
+                <label class="radio" id="labelPelo">
+                    <input type="radio" name="radio">
+                    <span class="name">Rubio</span>
+                </label>
+            </div>
+            <input class="btn" type="button" value="Atras">
+            <input class="btn" type="button" value="siguente">
+        </div>
+        <!------------------------------------------Página 3 --------------------------------------------->
+        <div class="input-group pagina3" id="pagina 3">
+            <!-- Campo de color de ojos-->
+            <div class="contenedor-ojos">
+                <label class="grupo" id="labelOjos">
+                    <input type="radio" name="grupo" checked="">
+                    <span class="nombre">Verdes</span>
+                </label>
+                <label class="grupo" id="labelOjos">
+                    <input type="radio" name="grupo">
+                    <span class="nombre">Azules</span>
+                </label>
+
+                <label class="grupo" id="labelOjos">
+                    <input type="radio" name="grupo">
+                    <span class="nombre">Marrones</span>
+                </label>
+            </div>
+            <!-- Campo de estilo de musica -->
+            <label for="musica"><strong>Estilo de música</strong></label>
+            <select name="tiposMusica" id="select estiloMusica">
+                <option value="rock&roll"><strong>Rock&Roll</strong></option>
+                <option value="dembow"><strong>dembow</strong></option>
+                <option value="pop"><strong>Pop</strong></option>
+                <option value="rap"><strong>Rap</strong></option>
+                <option value="reguetón"><strong>Reguetón</strong></option>
+                <option value="techno"><strong>Techno</strong></option>
+                <option value="hipHop"><strong>Hip-Hop</strong></option>
+                <option value="bachata"><strong>Bachata</strong></option>
+            </select>
+            <!-- Campo ejercicio -->
+            <label><strong>Deporte</strong></label>
+            <div class="contenedor-deportes">
+                <label class="grupo" id="labelDeporte">
+                    <input type="grupo" name="radio" checked="">
+                    <span class="nombre">Baloncesto</span>
+                </label>
+                <label class="grupo" id="labelDeporte">
+                    <input type="grupo" name="radio">
+                    <span class="nombre">Futbol</span>
+                </label>
+
+                <label class="grupo" id="labelDeporte">
+                    <input type="grupo" name="radio">
+                    <span class="nombre">Padel</span>
+                </label>
+                <label class="grupo" id="labelDeporte">
+                    <input type="grupo" name="radio">
+                    <span class="nombre">Voleibol</span>
+                </label>
+            </div>
+            <input class="btn" type="button" value="Atras">
+            <input class="btn" type="button" value="siguente">
+        </div>
+        <!------------------------------------------Página 4 --------------------------------------------->
+        <div class="input-group pagina4" id="pagina 4">
+            <!-- Campo fumador -->
+            <label for="fumador">Fumador</label>
+            <select name="selectFumar" id="select fumar">
+                <option value="true">Si fumo</option>
+                <option value="false">No fumo</option>
+            </select>
+            <!-- Campo Personalidad -->
+            <label for="fumador">¿Eres introvertido o extrovertido?</label>
+            <select name="selectPersonalidad" id="select personalidad">
+                <option value="introvertido">Introvertido</option>
+                <option value="extrovertido">Extrovertido</option>
+            </select>
+            <!-- Campo de tipo de amistad -->
+            <label for="amistad">¿Que tipo de amistad buscas?</label>
+            <select name="amistad" id="select">
+                <option value="a-lo-que-surja">Lo que surja</option>
+                <option value="mejor-amigo">Mejor amig@</option>
+                <option value="amigo-de-fiesta">Amig@ de fiesta</option>
+            </select>
+            <input class="btn" type="button" value="Atras">
+            <input class="btn" type="button" value="siguente">
+        </div>
+        <!------------------------------------------Página 5 --------------------------------------------->
+        <div class="input-group pagina5" id="pagina 5">
+            <!-- Campo de planes -->
+            <label for="plan"><strong>Planes</strong></label>
+            <select name="tiposPlan" id="select estiloPlan">
+                <option value="senderismo"><strong>Senderismo</strong></option>
+                <option value="salirDeFiesta"><strong>Salir de fiesta</strong></option>
+                <option value="cine"><strong>Cine</strong></option>
+                <option value="restaurantes"><strong>Restaurantes</strong></option>
+                <option value="paseo"><strong>Paseo</strong></option>
+                <option value="viajar"><strong>Viajar</strong></option>
+                <option value="museos"><strong>Museos</strong></option>
+                <option value="cataVinos"><strong>Cata de vinos</strong></option>
+            </select>
+            <!-- Campo de hobies -->
+            <label for="hobby"><strong>Hobbies</strong></label>
+            <select name="tiposHobbie" id="select hobbie">
+                <option value="dormir"><strong>Dormir</strong></option>
+                <option value="leer"><strong>Leer</strong></option>
+                <option value="viajar"><strong>Viajar</strong></option>
+                <option value="deportesExtremos"><strong>Deportes extremos</strong></option>
+                <option value="dibujar"><strong>Dibujar</strong></option>
+                <option value="viajar"><strong>Viajar</strong></option>
+                <option value="bailar"><strong>Bailar</strong></option>
+                <option value="cocinar"><strong>Cocinar</strong></option>
+            </select>
+            <!-- Campo definicion con tres palabras -->
+            <label for="definicion">Definite con tres palabras</label>
+            <input type="text" name="definicion" id="input-definicion1">
+            <input type="text" name="definicion" id="input-definicion1">
+            <input type="text" name="definicion" id="input-definicion1">
+        </div>
+    </form>
+
+</body>
+
+</html>
