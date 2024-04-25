@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Multi Step Form | CodingNepal</title>
+    <link rel="stylesheet" href="formulario.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="inputEleccion.css">
+</head>
+<body>
+<div class="container">
+    <header>Signup Form</header>
+    <div class="progress-bar">
+        <div class="step">
+            <p>
+                Name
+            </p>
+            <div class="bullet">
+                <span>1</span>
+            </div>
+            <div class="check fas fa-check"></div>
+        </div>
+        <div class="step">
+            <p>
+                Name
+            </p>
+            <div class="bullet">
+                <span>2</span>
+            </div>
+            <div class="check fas fa-check"></div>
+        </div>
+        <div class="step">
+            <p>
+                Contact
+            </p>
+            <div class="bullet">
+                <span>3</span>
+            </div>
+            <div class="check fas fa-check"></div>
+        </div>
+        <div class="step">
+            <p>
+                Birth
+            </p>
+            <div class="bullet">
+                <span>4</span>
+            </div>
+            <div class="check fas fa-check"></div>
+        </div>
+        <div class="step">
+            <p>
+                Submit
+            </p>
+            <div class="bullet">
+                <span>5</span>
+            </div>
+            <div class="check fas fa-check"></div>
+        </div>
+    </div>
+    <div class="form-outer">
+        <form action="#">
+
+            <div class="page slide-page">
+                <div class="title">
+                    Basic Info:
+                </div>
+                <div class="field">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="input-nombre" placeholder="Pon tu nombre aquí">
+                </div>
+                <div class="field">
+                    <label for="apellido">1ºApellido</label>
+                    <input type="text" name="apellido" id="input-apellido" placeholder="Pon tu apellido aquí">
+                </div>
+                <div class="field">
+                    <label for="edad">Edad</label>
+                    <input type="number" name="edad" id="input-edad">
+                </div>
+                <div class="field">
+                    <button class="firstNext next">Next</button>
+                </div>
+            </div>
+
+            <div class="page">
+                <div class="title">
+                    Contact Info:
+                </div>
+                <div class="field">
+                    <label for="curso"><strong>Curso</strong></label>
+                    <select name="nombres-cursos" id="select curso">
+                        <option value="Comercio-internacional"><strong>Comercio internacional</strong></option>
+                        <option value="Marketing-y-publicidad">Márketing y publicidad</option>
+                        <option value="Administracion-y-finanzas">Administración y finanzas</option>
+                        <option value="Desarrollo-de-aplicaciones-multiplataforma">Desarrollo de aplicaciones
+                            multiplataforma
+                        </option>
+                        <option value="Desarrollo-de-aplicaciones-web">Desarrollo de aplicaciones web</option>
+                        <option value="Administración-de-sistemas-informáticos-en-red">Administración de Sistemas
+                            Informáticosen
+                            Red
+                        </option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="sexo"><strong>Género</strong></label>
+                    <select name="eleccionSexo" id="select sexo">
+                        <option value="Maculino&roll"><strong>Maculino</strong></option>
+                        <option value="Femenino"><strong>Femenino</strong></option>
+                        <option value="Otro"><strong>Otro</strong></option>
+                    </select>
+                </div>
+                <div class="campoMultiple">
+                    <label><strong>Color de pelo</strong></label>
+                    <div class="radio-inputs">
+                        <label class="radio" id="labelPelo">
+                            <input type="radio" name="grupo1" checked="">
+                            <span class="name">Castaño</span>
+                        </label>
+                        <label class="radio" id="labelPelo">
+                            <input type="radio" name="grupo1">
+                            <span class="name">Pelirrojo</span>
+                        </label>
+
+                        <label class="radio" id="labelPelo">
+                            <input type="radio" name="grupo1">
+                            <span class="name">Moreno</span>
+                        </label>
+                        <label class="radio" id="labelPelo">
+                            <input type="radio" name="grupo1">
+                            <span class="name">Rubio</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="field btns">
+                    <button class="prev-1 prev">Previous</button>
+                    <button class="next-1 next">Next</button>
+                </div>
+            </div>
+
+            <div class="page">
+                <div class="title">
+                    Mas datos
+                </div>
+                <div class="campoMultiple">
+                    <label><strong>Color de ojos</strong></label>
+                    <div class="radio-inputs">
+                        <label class="radio" id="labelOjos">
+                            <input type="radio" name="grupo2" checked="">
+                            <span class="name">Verdes</span>
+                        </label>
+                        <label class="radio" id="labelOjos">
+                            <input type="radio" name="grupo2">
+                            <span class="name">Azules</span>
+                        </label>
+
+                        <label class="radio" id="labelOjos">
+                            <input type="radio" name="grupo2">
+                            <span class="name">Marrones</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="musica"><strong>Estilo de música</strong></label>
+                    <select name="tiposMusica" id="select estiloMusica">
+                        <option value="rock&roll"><strong>Rock&Roll</strong></option>
+                        <option value="dembow"><strong>dembow</strong></option>
+                        <option value="pop"><strong>Pop</strong></option>
+                        <option value="rap"><strong>Rap</strong></option>
+                        <option value="reguetón"><strong>Reguetón</strong></option>
+                        <option value="techno"><strong>Techno</strong></option>
+                        <option value="hipHop"><strong>Hip-Hop</strong></option>
+                        <option value="bachata"><strong>Bachata</strong></option>
+                    </select>
+                </div>
+                <div class="campoMultiple">
+                    <label><strong>Deporte</strong></label>
+                    <div class="radio-inputs">
+                        <label class="radio" id="labelDeporte">
+                            <input type="radio" name="grupo3" checked="">
+                            <span class="name">Baloncesto</span>
+                        </label>
+                        <label class="radio" id="labelDeporte">
+                            <input type="radio" name="grupo3">
+                            <span class="name">Futbol</span>
+                        </label>
+
+                        <label class="radio" id="labelDeporte">
+                            <input type="radio" name="grupo3">
+                            <span class="name">Padel</span>
+                        </label>
+                        <label class="radio" id="labelDeporte">
+                            <input type="radio" name="grupo3">
+                            <span class="name">Voleibol</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="field btns">
+                    <button class="prev-2 prev">Previous</button>
+                    <button class="next-2 next">Next</button>
+                </div>
+            </div>
+            <div class="page">
+                <div class="title">
+                    Login Details:
+                </div>
+                <div class="campoMultiple">
+                    <label><strong>¿Fumas?</strong></label>
+                    <div class="radio-inputs">
+                        <label class="radio" id="labelDeporte">
+                            <input type="radio" name="grupo4">
+                            <span class="name">Fumo</span>
+                        </label>
+                        <label class="radio" id="labelDeporte">
+                            <input type="radio" name="grupo4">
+                            <span class="name">No fumo</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="campoMultiple">
+                    <label><strong>¿Eres extrovertido o introvertido?</strong></label>
+                    <div class="radio-inputs">
+                        <label class="radio" id="labelDeporte">
+                            <input type="radio" name="inputPersonalidad">
+                            <span class="name">Extrovertido</span>
+                        </label>
+                        <label class="radio" id="labelDeporte">
+                            <input type="radio" name="inputPersonalidad">
+                            <span class="name">Introvertido</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="musica"><strong>Estilo de música</strong></label>
+                    <select name="amistad" id="select">
+                        <option value="a-lo-que-surja">Lo que surja</option>
+                        <option value="mejor-amigo">Mejor amigo/a</option>
+                        <option value="amigo-de-fiesta">Amigo/a de fiesta</option>
+                    </select>
+                </div>
+                <div class="field btns">
+                    <button class="prev-3 prev">Previous</button>
+                    <button class="next-3 next">Next</button>
+                </div>
+            </div>
+            <div class="page">
+                <div class="title">
+                    Login Details:
+                </div>
+                <div class="field">
+                    <label for="plan"><strong>Planes</strong></label>
+                    <select name="tiposPlan" id="select estiloPlan">
+                        <option value="senderismo"><strong>Senderismo</strong></option>
+                        <option value="salirDeFiesta"><strong>Salir de fiesta</strong></option>
+                        <option value="cine"><strong>Cine</strong></option>
+                        <option value="restaurantes"><strong>Restaurantes</strong></option>
+                        <option value="paseo"><strong>Paseo</strong></option>
+                        <option value="viajar"><strong>Viajar</strong></option>
+                        <option value="museos"><strong>Museos</strong></option>
+                        <option value="cataVinos"><strong>Cata de vinos</strong></option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="hobby"><strong>Hobbies</strong></label>
+                    <select name="tiposHobbie" id="select hobbie">
+                        <option value="dormir"><strong>Dormir</strong></option>
+                        <option value="leer"><strong>Leer</strong></option>
+                        <option value="viajar"><strong>Viajar</strong></option>
+                        <option value="deportesExtremos"><strong>Deportes extremos</strong></option>
+                        <option value="dibujar"><strong>Dibujar</strong></option>
+                        <option value="viajar"><strong>Viajar</strong></option>
+                        <option value="bailar"><strong>Bailar</strong></option>
+                        <option value="cocinar"><strong>Cocinar</strong></option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="definicion">Definite con tres palabras</label>
+                    <input type="text" name="definicion" id="input-definicion1">
+                    <input type="text" name="definicion" id="input-definicion1">
+                    <input type="text" name="definicion" id="input-definicion1">
+                </div>
+                <div class="field btns">
+                    <button class="prev-4 prev">Previous</button>
+                    <button class="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="logicaFormulario.js"></script>
+</body>
+</html>
