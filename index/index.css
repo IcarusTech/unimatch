@@ -1,0 +1,175 @@
+*{
+   list-style: none;
+   font-family: 'Lucida Sans Regular';
+}
+
+
+/* EMPIEZA EL NAV */
+
+
+nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.logo{
+    width: 90px;
+    height: 90px;
+}
+
+nav ul li{
+   float: left;
+   width: 20%;
+}
+
+nav ul li a{
+   background-color: rgb(0, 0, 0); 
+   color: #fff;
+   width: 100%;
+   display: block;
+   text-decoration: none;
+   text-align: center;
+   padding: 25px 0 25px 0;
+   font-family: 'Times New Roman', Times, serif;
+}
+
+nav ul li a:hover{
+background-color: rgb(56, 55, 53);
+
+}
+
+.linea{
+   width: 80%;
+   position: relative;
+   left: 130px;
+   background-color: green;
+}
+
+/* ACABA EL NAV */
+
+
+/* EMPIEZA EL ROADMAP */
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background:black;
+}
+.roadMap{
+    position: relative;
+    max-width: 1200px;
+    margin: 100px auto;
+    color: black;
+}
+.contenedor{
+    padding: 10px 50px;
+    position: relative;
+    width: 50%;
+
+}
+.cont-text{
+    padding: 20px 30px;
+    background: #fff;
+    position: relative;
+    border-radius: 6px;
+    font-size: 15px;
+}
+.left-Contenedor{
+    left: 0;
+}
+.right-Contenedor{
+    left: 50%;
+}
+.contenedor img{
+    position: absolute;
+    width: 30px;
+    right: -20px;
+    border-radius: 50%;
+    background: #fff;
+    top: 32px;
+    z-index: 10;
+}
+.right-Contenedor img{
+    left: -13px;
+}
+.roadMap::after{
+    content: '';
+    position: absolute;
+    width:6px ;
+    height: 100%;
+    background: #fff;
+    top: 0;
+    left: 50%;
+    margin-left: -3px;
+    z-index: -1;
+}
+
+/* ACABA EL ROADMAP */
+
+/* EMPIEZA EL FOOTER */
+
+footer{
+   background-color: rgb(0, 0, 0);
+   text-align: center;
+   border-radius: 15px;
+   color: white;
+}
+
+ul{
+   margin: 0;
+   padding: 0;
+}
+
+.all{
+   display: grid;
+   grid-template-rows: 15% 20% 5% 15%;
+   grid-template-areas: 
+   'ayuda'
+   'equipo'
+   'redes'
+   'enlaces'
+   ;
+   list-style: none;
+   gap: 50px;
+}
+
+.ayuda{
+grid-area: ayuda;
+}
+
+.equipo{
+grid-area: equipo;
+}
+
+.redes{
+grid-area: redes;
+display: grid;
+grid-template-columns: auto auto auto;
+grid-template-areas: 
+'...insta you face...'
+;
+}
+
+.face{
+grid-area: face;
+}
+
+.insta{
+grid-area: insta;
+}
+
+.you{
+grid-area: you;
+}
+
+.enlaces{
+   grid-area: enlaces;
+}
+
+/* ACABA EL FOOTER */
