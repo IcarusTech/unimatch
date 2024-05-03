@@ -14,15 +14,22 @@ const definicion3 = document.getElementById('input-definicion3');
 const errorNombre = document.getElementById('error-nombre');
 const errorApellido = document.getElementById('error-apellido');
 const errorFecha = document.getElementById('error-date');
-const errorDefinicon = document.getElementById('error-definicion');
+const errorDefinicion = document.getElementById('error-definicion');
 errorNombre.innerHTML = "";
 errorApellido.innerHTML = "";
 errorFecha.innerHTML = "";
-errorDefinicon.innerHTML = "";
+errorDefinicion.innerHTML = "";
 
 let validado = false;
-let nombreOk=false;
-let apellidoOk=false;
+let nombreOk = false;
+let apellidoOk = false;
+let definicion1Ok = false;
+let definicion2Ok = false;
+let definicion3Ok = false;
+let formularioOk=false;
+// Creamos variabes que contengan string procesados y validados de los inputs
+let nombreProcesado;
+let apellidoProcesado;
 /* 
   Creamos un evento que cuando se cargue el DOM si el usuario pulsa el botón de 
   enviar el formulario se active la función validarFormulario
@@ -31,26 +38,37 @@ btnsNext.forEach((button => {
   //Solo se ejecutara este código si hacemos click en un boton
   button.addEventListener('click', function () {
 
-    if (nombre.value == "" || !/^[a-zA-Z0-9\s]{1,50}$/.test(nombre.value)) {
+    if (nombre.value.trim() == "" || !/^[a-zA-Z\s]{3,50}$/.test(nombre.value)) {
+      console.log("No está puesto el nombre");
       errorNombre.innerHTML = 'Introduzca un nombre válido';
       nombre.style.border = "2px solid red";
-      nombreOk=false;
+      nombreOk = false;
     } else {
       nombre.style.border = "2px solid black";
-      
-      nombreOk=true;
+      errorNombre.innerHTML = '';
+      nombreOk = true;
+      nombreProcesado = nombre.value.trim()//Igualamos la variable al nombre sin espacios iniciales y finales
+      console.log(nombreProcesado); //Mostramos por consola como se veria en nombre sin espacion innecesarios
     }
-    if (apellido.value == "" || !/^[a-zA-Z0-9\s]{1,50}$/.test(apellido.value)) {
+    if (apellido.value.trim() == "" || !/^[a-zA-Z\s]{3,50}$/.test(apellido.value)) {
+      console.log("No está puesta el apellido");
       errorApellido.innerHTML = 'Introduzca un apellido válido';
       apellido.style.border = "2px solid red";
-      apellidoOk=false;
+      apellidoOk = false;
     } else {
       apellido.style.border = "2px solid black";
-      
-      apellidoOk=true;
+      errorApellido.innerHTML = '';
+      apellidoOk = true;
+      apellidoProcesado = apellido.value.trim();
+      console.log(apellidoProcesado);
     }
-    if(nombreOk==true && apellidoOk==true){
+    if (nombreOk == true && apellidoOk == true) {
       validarEdad();
+    } else {
+      console.log("No esta puesta la fecha");
+      errorFecha.innerHTML = 'No hay ninguna fecha en el input';
+      nacimiento.style.border = "2px solid red";
+      validado = false;
     }
   })
 }));
@@ -74,14 +92,34 @@ function validarEdad() {
     console.log(anio_act);
     console.log(anio_naci);
     console.log(resta);
-    console.log("Hay ninguna fecha");
+    console.log("Hay una fecha");
     if (resta < 18) {
       console.log("menor de edad");
       errorFecha.innerHTML = 'Introduzca una fecha válida';
       nacimiento.style.border = "2px solid red";
       validado = false;
-    } else {
-      console.log("Mayor de edad");
+    } else if (resta == 18) {
+      console.log("El mes puesto es: " + mes_naci + " y el actual es: " + mes_act);
+      if (mes_act > mes_naci) {
+
+        console.log("Mayor de edad");
+      } else if (mes_act == mes_naci) {
+        console.log("El dia puesto es: " + dia_naci + " y es actual es: " + dia_act);
+        if (dia_act >= dia_naci) {
+          console.log("Feliz cumple");
+          errorFecha.innerHTML = '';
+          nacimiento.style.border = "2px solid black";
+          validado = true;
+        } else {
+          console.log("Menor de edad");
+        }
+      }
+      else {
+        console.log("menor de edad");
+      }
+    }
+    else {
+
       errorFecha.innerHTML = '';
       nacimiento.style.border = "2px solid black";
       validado = true;
@@ -95,7 +133,7 @@ function validarEdad() {
 
 }
 
-//-----------------------------------------------------------------------
+//::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 const slidePage = document.querySelector(".slide-page");
 const nextBtnFirst = document.querySelector(".firstNext");
 const prevBtnSec = document.querySelector(".prev-1");
@@ -150,19 +188,55 @@ submitBtn.addEventListener("click", function () {
   progressCheck[current - 1].classList.add("active");
   progressText[current - 1].classList.add("active");
   current += 1;
-  if (definicion1.value == "" || !/^[a-zA-Z0-9\s]{1,20}$/.test(definicion1.value)) {
-    errorDefinicon.innerHTML = 'La descripción es incorrecta';
-    errorDefinicon.style.border = "2px solid red";
-    validado = false;
-  } else {
-    errorDefinicon.style.border = "2px solid black";
+  validar1definicion();
+  validar2definicion();
+  validar3definicion();
+  if (definicion1Ok && definicion2Ok && definicion3Ok) {
     validado = true;
-    setTimeout(function () {
-      alert("Your Form Successfully Signed up");
-      location.reload();
-    }, 800);
+    console.log("Las tres definiciones estas correctas");
   }
+  formularioOk=window.confirm("¿Estás seguro que quieres finalizar ?");
+  /*
+  setTimeout(function () {
+    alert("Your Form Successfully Signed up");
+    location.reload();
+  }, 800);
+  */
+
 });
+function validar1definicion() {
+  if (definicion1.value.trim() == "" || !/^[a-zA-Z\s]{3,20}$/.test(definicion1.value)) {
+    errorDefinicion.innerHTML = 'La descripción está incompleta';
+    errorDefinicion.style.border = "2px solid red";
+  } else {
+    errorDefinicion.style.border = "2px solid black";
+    errorDefinicion.innerHTML = "";
+    definicion1Ok = true;
+    console.log("La definicion 3 esta bien: " + definicion1Ok);
+  }
+}
+function validar2definicion() {
+  if (definicion2.value.trim() == "" || !/^[a-zA-Z\s]{3,20}$/.test(definicion2.value)) {
+    errorDefinicion.innerHTML = 'La descripción está incompleta';
+    errorDefinicion.style.border = "2px solid red";
+  } else {
+    errorDefinicion.style.border = "2px solid black";
+    errorDefinicion.innerHTML = "";
+    definicion2Ok = true;
+    console.log("La definicion 2 esta bien: " + definicion2Ok);
+  }
+}
+function validar3definicion() {
+  if (definicion3.value.trim() == "" || !/^[a-zA-Z\s]{3,20}$/.test(definicion3.value)) {
+    errorDefinicion.innerHTML = 'La descripción está incompleta';
+    errorDefinicion.style.border = "2px solid red";
+  } else {
+    errorDefinicion.style.border = "2px solid black";
+    errorDefinicion.innerHTML = "";
+    definicion3Ok = true;
+    console.log("La definicion 3 esta bien: " + definicion3Ok);
+  }
+}
 
 prevBtnSec.addEventListener("click", function (event) {
   event.preventDefault();
