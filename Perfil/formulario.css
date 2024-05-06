@@ -11,7 +11,7 @@ body{
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background:  -webkit-linear-gradient(top, #f5f5f5, #d43f8d);
+  background:  -webkit-linear-gradient(top, #000000, #d43f8d);
 }
 ::selection{
   color: #fff;

@@ -26,7 +26,7 @@ let apellidoOk = false;
 let definicion1Ok = false;
 let definicion2Ok = false;
 let definicion3Ok = false;
-let formularioOk=false;
+let formularioOk = false;
 // Creamos variabes que contengan string procesados y validados de los inputs
 let nombreProcesado;
 let apellidoProcesado;
@@ -89,40 +89,43 @@ function validarEdad() {
 
   resta = (anio_act - anio_naci);
   if (nacimiento.value) {
-    console.log(anio_act);
-    console.log(anio_naci);
-    console.log(resta);
-    console.log("Hay una fecha");
-    if (resta < 18) {
-      console.log("menor de edad");
-      errorFecha.innerHTML = 'Introduzca una fecha válida';
-      nacimiento.style.border = "2px solid red";
-      validado = false;
-    } else if (resta == 18) {
-      console.log("El mes puesto es: " + mes_naci + " y el actual es: " + mes_act);
-      if (mes_act > mes_naci) {
+    if (anio_naci >= 1980 && anio_naci < 2025) {
 
-        console.log("Mayor de edad");
-      } else if (mes_act == mes_naci) {
-        console.log("El dia puesto es: " + dia_naci + " y es actual es: " + dia_act);
-        if (dia_act >= dia_naci) {
-          console.log("Feliz cumple");
-          errorFecha.innerHTML = '';
-          nacimiento.style.border = "2px solid black";
-          validado = true;
-        } else {
-          console.log("Menor de edad");
+      console.log(anio_act);
+      console.log(anio_naci);
+      console.log(resta);
+      console.log("Hay una fecha");
+      if (resta < 18) {
+        console.log("menor de edad");
+        errorFecha.innerHTML = 'Introduzca una fecha válida';
+        nacimiento.style.border = "2px solid red";
+        validado = false;
+      } else if (resta == 18) {
+        console.log("El mes puesto es: " + mes_naci + " y el actual es: " + mes_act);
+        if (mes_act > mes_naci) {
+
+          console.log("Mayor de edad");
+        } else if (mes_act == mes_naci) {
+          console.log("El dia puesto es: " + dia_naci + " y es actual es: " + dia_act);
+          if (dia_act >= dia_naci) {
+            console.log("Feliz cumple");
+            errorFecha.innerHTML = '';
+            nacimiento.style.border = "2px solid black";
+            validado = true;
+          } else {
+            console.log("Menor de edad");
+          }
+        }
+        else {
+          console.log("menor de edad");
         }
       }
       else {
-        console.log("menor de edad");
-      }
-    }
-    else {
 
-      errorFecha.innerHTML = '';
-      nacimiento.style.border = "2px solid black";
-      validado = true;
+        errorFecha.innerHTML = '';
+        nacimiento.style.border = "2px solid black";
+        validado = true;
+      }
     }
   } else {
     console.log("No esta puesta la fecha");
@@ -194,8 +197,8 @@ submitBtn.addEventListener("click", function () {
   if (definicion1Ok && definicion2Ok && definicion3Ok) {
     validado = true;
     console.log("Las tres definiciones estas correctas");
+    formularioOk = window.confirm("¿Estás seguro que quieres finalizar ?");
   }
-  formularioOk=window.confirm("¿Estás seguro que quieres finalizar ?");
   /*
   setTimeout(function () {
     alert("Your Form Successfully Signed up");
