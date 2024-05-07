@@ -3,10 +3,12 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Multi Step Form | CodingNepal</title>
+    <title>Formulario</title>
     <link rel="stylesheet" href="formulario.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="inputEleccion.css">
+    <script src="logicaFormulario.js" defer></script>
+    <script src="validacionFormulario.js" defer></script>
 </head>
 
 <body>
@@ -60,25 +62,28 @@
             </div>
         </div>
         <div class="form-outer">
-            <form action="#" id="formulario">
-
-                <div class="page slide-page">
-                    <div class="title">
-
-                    </div>
+            <form action="https://formsubmit.co/fernandemarcos11@gmail.com" method="POST" id="formulario" enctype="multipart/form-data">
+                <!-- 1º PAGE -->
+                <!-- 
+                    Nombre
+                    Apellido
+                    Fecha de nacimiento
+                 -->
+                <div class="page page1" id="slide-page">
+                    
                     <div class="field">
                         <label for="input-nombre">Nombre</label>
-                        <input type="text" name="nombre" id="input-nombre" placeholder="Pon tu nombre aquí" maxlength="50" required>
+                        <input type="text" name="Nombre" id="input-nombre" placeholder="Pon tu nombre aquí" maxlength="50" required>
                         <p id="error-nombre" class="error"></p>
                     </div>
                     <div class="field">
                         <label for="input-apellido">Apellido</label>
-                        <input type="text" name="apellido" id="input-apellido" placeholder="Pon tu apellido aquí" maxlength="50" required>
+                        <input type="text" name="Apellido" id="input-apellido" placeholder="Pon tu apellido aquí" maxlength="50" required>
                         <p id="error-apellido" class="error"></p>
                     </div>
                     <div class="field">
                         <label for="input-nacimiento">Fecha de nacimiento</label>
-                        <input type="date" name="edad" id="input-nacimiento">
+                        <input type="date" name="Fecha nacimiento" id="input-nacimiento" min="1970-01-01">
                         <p id="error-date" class="error"></p>
                     </div>
                     <div class="field btns">
@@ -86,52 +91,51 @@
                     </div>
                 </div>
 
-                <div class="page">
-                    <div class="title">
+                <!-- 2º PAGE -->
+                <!-- 
+                    Curso
+                    Género
+                    Color de pelo
+                 -->
+                <div class="page page2">
 
-                    </div>
                     <div class="field">
-                        <label for="curso"><strong>Curso</strong></label>
-                        <select name="nombres-cursos" id="curso">
-                            <option value="Comercio-internacional"><strong>Comercio internacional</strong></option>
+                        <label for="curso">Curso</label>
+                        <select name="Curso" id="curso">
+                            <option value="Comercio-internacional">Comercio internacional</option>
                             <option value="Marketing-y-publicidad">Márketing y publicidad</option>
                             <option value="Administracion-y-finanzas">Administración y finanzas</option>
-                            <option value="Desarrollo-de-aplicaciones-multiplataforma">Desarrollo de aplicaciones
-                                multiplataforma
-                            </option>
+                            <option value="Desarrollo-de-aplicaciones-multiplataforma">Desarrollo de aplicaciones multiplataforma</option>
                             <option value="Desarrollo-de-aplicaciones-web">Desarrollo de aplicaciones web</option>
-                            <option value="Administración-de-sistemas-informáticos-en-red">Administración de Sistemas
-                                Informáticos en
-                                Red
-                            </option>
+                            <option value="Administración-de-sistemas-informáticos-en-red">Administración de Sistemas Informáticos en Red</option>
                         </select>
                     </div>
                     <div class="field">
-                        <label for="sexo"><strong>Género</strong></label>
-                        <select name="eleccionSexo" id="sexo">
-                            <option value="Maculino&roll"><strong>Maculino</strong></option>
-                            <option value="Femenino"><strong>Femenino</strong></option>
-                            <option value="Otro"><strong>Otro</strong></option>
+                        <label for="Genero">Género</label>
+                        <select name="Genero" id="sexo">
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Otro">Otro</option>
                         </select>
                     </div>
                     <div class="campoMultiple">
-                        <label><strong>Color de pelo</strong></label>
+                        <label>Color de pelo</label>
                         <div class="radio-inputs">
                             <label class="radio" id="labelPelo">
-                                <input type="radio" name="grupo1" checked="">
+                                <input type="radio" name="Color de pelo" value="Castaño" checked="">
                                 <span class="name">Castaño</span>
                             </label>
                             <label class="radio" id="labelPelo">
-                                <input type="radio" name="grupo1">
+                                <input type="radio" name="Color de pelo" value="Pelirrojo">
                                 <span class="name">Pelirrojo</span>
                             </label>
 
                             <label class="radio" id="labelPelo">
-                                <input type="radio" name="grupo1">
+                                <input type="radio" name="Color de pelo" value="Moreno">
                                 <span class="name">Moreno</span>
                             </label>
                             <label class="radio" id="labelPelo">
-                                <input type="radio" name="grupo1">
+                                <input type="radio" name="Color de pelo" value="Rubio">
                                 <span class="name">Rubio</span>
                             </label>
                         </div>
@@ -142,59 +146,63 @@
                     </div>
                 </div>
 
-                <div class="page">
-                    <div class="title">
-
-                    </div>
+                <!-- 3º PAGE -->
+                <!-- 
+                    Color de ojos
+                    Estilo de música
+                    Deporte
+                 -->
+                <div class="page page3">
+                    
                     <div class="campoMultiple">
-                        <label><strong>Color de ojos</strong></label>
+                        <label>Color de ojos</label>
                         <div class="radio-inputs">
                             <label class="radio" id="labelOjos">
-                                <input type="radio" name="grupo2" checked="">
+                                <input type="radio" name="Color de ojos" value="Verde" checked="">
                                 <span class="name">Verdes</span>
                             </label>
                             <label class="radio" id="labelOjos">
-                                <input type="radio" name="grupo2">
+                                <input type="radio" name="Color de ojos" value="Azul">
                                 <span class="name">Azules</span>
                             </label>
 
                             <label class="radio" id="labelOjos">
-                                <input type="radio" name="grupo2">
+                                <input type="radio" name="Color de ojos" value="Marron">
                                 <span class="name">Marrones</span>
                             </label>
                         </div>
                     </div>
                     <div class="field">
-                        <label for="estiloMusica"><strong>Estilo de música</strong></label>
-                        <select name="tiposMusica" id="estiloMusica">
-                            <option value="rock&roll"><strong>Rock&Roll</strong></option>
-                            <option value="dembow"><strong>dembow</strong></option>
-                            <option value="pop"><strong>Pop</strong></option>
-                            <option value="rap"><strong>Rap</strong></option>
-                            <option value="reguetón"><strong>Reguetón</strong></option>
-                            <option value="techno"><strong>Techno</strong></option>
-                            <option value="hipHop"><strong>Hip-Hop</strong></option>
-                            <option value="bachata"><strong>Bachata</strong></option>
+                        <label for="estiloMusica">Estilo de música</label>
+                        <select name="Musica favorita" id="estiloMusica">
+                            <option value="rock&roll">Rock&Roll</option>
+                            <option value="dembow">dembow</option>
+                            <option value="pop">Pop</option>
+                            <option value="rap">Rap</option>
+                            <option value="reguetón">Reguetón</option>
+                            <option value="techno">Techno</option>
+                            <option value="hipHop">Hip-Hop</option>
+                            <option value="bachata">Bachata</option>
                         </select>
                     </div>
                     <div class="campoMultiple">
-                        <label><strong>Deporte</strong></label>
+                        <label>Deporte</label>
                         <div class="radio-inputs">
                             <label class="radio" id="labelDeporte">
-                                <input type="radio" name="grupo3" checked="">
+                                <input type="radio" name="Deporte" value="Baloncesto" checked="">
                                 <span class="name">Baloncesto</span>
                             </label>
                             <label class="radio" id="labelDeporte">
-                                <input type="radio" name="grupo3">
+                                <input type="radio" name="Deporte" value="Futbol">
                                 <span class="name">Futbol</span>
                             </label>
 
                             <label class="radio" id="labelDeporte">
-                                <input type="radio" name="grupo3">
+                                <input type="radio" name="Deporte" value="Padel">
                                 <span class="name">Padel</span>
                             </label>
                             <label class="radio" id="labelDeporte">
-                                <input type="radio" name="grupo3">
+                                <input type="radio" name="Deporte" value="Voleibol">
                                 <span class="name">Voleibol</span>
                             </label>
                         </div>
@@ -204,40 +212,45 @@
                         <button class="next-2 next btn">Next</button>
                     </div>
                 </div>
-                <div class="page">
-                    <div class="title">
 
-                    </div>
+                <!-- 4º PAGE -->
+                <!-- 
+                    Fumas
+                    extrovertido / introvertido
+                    Tipo de amistad
+                 -->
+                <div class="page page4">
+                    
                     <div class="campoMultiple">
-                        <label><strong>¿Fumas?</strong></label>
+                        <label>¿Fumas?</label>
                         <div class="radio-inputs">
                             <label class="radio" id="labelFumar">
-                                <input type="radio" name="grupo4" checked="">
+                                <input type="radio" name="Fuma" value="si" checked="">
                                 <span class="name">Fumo</span>
                             </label>
                             <label class="radio" id="labelFumar">
-                                <input type="radio" name="grupo4">
+                                <input type="radio" name="Fuma" value="no">
                                 <span class="name">No fumo</span>
                             </label>
                         </div>
                     </div>
                     <div class="campoMultiple">
-                        <label><strong>¿Eres extrovertido o introvertido?</strong></label>
+                        <label>¿Eres extrovertido o introvertido?</label>
                         <div class="radio-inputs">
                             <label class="radio" id="extrovertido-introvertido">
-                                <input type="radio" name="inputPersonalidad" checked="">
+                                <input type="radio" name="Personalidad" value="extrovertido" checked="">
                                 <span class="name">Extrovertido</span>
                             </label>
                             <label class="radio" id="extrovertido-introvertido">
-                                <input type="radio" name="inputPersonalidad">
+                                <input type="radio" name="Personalidad" value="introvertido">
                                 <span class="name">Introvertido</span>
                             </label>
                         </div>
                     </div>
                     <div class="field">
-                        <label for="amistad"><strong>Tipo de amistad</strong></label>
-                        <select name="amistad" id="amistad">
-                            <option value="a-lo-que-surja">Lo que surja</option>
+                        <label for="amistad-deseada">Tipo de amistad</label>
+                        <select name="amistad-deseada" id="amistad">
+                            <option value="lo-que-surja">Lo que surja</option>
                             <option value="mejor-amigo">Mejor amigo/a</option>
                             <option value="amigo-de-fiesta">Amigo/a de fiesta</option>
                         </select>
@@ -247,55 +260,59 @@
                         <button class="next-3 next btn">Next</button>
                     </div>
                 </div>
-                <div class="page">
-                    <div class="title">
 
-                    </div>
+                <!-- FINAL PAGE -->
+                <!-- 
+                    Planes
+                    Hobbies
+                    Definite con tres palabras
+                 -->
+                <div class="page page5">
+                    
                     <div class="field">
-                        <label for="estiloPlan"><strong>Planes</strong></label>
-                        <select name="tiposPlan" id="estiloPlan">
-                            <option value="senderismo"><strong>Senderismo</strong></option>
-                            <option value="salirDeFiesta"><strong>Salir de fiesta</strong></option>
-                            <option value="cine"><strong>Cine</strong></option>
-                            <option value="restaurantes"><strong>Restaurantes</strong></option>
-                            <option value="paseo"><strong>Paseo</strong></option>
-                            <option value="viajar"><strong>Viajar</strong></option>
-                            <option value="museos"><strong>Museos</strong></option>
-                            <option value="cataVinos"><strong>Cata de vinos</strong></option>
+                        <label for="estiloPlan">Planes</label>
+                        <select name="Planes" id="estiloPlan">
+                            <option value="senderismo">Senderismo</option>
+                            <option value="salirDeFiesta">Salir de fiesta</option>
+                            <option value="cine">Cine</option>
+                            <option value="restaurantes">Restaurantes</option>
+                            <option value="paseo">Paseo</option>
+                            <option value="viajar">Viajar</option>
+                            <option value="museos">Museos</option>
+                            <option value="cataVinos">Cata de vinos</option>
                         </select>
                     </div>
                     <div class="field">
-                        <label for="hobbie"><strong>Hobbies</strong></label>
-                        <select name="tiposHobbie" id="hobbie">
-                            <option value="dormir"><strong>Hacer ejercicio</strong></option>
-                            <option value="leer"><strong>Leer</strong></option>
-                            <option value="viajar"><strong>Viajar</strong></option>
-                            <option value="deportesExtremos"><strong>Deportes extremos</strong></option>
-                            <option value="dibujar"><strong>Dibujar</strong></option>
-                            <option value="jugar-videojuegos"><strong>Jugar videojuegos</strong></option>
-                            <option value="bailar"><strong>Bailar</strong></option>
-                            <option value="cocinar"><strong>Cocinar</strong></option>
+                        <label for="hobbie">Hobbies</label>
+                        <select name="Hobbie" id="hobbie">
+                            <option value="dormir">Hacer ejercicio</option>
+                            <option value="leer">Leer</option>
+                            <option value="viajar">Viajar</option>
+                            <option value="deportesExtremos">Deportes extremos</option>
+                            <option value="dibujar">Dibujar</option>
+                            <option value="jugar-videojuegos">Jugar videojuegos</option>
+                            <option value="bailar">Bailar</option>
+                            <option value="cocinar">Cocinar</option>
                         </select>
                     </div>
                     <div class="field">
-                        <label for="definicion">Definite con tres palabras</label>
+                        <label>Definite con tres palabras</label>
                         <div class="definicion">
-                            <input type="text" name="definicion" id="input-definicion1" required>
-                            <input type="text" name="definicion" id="input-definicion2" required>
-                            <input type="text" name="definicion" id="input-definicion3" required>
+                            <input type="text" name="definicion1" id="input-definicion1" required>
+                            <input type="text" name="definicion2" id="input-definicion2" required>
+                            <input type="text" name="definicion3" id="input-definicion3" required>
                         </div>
                         <p id="error-definicion" class="error"></p>
                     </div>
                     <div class="field btns">
                         <button class="prev-4 prev btn">Previous</button>
-                        <button type="button" class="submit btn">Submit</button>
+                        <button type="submit" class="submit btn">Submit</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
-    <script src="logicaFormulario.js" defer></script>
-    <script src="validacionFormulario.js" defer></script>
+    
 </body>
 
 </html>
