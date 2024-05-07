@@ -137,7 +137,7 @@ function validarEdad() {
 }
 
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-const slidePage = document.querySelector(".slide-page");
+const slidePage = document.getElementById("slide-page");
 const nextBtnFirst = document.querySelector(".firstNext");
 const prevBtnSec = document.querySelector(".prev-1");
 const nextBtnSec = document.querySelector(".next-1");
@@ -152,6 +152,7 @@ const progressCheck = document.querySelectorAll(".step .check");
 const bullet = document.querySelectorAll(".step .bullet");
 let current = 1;
 
+// 1º NEXT
 nextBtnFirst.addEventListener("click", function (event) {
   event.preventDefault();
   if (validado) {
@@ -162,6 +163,8 @@ nextBtnFirst.addEventListener("click", function (event) {
     current += 1;
   }
 });
+
+// 2º NEXT
 nextBtnSec.addEventListener("click", function (event) {
   event.preventDefault();
   slidePage.style.marginLeft = "-40%";
@@ -170,6 +173,8 @@ nextBtnSec.addEventListener("click", function (event) {
   progressText[current - 1].classList.add("active");
   current += 1;
 });
+
+// 3º NEXT
 nextBtnThird.addEventListener("click", function (event) {
   event.preventDefault();
   slidePage.style.marginLeft = "-60%";
@@ -178,6 +183,8 @@ nextBtnThird.addEventListener("click", function (event) {
   progressText[current - 1].classList.add("active");
   current += 1;
 });
+
+// 4º NEXT
 nextBtnfourth.addEventListener("click", function (event) {
   event.preventDefault();
   slidePage.style.marginLeft = "-80%";
@@ -186,19 +193,29 @@ nextBtnfourth.addEventListener("click", function (event) {
   progressText[current - 1].classList.add("active");
   current += 1;
 });
+
+// BOTON SUBMIT
 submitBtn.addEventListener("click", function () {
   bullet[current - 1].classList.add("active");
   progressCheck[current - 1].classList.add("active");
   progressText[current - 1].classList.add("active");
-  current += 1;
+
   validar1definicion();
   validar2definicion();
   validar3definicion();
   if (definicion1Ok && definicion2Ok && definicion3Ok) {
     validado = true;
     console.log("Las tres definiciones estas correctas");
-    formularioOk = window.confirm("¿Estás seguro que quieres finalizar ?");
+    formularioOk = confirm("¿Estás seguro que quieres finalizar ?");
+    if(formularioOk == false){
+      event.preventDefault();
+    }
+    else{
+      current += 1;
+      event.stopPropagation();
+    }
   }
+
   /*
   setTimeout(function () {
     alert("Your Form Successfully Signed up");
@@ -207,6 +224,8 @@ submitBtn.addEventListener("click", function () {
   */
 
 });
+
+//  VALIDAR 1º DEFINICION
 function validar1definicion() {
   if (definicion1.value.trim() == "" || !/^[a-zA-Z\s]{3,20}$/.test(definicion1.value)) {
     errorDefinicion.innerHTML = 'La descripción está incompleta';
@@ -218,6 +237,8 @@ function validar1definicion() {
     console.log("La definicion 3 esta bien: " + definicion1Ok);
   }
 }
+
+//  VALIDAR 2º DEFINICION
 function validar2definicion() {
   if (definicion2.value.trim() == "" || !/^[a-zA-Z\s]{3,20}$/.test(definicion2.value)) {
     errorDefinicion.innerHTML = 'La descripción está incompleta';
@@ -229,6 +250,8 @@ function validar2definicion() {
     console.log("La definicion 2 esta bien: " + definicion2Ok);
   }
 }
+
+//  VALIDAR 3º DEFINICION
 function validar3definicion() {
   if (definicion3.value.trim() == "" || !/^[a-zA-Z\s]{3,20}$/.test(definicion3.value)) {
     errorDefinicion.innerHTML = 'La descripción está incompleta';
@@ -240,7 +263,7 @@ function validar3definicion() {
     console.log("La definicion 3 esta bien: " + definicion3Ok);
   }
 }
-
+// RETROCEDER DE PAGINA 2
 prevBtnSec.addEventListener("click", function (event) {
   event.preventDefault();
   slidePage.style.marginLeft = "0%";
@@ -249,6 +272,7 @@ prevBtnSec.addEventListener("click", function (event) {
   progressText[current - 2].classList.remove("active");
   current -= 1;
 });
+// RETROCEDER DE PAGINA 3
 prevBtnThird.addEventListener("click", function (event) {
   event.preventDefault();
   slidePage.style.marginLeft = "-20%";
@@ -257,6 +281,7 @@ prevBtnThird.addEventListener("click", function (event) {
   progressText[current - 2].classList.remove("active");
   current -= 1;
 });
+// RETROCEDER DE PAGINA 4
 prevBtnFourth.addEventListener("click", function (event) {
   event.preventDefault();
   slidePage.style.marginLeft = "-40%";
@@ -265,6 +290,7 @@ prevBtnFourth.addEventListener("click", function (event) {
   progressText[current - 2].classList.remove("active");
   current -= 1;
 });
+// RETROCEDER DE PAGINA 5
 prevBtnfifth.addEventListener("click", function (event) {
   event.preventDefault();
   slidePage.style.marginLeft = "-60%";
