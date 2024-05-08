@@ -1,0 +1,123 @@
+* {
+
+  font-family: 'Lucida Sans Regular';
+}
+/*ESTILOS EN EL INCLUDE DEL NAV*/
+
+
+
+
+/* EMPIEZA EL ROADMAP */
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(0, 0, 0);
+  background: -moz-linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(247, 55, 71, 1) 45%, rgba(247, 55, 71, 1) 60%, rgba(0, 0, 0, 1) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(247, 55, 71, 1) 45%, rgba(247, 55, 71, 1) 60%, rgba(0, 0, 0, 1) 100%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(247, 55, 71, 1) 45%, rgba(247, 55, 71, 1) 60%, rgba(0, 0, 0, 1) 100%);
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, transparent 45%, #000000, transparent 55%);
+  order: 2;
+  text-align: center;
+  color: #fff;
+  font-size: 28px;
+  flex-basis: 100px;
+}
+
+.icon>span {
+  width: 100%;
+  height: auto;
+
+}
+
+.icon>span img {
+  width: 70%;
+  overflow: visible;
+  background: radial-gradient(rgb(247, 55, 71), rgb(247, 55, 71));
+  border-radius: 50%;
+  padding: 13px;
+}
+
+.info {
+  text-align: center;
+  padding: 10px;
+  color: #383838;
+  order: 3;
+  width: 80%;
+  padding-left: 10px;
+  border-radius: 5px;
+  box-shadow: 5px 5px black;
+  background: #fff;
+  transition: all .6s ease;
+  margin-bottom: 3%;
+}
+
+.info:hover {
+  background: bisque;
+}
+
+.info h2 {
+  margin: 0;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-family: 'Russo One', sans-serif;
+  letter-spacing: 2px;
+}
+
+.info p {
+  line-height: 1.4;
+  font-family: montserrat;
+}
+
+.useGuide {
+  list-style-position: inside;
+  text-align: left;
+}
+
+@media (min-width: 640px) {
+
+  .info,
+  .custom {
+    width: 40%;
+  }
+
+  .box-right .info {
+    order: 1;
+    padding-right: 10px;
+  }
+
+  .box-right .custom {
+    order: 3;
+  }
+}
+
+
+/* ACABA EL ROADMAP */
+
+/* ESTILOS EN EL FOOTER */
