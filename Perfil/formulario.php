@@ -4,11 +4,14 @@
 <head>
     <meta charset="utf-8">
     <title>Formulario</title>
-    <link rel="stylesheet" href="formulario.css">
+    <link rel="stylesheet" href="formulario.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link rel="stylesheet" href="inputEleccion.css">
-    <script src="logicaFormulario.js" defer></script>
-    <script src="validacionFormulario.js" defer></script>
+    <link rel="stylesheet" href="inputEleccion.css?v=<?php echo time(); ?>">
+    <script src="logicaFormulario.js?v=<?php echo time(); ?>" defer></script>
+    
+    <!--  -->
+    
+    <script src="./scripts/grafica.js?v=<?php echo time(); ?>" defer></script>
 </head>
 
 <body>
@@ -303,6 +306,11 @@
                             <input type="text" name="definicion3" id="input-definicion3" required>
                         </div>
                         <p id="error-definicion" class="error"></p>
+                    </div>
+                    <div class="field">
+                        <label for="input-instagram">Instagram</label>
+                        <input type="text" name="instagram" id="input-instagram" placeholder="Pon tu instagram (opcional)" maxlength="50">
+                        
                     </div>
                     <div class="field btns">
                         <button class="prev-4 prev btn">Previous</button>

@@ -12,13 +12,13 @@
 
         <ul>
             <!-- <li><a href="#"><i class="fas fa-tv"></i>dashboard</a></li> -->
-            <li class="opL"><a href="#"><i class="far fa-user"></i>Profile</a></li>
+            <li class="opL"><a href="#">Unimatch</a></li>
             <!-- <li><a href="#"><i class="fab fa-gripfire"></i>trending</a></li> -->
-            <li class="opL"><a href="#"><i class="far fa-comments"></i>Messages</a></li>
+            <li class="opL"><a href="#">Eventos</a></li>
             <!-- <li><a href="#"><i class="far fa-folder"></i>file manager</a></li> -->
             <!-- <li><a href="#"><i class="far fa-address-book"></i>portfolio</a></li> -->
-            <li class="opL"><a href="#"><i class="fas fa-heart"></i>Saved</a></li>
-            <li class="opL"><a href="#"><i class="fas fa-cogs"></i>Settings</a></li>
+            <li class="opL"><a href="#">Iniciar sesión</a></li>
+            <li class="opL"><a href="#">Registrarse</a></li>
         </ul>
     </div>
 </label>

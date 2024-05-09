@@ -7,8 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="grafica.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="./styles/index.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css?v=<?php echo time(); ?>">
 
 </head>
 
@@ -20,7 +19,7 @@
     ?>
     <!-- INCLUDE DEL NAV  -->
     <?php
-    include './elementos/barraLateral.php';
+    include './elementos/menuLateral.php';
     ?>
 
     <div class="container">
