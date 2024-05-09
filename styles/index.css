@@ -18,6 +18,7 @@
 }
 
 body {
+  width: 100%;
   background: rgb(0, 0, 0);
   background: -moz-linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(247, 55, 71, 1) 45%, rgba(247, 55, 71, 1) 60%, rgba(0, 0, 0, 1) 100%);
   background: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(247, 55, 71, 1) 45%, rgba(247, 55, 71, 1) 60%, rgba(0, 0, 0, 1) 100%);
@@ -123,6 +124,7 @@ body {
   .container {
     width: 100%;
     padding: 17.5% 3% 5% 2%;
+    
   }
 
   .icon{
@@ -134,7 +136,7 @@ body {
   }
 
   .icon>span img{
-    width: 80%;
+    min-width: 50px;
   }
 
   .info{
