@@ -1,6 +1,6 @@
 <footer>
 
-    <div class="container">
+    <div class="footer">
 
 
         <div class="footer-row">
@@ -78,7 +78,7 @@
         list-style: none;
     }
 
-    .container {
+    .footer {
         max-width: 1200px;
         margin: 0 auto;
     }

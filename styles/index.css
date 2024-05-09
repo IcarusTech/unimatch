@@ -42,7 +42,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(90deg, transparent 45%, #000000, transparent 55%);
+  background: linear-gradient(90deg, transparent 45%, #fff, transparent 55%);
   order: 2;
   text-align: center;
   color: #fff;
@@ -61,6 +61,7 @@ body {
   overflow: visible;
   background: radial-gradient(rgb(247, 55, 71), rgb(247, 55, 71));
   border-radius: 50%;
+  border:5px solid #fff ;
   padding: 13px;
 }
 
