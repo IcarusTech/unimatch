@@ -1,7 +1,7 @@
 <!-- Barra lateral -->
 <label class="lateral">
 
-    <input type="checkbox">
+    <input type="checkbox" class="input-barraLateral">
     <div class="toggle">
         <span class="top_line common"></span>
         <span class="middle_line common"></span>
@@ -39,21 +39,12 @@
         z-index: 1;
     }
 
-    h1 {
-        color: #8000ff;
-        font-weight: 800;
-        text-align: right;
-        padding: 10px 0;
-        padding-right: 30px;
-        pointer-events: none;
-    }
-
-    ul li {
+    .slide ul li {
         list-style: none;
 
     }
 
-    ul li a {
+    .slide ul li a {
         color: #011a41;
         font-weight: 500;
         padding: 5px 0;
@@ -63,22 +54,22 @@
         transition: 0.2s ease-out;
     }
 
-    ul .opL:hover a {
+    .slide ul .opL:hover a {
         color: #fff;
         background-color: #8000ff;
 
     }
 
-    ul li a i {
+    .slide ul li a i {
         width: 40px;
         text-align: center;
 
     }
 
-    input {
+    .input-barraLateral {
         display: none;
         visibility: hidden;
-        -webkit-appearance: none;
+        
     }
 
     .toggle {
@@ -123,7 +114,7 @@
         transform: translate(-50%, -50%);
     }
 
-    input:checked~.toggle .top_line {
+    .lateral input:checked~.toggle .top_line {
         left: 2px;
         top: 14px;
         width: 25px;
@@ -131,7 +122,7 @@
     }
 
 
-    input:checked~.toggle .bottom_line {
+    .lateral input:checked~.toggle .bottom_line {
         left: 2px;
         top: 14px;
         width: 25px;
@@ -139,12 +130,12 @@
     }
 
 
-    input:checked~.toggle .middle_line {
+    .lateral input:checked~.toggle .middle_line {
         opacity: 0;
         transform: translateX(20px);
     }
 
-    input:checked~.slide {
+    .lateral input:checked~.slide {
         transform: translateX(0);
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     }
@@ -152,21 +143,10 @@
 
     /* ACABA LA BARRA LATERAL */
 
-
-
-
-    }
-
-
     /* AQUI EMPIEZA MEDIA PARA LA BARRA LATERAL */
 
     @media (max-width: 650px) {
-        .container {
-            padding: 36px;
-            margin-top: 7%;
-
-        }
-
+    
         .slide {
             width: 100%;
             /* Ancho completo */
