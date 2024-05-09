@@ -1,12 +1,13 @@
 <nav>
     <ul>
+        
         <li><a href="#" class="navMain">
                 <hr class="lineaMain">Unimatch
             </a></li>
-        <li><a href="#" class="navText">Eventos</a></li>
+        <li><a href="indexRegistrado.php" class="navText">Eventos</a></li>
         <li class="vacio"></li>
-        <li><a href="#" class="navText">Inicio</a></li>
-        <li><a href="#" class="navText">Registrarse</a></li>
+        <li><a href="indexRegistrado.php" class="navText">Inicio</a></li>
+        <li><a <?php header("Location: indexRegistrado.php") ?> class="navText">Registrarse</a></li>;
     </ul>
     <div class="lineas">
         <hr class="lineaLeft">
