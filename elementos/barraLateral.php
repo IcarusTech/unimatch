@@ -155,7 +155,7 @@
 
 
 
-    }
+    
 
 
     /* AQUI EMPIEZA MEDIA PARA LA BARRA LATERAL */
