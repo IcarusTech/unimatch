@@ -3,7 +3,8 @@
         
         <li><a href="#" class="navMain">
                 <hr class="lineaMain">Unimatch
-            </a></li>
+            </a>
+        </li>
         <li><a href="indexRegistrado.php" class="navText">Eventos</a></li>
         <li class="vacio"></li>
         <li><a href="indexRegistrado.php" class="navText">Inicio</a></li>
@@ -16,6 +17,10 @@
     </div>
 </nav>
 <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
     nav {
         display: flex;
         flex-direction: row;

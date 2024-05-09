@@ -27,7 +27,7 @@ body {
 .container {
   display: flex;
   flex-wrap: wrap;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -101,7 +101,8 @@ body {
   text-align: left;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 650px) {
+
 
   .info,
   .custom {
@@ -115,6 +116,45 @@ body {
 
   .box-right .custom {
     order: 3;
+  }
+}
+
+@media (max-width: 650px){
+  .container {
+    width: 100%;
+    padding: 17.5% 3% 5% 2%;
+  }
+
+  .icon{
+    max-width: 20%;
+  }
+
+  .icon>span{
+    width: 100%;
+  }
+
+  .icon>span img{
+    width: 80%;
+  }
+
+  .info{
+    max-width: 80%;
+  }
+
+  .info h2{
+    font-size: 16px;
+  }
+
+  .info p{
+    font-size: 14px;
+  }
+
+  .useGuide li{
+    font-size: 14px;
+  }
+
+  .info small{
+    font-size: 12px;
   }
 }
 
