@@ -7,8 +7,8 @@
         </li>
         <li><a href="indexRegistrado.php" class="navText">Eventos</a></li>
         <li class="vacio"></li>
-        <li><a href="indexRegistrado.php" class="navText">Inicio</a></li>
-        <li><a href="#" class="navText">Registrarse</a></li>;
+        <li><a href="inicioSesionForm/index.php" class="navText">Inicio</a></li>
+        <li><a href="registroForm/form.php" class="navText">Registrarse</a></li>;
     </ul>
     <div class="lineas">
         <hr class="lineaLeft">
