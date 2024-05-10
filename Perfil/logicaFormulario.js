@@ -156,7 +156,7 @@ let current = 1;
 nextBtnFirst.addEventListener("click", function (event) {
   event.preventDefault();
   if (validado) {
-    slidePage.style.marginLeft = "-20%";
+    form.style.marginLeft = "-100%";
     bullet[current - 1].classList.add("active");
     progressCheck[current - 1].classList.add("active");
     progressText[current - 1].classList.add("active");
@@ -167,7 +167,7 @@ nextBtnFirst.addEventListener("click", function (event) {
 // 2º NEXT
 nextBtnSec.addEventListener("click", function (event) {
   event.preventDefault();
-  slidePage.style.marginLeft = "-40%";
+  form.style.marginLeft = "-200%";
   bullet[current - 1].classList.add("active");
   progressCheck[current - 1].classList.add("active");
   progressText[current - 1].classList.add("active");
@@ -177,7 +177,7 @@ nextBtnSec.addEventListener("click", function (event) {
 // 3º NEXT
 nextBtnThird.addEventListener("click", function (event) {
   event.preventDefault();
-  slidePage.style.marginLeft = "-60%";
+  form.style.marginLeft = "-300%";
   bullet[current - 1].classList.add("active");
   progressCheck[current - 1].classList.add("active");
   progressText[current - 1].classList.add("active");
@@ -187,7 +187,7 @@ nextBtnThird.addEventListener("click", function (event) {
 // 4º NEXT
 nextBtnfourth.addEventListener("click", function (event) {
   event.preventDefault();
-  slidePage.style.marginLeft = "-80%";
+  form.style.marginLeft = "-400%";
   bullet[current - 1].classList.add("active");
   progressCheck[current - 1].classList.add("active");
   progressText[current - 1].classList.add("active");
@@ -196,9 +196,7 @@ nextBtnfourth.addEventListener("click", function (event) {
 
 // BOTON SUBMIT
 submitBtn.addEventListener("click", function () {
-  bullet[current - 1].classList.add("active");
-  progressCheck[current - 1].classList.add("active");
-  progressText[current - 1].classList.add("active");
+  
 
   validar1definicion();
   validar2definicion();
@@ -263,10 +261,12 @@ function validar3definicion() {
     console.log("La definicion 3 esta bien: " + definicion3Ok);
   }
 }
+
+
 // RETROCEDER DE PAGINA 2
 prevBtnSec.addEventListener("click", function (event) {
   event.preventDefault();
-  slidePage.style.marginLeft = "0%";
+  form.style.marginLeft = "0%";
   bullet[current - 2].classList.remove("active");
   progressCheck[current - 2].classList.remove("active");
   progressText[current - 2].classList.remove("active");
@@ -275,7 +275,7 @@ prevBtnSec.addEventListener("click", function (event) {
 // RETROCEDER DE PAGINA 3
 prevBtnThird.addEventListener("click", function (event) {
   event.preventDefault();
-  slidePage.style.marginLeft = "-20%";
+  form.style.marginLeft = "-100%";
   bullet[current - 2].classList.remove("active");
   progressCheck[current - 2].classList.remove("active");
   progressText[current - 2].classList.remove("active");
@@ -284,7 +284,7 @@ prevBtnThird.addEventListener("click", function (event) {
 // RETROCEDER DE PAGINA 4
 prevBtnFourth.addEventListener("click", function (event) {
   event.preventDefault();
-  slidePage.style.marginLeft = "-40%";
+  form.style.marginLeft = "-200%";
   bullet[current - 2].classList.remove("active");
   progressCheck[current - 2].classList.remove("active");
   progressText[current - 2].classList.remove("active");
@@ -293,7 +293,7 @@ prevBtnFourth.addEventListener("click", function (event) {
 // RETROCEDER DE PAGINA 5
 prevBtnfifth.addEventListener("click", function (event) {
   event.preventDefault();
-  slidePage.style.marginLeft = "-60%";
+  form.style.marginLeft = "-300%";
   bullet[current - 2].classList.remove("active");
   progressCheck[current - 2].classList.remove("active");
   progressText[current - 2].classList.remove("active");

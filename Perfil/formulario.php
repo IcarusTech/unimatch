@@ -11,7 +11,6 @@
     
     <!--  -->
     
-    <script src="./scripts/grafica.js?v=<?php echo time(); ?>" defer></script>
 </head>
 
 <body>
@@ -76,20 +75,20 @@
                     
                     <div class="field">
                         <label for="input-nombre">Nombre</label>
-                        <input type="text" name="Nombre" id="input-nombre" placeholder="Pon tu nombre aquí" maxlength="50" required>
+                        <input type="text" name="Nombre" id="input-nombre" placeholder="Pon tu nombre aquí" value="afb" maxlength="50" required>
                         <p id="error-nombre" class="error"></p>
                     </div>
                     <div class="field">
                         <label for="input-apellido">Apellido</label>
-                        <input type="text" name="Apellido" id="input-apellido" placeholder="Pon tu apellido aquí" maxlength="50" required>
+                        <input type="text" name="Apellido" id="input-apellido" placeholder="Pon tu apellido aquí" maxlength="50" value="vsf" required>
                         <p id="error-apellido" class="error"></p>
                     </div>
                     <div class="field">
                         <label for="input-nacimiento">Fecha de nacimiento</label>
-                        <input type="date" name="Fecha nacimiento" id="input-nacimiento" min="1970-01-01">
+                        <input type="date" name="Fecha nacimiento" id="input-nacimiento" min="1970-01-01" value="2004-02-02">
                         <p id="error-date" class="error"></p>
                     </div>
-                    <div class="field btns">
+                    <div class="btns field">
                         <button class="firstNext next btn">Next</button>
                     </div>
                 </div>
@@ -143,7 +142,8 @@
                             </label>
                         </div>
                     </div>
-                    <div class="field btns">
+
+                    <div class="btns field">
                         <button class="prev-1 prev btn">Previous</button>
                         <button class="next-1 next btn">Next</button>
                     </div>
@@ -153,7 +153,7 @@
                 <!-- 
                     Color de ojos
                     Estilo de música
-                    Deporte
+                    Fumas
                  -->
                 <div class="page page3">
                     
@@ -188,7 +188,7 @@
                             <option value="bachata">Bachata</option>
                         </select>
                     </div>
-                    <div class="campoMultiple">
+                    <!-- <div class="campoMultiple">
                         <label>Deporte</label>
                         <div class="radio-inputs">
                             <label class="radio" id="labelDeporte">
@@ -209,21 +209,7 @@
                                 <span class="name">Voleibol</span>
                             </label>
                         </div>
-                    </div>
-                    <div class="field btns">
-                        <button class="prev-2 prev btn">Previous</button>
-                        <button class="next-2 next btn">Next</button>
-                    </div>
-                </div>
-
-                <!-- 4º PAGE -->
-                <!-- 
-                    Fumas
-                    extrovertido / introvertido
-                    Tipo de amistad
-                 -->
-                <div class="page page4">
-                    
+                    </div> -->
                     <div class="campoMultiple">
                         <label>¿Fumas?</label>
                         <div class="radio-inputs">
@@ -237,6 +223,21 @@
                             </label>
                         </div>
                     </div>
+                    <div class="btns field">
+                        <button class="prev-2 prev btn">Previous</button>
+                        <button class="next-2 next btn">Next</button>
+                    </div>
+                </div>
+
+                <!-- 4º PAGE -->
+                <!-- 
+                    extrovertido / introvertido
+                    Tipo de amistad
+                    Planes
+                 -->
+                <div class="page page4">
+                    
+                    
                     <div class="campoMultiple">
                         <label>¿Eres extrovertido o introvertido?</label>
                         <div class="radio-inputs">
@@ -258,20 +259,6 @@
                             <option value="amigo-de-fiesta">Amigo/a de fiesta</option>
                         </select>
                     </div>
-                    <div class="field btns">
-                        <button class="prev-3 prev btn">Previous</button>
-                        <button class="next-3 next btn">Next</button>
-                    </div>
-                </div>
-
-                <!-- FINAL PAGE -->
-                <!-- 
-                    Planes
-                    Hobbies
-                    Definite con tres palabras
-                 -->
-                <div class="page page5">
-                    
                     <div class="field">
                         <label for="estiloPlan">Planes</label>
                         <select name="Planes" id="estiloPlan">
@@ -285,6 +272,21 @@
                             <option value="cataVinos">Cata de vinos</option>
                         </select>
                     </div>
+                    
+                    <div class="btns field">
+                        <button class="prev-3 prev btn">Previous</button>
+                        <button class="next-3 next btn">Next</button>
+                    </div>
+                </div>
+
+                <!-- FINAL PAGE -->
+                <!-- 
+                    Hobbies
+                    Definite con tres palabras
+                    Insta
+                 -->
+                <div class="page page5">
+                    
                     <div class="field">
                         <label for="hobbie">Hobbies</label>
                         <select name="Hobbie" id="hobbie">
@@ -312,7 +314,7 @@
                         <input type="text" name="instagram" id="input-instagram" placeholder="Pon tu instagram (opcional)" maxlength="50">
                         
                     </div>
-                    <div class="field btns">
+                    <div class="btns field">
                         <button class="prev-4 prev btn">Previous</button>
                         <button type="submit" class="submit btn">Submit</button>
                     </div>
