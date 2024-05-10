@@ -1,93 +1,116 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-*{
+
+* {
   margin: 0;
   padding: 0;
   outline: none;
   font-family: 'Poppins', sans-serif;
 }
-body{
-  height: 700px;
+
+body {
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
   overflow: hidden;
-  background:  -webkit-linear-gradient(top, #000000, #d43f8d);
+  
+  /* background:  -webkit-linear-gradient(top, #000000, #d43f8d); */
+  /* opacity: 1;
+  background: radial-gradient(circle, transparent 20%, #e5e5f7 20%, #e5e5f7 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #e5e5f7 20%, #e5e5f7 80%, transparent 80%, transparent) 15px 15px, linear-gradient(#f74545 1.2000000000000002px, transparent 1.2000000000000002px) 0 -0.6000000000000001px, linear-gradient(90deg, #f74545 1.2000000000000002px, #e5e5f7 1.2000000000000002px) -0.6000000000000001px 0;
+  background-size: 30px 30px, 30px 30px, 15px 15px, 15px 15px; */
+  /* background-image: url(../img/fondoFormulario.png); */
 }
-::selection{
+
+::selection {
   color: #fff;
   background: #d43f8d;
 }
-.container{
-  width: 400px;
-  max-height: 650px;
+
+.container {
+  align-self: center;
+  width: 25%;
+  height: 700px;
   background: #fff;
   text-align: center;
   border-radius: 5px;
-  padding: 10px 25px 10px 35px;
-  height: fit-content;
+  padding: 50px 25px 10px 35px;
+  box-shadow: 5px 5px 0px #d33f8d;
 }
-.container header{
 
+.container header {
   font-size: 35px;
   font-weight: 600;
   margin: 0 0 30px 0;
 }
-.container .form-outer{
-  width: 100%;
-  overflow: hidden;
 
+.container .form-outer {
+  width: 100%;
+  height: 80%;
+  overflow: hidden;
 }
-.container .form-outer form{
+
+.container .form-outer form {
+  height: 100%;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   width: 500%;
+  transition: 0.3s ease-in-out;
 }
-.form-outer form .page{
-  width: 400px;
+
+.form-outer form .page {
+  width: 30%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-
-  transition:  0.3s ease-in-out;
+  justify-content: center;
+  align-items: center;
+  
 }
-.form-outer form .page .title{
+
+.form-outer form .page .title {
   text-align: left;
   font-size: 25px;
   font-weight: 500;
 }
 
-form .page .btns{
-  width: 85%;
-  min-height: 100px;
-  margin: 30px 0;
+
+.form-outer form .page .field {
+  width: 80%;
+  height: 50%;
+  margin: 15px 0;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
 }
 
-.form-outer form .page .field{
-  width: 100%;
-  height: 20%;
+
+.form-outer form .page .btns {
+  width: 80%;
+  min-height: 100px;
+  min-height: 75px;
   margin: 15px 0;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
-.form-outer form .page .campoMultiple{
-  width: 100%;
-  height: fit-content;
-  margin: 30px 0;
 
+.form-outer form .page .campoMultiple {
+  width: 80%;
+  height: 40%;
+  margin: 15px 0;
+  position: relative;
 }
-form .page .field label{
+
+form .page .field label {
   display: flex;
   font-weight: 500;
 }
 
-form .page .field input{
+form .page .field input {
   height: 60%;
-  width: 100%;
+  width: 80%;
   border-radius: 5px;
   border: 2px solid black;
   padding-left: 15px;
@@ -95,21 +118,19 @@ form .page .field input{
   padding-left: 30px;
   padding-right: 30px;
 }
-form .page .field select{
-  border: 2px solid black;
-  border-radius: 5px;
-}
 
-form .page .field .definicion input{
+
+form .page .field .definicion input {
   height: 40%;
-  width: 95%;
+  width: 80%;
   border: 1px solid lightgrey;
   border-radius: 5px;
   padding-left: 15px;
   margin-bottom: 5px;
   font-size: 14px;
 }
-form .page .field .definicion .error{
+
+form .page .field .definicion .error {
   height: 20%;
   width: 95%;
   border: 1px solid lightgrey;
@@ -119,33 +140,30 @@ form .page .field .definicion .error{
   font-size: 14px;
 }
 
-.form-outer form .page .fieldbtns{
+/* .form-outer form .page .fieldbtns {
   width: 100%;
   height: 45px;
   margin: 40px 0;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   background: #d33f8d;
   border-radius: 5px;
   color: #fff;
   cursor: pointer;
   font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition: 0.5s ease;
-}
+} */
 
-form .page .field select{
+form .page .field select {
   width: 100%;
-  height: 50px;
+  height: 40%;
   padding-left: 10px;
   font-size: 17px;
   font-weight: 500;
+  border: 2px solid black;
+  border-radius: 5px;
 }
 
-form .page .field button{
+form .page .field button {
   width: 40%;
   height: 40%;
   border: none;
@@ -161,40 +179,56 @@ form .page .field button{
   transition: 0.5s ease;
 }
 
-form .page .field button:hover{
+form .page .field button:hover {
   background: #000;
 }
-form .page .fieldbtns button{
-  margin-top: -20px!important;
+
+form .page .fieldbtns button {
+  margin-top: -20px !important;
 }
-form .page .fieldbtns button.prev{
+
+form .page .fieldbtns button.prev {
   margin-right: 3px;
   font-size: 17px;
 }
-form .page .fieldbtns button.next{
+
+form .page .fieldbtns button.next {
   margin-left: 3px;
 }
-.container .progress-bar{
+
+.container .progress-bar {
+  width: 100%;
   display: flex;
   margin: 20px 0;
   user-select: none;
 }
-.container .progress-bar .step{
-  text-align: center;
+
+.container .progress-bar .step {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  position: relative;
 }
-.container .progress-bar .step p{
+
+.container .progress-bar .step p {
   font-weight: 500;
   font-size: 18px;
   color: #000;
   margin-bottom: 8px;
 }
-.progress-bar .step .bullet{
-  height: 25px;
-  width: 25px;
+
+.progress-bar .step .bullet {
+  width: 40%;
+  min-height: 35%;
+  max-height: 65%;
+  aspect-ratio: 1;
   border: 2px solid #000;
-  display: inline-block;
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   position: relative;
   transition: 0.2s;
@@ -202,59 +236,101 @@ form .page .fieldbtns button.next{
   font-size: 17px;
   line-height: 25px;
 }
-.progress-bar .step .bullet.active{
+
+.progress-bar .step .bullet.active {
   border-color: #d43f8d;
   background: #d43f8d;
 }
-.progress-bar .step .bullet span{
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.progress-bar .step .bullet.active span{
+
+
+.progress-bar .step .bullet.active span {
   display: none;
 }
-.progress-bar .step .bullet:before,
-.progress-bar .step .bullet:after{
+/* .progress-bar .step .bullet:before{
   position: absolute;
   content: '';
   bottom: 11px;
-  right: -51px;
+  right: 90%;
   height: 3px;
-  width: 44px;
+  width: 90%;
+  background: #262626;
+} */
+
+.progress-bar .step .bullet:after {
+  position: absolute;
+  content: '';
+  bottom: 15px;
+  left: 100%;
+  height: 3px;
+  width: 150%;
   background: #262626;
 }
-.progress-bar .step .bullet.active:after{
+
+.progress-bar .step .bullet.active:after {
   background: #d43f8d;
   transform: scaleX(0);
   transform-origin: left;
   animation: animate 0.3s linear forwards;
 }
+
 @keyframes animate {
-  100%{
+  100% {
     transform: scaleX(1);
   }
 }
+
 .progress-bar .step:last-child .bullet:before,
-.progress-bar .step:last-child .bullet:after{
+.progress-bar .step:last-child .bullet:after {
   display: none;
 }
-.progress-bar .step p.active{
+
+.progress-bar .step p.active {
   color: #d43f8d;
   transition: 0.2s linear;
 }
-.progress-bar .step .check{
-  position: absolute;
+
+.progress-bar .step .check {
   left: 50%;
   top: 70%;
   font-size: 15px;
   transform: translate(-50%, -50%);
   display: none;
 }
-.progress-bar .step .check.active{
-  display: block;
+
+.progress-bar .step .check.active {
   color: #fff;
 }
-p{
+
+p {
   display: flex;
 }
+
+@media (min-width:100px){
+  body {
+    background-image:url(../img/fondoFormMovil.png);
+    background-size: cover;
+  }
+  
+}
+
+@media (min-width:450px){
+  body {
+    background-image:url(../img/fondoFormTablet.png);
+    background-size: cover;
+  }
+  
+}
+
+@media (min-width:950px){
+  body{
+    background-image:url(../img/fondoFormOrdenador.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+
+
+
+
+
