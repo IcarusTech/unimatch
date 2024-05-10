@@ -40,7 +40,7 @@ $correo= $_POST['inputCorreo'];
                 </div>
                 <div class="form-txt">
                     <a href="#">Politica de privacidad</a>
-                    <a href="#">Terminos y condiciones</a>
+                    <a href="../documentosLegales/terminos.php">Terminos y condiciones</a>
                 </div>
                 <input class="btn" type="submit" value="Enviar">
             </div>

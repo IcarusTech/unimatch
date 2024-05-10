@@ -1,0 +1,46 @@
+
+.radio-inputs {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 0.5rem;
+    background-color:#ffff ;
+    box-sizing: border-box;
+    border: 2px solid #424242 ;
+    box-shadow: 5px 5px 0px  #615757;
+    padding: 0.25rem;
+    width: 15%;
+    font-size: 14px;
+
+}
+
+.radio-inputs .radio {
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+.radio-inputs .radio input {
+    display: none;
+}
+#labelPelo{
+    margin-bottom: 0px;
+}
+#labelPelo{
+    margin-bottom: 0px;
+}
+.radio-inputs .radio .name {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    border: none;
+    padding: .5rem 0;
+    color: #424242;
+    transition: all .15s ease-in-out;
+}
+
+.radio-inputs .radio input:checked + .name {
+    background-color: 	#ef4a75;
+    font-weight: 600;
+}

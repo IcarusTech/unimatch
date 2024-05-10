@@ -1,0 +1,32 @@
+*{
+    padding: 0%;
+}
+body{
+    padding: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.titulo{
+    display: flex;
+    align-items: center;
+}
+h1{
+    text-align: center;
+    color: rgb(225, 73, 73);
+    font-size: 50px;
+}
+.seccion{
+    margin-left: 10px;
+}
+hr{
+    background-color: rgb(225, 73, 73);
+    height: 1px;
+}
+p{
+    
+    line-height: 20px;
+}
+@media (max-width: 650px){
+    h2{
+        text-align: center;
+    }
+}
