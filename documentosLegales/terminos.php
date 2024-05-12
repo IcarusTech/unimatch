@@ -103,21 +103,156 @@
             <p>No garantizamos que la calidad de cualquier producto, servicio, información u otro material que usted haya comprado u obtenido cumplirá con sus expectativas, o que cualquier error en el Servicio se corregirá.</p>
 
         </div>
-        <div class="seccion"></div>
-        <div class="seccion"></div>
-        <div class="seccion"></div>
-        <div class="seccion"></div>
-        <div class="seccion"></div>
-        <div class="seccion"></div>
-        <div class="seccion"></div>
-        <div class="seccion"></div>
-        <div class="seccion"></div>
-        <div class="seccion"></div>
-        <div class="seccion"></div>
-        <div class="seccion"></div>
-        <div class="seccion"></div>
-        <div class="seccion"></div>
-        <div class="seccion"></div>
+        <div class="seccion">
+
+            <h2 class="subtitulo">SECCIÓN 6: EXACTITUD DE LA FACTURACIÓN Y DE LA INFORMACIÓN DE LA CUENTA</h2>
+
+            <p>Nos reservamos el derecho de rechazar cualquier pedido que realice en nuestra tienda. Podemos, a nuestro exclusivo criterio, limitar o cancelar las cantidades compradas por persona, por hogar o por pedido. Estas restricciones pueden incluir pedidos realizados con la misma cuenta de cliente, la misma tarjeta de crédito o pedidos que usen la misma dirección de facturación o de envío. En el caso de que realicemos un cambio o cancelemos un pedido, intentaremos notificarle vía correo electrónico o la dirección de facturación / número de teléfono proporcionados en el momento en que se realizó el pedido. Nos reservamos el derecho de limitar o prohibir los pedidos que, a nuestra entera discreción, parezcan haber sido realizados por comerciantes, revendedores o distribuidores.</p>
+
+            <p>Usted acepta suministrar información completa y precisa de la compra y cuenta actual, para todas las compras realizadas en nuestra tienda. Usted acepta actualizar rápidamente su cuenta y demás informaciones, entre ellas, su dirección de correo electrónico, los números de tarjeta de crédito y las fechas de vencimiento, para que podamos completar sus transacciones y contactarlo según sea necesario.</p>
+
+            <p>Para obtener más información, consulte nuestra Política de devoluciones.</p>
+
+        </div>
+        <div class="seccion">
+
+        </div>
+        <div class="seccion">
+            <h2 class="subtitulo">SECCIÓN 7: HERRAMIENTAS OPCIONALES</h2>
+
+            <p>Podemos proporcionarle acceso a herramientas de terceros que no supervisamos, ni tenemos ningún control sobre ellas, ni tampoco contribuimos.</p>
+
+            <p>Usted reconoce y acepta que brindamos acceso a dichas herramientas "tal como se encuentran" y "según disponibilidad" sin garantías, representaciones ni condiciones de ningún tipo y sin ningún tipo de respaldo. No tendremos ninguna responsabilidad como consecuencia del uso que haga de herramientas opcionales de terceros o en relación a ellas.</p>
+
+            <p>Cualquier uso que haga de las herramientas opcionales ofrecidas a través del sitio es por su cuenta y riesgo, y debe asegurarse de estar familiarizado con los términos según los cuales los proveedores externos relevantes suministran dichas herramientas y aprobarlos.</p>
+
+            <p>También podemos, en el futuro, ofrecer nuevos servicios o funciones a través del sitio web (incluido el lanzamiento de nuevas herramientas y recursos). Estas nuevas funciones o servicios también estarán sujetos a los presentes Términos de servicio.</p>
+
+        </div>
+        <div class="seccion">
+
+            <h2 class="subtitulo">SECCIÓN 8: ENLACES DE TERCEROS</h2>
+
+            <p>Algunos contenidos, productos y servicios disponibles a través de nuestro Servicio pueden incluir recursos de terceros.</p>
+
+            <p>Los enlaces de terceros en este sitio pueden dirigirlo a páginas web de terceros que no están afiliados a nosotros. No somos responsables de examinar o evaluar el contenido o la exactitud, ni garantizamos ni asumiremos ninguna obligación ni responsabilidad por los recursos o páginas web de terceros, ni por ningún otro material, producto o servicio de terceros.</p>
+
+            <p>No somos responsables de ningún daño o perjuicio relacionado con la compra o el uso de bienes, servicios, recursos, contenido o cualquier otra transacción realizada en conexión con sitios web de terceros. Revise cuidadosamente las políticas y prácticas de terceros, y asegúrese de comprenderlas antes de participar en cualquier transacción. Las quejas, reclamos, inquietudes o preguntas referentes a productos de terceros deben dirigirse a estos.</p>
+
+        </div>
+        <div class="seccion">
+
+            <h2 class="subtitulo">SECCIÓN 9: COMENTARIOS DE LOS USUARIOS, OPINIONES Y OTRAS COMUNICACIONES</h2>
+
+            <p>Si, a petición nuestra, usted envía ciertas comunicaciones específicas (por ejemplo, participaciones en un concurso) o, sin una solicitud nuestra, envía ideas creativas, sugerencias, propuestas, planes u otros materiales, ya sea online, por correo electrónico, por correo postal, o de otro modo (denominado en lo sucesivo y de manera colectiva, 'comentarios'), usted acepta que podemos, en cualquier momento, sin restricción: editar, copiar, publicar, distribuir, traducir y usar en cualquier medio cualquier comentario que usted nos envíe. No tenemos ni tendremos ninguna obligación (1) de mantener ningún comentario de manera confidencial; (2) pagar alguna compensación por cualquier comentario; o (3) responder a cualquier comentario.</p>
+
+            <p>Podemos, pero no tenemos la obligación de monitorear, editar o eliminar contenido que a nuestra entera discreción determinemos que es ilegal, ofensivo, amenazante, calumnioso, difamatorio, pornográfico, obsceno u objetable, o que infrinja la propiedad intelectual de cualquiera de las partes o de los presentes Términos del servicio.</p>
+
+            <p>Usted acepta que sus comentarios no infringirán ningún derecho de terceros, incluidos los derechos de autor, marca registrada, privacidad, personalidad u otro derecho personal o de propiedad. Además, acepta que sus comentarios no contendrán material difamatorio, ilegítimo, abusivo u obsceno, ni contendrán ningún virus informático ni otro software dañino que pueda afectar de cualquier manera el funcionamiento del Servicio o de cualquier sitio web relacionado. No puede utilizar una dirección de correo electrónico falsa, simular ser otra persona o engañarnos o engañar a terceros sobre el origen de los comentarios. Usted es el único responsable de los comentarios que realice y de su exactitud. No asumimos ninguna responsabilidad ni ninguna obligación por los comentarios publicados por usted o por un tercero.</p>
+
+
+        </div>
+        <div class="seccion">
+
+            <h2 class="subtitulo">SECCIÓN 10: INFORMACIÓN PERSONAL</h2>
+
+            <p>El envío de la información personal que haga a través de la aplicacion se rige por nuestra Política de privacidad. Para ver nuestra Política de privacidad.</p>
+
+        </div>
+        <div class="seccion">
+
+            <h2 class="subtitulo">SECCIÓN 11: ERRORES, INEXACTITUDES Y OMISIONES</h2>
+
+            <p>Puede haber información en nuestro sitio o en el Servicio que, ocasionalmente, contenga errores tipográficos, inexactitudes u omisiones que puedan relacionarse con descripciones de productos, precios, promociones, ofertas, cargos por envío de productos, tiempos de tránsito y disponibilidad. Nos reservamos el derecho de corregir cualquier error, inexactitud u omisión, de cambiar o actualizar información, o cancelar pedidos si alguna información en el Servicio o en cualquier página web relacionada es inexacta en cualquier momento sin previo aviso (incluso después de haber enviado su pedido).</p>
+
+            <p>No asumimos ninguna obligación de actualizar, modificar o aclarar la información en el Servicio o en cualquier sitio web relacionado, incluyendo de manera enunciativa pero no limitativa, la información de precios, excepto cuando lo exija la ley. Ninguna actualización especificada o fecha de actualización aplicada en el Servicio o en cualquier sitio web relacionado debe tomarse para indicar que toda la información en el Servicio o en cualquier sitio web relacionado se modificó o actualizó.</p>
+
+        </div>
+        <div class="seccion">
+
+            <h2 class="subtitulo">SECCIÓN 12: USOS PROHIBIDOS</h2>
+
+            <p>Además de las prohibiciones establecidas en los Términos del servicio, se le prohíbe utilizar el sitio o su contenido (a) para cualquier propósito ilegal; (b) para solicitar a otros que realicen o participen en cualquier acto ilegal; (c) para infringir cualquier reglamento, norma, ley u ordenanza local internacional, federal, provincial o estatal; (d) para infringir o violar nuestros derechos de propiedad intelectual o los derechos de propiedad intelectual de otros; (e) acosar, abusar, insultar, dañar, difamar, calumniar, denigrar, intimidar o discriminar por motivos de género, orientación sexual, religión, etnia, raza, edad, nacionalidad o discapacidad; (f) enviar información falsa o engañosa;</p>
+
+            <p>(g) cargar o transmitir virus o cualquier otro tipo de código dañino que afecte o pueda afectar a la funcionalidad o el funcionamiento del Servicio o de cualquier sitio web relacionado, de otros sitios web o de Internet; (h) recopilar o rastrear la información personal de otros; (i) enviar correo no deseado, phishing, pharm, pretexto, spider, rastrear o extraer; (j) para cualquier propósito obsceno o inmoral; o (k) para interferir o eludir las funciones de seguridad del servicio o de cualquier sitio web relacionado, o de otros sitios web o de Internet. Nos reservamos el derecho de dar por terminado su uso del Servicio o de cualquier sitio web relacionado por infringir cualquiera de los usos prohibidos.</p>
+
+        </div>
+        <div class="seccion">
+
+            <h2 class="subtitulo">SECCIÓN 13: DESCARGO DE RESPONSABILIDAD DE GARANTÍAS; LIMITACIÓN DE RESPONSABILIDAD</h2>
+
+            <p>No garantizamos, representamos ni aseguramos que el uso que haga de nuestro servicio será sin interrupciones, oportuno, seguro o sin errores.</p>
+
+            <p>No garantizamos que los resultados que se puedan obtener del uso del servicio sean exactos o confiables.</p>
+
+            <p>Usted acepta que periódicamente, podamos eliminar el servicio por lapsos de tiempo indefinidos o cancelar el servicio en cualquier momento, sin notificarle.</p>
+
+            <p>Usted acepta expresamente que su uso del servicio o la imposibilidad de utilizarlo corre por su riesgo. El servicio y todos los productos y servicios que se le entregan a través del servicio (salvo que así lo especifiquemos nosotros) se ofrecen "tal como están" y "según disponibilidad" para su uso, sin ninguna representación, garantía o condición de ningún tipo, ya sea expresa o implícita, entre las que se incluyen todas las garantías implícitas o condiciones de comerciabilidad, calidad comercial, idoneidad para un propósito particular, durabilidad, título y no violación.</p>
+
+            <p>En ningún caso unimatch, nuestros directores, funcionarios, empleados, afiliados, agentes, contratistas, pasantes, proveedores, proveedores de servicios o licenciantes serán responsables de cualquier lesión, pérdida, reclamo o cualquier daño directo, indirecto, incidental, punitivo, especial o consecuente de cualquier tipo, incluyendo de manera enunciativa más no limitativa; la pérdida de beneficios, pérdida de ingresos, pérdida de ahorros, pérdida de datos, costos de reemplazo o daños similares, ya sea por contrato, perjuicio (incluida la negligencia), responsabilidad estricta o de otro tipo, que surjan del uso que haga de cualquiera de los servicios o de cualquier producto adquirido por medio del servicio, o para cualquier otro reclamo relacionado de alguna manera con su uso del servicio o de cualquier producto, incluidos, entre otros, cualquier error u omisión en cualquier contenido, o cualquier pérdida o daño de cualquier tipo en el que se haya incurrido como resultado del uso del servicio o de cualquier contenido (o producto) publicado, transmitido o puesto a disposición a través del servicio, incluso si se informa de su posibilidad.</p>
+
+            <p>Debido a que algunos estados o jurisdicciones no permiten la exclusión o la limitación de la responsabilidad por daños consecuentes o incidentales, en dichos estados o jurisdicciones, nuestra responsabilidad se limitará a la extensión máxima de lo permitido por la ley.</p>
+
+        </div>
+        <div class="seccion">
+
+            <h2 class="subtitulo">SECCIÓN 14: INDEMNIZACIÓN</h2>
+
+            <p>Usted acepta indemnizar, defender y mantener indemne a unimatch y a nuestra empresa matriz, subsidiarias, afiliadas, asociados, funcionarios, directores, agentes, contratistas, licenciantes, proveedores de servicios, subcontratistas, proveedores, pasantes y empleados, de cualquier reclamo o demanda, incluidos los honorarios razonables de abogados, en los que un tercero haya incurrido debido a su incumplimiento de los presentes Términos del servicio o de los documentos que incorporan como referencia o que surjan por su incumplimiento de los mismos, o por la violación de cualquier ley o derechos de un tercero que haga.</p>
+
+        </div>
+        <div class="seccion">
+
+            <h2 class="subtitulo">SECCIÓN 15: DIVISIBILIDAD</h2>
+
+            <p>En caso de que se determine que alguna disposición de los presentes Términos del servicio sea ilegal, nula o inaplicable, dicha disposición será, no obstante, ejecutable en la medida en que lo permita la legislación aplicable, y la parte inaplicable se considerará separada de los presentes Términos del servicio, sin que dicha determinación afecte a la validez y aplicabilidad de las demás disposiciones.</p>
+
+        </div>
+        <div class="seccion">
+
+            <h2 class="subtitulo">SECCIÓN 16: RESCISIÓN</h2>
+
+            <p>Las obligaciones y responsabilidades de las partes incurridas antes de la fecha de rescisión seguirán vigentes después de la rescisión de este contrato a todos los efectos.</p>
+
+            <p>Estos Términos del servicio se encuentran vigentes a menos que usted o nosotros los rescindamos. Puede rescindir los presentes Términos del servicio en cualquier momento al notificarnos que ya no desea utilizar nuestros Servicios o cuando cese de utilizar nuestro sitio.</p>
+
+            <p>Si a nuestro juicio usted incumple, o sospechamos que ha incumplido con cualquier término o disposición de los presentes Términos del servicio, podemos rescindir igualmente este acuerdo en cualquier momento sin previo aviso y usted seguirá siendo responsable de todos los importes adeudados, hasta la fecha de rescisión inclusive; y/o en consecuencia podemos denegarle el acceso a nuestros Servicios (o a parte de ellos).</p>
+
+        </div>
+        <div class="seccion">
+
+            <h2 class="subtitulo">SECCIÓN 17: ACUERDO COMPLETO</h2>
+
+            <p>El hecho de que no ejerzamos o hagamos valer algún derecho o disposición de los presentes Términos del Servicio no constituirá una renuncia a dicho derecho o disposición.</p>
+
+            <p>Estos Términos de servicio y cualquier política o regla de funcionamiento que hayamos publicado en este sitio o con respecto al Servicio constituye el acuerdo y el entendimiento completo entre usted y nosotros, y rigen su uso del Servicio, sustituyendo a cualquier acuerdo, comunicación o propuesta anterior o contemporánea, ya sea oral o escrita, entre usted y nosotros (incluyendo de manera enunciativa más no limitativa, las versiones anteriores de los Términos del servicio).</p>
+
+            <p>Cualquier ambigüedad en la interpretación de los presentes Términos del servicio no se interpretará en contra de la parte redactora.</p>
+
+        </div>
+        <div class="seccion">
+
+            <h2 class="subtitulo">SECCIÓN 18: LEY APLICABLE</h2>
+
+            <p>Los presentes Términos del servicio y cualquier acuerdo por separado por el cual le proporcionemos Servicios se regirán e interpretarán de acuerdo con las leyes españolas.</p>
+
+        </div>
+        <div class="seccion">
+
+            <h2 class="subtitulo">SECCIÓN 19: CAMBIOS EN LOS TÉRMINOS DEL SERVICIO</h2>
+
+            <p>Puede revisar la versión más reciente de los Términos del servicio en cualquier momento en esta página.</p>
+
+            <p>Nos reservamos el derecho, a nuestra entera discreción, de actualizar, cambiar o sustituir cualquier parte de los presentes Términos del servicio mediante la publicación de actualizaciones y cambios en nuestro sitio web. Es su responsabilidad consultar nuestro sitio web periódicamente para ver los cambios. El uso que haga de nuestra página web o del Servicio o su acceso a cualquiera de estos de forma continua después de la publicación de cualquier cambio en los presentes Términos del servicio, constituye la aceptación de dichos cambios.</p>
+
+        </div>
+        <div class="seccion">
+
+            <h2 class="subtitulo">SECTION 20: INFORMACIÓN DE CONTACTO</h2>
+
+            <p>Las preguntas sobre los Términos del servicio se deben enviar a correo electrónico corporativo.</p>
+
+        </div>
     </div>
 </body>
 
