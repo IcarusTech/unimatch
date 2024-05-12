@@ -30,3 +30,7 @@ p{
         text-align: center;
     }
 }
+a{
+    text-decoration: underline;
+    color: rgb(242, 58, 138);
+}
