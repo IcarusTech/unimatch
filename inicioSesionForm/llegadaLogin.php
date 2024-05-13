@@ -1,4 +1,13 @@
 <?php
+error_reporting (0);//Funcion para ocultar las advertencias del programa
+session_start();//Iniciar una sesion
+if (isset($_SESSION['usuario'])) {   
+    //Si ya ha iniciado sesión, la pagina le mandara a explorador.php
+    header("Location: ../indexRegistrado.php");
+    exit();//Finalizar el script actual
+}else{
+    echo("Error");
+}
 $dbhost = "localhost";
 $dbuser = "marcos";
 $dbpassword = "1234";

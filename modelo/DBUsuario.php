@@ -36,9 +36,10 @@ class BDlogin
         $query = mysqli_query($this->conexion, "SELECT * FROM usuarios WHERE nombre_usuario = '$user' AND contrasena ='$password'");
         $num = mysqli_num_rows($query);
         if ($num == 1) {
-            header("location: ../indexRegistrado.php");
+            $_SESSION['usuario']=$user;//El nombre de la sesión es igual al nombre del usuario
+            header("location: ../indexRegistrado.php");//Lo redirigimos al index registrado
         } else {
-            header("location: index.php");
+            header("location: ../inicioSesionForm/index.php");
         }
     }
 
