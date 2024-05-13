@@ -24,6 +24,11 @@ header .perfil {
 aside .menuLateral {
     display: none;
 }
+section .persona{
+    border: 2px solid white;
+    width: 200px;
+    height: 200px;
+}
 
 @media (min-width: 650px) {
     header {
@@ -45,6 +50,7 @@ aside .menuLateral {
     aside .menuLateral ul {
         line-height: 80px;
         font-size: 25px;
+        margin-left: -30px;
     }
 
     aside .menuLateral ul li {

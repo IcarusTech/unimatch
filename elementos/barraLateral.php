@@ -48,6 +48,7 @@
     }
 
     .slide ul li a {
+        width: 60px;
         color: red;
         font-weight: 500;
         padding: 5px 5px;

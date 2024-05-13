@@ -1,3 +1,12 @@
+<?php
+require '../modelo/DBUsuario.php';
+if(isset($_POST['nombre'])&&isset($_POST['password'])){
+    $user=$_POST['user'];
+    $password=$_POST['inputPasword'];
+    $conexion= new \modelo\BDlogin;
+    $conexion->login($user,$password);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +26,7 @@
     </head>
     <body>
         
-    <form action="llegadaLogin.php" method="post">
+    <form action="index.php" method="post">
     
     <h2>Inicio de sesion</h2>
     
