@@ -9,16 +9,17 @@
     </div>
 
     <div class="slide">
-
         <ul>
             <!-- <li><a href="#"><i class="fas fa-tv"></i>dashboard</a></li> -->
-            <li class="opL"><a href="#"><i class="far fa-user"></i>Profile</a></li>
+            <li class="opL"><a href="#"><i class='fa-solid fa-house'></i></a></li>
+            <li class="opL"><a href="#"><i class="far fa-user"></i></a></li>
             <!-- <li><a href="#"><i class="fab fa-gripfire"></i>trending</a></li> -->
-            <li class="opL"><a href="#"><i class="far fa-comments"></i>Messages</a></li>
+            <li class="opL"><a href="#"><i class="far fa-comments"></i></a></li>
             <!-- <li><a href="#"><i class="far fa-folder"></i>file manager</a></li> -->
             <!-- <li><a href="#"><i class="far fa-address-book"></i>portfolio</a></li> -->
-            <li class="opL"><a href="#"><i class="fas fa-heart"></i>Saved</a></li>
-            <li class="opL"><a href="#"><i class="fas fa-cogs"></i>Settings</a></li>
+            <li class="opL"><a href="#"><i class="fas fa-heart"></i></a></li>
+            <li class="opL"><a href="#"><i class="fas fa-cogs"></i></a></li>
+            <li class="opL"><a href="#"><i class='fas fa-sign-out-alt'></i></a></li>
         </ul>
     </div>
 </label>
@@ -28,10 +29,12 @@
 
 
     .slide {
+        border-radius: 5px;
+        margin-top: 5%;
         display: flex;
         flex-direction: column;
-        height: 100%;
-        width: 180px;
+        height: 80%;
+        width: 0%;
         position: absolute;
         background-color: #fff;
         transition: 0.5s ease;
@@ -41,11 +44,11 @@
 
     .slide ul li {
         list-style: none;
-
+        line-height: 80px;
     }
 
     .slide ul li a {
-        color: #011a41;
+        color: red;
         font-weight: 500;
         padding: 5px 5px;
         display: block;
@@ -149,14 +152,14 @@
     @media (max-width: 650px) {
     
         .slide {
-            width: 100%;
+            width: 30%;
             /* Ancho completo */
             display: flex;
             flex-direction: column;
             /* Configura flexbox para la columna */
             justify-content: center;
             /* Centra verticalmente */
-            align-items: center;
+            align-items: flex-start;
             /* Centra horizontalmente */
             font-size: 30px;
         }
@@ -178,12 +181,6 @@
         .toggle {
             display: none;
         }
-
-
-    }
-
-    @media(min-width:800px) {
-
         .lateral {
             display: none;
         }

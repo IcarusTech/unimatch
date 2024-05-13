@@ -24,8 +24,8 @@
     <div class="input-group">
     <label for="name">Nombre de usuario</label>
     <input type="text" name="nombre" id="name" placeholder="tu correo de nebrija sin el @alumnos...">
-    <label for="phone">Contraseña</label>
-    <input type="password" name="inputPasword" id="correo" placeholder="Introduce tu contraseña">
+    <label for="correo">Contraseña</label>
+    <input type="password" name="inputPasword" id="password" placeholder="Introduce tu contraseña">
     
     <div class="form-txt">
     <a href="../documentosLegales/privacidad.php">Politica de privacidad</a>

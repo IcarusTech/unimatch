@@ -71,7 +71,7 @@
         position: relative;
         top: auto;
         height: fit-content;
-        padding: 30px 0;
+        padding: 20px 0;
     }
 
     footer * {
