@@ -10,7 +10,7 @@ class BDlogin
     private $dbuser = "marcos";
     private $dbpassword = "1234";
     private $dbname = "unimatch";
-    private $table="usuarios";
+    private $table = "usuarios";
     private $conexion;
     /**
      * @param string $dbhost
@@ -50,22 +50,33 @@ class BDlogin
         $nombreUsuario = substr($correo, 0, strpos($correo, $caracter));
         //Consulta con la BD
         $insert = mysqli_query($this->conexion, "INSERT INTO $this->table (correo,nombre_usuario,contrasena) values ('$correo','$nombreUsuario','$password')");
-        $query = mysqli_query($this->conexion, "SELECT * FROM usuarios WHERE correo = '$correo' AND contrasena ='$password'");
+        $query = mysqli_query($this->conexion, "SELECT * FROM $this->table WHERE correo = '$correo' AND contrasena ='$password'");
+        $id_usuario = mysqli_query($this->conexion, "SELECT id_usuario FROM $this->table WHERE correo = '$correo' AND contrasena ='$password'");
         //Comprobamos que se ha recuperado al menus un registro del usuario
         $num = mysqli_num_rows($query);
         if ($num == 1) {
-            header("location: ../perfil/formulario.php?usuario=$nombreUsuario");
+            header("location: ../perfil/formulario.php?usuario=$nombreUsuario?id_usuario=$id_usuario");
         } else {
             header("Location:form.php");
         }
     }
-    public function delete($user, $password){
+    public function delete($user, $password, $confirmacion)
+    {
         $this->comprobarConexion();
-        $query = mysqli_query($this->conexion, "SELECT * FROM usuarios WHERE correo = '$correo' AND contrasena ='$password'");
+        $query = mysqli_query($this->conexion, "SELECT * FROM $this->table WHERE nombre_usuario = '$user' AND contrasena ='$password'");
         //Comprobamos que se ha recuperado al menus un registro del usuario
         $num = mysqli_num_rows($query);
-        if ($num == 1) {
-
+        if ($num == 1 && $confirmacion) {
+            $delete = mysqli_query($this->conexion, "DELETE FROM $this->table WHERE nombre_usuario = '$user' AND contrasena ='$password'");
+        }
+    }
+    public function update($user, $confirmacion,$campo,$valor){
+        $this->comprobarConexion();
+        $query = mysqli_query($this->conexion, "SELECT * FROM $this->table WHERE nombre_usuario = '$user'");
+        //Comprobamos que se ha recuperado al menus un registro del usuario
+        $num = mysqli_num_rows($query);
+        if ($num == 1 && $confirmacion) {
+            $update = mysqli_query($this->conexion, "UPDATE  $this->table SET $campo=$valor WHERE nombre_usuario = '$user'");
         }
     }
 }
