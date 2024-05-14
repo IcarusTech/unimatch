@@ -39,7 +39,7 @@ class BDlogin
             $_SESSION['usuario']=$user;//El nombre de la sesión es igual al nombre del usuario
             header("location: ../indexRegistrado.php");//Lo redirigimos al index registrado
         } else {
-            header("location: ../inicioSesionForm/index.php");
+            header("location: ../inicioSesionForm/inicioSesion.php");
         }
     }
 

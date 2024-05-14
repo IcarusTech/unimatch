@@ -29,8 +29,6 @@ if ($num == 1 && isset($_SESSION['usuario'])) {
     header("Location: ../indexRegistrado.php");
     exit(); //Finalizar el script actual
 
-} else {
-    echo $_SESSION['usuario'];
-            
-    
+} else {            
+    header("Location: inicioSesion.php");
 }

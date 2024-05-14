@@ -2,7 +2,7 @@
 session_start();
 if (!isset($_SESSION['usuario'])) {
     //Si no se ha iniciado sesion previamente,el código nos redirigirá al login para iniciar sesión
-    header("Location: inicioSesionForm/index.php");
+    header("Location: inicioSesionForm/inicioSesion.php");
     exit();
 }
 //-----------------
