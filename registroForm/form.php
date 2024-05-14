@@ -25,6 +25,7 @@ if (isset($_POST['inputCorreo']) && isset($_POST['inputPasword']) && $aceptarDoc
     <title>Document</title>
     <link rel="stylesheet" href="styles.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="checkBox.css?v=<?php echo time(); ?>">
+    <script src="validacionForm.js?v=<?php echo time(); ?>" defer></script>
 </head>
 
 <body>
@@ -34,29 +35,37 @@ if (isset($_POST['inputCorreo']) && isset($_POST['inputPasword']) && $aceptarDoc
         <h2>Registro</h2>
 
         <div class="input-group">
+
             <div class="campo">
-                <label for="name">Correo electrónico</label>
-                <input type="text" name="inputCorreo" id="correo" placeholder="...@alumnos.nebrija.es">
+                <label for="correo">Correo electrónico</label>
+                <input type="email" name="inputCorreo" id="correo" placeholder="...@alumnos.nebrija.es" pattern=".+@alumnos\.nebrija\.es" required>
+                <p id="error1" class="error"></p>
             </div>
+
             <div class="campo">
-                <label for="phone">Contraseña <img class="info" id="iconoInfo" src="../img/iconoInfo.png"
-                        alt="iconoInfo"></label>
-                <input type="password" name="inputPasword" id="password" placeholder="Introduce una contraseña">
+                <label for="password">Contraseña <img class="info" id="iconoInfo" src="../img/iconoInfo.png"alt="iconoInfo"></label>
+                <input type="password" name="inputPasword" id="password" placeholder="Introduce una contraseña"  pattern=".{6,12}" required>
+                <p id="error2" class="error"></p>
             </div>
 
             <div class="checkbox">
-                <label class="container">
-                    <input checked="checked" type="checkbox" name="aceptarDocumentos">
+                <label class="container" for="aceptar">
+                    <input id="aceptar" type="checkbox" name="aceptarDocumentos">
                     <div class="checkmark"></div>
                 </label>
-                <label for="">Acepto las condiciones</label>
+                <label>Acepto las condiciones</label>
             </div>
+            <p id="error3" class="error"></p>
+
             <div class="form-txt">
                 <a href="../documentosLegales/privacidad.php">Politica de privacidad</a>
                 <a href="../documentosLegales/terminos.php">Terminos y condiciones</a>
             </div>
+
             <input class="btn" type="submit" value="Enviar">
+
         </div>
+
     </form>
 </body>
 

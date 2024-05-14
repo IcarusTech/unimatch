@@ -48,7 +48,7 @@ input {
 
     padding: 17px 25px;
     border-radius: 25px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     background-color: #eeb6d7c8;
     border: 2px solid #F0FAF1;
     color: #283629;
@@ -88,6 +88,13 @@ input::placeholder {
 
 .btn:hover {
     background-color: #d21319;
+}
+
+.error{
+    color: red;
+    margin: 0 0 20px 0;
+    padding: 0;
+
 }
 
 @media(max-width:991px) {
