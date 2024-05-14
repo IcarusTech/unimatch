@@ -44,7 +44,10 @@ if (isset($_POST['inputCorreo']) && isset($_POST['inputPasword']) && $aceptarDoc
 
             <div class="campo">
                 <label for="password">Contraseña <img class="info" id="iconoInfo" src="../img/iconoInfo.png"alt="iconoInfo"></label>
-                <input type="password" name="inputPasword" id="password" placeholder="Introduce una contraseña"  pattern=".{6,12}" required>
+                <div class="inputPass">
+                    <input type="password" name="inputPasword" id="password" placeholder="Introduce una contraseña"  pattern=".{6,12}" required>
+                    <img src="../img/eye-open.png" id="mostrarPassword">
+                </div>
                 <p id="error2" class="error"></p>
             </div>
 

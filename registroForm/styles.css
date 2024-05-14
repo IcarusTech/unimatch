@@ -43,6 +43,26 @@ label {
     font-weight: 600;
     margin-bottom: 15px;
 }
+.inputPass{
+    display: flex;
+    align-items: center;
+}
+
+.inputPass input{
+    width: 100%;
+    
+
+}
+
+.inputPass img{
+    width: 25px;
+    float: right;
+    margin-left: -25px;
+    margin-top: -10px;
+    left: -15px;
+    position: relative;
+    z-index: 2;
+}
 
 input {
 
