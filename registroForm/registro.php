@@ -20,7 +20,7 @@ $query = mysqli_query($conexion, "SELECT * FROM usuarios WHERE correo = '$correo
 //Comprobamos que se ha recuperado al menus un registro del usuario
 $num = mysqli_num_rows($query);
 if ($num == 1) {
-    header("location: ../indexRegistrado.php");
+    header("location: ../perfil/formulario.php?usuario=$nombreUsuario");
 } else {
     header("Location:form.php");
 }

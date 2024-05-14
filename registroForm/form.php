@@ -60,7 +60,7 @@ if (isset($_POST['inputCorreo']) && isset($_POST['inputPasword']) && $aceptarDoc
 
             <div class="input-group">
                 <div class="campo">
-                    <label for="name">Correo de Nebrija</label>
+                    <label for="name">Correo electrónico</label>
                     <input type="text" name="inputCorreo" id="correo" placeholder="...@alumnos.nebrija.es">
                 </div>
                 <div class="campo">
@@ -73,7 +73,7 @@ if (isset($_POST['inputCorreo']) && isset($_POST['inputPasword']) && $aceptarDoc
                         <input checked="checked" type="checkbox" name="aceptarDocumentos">
                         <div class="checkmark"></div>
                     </label>
-                    <label for="">Acepto las codiciones</label>
+                    <label for="">Acepto las condiciones</label>
                 </div>
                 <div class="form-txt">
                     <a href="../documentosLegales/privacidad.php">Politica de privacidad</a>

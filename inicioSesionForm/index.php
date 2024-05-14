@@ -1,5 +1,4 @@
 <?php
-
 //-----------------------------------------------------------------------------------
 //require '../modelo/DBUsuario.php';
 /* if(isset($_POST['nombre'])&&isset($_POST['password'])){

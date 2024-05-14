@@ -41,7 +41,7 @@ $variable_php = 'valor';
                 <!-- <li><a href="#"><i class="far fa-address-book"></i>portfolio</a></li> -->
                 <li class="opL"><a href="#"><i class="fas fa-heart"></i>Favoritos</a></li>
                 <li class="opL"><a href="#"><i class="fas fa-cogs"></i>Ajustes</a></li>
-                <li class="opL"><a href="/inicioSesionForm/cerrarSesion.php"><i class='fas fa-sign-out-alt'></i>Salir</a></li>
+                <li class="opL"><a href="./inicioSesionForm/cerrarSesion.php"><i class='fas fa-sign-out-alt'></i>Salir</a></li>
             </ul>
         </div>
     </aside>

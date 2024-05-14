@@ -1,3 +1,7 @@
+<?php
+session_start();//Iniciar una sesion
+$_SESSION['usuario'] = $_GET['usuario'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,7 +68,7 @@
             </div>
         </div>
         <div class="form-outer">
-            <form action="https://formsubmit.co/fernandemarcos11@gmail.com" method="POST" id="formulario" enctype="multipart/form-data">
+            <form action="../indexRegistrado.php" method="POST" id="formulario" enctype="multipart/form-data">
                 <!-- 1º PAGE -->
                 <!-- 
                     Nombre

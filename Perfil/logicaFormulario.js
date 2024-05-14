@@ -210,7 +210,7 @@ submitBtn.addEventListener("click", function () {
     }
     else{
       current += 1;
-      event.stopPropagation();
+      
     }
   }
 
