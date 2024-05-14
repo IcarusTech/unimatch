@@ -1,12 +1,13 @@
 <?php
 //-----------------------------------------------------------------------------------
-//require '../modelo/DBUsuario.php';
-/* if(isset($_POST['nombre'])&&isset($_POST['password'])){
+/* require_once("../modelo/DBusuario.php");
+
+ if(isset($_POST['nombre'])&&isset($_POST['password'])){
     $user=$_POST['user'];
     $password=$_POST['inputPasword'];
     $conexion= new \modelo\BDlogin;
     $conexion->login($user,$password);
-} */
+}  */
 ?>
 <!DOCTYPE html>
 <html lang="en">
