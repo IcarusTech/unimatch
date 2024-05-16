@@ -1,5 +1,32 @@
 <?php
+error_reporting(0);
+// 1º página
 $nombre=$_POST['nombre'];
+$apellido=$_POST['apellido'];
+$fechaNacimiento=$_POST['fechaNacimiento'];
+// 2º página
+$curso=$_POST['curso'];
+$genero=$_POST['genero'];
+$colorPelo=$_POST['colorPelo'];
+// 3º página
+$colorOjos=$_POST['colorOjos'];
+$estiloMusica=$_POST['opcionMusica'];
+$fumador=$_POST['fuma'];
+// 4º página
+$personalidad=$_POST['personalidad'];
+$tipoAmistad=$_POST['amistad_deseada'];
+$planes=$_POST['planes'];
+// 5º página
+$hobbie=$_POST['hobbie'];
+$instagram=$_POST['instagram'];
+// Apartado de la definicion personal (en tres palabras)
+$definicion1=$_POST['definicion1'];
+$definicion2=$_POST['definicion2'];
+$definicion3=$_POST['definicion3'];
+$definiconTotal="";
+$definiconTotal.=$definicion1;
+$definiconTotal.=$definicion2;
+$definiconTotal.=$definicion3;
 //---------------------------------------------------------------------------------
 session_start();//Iniciar una sesión
 $_SESSION['usuario'] = $_GET['usuario'];
@@ -9,7 +36,7 @@ if (!isset($_SESSION['usuario'])) {
     //Si no se ha iniciado sesion previamente,el código nos redirigirá al login para iniciar sesión
     header("Location: ../inicioSesionForm/inicioSesion.php");
     $conexion= new \modelo\DBperfil();
-
+    //$conexion->create($nombre,$apellido,$fechaNacimiento,$curso,$genero,$colorPelo,$colorOjos,$estiloMusica,$fumador,$personalidad,$tipoAmistad,$planes,$hobbie,$definiconTotal,$instagram,$id_usuario);
     exit();
 }
 ?>
@@ -95,12 +122,12 @@ if (!isset($_SESSION['usuario'])) {
                     </div>
                     <div class="field">
                         <label for="input-apellido">Apellido</label>
-                        <input type="text" name="Apellido" id="input-apellido" placeholder="Pon tu apellido aquí" maxlength="50" value="vsf" required>
+                        <input type="text" name="apellido" id="input-apellido" placeholder="Pon tu apellido aquí" maxlength="50" value="vsf" required>
                         <p id="error-apellido" class="error"></p>
                     </div>
                     <div class="field">
                         <label for="input-nacimiento">Fecha de nacimiento</label>
-                        <input type="date" name="Fecha nacimiento" id="input-nacimiento" min="1970-01-01" value="2004-02-02">
+                        <input type="date" name="fechaNacimiento" id="input-nacimiento" min="1970-01-01" value="2004-02-02">
                         <p id="error-date" class="error"></p>
                     </div>
                     <div class="btns field">
@@ -118,7 +145,7 @@ if (!isset($_SESSION['usuario'])) {
 
                     <div class="field">
                         <label for="curso">Curso</label>
-                        <select name="Curso" id="curso">
+                        <select name="curso" id="curso">
                             <option value="Comercio-internacional">Comercio internacional</option>
                             <option value="Marketing-y-publicidad">Márketing y publicidad</option>
                             <option value="Administracion-y-finanzas">Administración y finanzas</option>
@@ -129,7 +156,7 @@ if (!isset($_SESSION['usuario'])) {
                     </div>
                     <div class="field">
                         <label for="Genero">Género</label>
-                        <select name="Genero" id="sexo">
+                        <select name="genero" id="sexo">
                             <option value="Masculino">Masculino</option>
                             <option value="Femenino">Femenino</option>
                             <option value="Otro">Otro</option>
@@ -139,20 +166,20 @@ if (!isset($_SESSION['usuario'])) {
                         <label>Color de pelo</label>
                         <div class="radio-inputs">
                             <label class="radio" id="labelPelo">
-                                <input type="radio" name="Color de pelo" value="Castaño" checked="">
+                                <input type="radio" name="colorPelo" value="Castaño" checked="">
                                 <span class="name">Castaño</span>
                             </label>
                             <label class="radio" id="labelPelo">
-                                <input type="radio" name="Color de pelo" value="Pelirrojo">
+                                <input type="radio" name="colorPelo" value="Pelirrojo">
                                 <span class="name">Pelirrojo</span>
                             </label>
 
                             <label class="radio" id="labelPelo">
-                                <input type="radio" name="Color de pelo" value="Moreno">
+                                <input type="radio" name="colorPelo " value="Moreno">
                                 <span class="name">Moreno</span>
                             </label>
                             <label class="radio" id="labelPelo">
-                                <input type="radio" name="Color de pelo" value="Rubio">
+                                <input type="radio" name="colorPelo" value="Rubio">
                                 <span class="name">Rubio</span>
                             </label>
                         </div>
@@ -176,23 +203,23 @@ if (!isset($_SESSION['usuario'])) {
                         <label>Color de ojos</label>
                         <div class="radio-inputs">
                             <label class="radio" id="labelOjos">
-                                <input type="radio" name="Color de ojos" value="Verde" checked="">
+                                <input type="radio" name="colorOjos" value="Verde" checked="">
                                 <span class="name">Verdes</span>
                             </label>
                             <label class="radio" id="labelOjos">
-                                <input type="radio" name="Color de ojos" value="Azul">
+                                <input type="radio" name="colorOjos" value="Azul">
                                 <span class="name">Azules</span>
                             </label>
 
                             <label class="radio" id="labelOjos">
-                                <input type="radio" name="Color de ojos" value="Marron">
+                                <input type="radio" name="colorOjos" value="Marron">
                                 <span class="name">Marrones</span>
                             </label>
                         </div>
                     </div>
                     <div class="field">
                         <label for="estiloMusica">Estilo de música</label>
-                        <select name="Musica favorita" id="estiloMusica">
+                        <select name="opcionMusica" id="estiloMusica">
                             <option value="rock&roll">Rock&Roll</option>
                             <option value="dembow">dembow</option>
                             <option value="pop">Pop</option>
@@ -229,11 +256,11 @@ if (!isset($_SESSION['usuario'])) {
                         <label>¿Fumas?</label>
                         <div class="radio-inputs">
                             <label class="radio" id="labelFumar">
-                                <input type="radio" name="Fuma" value="si" checked="">
+                                <input type="radio" name="fuma" value="si" checked="">
                                 <span class="name">Fumo</span>
                             </label>
                             <label class="radio" id="labelFumar">
-                                <input type="radio" name="Fuma" value="no">
+                                <input type="radio" name="fuma" value="no">
                                 <span class="name">No fumo</span>
                             </label>
                         </div>
@@ -257,18 +284,18 @@ if (!isset($_SESSION['usuario'])) {
                         <label>¿Eres extrovertido o introvertido?</label>
                         <div class="radio-inputs">
                             <label class="radio" id="extrovertido-introvertido">
-                                <input type="radio" name="Personalidad" value="extrovertido" checked="">
+                                <input type="radio" name="personalidad" value="extrovertido" checked="">
                                 <span class="name">Extrovertido</span>
                             </label>
                             <label class="radio" id="extrovertido-introvertido">
-                                <input type="radio" name="Personalidad" value="introvertido">
+                                <input type="radio" name="personalidad" value="introvertido">
                                 <span class="name">Introvertido</span>
                             </label>
                         </div>
                     </div>
                     <div class="field">
                         <label for="amistad-deseada">Tipo de amistad</label>
-                        <select name="amistad-deseada" id="amistad">
+                        <select name="amistad_deseada" id="amistad">
                             <option value="lo-que-surja">Lo que surja</option>
                             <option value="mejor-amigo">Mejor amigo/a</option>
                             <option value="amigo-de-fiesta">Amigo/a de fiesta</option>
@@ -276,7 +303,7 @@ if (!isset($_SESSION['usuario'])) {
                     </div>
                     <div class="field">
                         <label for="estiloPlan">Planes</label>
-                        <select name="Planes" id="estiloPlan">
+                        <select name="planes" id="estiloPlan">
                             <option value="senderismo">Senderismo</option>
                             <option value="salirDeFiesta">Salir de fiesta</option>
                             <option value="cine">Cine</option>
@@ -304,7 +331,7 @@ if (!isset($_SESSION['usuario'])) {
                     
                     <div class="field">
                         <label for="hobbie">Hobbies</label>
-                        <select name="Hobbie" id="hobbie">
+                        <select name="hobbie" id="hobbie">
                             <option value="dormir">Hacer ejercicio</option>
                             <option value="leer">Leer</option>
                             <option value="viajar">Viajar</option>

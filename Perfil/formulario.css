@@ -29,8 +29,8 @@ body {
 
 .container {
   align-self: center;
-  width: 25%;
-  height: 700px;
+  width: 75%;
+  height: 1000px;
   background: #fff;
   text-align: center;
   border-radius: 5px;
@@ -195,7 +195,7 @@ form .page .fieldbtns button.prev {
 form .page .fieldbtns button.next {
   margin-left: 3px;
 }
-
+/*Estilos de la barra de progreso*/
 .container .progress-bar {
   width: 100%;
   display: flex;
@@ -299,6 +299,7 @@ form .page .fieldbtns button.next {
 
 .progress-bar .step .check.active {
   color: #fff;
+  display: block;
 }
 
 p {
@@ -321,14 +322,17 @@ p {
   
 }
 
-@media (min-width:950px){
+@media (min-width:1000px){
   body{
     background-image:url(../img/fondoFormOrdenador.png);
     background-size: cover;
     background-repeat: no-repeat;
   }
+  .container {
+    width: 25%;
+    height: 620px;
+  }
 }
-
 
 
 
