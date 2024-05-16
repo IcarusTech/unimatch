@@ -4,7 +4,7 @@ namespace modelo;
 
 use mysqli;
 
-class BDlogin
+class BDusuario
 {
     private $dbhost = "localhost";
     private $dbuser = "marcos";
@@ -22,30 +22,29 @@ class BDlogin
     {
         $this->conexion = new mysqli($this->dbhost, $this->dbuser, $this->dbpassword, $this->dbname);
         $this->conexion->select_db($this->dbname);
-    }
-    function comprobarConexion()
-    {
         if (!$this->conexion) {
             die("Error de conexión :" . mysqli_connect_error());
         }
     }
+    
 
     public function login($user, $password)
     {
-        $this->comprobarConexion();
-        $_SESSION['usuario'] = $user;
+       
         $query = mysqli_query($this->conexion, "SELECT * FROM $this->table WHERE nombre_usuario = '$user' AND contrasena ='$password'");
         $num = mysqli_num_rows($query);
+        echo $num;
         if ($num == 1) {
+            session_start();
             $_SESSION['usuario'] = $user; //El nombre de la sesión es igual al nombre del usuario
-            header("location: ../indexRegistrado.php"); //Lo redirigimos al index registrado
+            header("location: ../indexRegistrado.php?usuario=$user"); //Lo redirigimos al index registrado
         } else {
-            header("location: ../inicioSesionForm/inicioSesion.php");
+            // header("location: ../inicioSesionForm/inicioSesion.php");
         }
     }
     public function create($correo, $password)
     {
-        $this->comprobarConexion();
+    
         $caracter = "@";
         $nombreUsuario = substr($correo, 0, strpos($correo, $caracter));
         //Consulta con la BD
@@ -62,7 +61,7 @@ class BDlogin
     }
     public function delete($user, $password, $confirmacion)
     {
-        $this->comprobarConexion();
+       
         $query = mysqli_query($this->conexion, "SELECT * FROM $this->table WHERE nombre_usuario = '$user' AND contrasena ='$password'");
         //Comprobamos que se ha recuperado al menus un registro del usuario
         $num = mysqli_num_rows($query);
@@ -71,7 +70,7 @@ class BDlogin
         }
     }
     public function update($user, $confirmacion,$campo,$valor){
-        $this->comprobarConexion();
+       
         $query = mysqli_query($this->conexion, "SELECT * FROM $this->table WHERE nombre_usuario = '$user'");
         //Comprobamos que se ha recuperado al menus un registro del usuario
         $num = mysqli_num_rows($query);

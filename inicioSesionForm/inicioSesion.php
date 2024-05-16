@@ -1,13 +1,13 @@
 <?php
 //-----------------------------------------------------------------------------------
-/* require_once("../modelo/DBusuario.php");
+require_once("../modelo/DBusuario.php");
 
- if(isset($_POST['nombre'])&&isset($_POST['password'])){
-    $user=$_POST['user'];
-    $password=$_POST['inputPasword'];
-    $conexion= new \modelo\BDlogin;
+ if(isset($_POST['nombre'])&&isset($_POST['inputPassword'])){
+    $user=$_POST['nombre'];
+    $password=$_POST['inputPassword'];
+    $conexion= new \modelo\BDusuario();
     $conexion->login($user,$password);
-}  */
+} 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,15 +28,15 @@
     </head>
     <body>
         
-    <form action="llegadaLogin.php" method="post">
+    <form action="inicioSesion.php" method="post">
     
     <h2>Inicio de sesion</h2>
     
     <div class="input-group">
-    <label for="name">Nombre de usuario</label>
+    <label for="nombre">Nombre de usuario</label>
     <input type="text" name="nombre" id="name" placeholder="tu correo de nebrija sin el @alumnos...">
-    <label for="correo">Contraseña</label>
-    <input type="password" name="inputPasword" id="password" placeholder="Introduce tu contraseña">
+    <label for="inputPassword">Contraseña</label>
+    <input type="password" name="inputPassword" id="password" placeholder="Introduce tu contraseña">
     
     <div class="form-txt">
     <a href="../documentosLegales/privacidad.php">Politica de privacidad</a>

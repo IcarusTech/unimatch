@@ -1,7 +1,7 @@
 <?php
 session_start(); //Iniciar una sesion
 $nombreUsuario = $_POST['nombre'];
-$password = $_POST['inputPasword'];
+$password = $_POST['inputPassword'];
 error_reporting(E_ALL);
 $dbhost = "localhost";
 $dbuser = "marcos";
