@@ -3,8 +3,9 @@
 namespace modelo;
 
 use mysqli;
+use mysqli_result;
 
-class BDusuario
+class DBusuario
 {
     private $dbhost = "localhost";
     private $dbuser = "marcos";
@@ -50,14 +51,15 @@ class BDusuario
         //Consulta con la BD
         $insert = mysqli_query($this->conexion, "INSERT INTO $this->table (correo,nombre_usuario,contrasena) values ('$correo','$nombreUsuario','$password')");
         $query = mysqli_query($this->conexion, "SELECT * FROM $this->table WHERE correo = '$correo' AND contrasena ='$password'");
-        $id_usuario = mysqli_query($this->conexion, "SELECT id_usuario FROM $this->table WHERE correo = '$correo' AND contrasena ='$password'");
+        $idUsuario = mysqli_query($this->conexion, "SELECT id_usuario FROM $this->table WHERE correo = '$correo' AND contrasena ='$password'");
         //Comprobamos que se ha recuperado al menus un registro del usuario
         $num = mysqli_num_rows($query);
-        if ($num == 1) {
-            session_start();//Iniciar una sesion
-            header("location: ../perfil/formulario.php?usuario=$nombreUsuario?id_usuario=$id_usuario");
+        if ($num == '1') {
+
+            $id_usuario = mysqli_fetch_row($idUsuario);
+            header("location: ../perfil/formulario.php?usuario=$nombreUsuario&id_usuario=$id_usuario[0]");
         } else {
-            header("Location:form.php");
+            header("Location: form.php");
         }
     }
     public function delete($user, $password, $confirmacion)

@@ -1,13 +1,13 @@
 <?php
 require_once("../modelo/DBusuario.php");
-error_reporting(0); //Funcion para ocultar las advertencias del programa
+//error_reporting(0); //Funcion para ocultar las advertencias del programa
 $aceptarDocumentos = isset($_POST['aceptarDocumentos']);
 
 if (isset($_POST['inputCorreo']) && isset($_POST['inputPassword']) && $aceptarDocumentos) { //Commprobamos que los datos estan escritos
     //Comprobamos que el correo, la contraseña esten puestos y que los terminos y privacidad esten seleccionados
     $correo = $_POST['inputCorreo'];
     $password = $_POST['inputPassword'];
-    $conexion= new \modelo\BDusuario();
+    $conexion= new \modelo\DBusuario();
     $conexion->create($correo,$password);
 }
 ?>

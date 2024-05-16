@@ -1,9 +1,17 @@
 <?php
-
+$nombre=$_POST['nombre'];
+//---------------------------------------------------------------------------------
+session_start();//Iniciar una sesión
 $_SESSION['usuario'] = $_GET['usuario'];
+require_once("../modelo/DBperfil.php");
 $id_usuario=$_GET['id_usuario'];
-echo $_SESSION['usuario'];
-echo $id_usuario;
+if (!isset($_SESSION['usuario'])) {
+    //Si no se ha iniciado sesion previamente,el código nos redirigirá al login para iniciar sesión
+    header("Location: ../inicioSesionForm/inicioSesion.php");
+    $conexion= new \modelo\DBperfil();
+
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,7 +90,7 @@ echo $id_usuario;
                     
                     <div class="field">
                         <label for="input-nombre">Nombre</label>
-                        <input type="text" name="Nombre" id="input-nombre" placeholder="Pon tu nombre aquí" value="afb" maxlength="50" required>
+                        <input type="text" name="nombre" id="input-nombre" placeholder="Pon tu nombre aquí" value="afb" maxlength="50" required>
                         <p id="error-nombre" class="error"></p>
                     </div>
                     <div class="field">

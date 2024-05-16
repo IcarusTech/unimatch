@@ -5,7 +5,7 @@ require_once("../modelo/DBusuario.php");
  if(isset($_POST['nombre'])&&isset($_POST['inputPassword'])){
     $user=$_POST['nombre'];
     $password=$_POST['inputPassword'];
-    $conexion= new \modelo\BDusuario();
+    $conexion= new \modelo\DBusuario();
     $conexion->login($user,$password);
 } 
 ?>
