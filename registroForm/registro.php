@@ -11,7 +11,7 @@ if (!$conexion) {
     die("Error de conexión :" . mysqli_connect_error());
 }
 $correo = $_POST['inputCorreo'];
-$password = $_POST['inputPasword'];
+$password = $_POST['inputPassword'];
 $caracter="@";
 $nombreUsuario=substr($correo, 0, strpos($correo, $caracter));
 //Consulta con la BD
@@ -19,10 +19,11 @@ $insert = mysqli_query($conexion, "INSERT INTO usuarios (correo,nombre_usuario,c
 $query = mysqli_query($conexion, "SELECT * FROM usuarios WHERE correo = '$correo' AND contrasena ='$password'");
 //Comprobamos que se ha recuperado al menus un registro del usuario
 $num = mysqli_num_rows($query);
+echo $num;
 if ($num == 1) {
-    header("location: ../perfil/formulario.php?usuario=$nombreUsuario");
+    //header("location: ../perfil/formulario.php?usuario=$nombreUsuario");
 } else {
-    header("Location:form.php");
+   // header("Location:form.php");
 }
 ?>
 <!--    <script>console.log('{$nombreUsuario}');</script>

@@ -1,6 +1,9 @@
 <?php
-session_start();//Iniciar una sesion
+
 $_SESSION['usuario'] = $_GET['usuario'];
+$id_usuario=$_GET['id_usuario'];
+echo $_SESSION['usuario'];
+echo $id_usuario;
 ?>
 <!DOCTYPE html>
 <html lang="en">
