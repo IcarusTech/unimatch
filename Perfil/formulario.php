@@ -35,12 +35,10 @@ $id_usuario=$_GET['id_usuario'];
 if (!isset($_SESSION['usuario'])) {
     //Si no se ha iniciado sesion previamente,el código nos redirigirá al login para iniciar sesión
     header("Location: ../inicioSesionForm/inicioSesion.php");
-    exit();
-}else{
-    
     $conexion= new \modelo\DBperfil();
     $conexion->create($nombre,$apellido,$fechaNacimiento,$curso,$genero,$colorPelo,$colorOjos,$estiloMusica,$fumador,$personalidad,$tipoAmistad,$planes,$hobbie,$definiconTotal,$instagram,$id_usuario);
 
+    exit();
 }
 ?>
 <!DOCTYPE html>
