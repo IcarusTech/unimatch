@@ -1,4 +1,5 @@
 <?php
+$carpetaPerfil = "Perfil";
 error_reporting(0);
 // 1º página
 $nombre=$_POST['nombre'];
@@ -361,6 +362,15 @@ if (!isset($_SESSION['usuario'])) {
                         <button class="prev-4 prev btn">Previous</button>
                         <button type="submit" class="submit btn">Submit</button>
                     </div>
+                    <?php $datos_del_usuario = array($nombre,$apellido,$fechaNacimiento,$curso,$genero,$colorPelo,
+                    $colorOjos,$estiloMusica,$fumador,$personalidad,$tipoAmistad,$planes,$hobbie,$instagram,
+                    $definicion1,$definicion2,$definicion3); 
+                    
+                    $json = json_encode($datos_del_usuario,JSON_PRETTY_PRINT);
+                    $ruta_json = $carpetaPerfil."/json".date('YmdHis').'.json';
+                    file_put_contents($ruta_json,$json, FILE_APPEND);
+                    ?>
+
                 </div>
             </form>
         </div>

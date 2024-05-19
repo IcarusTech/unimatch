@@ -17,6 +17,7 @@ $variable_php = 'valor';
     <link rel="stylesheet" href="./styles/indexRegistrado.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css?v=<?php echo time(); ?>">
     <script src="./logicaGeneral/llegadaDatosPerfiles.js?v=<?php echo time(); ?>" defer></script>
+    <script src="../imprimirPerfiles.js?v=<?php echo time(); ?>" defer></script>"></script>
 </head>
 
 <body>
@@ -47,7 +48,7 @@ $variable_php = 'valor';
     <section>
         <div class="persona">
          <div class="imagen"></div>
-         <div class="datos"></div>
+         <div class="datos" id="datos"></div>
         </div>
     </section>
 
