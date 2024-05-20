@@ -189,29 +189,29 @@ file_put_contents($ruta_json, $json, FILE_APPEND);
                     <div class="field">
                         <label for="Genero">Género</label>
                         <select name="genero" id="sexo">
-                            <option value="Masculino">Masculino</option>
-                            <option value="Femenino">Femenino</option>
-                            <option value="Otro">Otro</option>
+                            <option value="M">Masculino</option>
+                            <option value="F">Femenino</option>
+                            <option value="O">Otro</option>
                         </select>
                     </div>
                     <div class="campoMultiple">
                         <label>Color de pelo</label>
                         <div class="radio-inputs">
                             <label class="radio" id="labelPelo">
-                                <input type="radio" name="colorPelo" value="Castaño" checked="">
+                                <input type="radio" name="colorPelo" value="C" checked="">
                                 <span class="name">Castaño</span>
                             </label>
                             <label class="radio" id="labelPelo">
-                                <input type="radio" name="colorPelo" value="Pelirrojo">
+                                <input type="radio" name="colorPelo" value="P">
                                 <span class="name">Pelirrojo</span>
                             </label>
 
                             <label class="radio" id="labelPelo">
-                                <input type="radio" name="colorPelo " value="Moreno">
+                                <input type="radio" name="colorPelo" value="M">
                                 <span class="name">Moreno</span>
                             </label>
                             <label class="radio" id="labelPelo">
-                                <input type="radio" name="colorPelo" value="Rubio">
+                                <input type="radio" name="colorPelo" value="R">
                                 <span class="name">Rubio</span>
                             </label>
                         </div>
@@ -235,16 +235,16 @@ file_put_contents($ruta_json, $json, FILE_APPEND);
                         <label>Color de ojos</label>
                         <div class="radio-inputs">
                             <label class="radio" id="labelOjos">
-                                <input type="radio" name="colorOjos" value="Verde" checked="">
+                                <input type="radio" name="colorOjos" value="V" checked="">
                                 <span class="name">Verdes</span>
                             </label>
                             <label class="radio" id="labelOjos">
-                                <input type="radio" name="colorOjos" value="Azul">
+                                <input type="radio" name="colorOjos" value="A">
                                 <span class="name">Azules</span>
                             </label>
 
                             <label class="radio" id="labelOjos">
-                                <input type="radio" name="colorOjos" value="Marron">
+                                <input type="radio" name="colorOjos" value="M">
                                 <span class="name">Marrones</span>
                             </label>
                         </div>
@@ -288,11 +288,11 @@ file_put_contents($ruta_json, $json, FILE_APPEND);
                         <label>¿Fumas?</label>
                         <div class="radio-inputs">
                             <label class="radio" id="labelFumar">
-                                <input type="radio" name="fuma" value="si" checked="">
+                                <input type="radio" name="fuma" value="true" checked="">
                                 <span class="name">Fumo</span>
                             </label>
                             <label class="radio" id="labelFumar">
-                                <input type="radio" name="fuma" value="no">
+                                <input type="radio" name="fuma" value="false">
                                 <span class="name">No fumo</span>
                             </label>
                         </div>
@@ -316,11 +316,11 @@ file_put_contents($ruta_json, $json, FILE_APPEND);
                         <label>¿Eres extrovertido o introvertido?</label>
                         <div class="radio-inputs">
                             <label class="radio" id="extrovertido-introvertido">
-                                <input type="radio" name="personalidad" value="extrovertido" checked="">
+                                <input type="radio" name="personalidad" value="E" checked="">
                                 <span class="name">Extrovertido</span>
                             </label>
                             <label class="radio" id="extrovertido-introvertido">
-                                <input type="radio" name="personalidad" value="introvertido">
+                                <input type="radio" name="personalidad" value="I">
                                 <span class="name">Introvertido</span>
                             </label>
                         </div>

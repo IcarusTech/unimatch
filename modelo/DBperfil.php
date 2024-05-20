@@ -27,7 +27,7 @@ class DBperfil
         $query = mysqli_query($this->conexion, "SELECT * FROM $this->table WHERE nombre = '$nombre' AND apellido ='$apellido' AND curso='$curso'");
         //Comprobamos que se ha recuperado al menus un registro del usuario
         $num = mysqli_num_rows($query);
-        if ($num == 1) {
+        if ($num == '1') {
             session_start();//Iniciar una sesión o continuarla
             header("location: ../indexRegistrado.php");
         } else {
