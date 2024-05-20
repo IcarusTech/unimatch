@@ -2,45 +2,70 @@
 $carpetaPerfil = "Perfil";
 error_reporting(0);
 // 1º página
-$nombre=$_POST['nombre'];
-$apellido=$_POST['apellido'];
-$fechaNacimiento=$_POST['fechaNacimiento'];
+$nombre = $_POST['nombre'];
+$apellido = $_POST['apellido'];
+$fechaNacimiento = $_POST['fechaNacimiento'];
 // 2º página
-$curso=$_POST['curso'];
-$genero=$_POST['genero'];
-$colorPelo=$_POST['colorPelo'];
+$curso = $_POST['curso'];
+$genero = $_POST['genero'];
+$colorPelo = $_POST['colorPelo'];
 // 3º página
-$colorOjos=$_POST['colorOjos'];
-$estiloMusica=$_POST['opcionMusica'];
-$fumador=$_POST['fuma'];
+$colorOjos = $_POST['colorOjos'];
+$estiloMusica = $_POST['opcionMusica'];
+$fumador = $_POST['fuma'];
 // 4º página
-$personalidad=$_POST['personalidad'];
-$tipoAmistad=$_POST['amistad_deseada'];
-$planes=$_POST['planes'];
+$personalidad = $_POST['personalidad'];
+$tipoAmistad = $_POST['amistad_deseada'];
+$planes = $_POST['planes'];
 // 5º página
-$hobbie=$_POST['hobbie'];
-$instagram=$_POST['instagram'];
+$hobbie = $_POST['hobbie'];
+$instagram = $_POST['instagram'];
 // Apartado de la definicion personal (en tres palabras)
-$definicion1=$_POST['definicion1'];
-$definicion2=$_POST['definicion2'];
-$definicion3=$_POST['definicion3'];
-$definiconTotal="";
-$definiconTotal.=$definicion1;
-$definiconTotal.=$definicion2;
-$definiconTotal.=$definicion3;
+$definicion1 = $_POST['definicion1'];
+$definicion2 = $_POST['definicion2'];
+$definicion3 = $_POST['definicion3'];
+$definiconTotal = "";
+$definiconTotal .= $definicion1;
+$definiconTotal .= $definicion2;
+$definiconTotal .= $definicion3;
 //---------------------------------------------------------------------------------
 session_start();//Iniciar una sesión
 $_SESSION['usuario'] = $_GET['usuario'];
-require_once("../modelo/DBperfil.php");
-$id_usuario=$_GET['id_usuario'];
+require_once ("../modelo/DBperfil.php");
+$id_usuario = $_GET['id_usuario'];
 if (!isset($_SESSION['usuario'])) {
     //Si no se ha iniciado sesion previamente,el código nos redirigirá al login para iniciar sesión
     header("Location: ../inicioSesionForm/inicioSesion.php");
-    $conexion= new \modelo\DBperfil();
-    $conexion->create($nombre,$apellido,$fechaNacimiento,$curso,$genero,$colorPelo,$colorOjos,$estiloMusica,$fumador,$personalidad,$tipoAmistad,$planes,$hobbie,$definiconTotal,$instagram,$id_usuario);
+    $conexion = new \modelo\DBperfil();
+    $conexion->create($nombre, $apellido, $fechaNacimiento, $curso, $genero, $colorPelo, $colorOjos, $estiloMusica, $fumador, $personalidad, $tipoAmistad, $planes, $hobbie, $definiconTotal, $instagram, $id_usuario);
 
     exit();
 }
+
+$datos_del_usuario = array(
+    $nombre,
+    $apellido,
+    $fechaNacimiento,
+    $curso,
+    $genero,
+    $colorPelo,
+    $colorOjos,
+    $estiloMusica,
+    $fumador,
+    $personalidad,
+    $tipoAmistad,
+    $planes,
+    $hobbie,
+    $instagram,
+    $definicion1,
+    $definicion2,
+    $definicion3
+);
+
+$json = json_encode($datos_del_usuario, JSON_PRETTY_PRINT);
+$ruta_json = $carpetaPerfil . "/json" . date('YmdHis') . '.json';
+file_put_contents($ruta_json, $json, FILE_APPEND);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,9 +77,9 @@ if (!isset($_SESSION['usuario'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="inputEleccion.css?v=<?php echo time(); ?>">
     <script src="logicaFormulario.js?v=<?php echo time(); ?>" defer></script>
-    
+
     <!--  -->
-    
+
 </head>
 
 <body>
@@ -116,20 +141,23 @@ if (!isset($_SESSION['usuario'])) {
                     Fecha de nacimiento
                  -->
                 <div class="page page1" id="slide-page">
-                    
+
                     <div class="field">
                         <label for="input-nombre">Nombre</label>
-                        <input type="text" name="nombre" id="input-nombre" placeholder="Pon tu nombre aquí" value="afb" maxlength="50" required>
+                        <input type="text" name="nombre" id="input-nombre" placeholder="Pon tu nombre aquí" value="afb"
+                            maxlength="50" required>
                         <p id="error-nombre" class="error"></p>
                     </div>
                     <div class="field">
                         <label for="input-apellido">Apellido</label>
-                        <input type="text" name="apellido" id="input-apellido" placeholder="Pon tu apellido aquí" maxlength="50" value="vsf" required>
+                        <input type="text" name="apellido" id="input-apellido" placeholder="Pon tu apellido aquí"
+                            maxlength="50" value="vsf" required>
                         <p id="error-apellido" class="error"></p>
                     </div>
                     <div class="field">
                         <label for="input-nacimiento">Fecha de nacimiento</label>
-                        <input type="date" name="fechaNacimiento" id="input-nacimiento" min="1970-01-01" value="2004-02-02">
+                        <input type="date" name="fechaNacimiento" id="input-nacimiento" min="1970-01-01"
+                            value="2004-02-02">
                         <p id="error-date" class="error"></p>
                     </div>
                     <div class="btns field">
@@ -151,9 +179,11 @@ if (!isset($_SESSION['usuario'])) {
                             <option value="Comercio-internacional">Comercio internacional</option>
                             <option value="Marketing-y-publicidad">Márketing y publicidad</option>
                             <option value="Administracion-y-finanzas">Administración y finanzas</option>
-                            <option value="Desarrollo-de-aplicaciones-multiplataforma">Desarrollo de aplicaciones multiplataforma</option>
+                            <option value="Desarrollo-de-aplicaciones-multiplataforma">Desarrollo de aplicaciones
+                                multiplataforma</option>
                             <option value="Desarrollo-de-aplicaciones-web">Desarrollo de aplicaciones web</option>
-                            <option value="Administración-de-sistemas-informáticos-en-red">Administración de Sistemas Informáticos en Red</option>
+                            <option value="Administración-de-sistemas-informáticos-en-red">Administración de Sistemas
+                                Informáticos en Red</option>
                         </select>
                     </div>
                     <div class="field">
@@ -200,7 +230,7 @@ if (!isset($_SESSION['usuario'])) {
                     Fumas
                  -->
                 <div class="page page3">
-                    
+
                     <div class="campoMultiple">
                         <label>Color de ojos</label>
                         <div class="radio-inputs">
@@ -280,8 +310,8 @@ if (!isset($_SESSION['usuario'])) {
                     Planes
                  -->
                 <div class="page page4">
-                    
-                    
+
+
                     <div class="campoMultiple">
                         <label>¿Eres extrovertido o introvertido?</label>
                         <div class="radio-inputs">
@@ -316,7 +346,7 @@ if (!isset($_SESSION['usuario'])) {
                             <option value="cataVinos">Cata de vinos</option>
                         </select>
                     </div>
-                    
+
                     <div class="btns field">
                         <button class="prev-3 prev btn">Previous</button>
                         <button class="next-3 next btn">Next</button>
@@ -330,7 +360,7 @@ if (!isset($_SESSION['usuario'])) {
                     Insta
                  -->
                 <div class="page page5">
-                    
+
                     <div class="field">
                         <label for="hobbie">Hobbies</label>
                         <select name="hobbie" id="hobbie">
@@ -355,27 +385,21 @@ if (!isset($_SESSION['usuario'])) {
                     </div>
                     <div class="field">
                         <label for="input-instagram">Instagram</label>
-                        <input type="text" name="instagram" id="input-instagram" placeholder="Pon tu instagram (opcional)" maxlength="50">
-                        
+                        <input type="text" name="instagram" id="input-instagram"
+                            placeholder="Pon tu instagram (opcional)" maxlength="50">
+
                     </div>
                     <div class="btns field">
                         <button class="prev-4 prev btn">Previous</button>
                         <button type="submit" class="submit btn">Submit</button>
                     </div>
-                    <?php $datos_del_usuario = array($nombre,$apellido,$fechaNacimiento,$curso,$genero,$colorPelo,
-                    $colorOjos,$estiloMusica,$fumador,$personalidad,$tipoAmistad,$planes,$hobbie,$instagram,
-                    $definicion1,$definicion2,$definicion3); 
-                    
-                    $json = json_encode($datos_del_usuario,JSON_PRETTY_PRINT);
-                    $ruta_json = $carpetaPerfil."/json".date('YmdHis').'.json';
-                    file_put_contents($ruta_json,$json, FILE_APPEND);
-                    ?>
+
 
                 </div>
             </form>
         </div>
     </div>
-    
+
 </body>
 
 </html>
