@@ -72,6 +72,7 @@
         top: auto;
         height: fit-content;
         padding: 20px 0;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
     footer * {
@@ -90,6 +91,7 @@
 
     .footer-links {
         width: 25%;
+        
     }
 
     .footer-links h4 {
