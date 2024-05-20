@@ -79,18 +79,17 @@
     }
 
     .footer {
-        max-width: 1200px;
         margin: 0 auto;
     }
 
     .footer-row {
         display: flex;
+        flex-direction: row;
         flex-wrap: wrap;
     }
 
     .footer-links {
         width: 25%;
-        padding: 0 15px;
     }
 
     .footer-links h4 {
