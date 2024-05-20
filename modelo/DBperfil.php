@@ -28,7 +28,7 @@ class DBperfil
         //Comprobamos que se ha recuperado al menus un registro del usuario
         $num = mysqli_num_rows($query);
         if ($num == 1) {
-            session_start();//Iniciar una sesión
+            session_start();//Iniciar una sesión o continuarla
             header("location: ../indexRegistrado.php");
         } else {
             header("Location: formulario.php");

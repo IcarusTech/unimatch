@@ -36,7 +36,7 @@ class DBusuario
         $num = mysqli_num_rows($query);
         echo $num;
         if ($num == 1) {
-            session_start();
+            session_start();//iniciar sesion o continuarla
             $_SESSION['usuario'] = $user; //El nombre de la sesión es igual al nombre del usuario
             header("location: ../indexRegistrado.php?usuario=$user"); //Lo redirigimos al index registrado
         } else {
@@ -55,7 +55,7 @@ class DBusuario
         //Comprobamos que se ha recuperado al menus un registro del usuario
         $num = mysqli_num_rows($query);
         if ($num == '1') {
-
+            session_start();//iniciar sesion o continuarla
             $id_usuario = mysqli_fetch_row($idUsuario);
             header("location: ../perfil/formulario.php?usuario=$nombreUsuario&id_usuario=$id_usuario[0]");
         } else {
