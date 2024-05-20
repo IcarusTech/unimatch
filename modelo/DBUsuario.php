@@ -50,8 +50,8 @@ class DBusuario
         $nombreUsuario = substr($correo, 0, strpos($correo, $caracter));
         //Consulta con la BD
         $insert = mysqli_query($this->conexion, "INSERT INTO $this->table (correo,nombre_usuario,contrasena) values ('$correo','$nombreUsuario','$password')");
-        $query = mysqli_query($this->conexion, "SELECT * FROM $this->table WHERE correo = '$correo' AND contrasena ='$password'");
-        $idUsuario = mysqli_query($this->conexion, "SELECT id_usuario FROM $this->table WHERE correo = '$correo' AND contrasena ='$password'");
+        $query = mysqli_query($this->conexion, "SELECT * FROM $this->table WHERE nombre_usuario = '$nombreUsuario' AND contrasena ='$password'");
+        $idUsuario = mysqli_query($this->conexion, "SELECT id_usuario FROM $this->table WHERE nombre_usuario = '$nombreUsuario' AND contrasena ='$password'");
         //Comprobamos que se ha recuperado al menus un registro del usuario
         $num = mysqli_num_rows($query);
         if ($num == '1') {

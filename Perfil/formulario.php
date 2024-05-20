@@ -1,5 +1,5 @@
 <?php
-$carpetaPerfil = "Perfil";
+$carpetaPerfil = "../datosRegistros";
 error_reporting(0);
 // 1º página
 $nombre = $_POST['nombre'];
