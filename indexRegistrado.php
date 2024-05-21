@@ -55,6 +55,11 @@ $variable_php = 'valor';
             <div class="datos" id="datos">
                 <h3>Datos</h3>
             </div>
+            <div class="botones">
+                <?php
+                include "./elementos/btnFavorito.php";
+                ?>
+            </div>
         </div>
         <div class="persona">
             <div class="imagen"><img src="./avatares/img/HpeloCastañoOjosVerdes.png" alt=""></div>

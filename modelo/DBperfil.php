@@ -22,11 +22,11 @@ class DBperfil
     {
 
         //Consulta con la BD
-        $insert = mysqli_query($this->conexion, "INSERT INTO $this->table (nombre,apellido,fecha_nacimiento,curso,genero,color_pelo,color_ojos,estilo_musical,fumador,tipo_personalidad,tipo_amistad,planes,hobbies,definicion_personal,instagram,id_usuario) 
-                  values ('$nombre','$apellido','$fecha_nacimiento','$curso','$genero','$color_pelo','$color_ojos','$estilo_musical','$fumador','$tipo_personalidad','$tipo_amistad','$planes','$hobbies','$definicion_personal','$instagram','$id_usuario')");
+        $insert = mysqli_query($this->conexion, "INSERT INTO $this->table (nombre,apellido,fecha_nacimiento,curso,genero,color_pelo,color_ojos,estilo_musical,fumador,tipo_personalidad,tipo_amistad,planes,hobbies,definicion_personal,instagram,id_usuario) values ('$nombre','$apellido','$fecha_nacimiento','$curso','$genero','$color_pelo','$color_ojos','$estilo_musical','$fumador','$tipo_personalidad','$tipo_amistad','$planes','$hobbies','$definicion_personal','$instagram','$id_usuario')");
         $query = mysqli_query($this->conexion, "SELECT * FROM $this->table WHERE nombre = '$nombre' AND apellido ='$apellido' AND curso='$curso'");
         //Comprobamos que se ha recuperado al menus un registro del usuario
         $num = mysqli_num_rows($query);
+        $_SESSION['usuario'] = $nombre;
         if ($num == '1') {
             session_start();//Iniciar una sesión o continuarla
             header("location: ../indexRegistrado.php");

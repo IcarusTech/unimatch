@@ -1,19 +1,22 @@
 <?php
 $carpetaPerfil = "../datosRegistros";
-error_reporting(0);
 //---------------------------------------------------------------------------------
 session_start(); //Iniciar una sesión
-$_SESSION['usuario'] = $_GET['usuario'];
-echo ($_GET['usuario']);
+
 require_once("../modelo/DBperfil.php");
-$id_usuario = $_GET['id_usuario'];
-if (!isset($_SESSION['usuario'])) {
+
+
     //Si no se ha iniciado sesion previamente, el código nos redirigirá al login para iniciar sesión
-    header("Location: ../inicioSesionForm/inicioSesion.php");
-    exit();
-}
-else if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
+    $id_usuario=$_GET['id_usuario'];
+    $_SESSION['usuario']=$_GET['usuario'];
+    $usuario=$_GET['usuario'];
+
+ if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
     echo ("el nombre esta puesto : ").$_POST['nombre'];
+    $id_usuarioForm=$_POST['id'];
+    $nombreUsuario=$_POST['usuario'];
+    echo ("el nombre del usuario esta puesto : ").$nombreUsuario;
+    echo ("el nombre id del usuario esta puesto : ").$id_usuarioForm;
     // 1º página
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
@@ -39,33 +42,34 @@ else if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
     $definicion3 = $_POST['definicion3'];
     $definicionTotal = "";
     $definicionTotal .= $definicion1;
-    $definicionTotal .= $definicion2;
-    $definicionTotal .= $definicion3;
+    $definicionTotal .= "/".$definicion2;
+    $definicionTotal .= "/".$definicion3;
     $datos_del_usuario = array(
-        $nombre,
-        $apellido,
-        $fechaNacimiento,
-        $curso,
-        $genero,
-        $colorPelo,
-        $colorOjos,
-        $estiloMusica,
-        $fumador,
-        $personalidad,
-        $tipoAmistad,
-        $planes,
-        $hobbie,
-        $instagram,
-        $definicion1,
-        $definicion2,
-        $definicion3
+        "nombre"=>$nombre,
+        "apellido"=>$apellido,
+        "fecha de nacimiento"=>$fechaNacimiento,
+        "curso"=>$curso,
+        "genero"=>$genero,
+        "color de pelo"=>$colorPelo,
+        "color de ojos"=>$colorOjos,
+        "estilo de musica"=>$estiloMusica,
+        "fumador"=>$fumador,
+        "tipo de personalidad"=>$personalidad,
+        "tipo de amistad buscada"=>$tipoAmistad,
+        "planes"=>$planes,
+        "hobbie"=>$hobbie,
+        "instagram"=>$instagram,
+        "definicion 1"=>$definicion1,
+        "definicion 2"=>$definicion2,
+        "definicion 3"=>$definicion3
     );
 
     $json = json_encode($datos_del_usuario, JSON_PRETTY_PRINT);
     $ruta_json = $carpetaPerfil . "/json" . date('YmdHis') . '.json';
     file_put_contents($ruta_json, $json, FILE_APPEND);
     $conexion = new \modelo\DBperfil();
-    $conexion->create($nombre, $apellido, $fechaNacimiento, $curso, $genero, $colorPelo, $colorOjos, $estiloMusica, $fumador, $personalidad, $tipoAmistad, $planes, $hobbie, $definicionTotal, $instagram, $id_usuario);
+    $conexion->create($nombre, $apellido, $fechaNacimiento, $curso, $genero, $colorPelo, $colorOjos, $estiloMusica, $fumador, $personalidad, $tipoAmistad, $planes, $hobbie, $definicionTotal, $instagram, $id_usuarioForm);
+    echo $nombre;
 }
 
 ?>
@@ -135,7 +139,11 @@ else if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
             </div>
         </div>
         <div class="form-outer">
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" id="formulario" enctype="multipart/form-data">
+            <form action="formulario.php" method="POST" id="formulario" enctype="multipart/form-data">
+                <div class="inputsEnlace">
+                <input type="text" id="nombreUsuario" name="usuario" value="<?php echo $usuario; ?>">
+                <input type="number" id="id_usuario" name="id" value="<?php echo $id_usuario; ?>">
+                </div>
                 <!-- 1º PAGE -->
                 <!-- 
                     Nombre
@@ -146,17 +154,17 @@ else if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
 
                     <div class="field">
                         <label for="input-nombre">Nombre</label>
-                        <input type="text" name="nombre" id="input-nombre" placeholder="Pon tu nombre aquí" value="afb" maxlength="50" required>
+                        <input type="text" name="nombre" id="input-nombre" placeholder="Pon tu nombre aquí" maxlength="50" required>
                         <p id="error-nombre" class="error"></p>
                     </div>
                     <div class="field">
                         <label for="input-apellido">Apellido</label>
-                        <input type="text" name="apellido" id="input-apellido" placeholder="Pon tu apellido aquí" maxlength="50" value="vsf" required>
+                        <input type="text" name="apellido" id="input-apellido" placeholder="Pon tu apellido aquí" maxlength="50" required>
                         <p id="error-apellido" class="error"></p>
                     </div>
                     <div class="field">
                         <label for="input-nacimiento">Fecha de nacimiento</label>
-                        <input type="date" name="fechaNacimiento" id="input-nacimiento" min="1970-01-01" value="2004-02-02">
+                        <input type="date" name="fechaNacimiento" id="input-nacimiento" min="1970-01-01">
                         <p id="error-date" class="error"></p>
                     </div>
                     <div class="btns field">

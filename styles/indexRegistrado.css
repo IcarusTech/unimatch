@@ -54,6 +54,11 @@ section .persona {
 section .persona #datos {
     text-align: center;
 }
+section .persona  .botones{
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+}
 
 @media (min-width: 650px) {
     header {
