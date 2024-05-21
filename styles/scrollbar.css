@@ -1,0 +1,12 @@
+body::-webkit-scrollbar {
+    width: 12px;               /* ancho del scrollbar*/
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);        /*color del area donde se desliza el scroll */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 0, 111);    /* color de la propia barra*/
+    border-radius: 20px; 
+  }

@@ -17,9 +17,10 @@ $variable_php = 'valor';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index Registrado</title>
     <link rel="stylesheet" href="./styles/indexRegistrado.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="./styles/scrollbar.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css?v=<?php echo time(); ?>">
-    <script src="./logicaGeneral/llegadaDatosPerfiles.js?v=<?php echo time(); ?>" defer></script>
-    <script src="../imprimirPerfiles.js?v=<?php echo time(); ?>" defer></script>
+    <!-- <script src="./logicaGeneral/llegadaDatosPerfiles.js?v=<?php echo time(); ?>" defer></script>
+    <script src="../imprimirPerfiles.js?v=<?php echo time(); ?>" defer></script> -->
     </script>
 </head>
 

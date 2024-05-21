@@ -44,7 +44,7 @@
                     <a href="#" target="_blank" onclick>
                         <i class="fab fa-youtube"></i>
                     </a>
-                    <a href="#" target="_blank" onclick>
+                    <a href="https://github.com/orgs/IcarusTech/people" target="_blank" onclick>
                         <i class="fab fa-github"></i>
                     </a>
                 </div>
@@ -55,7 +55,8 @@
                 <h4>Algun enlace por la cara</h4>
 
                 <ul>
-                    <li><a href="#">Politica de privacidad</a></li>
+                    <li><a href="../documentosLegales/privacidad.php">Politica de privacidad</a></li>
+                    <li><a href="../documentosLegales/terminos.php">Terminos y condiciones</a></li>
                 </ul>
             </div>
 
@@ -92,7 +93,7 @@
 
     .footer-links {
         width: 25%;
-        
+
     }
 
     .footer-links h4 {
