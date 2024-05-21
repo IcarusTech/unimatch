@@ -98,11 +98,10 @@
     .footer-links h4 {
         width: 280px;
         font-size: 20px;
-        color: #ffffff;
+        color: red;
         margin-bottom: 25px;
         font-weight: 500;
         font-size: 20px;
-        color: #ffffff;
         margin-bottom: 10px;
         /* Puedes ajustar el espaciado según sea necesario */
         font-weight: 500;
@@ -114,7 +113,7 @@
     }
 
     .escribenos {
-        color: white;
+        color: black;
         margin-bottom: 5%;
     }
 
@@ -129,14 +128,14 @@
     .footer-links ul li a {
         font-size: 18px;
         text-decoration: none;
-        color: #BBBBBB;
+        color: black;
         display: block;
         margin-bottom: 15px;
         transition: all .3s ease;
     }
 
     .footer-links ul li a:hover {
-        color: #FFFFFF;
+        color: red;
         padding-left: 6px;
     }
 
@@ -149,7 +148,7 @@
         text-align: center;
         line-height: 40px;
         border-radius: 50%;
-        color: #FFFFFF;
+        color: black;
         transition: all .5s ease;
     }
 

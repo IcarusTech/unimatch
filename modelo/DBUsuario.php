@@ -23,6 +23,7 @@ class DBusuario
     {
         $this->conexion = new mysqli($this->dbhost, $this->dbuser, $this->dbpassword, $this->dbname);
         $this->conexion->select_db($this->dbname);
+        $this->conexion->query("SET NAMES 'utf8'");
         if (!$this->conexion) {
             die("Error de conexión :" . mysqli_connect_error());
         }

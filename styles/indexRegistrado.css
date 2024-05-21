@@ -1,15 +1,11 @@
 body {
-  background: rgb(0, 0, 0);
-  background: -moz-linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(247, 55, 71, 1) 45%, rgba(247, 55, 71, 1) 60%, rgba(0, 0, 0, 1) 100%);
-  background: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(247, 55, 71, 1) 45%, rgba(247, 55, 71, 1) 60%, rgba(0, 0, 0, 1) 100%);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(247, 55, 71, 1) 45%, rgba(247, 55, 71, 1) 60%, rgba(0, 0, 0, 1) 100%);
+    background-color: #ffffff;
 }
 
 header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    border: 2px solid white;
 }
 
 header .toggle {
@@ -24,13 +20,39 @@ header .perfil {
     order: 2;
 }
 
+aside {
+    float: left;
+}
+
 aside .menuLateral {
+
     display: none;
 }
-section .persona{
+
+section {
+    padding: 5px;
+    width: calc(90vw);
+    /* ancho del section elemento será el 100% de la pantalla menos el ancho del menu lateral*/
+    float: right;
     border: 2px solid white;
-    width: 200px;
-    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* envolver elementos en varias líneas */
+}
+
+section .persona {
+    border-radius: 5%;
+    background: rgb(238, 174, 202);
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(233, 56, 59, 1) 100%);
+    padding: 10px;
+    border: 2px solid white;
+    overflow: hidden;
+    margin: 5px;
+}
+
+section .persona #datos {
+    text-align: center;
 }
 
 @media (min-width: 650px) {
@@ -41,13 +63,14 @@ section .persona{
 
     aside .menuLateral {
         display: block;
-        border: 2px solid white;
+        border-radius: 5px;
+        border: 2px solid rgb(0, 0, 0);
         height: 600px;
         display: flex;
         justify-content: center;
         align-items: center;
         width: 200px;
-      
+
     }
 
     aside .menuLateral ul {
@@ -62,7 +85,7 @@ section .persona{
     }
 
     aside .menuLateral ul li a {
-        color: #ffffff;
+        color: #000000;
         font-weight: 500;
         padding: 5px 5px;
         display: block;
@@ -82,5 +105,8 @@ section .persona{
         width: 40px;
         text-align: center;
 
+    }
+    section{
+        width: calc(100vw - 250px); 
     }
 }

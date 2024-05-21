@@ -83,6 +83,7 @@
         width: 40px;
         top: 20px;
         left: 25px;
+        margin-left: 10px;
         z-index: 10;
         cursor: pointer;
         border-radius: 3px;
@@ -153,7 +154,7 @@
     @media (max-width: 650px) {
     
         .slide {
-            width: 30%;
+            width: 40%;
             /* Ancho completo */
             display: flex;
             flex-direction: column;
@@ -166,7 +167,7 @@
         }
 
         .slide ul li {
-            width: 100%;
+            width:fit-content;
             /* Ancho completo de cada elemento de la lista */
             text-align: center;
             /* Centra horizontalmente el texto */

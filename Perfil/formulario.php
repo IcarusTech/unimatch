@@ -1,70 +1,72 @@
 <?php
 $carpetaPerfil = "../datosRegistros";
 error_reporting(0);
-// 1º página
-$nombre = $_POST['nombre'];
-$apellido = $_POST['apellido'];
-$fechaNacimiento = $_POST['fechaNacimiento'];
-// 2º página
-$curso = $_POST['curso'];
-$genero = $_POST['genero'];
-$colorPelo = $_POST['colorPelo'];
-// 3º página
-$colorOjos = $_POST['colorOjos'];
-$estiloMusica = $_POST['opcionMusica'];
-$fumador = $_POST['fuma'];
-// 4º página
-$personalidad = $_POST['personalidad'];
-$tipoAmistad = $_POST['amistad_deseada'];
-$planes = $_POST['planes'];
-// 5º página
-$hobbie = $_POST['hobbie'];
-$instagram = $_POST['instagram'];
-// Apartado de la definicion personal (en tres palabras)
-$definicion1 = $_POST['definicion1'];
-$definicion2 = $_POST['definicion2'];
-$definicion3 = $_POST['definicion3'];
-$definiconTotal = "";
-$definiconTotal .= $definicion1;
-$definiconTotal .= $definicion2;
-$definiconTotal .= $definicion3;
 //---------------------------------------------------------------------------------
-session_start();//Iniciar una sesión
+session_start(); //Iniciar una sesión
 $_SESSION['usuario'] = $_GET['usuario'];
-require_once ("../modelo/DBperfil.php");
+echo ($_GET['usuario']);
+require_once("../modelo/DBperfil.php");
 $id_usuario = $_GET['id_usuario'];
 if (!isset($_SESSION['usuario'])) {
-    //Si no se ha iniciado sesion previamente,el código nos redirigirá al login para iniciar sesión
+    //Si no se ha iniciado sesion previamente, el código nos redirigirá al login para iniciar sesión
     header("Location: ../inicioSesionForm/inicioSesion.php");
-    $conexion = new \modelo\DBperfil();
-    $conexion->create($nombre, $apellido, $fechaNacimiento, $curso, $genero, $colorPelo, $colorOjos, $estiloMusica, $fumador, $personalidad, $tipoAmistad, $planes, $hobbie, $definiconTotal, $instagram, $id_usuario);
-
     exit();
 }
+else if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
+    echo ("el nombre esta puesto : ").$_POST['nombre'];
+    // 1º página
+    $nombre = $_POST['nombre'];
+    $apellido = $_POST['apellido'];
+    $fechaNacimiento = $_POST['fechaNacimiento'];
+    // 2º página
+    $curso = $_POST['curso'];
+    $genero = $_POST['genero'];
+    $colorPelo = $_POST['colorPelo'];
+    // 3º página
+    $colorOjos = $_POST['colorOjos'];
+    $estiloMusica = $_POST['opcionMusica'];
+    $fumador = $_POST['fuma'];
+    // 4º página
+    $personalidad = $_POST['personalidad'];
+    $tipoAmistad = $_POST['amistad_deseada'];
+    $planes = $_POST['planes'];
+    // 5º página
+    $hobbie = $_POST['hobbie'];
+    $instagram = $_POST['instagram'];
+    // Apartado de la definicion personal (en tres palabras)
+    $definicion1 = $_POST['definicion1'];
+    $definicion2 = $_POST['definicion2'];
+    $definicion3 = $_POST['definicion3'];
+    $definicionTotal = "";
+    $definicionTotal .= $definicion1;
+    $definicionTotal .= $definicion2;
+    $definicionTotal .= $definicion3;
+    $datos_del_usuario = array(
+        $nombre,
+        $apellido,
+        $fechaNacimiento,
+        $curso,
+        $genero,
+        $colorPelo,
+        $colorOjos,
+        $estiloMusica,
+        $fumador,
+        $personalidad,
+        $tipoAmistad,
+        $planes,
+        $hobbie,
+        $instagram,
+        $definicion1,
+        $definicion2,
+        $definicion3
+    );
 
-$datos_del_usuario = array(
-    $nombre,
-    $apellido,
-    $fechaNacimiento,
-    $curso,
-    $genero,
-    $colorPelo,
-    $colorOjos,
-    $estiloMusica,
-    $fumador,
-    $personalidad,
-    $tipoAmistad,
-    $planes,
-    $hobbie,
-    $instagram,
-    $definicion1,
-    $definicion2,
-    $definicion3
-);
-
-$json = json_encode($datos_del_usuario, JSON_PRETTY_PRINT);
-$ruta_json = $carpetaPerfil . "/json" . date('YmdHis') . '.json';
-file_put_contents($ruta_json, $json, FILE_APPEND);
+    $json = json_encode($datos_del_usuario, JSON_PRETTY_PRINT);
+    $ruta_json = $carpetaPerfil . "/json" . date('YmdHis') . '.json';
+    file_put_contents($ruta_json, $json, FILE_APPEND);
+    $conexion = new \modelo\DBperfil();
+    $conexion->create($nombre, $apellido, $fechaNacimiento, $curso, $genero, $colorPelo, $colorOjos, $estiloMusica, $fumador, $personalidad, $tipoAmistad, $planes, $hobbie, $definicionTotal, $instagram, $id_usuario);
+}
 
 ?>
 <!DOCTYPE html>
@@ -133,7 +135,7 @@ file_put_contents($ruta_json, $json, FILE_APPEND);
             </div>
         </div>
         <div class="form-outer">
-            <form action="../indexRegistrado.php" method="POST" id="formulario" enctype="multipart/form-data">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" id="formulario" enctype="multipart/form-data">
                 <!-- 1º PAGE -->
                 <!-- 
                     Nombre
@@ -144,20 +146,17 @@ file_put_contents($ruta_json, $json, FILE_APPEND);
 
                     <div class="field">
                         <label for="input-nombre">Nombre</label>
-                        <input type="text" name="nombre" id="input-nombre" placeholder="Pon tu nombre aquí" value="afb"
-                            maxlength="50" required>
+                        <input type="text" name="nombre" id="input-nombre" placeholder="Pon tu nombre aquí" value="afb" maxlength="50" required>
                         <p id="error-nombre" class="error"></p>
                     </div>
                     <div class="field">
                         <label for="input-apellido">Apellido</label>
-                        <input type="text" name="apellido" id="input-apellido" placeholder="Pon tu apellido aquí"
-                            maxlength="50" value="vsf" required>
+                        <input type="text" name="apellido" id="input-apellido" placeholder="Pon tu apellido aquí" maxlength="50" value="vsf" required>
                         <p id="error-apellido" class="error"></p>
                     </div>
                     <div class="field">
                         <label for="input-nacimiento">Fecha de nacimiento</label>
-                        <input type="date" name="fechaNacimiento" id="input-nacimiento" min="1970-01-01"
-                            value="2004-02-02">
+                        <input type="date" name="fechaNacimiento" id="input-nacimiento" min="1970-01-01" value="2004-02-02">
                         <p id="error-date" class="error"></p>
                     </div>
                     <div class="btns field">
@@ -187,7 +186,7 @@ file_put_contents($ruta_json, $json, FILE_APPEND);
                         </select>
                     </div>
                     <div class="field">
-                        <label for="Genero">Género</label>
+                        <label for="sexo">Género</label>
                         <select name="genero" id="sexo">
                             <option value="M">Masculino</option>
                             <option value="F">Femenino</option>
@@ -326,7 +325,7 @@ file_put_contents($ruta_json, $json, FILE_APPEND);
                         </div>
                     </div>
                     <div class="field">
-                        <label for="amistad-deseada">Tipo de amistad</label>
+                        <label for="amistad">Tipo de amistad</label>
                         <select name="amistad_deseada" id="amistad">
                             <option value="lo-que-surja">Lo que surja</option>
                             <option value="mejor-amigo">Mejor amigo/a</option>
@@ -375,18 +374,17 @@ file_put_contents($ruta_json, $json, FILE_APPEND);
                         </select>
                     </div>
                     <div class="field">
-                        <label>Definite con tres palabras</label>
+                        <label >Definite con tres palabras</label>
                         <div class="definicion">
-                            <input type="text" name="definicion1" id="input-definicion1" required>
-                            <input type="text" name="definicion2" id="input-definicion2" required>
-                            <input type="text" name="definicion3" id="input-definicion3" required>
+                            <input type="text" name="definicion1" id="input-definicion1 def" required>
+                            <input type="text" name="definicion2" id="input-definicion2 def" required>
+                            <input type="text" name="definicion3" id="input-definicion3 def" required>
                         </div>
                         <p id="error-definicion" class="error"></p>
                     </div>
                     <div class="field">
                         <label for="input-instagram">Instagram</label>
-                        <input type="text" name="instagram" id="input-instagram"
-                            placeholder="Pon tu instagram (opcional)" maxlength="50">
+                        <input type="text" name="instagram" id="input-instagram" placeholder="Pon tu instagram (opcional)" maxlength="50">
 
                     </div>
                     <div class="btns field">

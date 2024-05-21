@@ -1,6 +1,6 @@
 <?php
 require_once("../modelo/DBusuario.php");
-//error_reporting(0); //Funcion para ocultar las advertencias del programa
+error_reporting(0); //Funcion para ocultar las advertencias del programa
 $aceptarDocumentos = isset($_POST['aceptarDocumentos']);
 
 if (isset($_POST['inputCorreo']) && isset($_POST['inputPassword']) && $aceptarDocumentos) { //Commprobamos que los datos estan escritos
@@ -48,7 +48,7 @@ if (isset($_POST['inputCorreo']) && isset($_POST['inputPassword']) && $aceptarDo
 
             <div class="checkbox">
                 <label class="container" for="aceptar">
-                    <input id="aceptar" type="checkbox" name="aceptarDocumentos">
+                    <input id="aceptar" type="checkbox" name="aceptarDocumentos" checked="" >
                     <div class="checkmark"></div>
                 </label>
                 <label>Acepto las condiciones</label>

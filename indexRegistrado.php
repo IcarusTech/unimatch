@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 session_start();
 if (!isset($_SESSION['usuario'])) {
     //Si no se ha iniciado sesion previamente,el código nos redirigirá al login para iniciar sesión
@@ -6,7 +7,7 @@ if (!isset($_SESSION['usuario'])) {
     exit();
 }
 //-----------------
-$variable_php = 'valor'; 
+$variable_php = 'valor';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,11 +19,13 @@ $variable_php = 'valor';
     <link rel="stylesheet" href="./styles/indexRegistrado.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css?v=<?php echo time(); ?>">
     <script src="./logicaGeneral/llegadaDatosPerfiles.js?v=<?php echo time(); ?>" defer></script>
-    <script src="../imprimirPerfiles.js?v=<?php echo time(); ?>" defer></script>"></script>
+    <script src="../imprimirPerfiles.js?v=<?php echo time(); ?>" defer></script>
+    </script>
 </head>
 
 <body>
     <header>
+        <!-- include con el menu desplegable para movil (visible solo en movil) -->
         <?php
         include "./elementos/barraLateral.php";
         ?>
@@ -48,14 +51,34 @@ $variable_php = 'valor';
     </aside>
     <section>
         <div class="persona">
-         <div class="imagen"></div>
-         <div class="datos" id="datos"></div>
+            <div class="imagen"><img src="./avatares/img/HpeloCastañoOjosAzules.png" alt=""></div>
+            <div class="datos" id="datos">
+                <h3>Datos</h3>
+            </div>
+        </div>
+        <div class="persona">
+            <div class="imagen"><img src="./avatares/img/HpeloCastañoOjosVerdes.png" alt=""></div>
+            <div class="datos" id="datos">
+                <h3>Datos</h3>
+            </div>
+        </div>
+        <div class="persona">
+            <div class="imagen"><img src="./avatares/img/MpeloCastañoOjosAzules.png" alt=""></div>
+            <div class="datos" id="datos">
+                <h3>Datos</h3>
+            </div>
+        </div>
+        <div class="persona">
+            <div class="imagen"><img src="./avatares/img/MpeloPelirojoOjosAzules.png" alt=""></div>
+            <div class="datos" id="datos">
+                <h3>Datos</h3>
+            </div>
         </div>
     </section>
 
     <?php
 
-    include "./elementos/footer.php";
+    include "./elementos/footerBlanco.php";
 
     ?>
 

@@ -64,7 +64,15 @@ input::placeholder {
     font-weight: 600;
     text-decoration: none;
 }
-
+.enlaceInicio{
+    text-align: center;
+}
+.enlaceInicio a{
+    color: #8db276;
+    font-size: larger;
+    font-weight: 600;
+    text-decoration: none;
+}
 .btn {
     font-size: 16px;
     color: #FFFFFF;
