@@ -57,20 +57,25 @@ section .persona #datos {
 section .persona  .botones{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    justify-content: center;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
     width: 100%;
-    background-color: #fff;
     border-radius: 5px;
+    gap: 10px;
 }
 
 .perfil{
+    text-align: center;
     
 }
 
 .ver-perfil{
     width: 120px;
-    
+    height: 30px;
+    background-color: rgb(251, 108, 225);
+    color: white;
+    border: 1px black solid;
+    border-radius: 15px;
 }
 
 @media (min-width: 650px) {
