@@ -56,6 +56,7 @@ $variable_php = 'valor';
                 <h3>Datos</h3>
             </div>
             <div class="botones">
+                <div class="perfil"><button class="ver-perfil">Ver perfil</button></div>
                 <?php
                 include "./elementos/btnFavorito.php";
                 ?>
