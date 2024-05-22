@@ -1,12 +1,12 @@
 {
     "nombre": "juanito",
     "apellido": "huevin",
-    "fecha de nacimiento": "2004-10-15",
+    "fecha de nacimiento": "2004-10-14",
     "curso": "Desarrollo-de-aplicaciones-multiplataforma",
     "genero": "O",
     "color de pelo": "M",
     "color de ojos": "M",
-    "estilo de musica": "techno",
+    "estilo de musica": "hipHop",
     "fumador": "false",
     "tipo de personalidad": "I",
     "tipo de amistad buscada": "lo-que-surja",
@@ -15,5 +15,6 @@
     "instagram": "coquito69",
     "definicion 1": "pulpin",
     "definicion 2": "huevo",
-    "definicion 3": "melon"
+    "definicion 3": "zanahorio",
+    "id usuario relacionado": "25"
 }

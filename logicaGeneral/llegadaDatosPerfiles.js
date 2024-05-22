@@ -1,16 +1,12 @@
-function enviarVariable() {
-    const variable_js = 'valor'; // valor que deseas enviar
-    fetch('../unimatch/indexRegistrado.php', {
-        method: 'POST',
-        body: JSON.stringify({ variable_php: variable_js }),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-    .then(response => response.json())
-    .then(data => function(){
-        console.log("Funciona función");
-        console.log(data);
-    });
-}
-console.log("Funciona enlace");
+console.log("Hola");
+document.addEventListener('DOMContentLoaded', recogerDatosPerfiles);
+function recogerDatosPerfiles() {
+    fetch("datosRegistros/datos.json")
+      .then(res => res.json())
+      .then(res => {
+        console.log(res);
+        console.log("Mostrar datos fetch");
+        mostrarInfo(res);
+      })
+      .catch(error => console.error("Ha habido un error al cargar los perfiles"+ error));
+  }

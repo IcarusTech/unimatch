@@ -6,17 +6,17 @@ session_start(); //Iniciar una sesión
 require_once("../modelo/DBperfil.php");
 
 
-    //Si no se ha iniciado sesion previamente, el código nos redirigirá al login para iniciar sesión
-    $id_usuario=$_GET['id_usuario'];
-    $_SESSION['usuario']=$_GET['usuario'];
-    $usuario=$_GET['usuario'];
+//Si no se ha iniciado sesion previamente, el código nos redirigirá al login para iniciar sesión
+$id_usuario = $_GET['id_usuario'];
+$_SESSION['usuario'] = $_GET['usuario'];
+$usuario = $_GET['usuario'];
 
- if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
-    echo ("el nombre esta puesto : ").$_POST['nombre'];
-    $id_usuarioForm=$_POST['id'];
-    $nombreUsuario=$_POST['usuario'];
-    echo ("el nombre del usuario esta puesto : ").$nombreUsuario;
-    echo ("el nombre id del usuario esta puesto : ").$id_usuarioForm;
+if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
+    echo ("el nombre esta puesto : ") . $_POST['nombre'];
+    $id_usuarioForm = $_POST['id'];
+    $nombreUsuario = $_POST['usuario'];
+    echo ("el nombre del usuario esta puesto : ") . $nombreUsuario;
+    echo ("el nombre id del usuario esta puesto : ") . $id_usuarioForm;
     // 1º página
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
@@ -42,31 +42,51 @@ require_once("../modelo/DBperfil.php");
     $definicion3 = $_POST['definicion3'];
     $definicionTotal = "";
     $definicionTotal .= $definicion1;
-    $definicionTotal .= "/".$definicion2;
-    $definicionTotal .= "/".$definicion3;
+    $definicionTotal .= "/" . $definicion2;
+    $definicionTotal .= "/" . $definicion3;
+
+    //-----------------------------------------------------
     $datos_del_usuario = array(
-        "nombre"=>$nombre,
-        "apellido"=>$apellido,
-        "fecha de nacimiento"=>$fechaNacimiento,
-        "curso"=>$curso,
-        "genero"=>$genero,
-        "color de pelo"=>$colorPelo,
-        "color de ojos"=>$colorOjos,
-        "estilo de musica"=>$estiloMusica,
-        "fumador"=>$fumador,
-        "tipo de personalidad"=>$personalidad,
-        "tipo de amistad buscada"=>$tipoAmistad,
-        "planes"=>$planes,
-        "hobbie"=>$hobbie,
-        "instagram"=>$instagram,
-        "definicion 1"=>$definicion1,
-        "definicion 2"=>$definicion2,
-        "definicion 3"=>$definicion3
+        "nombre" => $nombre,
+        "apellido" => $apellido,
+        "fecha de nacimiento" => $fechaNacimiento,
+        "curso" => $curso,
+        "genero" => $genero,
+        "color de pelo" => $colorPelo,
+        "color de ojos" => $colorOjos,
+        "estilo de musica" => $estiloMusica,
+        "fumador" => $fumador,
+        "tipo de personalidad" => $personalidad,
+        "tipo de amistad buscada" => $tipoAmistad,
+        "planes" => $planes,
+        "hobbie" => $hobbie,
+        "instagram" => $instagram,
+        "definicion 1" => $definicion1,
+        "definicion 2" => $definicion2,
+        "definicion 3" => $definicion3,
+        "id usuario relacionado" => $id_usuarioForm
     );
 
     $json = json_encode($datos_del_usuario, JSON_PRETTY_PRINT);
     $ruta_json = $carpetaPerfil . "/json" . date('YmdHis') . '.json';
     file_put_contents($ruta_json, $json, FILE_APPEND);
+    //--------------------------------------------------------
+    $file = '../datosRegistros/datos.json';
+    $current_data = file_get_contents($file);
+    $data_array = json_decode($current_data, true);
+
+    $new_object = array(
+
+        'id usuario asociado' => $id_usuarioForm,
+        'nombre del usuario' => $nombreUsuario,
+        "url" => $ruta_json
+
+    );
+
+    $data_array[] = $new_object;
+    $new_data_json = json_encode($data_array, JSON_PRETTY_PRINT);
+    file_put_contents($file, $new_data_json);
+    //----------------------------------------------------
     $conexion = new \modelo\DBperfil();
     $conexion->create($nombre, $apellido, $fechaNacimiento, $curso, $genero, $colorPelo, $colorOjos, $estiloMusica, $fumador, $personalidad, $tipoAmistad, $planes, $hobbie, $definicionTotal, $instagram, $id_usuarioForm);
     echo $nombre;
@@ -141,8 +161,8 @@ require_once("../modelo/DBperfil.php");
         <div class="form-outer">
             <form action="formulario.php" method="POST" id="formulario" enctype="multipart/form-data">
                 <div class="inputsEnlace">
-                <input type="text" id="nombreUsuario" name="usuario" value="<?php echo $usuario; ?>">
-                <input type="number" id="id_usuario" name="id" value="<?php echo $id_usuario; ?>">
+                    <input type="text" id="nombreUsuario" name="usuario" value="<?php echo $usuario; ?>">
+                    <input type="number" id="id_usuario" name="id" value="<?php echo $id_usuario; ?>">
                 </div>
                 <!-- 1º PAGE -->
                 <!-- 
@@ -382,7 +402,7 @@ require_once("../modelo/DBperfil.php");
                         </select>
                     </div>
                     <div class="field">
-                        <label >Definite con tres palabras</label>
+                        <label>Definite con tres palabras</label>
                         <div class="definicion">
                             <input type="text" name="definicion1" id="input-definicion1 def" required>
                             <input type="text" name="definicion2" id="input-definicion2 def" required>

@@ -1,19 +1,20 @@
 {
     "nombre": "paquito",
     "apellido": "chocolatero",
-    "fecha de nacimiento": "2003-03-22",
+    "fecha de nacimiento": "2002-03-12",
     "curso": "Desarrollo-de-aplicaciones-multiplataforma",
     "genero": "M",
     "color de pelo": "M",
-    "color de ojos": "M",
-    "estilo de musica": "rap",
+    "color de ojos": "V",
+    "estilo de musica": "techno",
     "fumador": "false",
     "tipo de personalidad": "E",
     "tipo de amistad buscada": "lo-que-surja",
-    "planes": "restaurantes",
-    "hobbie": "dormir",
+    "planes": "paseo",
+    "hobbie": "cocinar",
     "instagram": "makiDeSalmon36",
     "definicion 1": "peonza",
     "definicion 2": "planeta",
-    "definicion 3": "melon"
+    "definicion 3": "melon",
+    "id usuario relacionado": "24"
 }
