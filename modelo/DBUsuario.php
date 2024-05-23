@@ -3,7 +3,6 @@
 namespace modelo;
 
 use mysqli;
-use mysqli_result;
 
 class DBusuario
 {
@@ -13,35 +12,31 @@ class DBusuario
     private $dbname = "unimatch";
     private $table = "usuarios";
     private $conexion;
-    /**
-     * @param string $dbhost
-     * @param string $dbuser
-     * @param string $dbpassword
-     * @param string $dbname
-     */
+    
     public function __construct()
     {
         $this->conexion = new mysqli($this->dbhost, $this->dbuser, $this->dbpassword, $this->dbname);
         $this->conexion->select_db($this->dbname);
         $this->conexion->query("SET NAMES 'utf8'");
-        if (!$this->conexion) {
-            die("Error de conexión :" . mysqli_connect_error());
+        if ($this->conexion->connect_error) {
+            die("Error de conexión :" . $this->conexion->connect_error);
         }
     }
-    
 
     public function login($user, $password)
     {
-       $message="Usuario o contraseña incorrecto";
-        $query = mysqli_query($this->conexion, "SELECT * FROM $this->table WHERE nombre_usuario = '$user' AND contrasena ='$password'");
-        $num = mysqli_num_rows($query);
+        $message = "Usuario o contraseña incorrecto";
+        $query = $this->conexion->prepare("SELECT * FROM $this->table WHERE nombre_usuario = ? AND contrasena = ?");
+        $query->bind_param("ss", $user, $password);
+        $query->execute();
+        $result = $query->get_result();
+        $num = $result->num_rows;
         
         if ($num == 1) {
-            session_start();//iniciar sesion o continuarla
+            session_start(); //iniciar sesion o continuarla
             $_SESSION['usuario'] = $user; //El nombre de la sesión es igual al nombre del usuario
             header("location: ../indexRegistrado.php?usuario=$user"); //Lo redirigimos al index registrado
         } else {
-            // header("location: ../inicioSesionForm/inicioSesion.php");
             echo "<script>
             document.addEventListener('DOMContentLoaded', function() {
                 let correccion = document.getElementById('correccion');
@@ -52,42 +47,63 @@ class DBusuario
             </script>";
         }
     }
+
     public function create($correo, $password)
     {
-    
         $caracter = "@";
         $nombreUsuario = substr($correo, 0, strpos($correo, $caracter));
-        //Consulta con la BD
-        $insert = mysqli_query($this->conexion, "INSERT INTO $this->table (correo,nombre_usuario,contrasena) values ('$correo','$nombreUsuario','$password')");
-        $query = mysqli_query($this->conexion, "SELECT * FROM $this->table WHERE nombre_usuario = '$nombreUsuario' AND contrasena ='$password'");
-        $idUsuario = mysqli_query($this->conexion, "SELECT id_usuario FROM $this->table WHERE nombre_usuario = '$nombreUsuario' AND contrasena ='$password'");
-        //Comprobamos que se ha recuperado al menus un registro del usuario
-        $num = mysqli_num_rows($query);
-        if ($num == '1') {
-            session_start();//iniciar sesion o continuarla
-            $id_usuario = mysqli_fetch_row($idUsuario);
+        $insert = $this->conexion->prepare("INSERT INTO $this->table (correo, nombre_usuario, contrasena) VALUES (?, ?, ?)");
+        $insert->bind_param("sss", $correo, $nombreUsuario, $password);
+        $insert->execute();
+
+        $query = $this->conexion->prepare("SELECT * FROM $this->table WHERE nombre_usuario = ? AND contrasena = ?");
+        $query->bind_param("ss", $nombreUsuario, $password);
+        $query->execute();
+        $result = $query->get_result();
+        
+        $idUsuario = $this->conexion->prepare("SELECT id_usuario FROM $this->table WHERE nombre_usuario = ? AND contrasena = ?");
+        $idUsuario->bind_param("ss", $nombreUsuario, $password);
+        $idUsuario->execute();
+        $idUsuarioResult = $idUsuario->get_result();
+        
+        $num = $result->num_rows;
+        if ($num == 1) {
+            session_start(); //iniciar sesion o continuarla
+            $id_usuario = $idUsuarioResult->fetch_row();
             header("location: ../perfil/formulario.php?usuario=$nombreUsuario&id_usuario=$id_usuario[0]");
         } else {
             header("Location: form.php");
         }
     }
+
     public function delete($user, $password, $confirmacion)
     {
-       
-        $query = mysqli_query($this->conexion, "SELECT * FROM $this->table WHERE nombre_usuario = '$user' AND contrasena ='$password'");
-        //Comprobamos que se ha recuperado al menus un registro del usuario
-        $num = mysqli_num_rows($query);
+        $query = $this->conexion->prepare("SELECT * FROM $this->table WHERE nombre_usuario = ? AND contrasena = ?");
+        $query->bind_param("ss", $user, $password);
+        $query->execute();
+        $result = $query->get_result();
+        
+        $num = $result->num_rows;
         if ($num == 1 && $confirmacion) {
-            $delete = mysqli_query($this->conexion, "DELETE FROM $this->table WHERE nombre_usuario = '$user' AND contrasena ='$password'");
+            $delete = $this->conexion->prepare("DELETE FROM $this->table WHERE nombre_usuario = ? AND contrasena = ?");
+            $delete->bind_param("ss", $user, $password);
+            $delete->execute();
         }
     }
-    public function update($user, $confirmacion,$campo,$valor){
-       
-        $query = mysqli_query($this->conexion, "SELECT * FROM $this->table WHERE nombre_usuario = '$user'");
-        //Comprobamos que se ha recuperado al menus un registro del usuario
-        $num = mysqli_num_rows($query);
+
+    public function update($user, $confirmacion, $campo, $valor)
+    {
+        $query = $this->conexion->prepare("SELECT * FROM $this->table WHERE nombre_usuario = ?");
+        $query->bind_param("s", $user);
+        $query->execute();
+        $result = $query->get_result();
+        
+        $num = $result->num_rows;
         if ($num == 1 && $confirmacion) {
-            $update = mysqli_query($this->conexion, "UPDATE  $this->table SET $campo=$valor WHERE nombre_usuario = '$user'");
+            $update = $this->conexion->prepare("UPDATE $this->table SET $campo = ? WHERE nombre_usuario = ?");
+            $update->bind_param("ss", $valor, $user);
+            $update->execute();
         }
     }
 }
+?>
