@@ -1,11 +1,12 @@
 body {
     background-color: #ffffff;
 }
-
+/* INICIO DEL HEADER */
 header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-bottom: 10px;
 }
 
 header .toggle {
@@ -19,7 +20,12 @@ header .perfil {
     border: 4px solid #e11d48;
     order: 2;
 }
-
+header .perfil img{
+    width: 25px;
+    height: 22px;
+}
+/* FINAL DEL HEADER */
+/*  EMPIEZA EL MENÚ LATERAL PERMANENTE */
 aside {
     float: left;
 }
@@ -28,36 +34,41 @@ aside .menuLateral {
     display: none;
     
 }
+/* FINAL DEL MENÚ PERMANENTE */
 
+/* EMPIEZA LAS TARJETAS DE USUARIO */
 section {
     padding: 5px;
     width: calc(90vw);
     /* ancho del section elemento será el 100% de la pantalla menos el ancho del menu lateral*/
     float: right;
-    border: 2px solid white;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     /* envolver elementos en varias líneas */
 }
 
+
 section .persona {
     width: 200px;
     border-radius: 3%;
-    background: rgb(230, 206, 206);
-    box-shadow: 5px 5px 0px rgba(225, 59, 86, 0.627);
+    box-shadow: 0 0  10px rgb(210,217,225);
     padding: 10px;
-    border: 2px solid white;
     overflow: hidden;
     margin: 5px;
+    scale: 1.;
+    transition: 0.8s;
+}
+.persona:hover{
+    scale: 1.02;
+    transition: 0.8s;
 }
 
-section .persona #datos {
+section .persona .datos {
     text-align: left;
 }
-section .persona #datos ul {
+section .persona .datos ul {
     list-style: none;
-    font-size: large;
     line-height: 30px;
     margin-left: -20px;
     font-family: "Reef";
@@ -66,10 +77,10 @@ section .persona #datos ul {
     font-family: "Reef";
     src: url("../tipografias/Reef.ttf");
 }
-section .persona #datos ul .valor {
+section .persona .datos ul .valor {
     display: inline-block;
-    color: #e01919;
-    font-size: larger;
+    color: #424242;
+    
 }
 section .persona .imagen img{
     border-radius: 10px;
@@ -90,12 +101,13 @@ section .persona  .botones{
 }
 
 .btnPerfil{
-    width: 120px;
-    height: 40px;
-    background-color: rgb(234, 56, 56);
-    color: white;
-    border-radius: 5px;
-    font-size: 25px;
+    width: 100px;
+    height: 25px;
+    background-color: #fd5564; 
+    border: none;
+    color: black;
+    border-radius: 10px;
+    font-size: 15px;
 }
 
 @media (min-width: 650px) {
@@ -109,19 +121,18 @@ section .persona  .botones{
     }
     aside .menuLateral{
         display: block;
-        border-radius: 5px;
-        border: 2px solid rgb(0, 0, 0);
-        height: 600px;
+        border-radius: 15px;
+        height: 500px;
         display: flex;
+        box-shadow: 0 0  10px rgb(210,217,225); 
         justify-content: center;
         align-items: center;
         width: 100px;
-
     }
     
 
     aside .menuLateral ul {
-        line-height: 80px;
+        line-height: 50px;
         font-size: 25px;
         margin-left: -40px;
     }
@@ -129,6 +140,7 @@ section .persona  .botones{
     aside .menuLateral ul li {
         list-style: none;
         width: 100%;
+        margin-bottom: 5px;
     }
 
     aside .menuLateral ul li a {
@@ -145,7 +157,6 @@ section .persona  .botones{
     aside .menuLateral ul .opL:hover a {
         color: #fff;
         background-color: red;
-
     }
 
     aside .menuLateral ul li a i {
@@ -154,6 +165,6 @@ section .persona  .botones{
 
     }
     section{
-        width: calc(100vw - 250px); 
+        width: calc(100vw - 150px); 
     }
 }

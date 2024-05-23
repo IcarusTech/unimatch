@@ -23,8 +23,8 @@
     .heart-container {
   --heart-color: red;
   position: relative;
-  width: 50px;
-  height: 50px;
+  width: 25px;
+  height: 25px;
   transition: .3s;
 }
 
@@ -63,7 +63,7 @@
   display: none;
   stroke: var(--heart-color);
   fill: var(--heart-color);
-  stroke-width: 2px;
+  stroke-width: 2px;/* CAMBIAMOS EL GROSOR DEL DESTELLO DEL CORAZÓN */
 }
 
 .heart-container .checkbox:checked~.svg-container .svg-filled {
