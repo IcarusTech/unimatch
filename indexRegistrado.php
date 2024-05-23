@@ -19,6 +19,7 @@ $variable_php = 'valor';
     <link rel="stylesheet" href="./styles/indexRegistrado.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="./styles/scrollbar.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css?v=<?php echo time(); ?>">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./logicaGeneral/llegadaDatosPerfiles.js?v=<?php echo time(); ?>" defer></script>
     </script>
 </head>
@@ -69,24 +70,7 @@ $variable_php = 'valor';
                 ?>
             </div>
         </div>
-        <div class="persona">
-            <div class="imagen"><img src="./avatares/img/HpeloCastañoOjosVerdes.png" alt=""></div>
-            <div class="datos" id="datos">
-                <h3>Datos</h3>
-            </div>
-        </div>
-        <div class="persona">
-            <div class="imagen"><img src="./avatares/img/MpeloCastañoOjosAzules.png" alt=""></div>
-            <div class="datos" id="datos">
-                <h3>Datos</h3>
-            </div>
-        </div>
-        <div class="persona">
-            <div class="imagen"><img src="./avatares/img/MpeloPelirojoOjosAzules.png" alt=""></div>
-            <div class="datos" id="datos">
-                <h3>Datos</h3>
-            </div>
-        </div>
+        
     </section>
 
     <?php

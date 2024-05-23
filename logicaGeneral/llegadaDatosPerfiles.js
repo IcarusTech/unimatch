@@ -1,5 +1,5 @@
 //declaramos variables y constantes
-let resultadosPerfiles=document.getElementById('resultadosPerfiles');
+let resultadosPerfiles = document.getElementById('resultadosPerfiles');
 
 //Le decimos al sistema que al cargar ejecute automáticamente la funcion de abajo
 document.addEventListener('DOMContentLoaded', recogerDatosPerfiles);
@@ -22,9 +22,9 @@ function recogerDatosPerfiles() {
 //Esta funcion se encarga de recorrer el json obtenido en la aterior funcion
 // y hacer un fetch de la url de cada perfil dentro para obtener todos los campos de cada perfil
 function buscarDatosPerfiles(array) {
-  //Creamos un array de "promesas",cada promesa es un fech de cada objeto dentro del array
-    const promesas = array.map(obj => fetch("unimatch/"+obj.url) 
-    //Hacemos fetch de la url para obtener los datos requeridos
+    //Creamos un array de "promesas",cada promesa es un fech de cada objeto dentro del array
+    const promesas = array.map(obj => fetch("unimatch/" + obj.url)
+        //Hacemos fetch de la url para obtener los datos requeridos
         .then(res => res.json())
         .then(res => {
             return res;
@@ -34,9 +34,9 @@ function buscarDatosPerfiles(array) {
         }));
     //Mediante promise.all() esperamos a que todas las promesas esten resueltas (completadas)
     Promise.all(promesas)
-         //Cundo han cargado todos los datos le pasamos el array de promesas con todos los datos
+        //Cundo han cargado todos los datos le pasamos el array de promesas con todos los datos
         .then(resultados => {
-          //Mostramos los resultados por consola en la variable resultados (antes llamada promises)
+            //Mostramos los resultados por consola en la variable resultados (antes llamada promises)
             console.log('Todos los datos cargados:', resultados);
             generarPerfiles(resultados);
         })
@@ -44,24 +44,37 @@ function buscarDatosPerfiles(array) {
             console.error('Error al cargar todos los datos:', error);
         });
 }
-function generarPerfiles(resultados){
-    let textoRes;
-    for(let i=0;i<resultados.length;i++){
-        textoRes += "<div class='persona'>"
-        + "<div class='imagen'><img src='" + allPokemons[i].sprites.other['official-artwork'].front_default + "' alt='" + allPokemons[i].name + "'></div>"
-        + "<div class ='datos' id='cajaDatos'>"
-        +"<ul>"
-        +"<li><li>Nombre: <div class='valor'>'"+resultados[i].nombre+"'</div></li>"
-        +"<li>Curso: <div class='valor'>'"+resultados[i].curso+"'</div></li>"
-        +"<li>Amistad buscada:<br><div class='valor'>'"+resultados[i].tipo_de_amistad_buscada+"'</div></li>"
-        +"</ul>"
-        +"</div>"
-        +"<div class='botones'>"
-        +"<div class='perfil'><button class='btnPerfil' onclick='' >Ver perfil</button></div>"
-        +"<?php"
-        +"include './elementos/btnFavorito.php';"
-        +"?>"
-        +"</div>"
+function generarPerfiles(resultados) {
+    let textoRes = "";
+    for (let i = 0; i < resultados.length; i++) {
+        let curso = resultados[i].curso.replaceAll("-", " ");
+        let amistad = resultados[i].tipo_de_amistad_buscada.replaceAll("-", " ");
+        
+        console.log(resultados[i].ruta_img);
+        textoRes += ""
+            + "<div class='persona'>"
+            + "<div class='imagen'><img src='" + resultados[i].ruta_img + "' alt='" + resultados[i].nombre + "'></div>"
+            + "<div class ='datos' id='cajaDatos'>"
+            + "<ul>"
+            + "<li>Nombre: <div class='valor'>" + resultados[i].nombre + "</div></li>"
+            + "<li>Curso: <div class='valor'>" + curso + "</div></li>"
+            + "<li>Amistad buscada: <div class='valor'>" + amistad + "</div></li>"
+            + "</ul>"
+            + "</div>"
+            + "<div class='botones'>"
+            + "<div class='perfil'><button class='btnPerfil' onclick='' >Ver perfil</button></div>"
+            + "<div id='btnFavoritoContainer' class='btnFavorito'></div>"
+            + "</div>"
+            + "</div>";
+
+        // Cargar contenido del archivo PHP en el contenedor
+        $.get('./elementos/btnFavorito.php', function (data) {
+            $('.btnFavorito').html(data);
+        });
         //+ "<li><button id='ficha' onclick='mostrarFicha(" + allPokemons[i].id + ")'>Ver ficha</button></li></ul></div>";
     }
+
+    resultadosPerfiles.innerHTML += textoRes;
+
+
 }
