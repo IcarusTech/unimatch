@@ -49,22 +49,22 @@ if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
     $datos_del_usuario = array(
         "nombre" => $nombre,
         "apellido" => $apellido,
-        "fecha de nacimiento" => $fechaNacimiento,
+        "fecha_de_nacimiento" => $fechaNacimiento,
         "curso" => $curso,
         "genero" => $genero,
-        "color de pelo" => $colorPelo,
-        "color de ojos" => $colorOjos,
-        "estilo de musica" => $estiloMusica,
+        "color_de_pelo" => $colorPelo,
+        "color_de_ojos" => $colorOjos,
+        "estilo_de_musica" => $estiloMusica,
         "fumador" => $fumador,
-        "tipo de personalidad" => $personalidad,
-        "tipo de amistad buscada" => $tipoAmistad,
+        "tipo_de_personalidad" => $personalidad,
+        "tipo_de_amistad_buscada" => $tipoAmistad,
         "planes" => $planes,
         "hobbie" => $hobbie,
         "instagram" => $instagram,
-        "definicion 1" => $definicion1,
-        "definicion 2" => $definicion2,
-        "definicion 3" => $definicion3,
-        "id usuario relacionado" => $id_usuarioForm
+        "definicion_1" => $definicion1,
+        "definicion_2" => $definicion2,
+        "definicion_3" => $definicion3,
+        "id_usuario_relacionado" => $id_usuarioForm
     );
     // convierte los datos del usuario introducidos en el formulario en un json
     $json = json_encode($datos_del_usuario, JSON_PRETTY_PRINT);

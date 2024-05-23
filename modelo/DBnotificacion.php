@@ -18,15 +18,16 @@ class DBnotificacion{
        }
 
    }
-    
-   public function enviarNotificacionUsuarioNuevo( $id_remitente, $contenido){
+     //metodo por completar
+   public function enviarNotificacionUsuarioNuevo($id_receptor,$titulo, $contenido,$fecha){
 
-        $insertar = "INSERT INTO notificaciones (id_notificacion, id_remitente, contenido, fecha, id_usuario_receptor) VALUES ('$id_remitente', '$contenido')";
-
+        $insertar = "INSERT INTO notificaciones (titulo,contenido, fecha, id_usuario_receptor) VALUES ('$titulo','$contenido', '$fecha','$id_receptor')";
+       
         if (mysqli_query($this->conexion, $insertar)) {
-            echo "Has recibido una notificacion proveniente de 
-            <h1>$id_remitente<h1/>
+            echo "
+            <h1>$titulo</h1>
             <p>$contenido<p/>
+            <p>$fecha</p>
             ";
             exit();
         } else {

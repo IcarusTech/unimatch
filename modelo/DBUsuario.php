@@ -32,16 +32,17 @@ class DBusuario
 
     public function login($user, $password)
     {
-       
+       $message="Usuario o contraseña incorrecto";
         $query = mysqli_query($this->conexion, "SELECT * FROM $this->table WHERE nombre_usuario = '$user' AND contrasena ='$password'");
         $num = mysqli_num_rows($query);
-        echo $num;
+        
         if ($num == 1) {
             session_start();//iniciar sesion o continuarla
             $_SESSION['usuario'] = $user; //El nombre de la sesión es igual al nombre del usuario
             header("location: ../indexRegistrado.php?usuario=$user"); //Lo redirigimos al index registrado
         } else {
             // header("location: ../inicioSesionForm/inicioSesion.php");
+            echo "<script type='text/javascript'>alert('$message');</script>";
         }
     }
     public function create($correo, $password)

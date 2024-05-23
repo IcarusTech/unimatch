@@ -49,10 +49,10 @@ $variable_php = 'valor';
             </ul>
         </div>
     </aside>
-    <section>
+    <section id="resultadosPerfiles">
         <div class="persona">
             <div class="imagen"><img src="./avatares/img/HpeloCastañoOjosAzules.png" alt=""></div>
-            <div class="datos" id="datos">
+            <div class="datos" id="cajaDatos">
                 <ul>
                     <li>Nombre: <div class="valor">Marcos</div>
                     </li>

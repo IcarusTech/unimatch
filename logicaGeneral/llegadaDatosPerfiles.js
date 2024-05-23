@@ -1,3 +1,6 @@
+//declaramos variables y constantes
+let resultadosPerfiles=document.getElementById('resultadosPerfiles');
+
 //Le decimos al sistema que al cargar ejecute automáticamente la funcion de abajo
 document.addEventListener('DOMContentLoaded', recogerDatosPerfiles);
 
@@ -35,8 +38,30 @@ function buscarDatosPerfiles(array) {
         .then(resultados => {
           //Mostramos los resultados por consola en la variable resultados (antes llamada promises)
             console.log('Todos los datos cargados:', resultados);
+            generarPerfiles(resultados);
         })
         .catch(error => {
             console.error('Error al cargar todos los datos:', error);
         });
+}
+function generarPerfiles(resultados){
+    let textoRes;
+    for(let i=0;i<resultados.length;i++){
+        textoRes += "<div class='persona'>"
+        + "<div class='imagen'><img src='" + allPokemons[i].sprites.other['official-artwork'].front_default + "' alt='" + allPokemons[i].name + "'></div>"
+        + "<div class ='datos' id='cajaDatos'>"
+        +"<ul>"
+        +"<li><li>Nombre: <div class='valor'>'"+resultados[i].nombre+"'</div></li>"
+        +"<li>Curso: <div class='valor'>'"+resultados[i].curso+"'</div></li>"
+        +"<li>Amistad buscada:<br><div class='valor'>'"+resultados[i].tipo_de_amistad_buscada+"'</div></li>"
+        +"</ul>"
+        +"</div>"
+        +"<div class='botones'>"
+        +"<div class='perfil'><button class='btnPerfil' onclick='' >Ver perfil</button></div>"
+        +"<?php"
+        +"include './elementos/btnFavorito.php';"
+        +"?>"
+        +"</div>"
+        //+ "<li><button id='ficha' onclick='mostrarFicha(" + allPokemons[i].id + ")'>Ver ficha</button></li></ul></div>";
+    }
 }
