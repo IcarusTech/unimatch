@@ -154,7 +154,7 @@
     @media (max-width: 650px) {
     
         .slide {
-            width: 40%;
+            width: 30%;
             /* Ancho completo */
             display: flex;
             flex-direction: column;

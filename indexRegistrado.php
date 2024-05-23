@@ -37,15 +37,15 @@ $variable_php = 'valor';
         <div class="menuLateral">
             <ul>
                 <!-- <li><a href="#"><i class="fas fa-tv"></i>dashboard</a></li> -->
-                <li class="opL"><a href="#"><i class='fa-solid fa-house'></i>Inicio</a></li>
-                <li class="opL"><a href="#"><i class="far fa-user"></i>Perfil</a></li>
+                <li class="opL"><a href="#"><i class='fa-solid fa-house'></i></a></li>
+                <li class="opL"><a href="#"><i class="far fa-user"></i></a></li>
                 <!-- <li><a href="#"><i class="fab fa-gripfire"></i>trending</a></li> -->
-                <li class="opL"><a href="#"><i class="far fa-comments"></i>Foro</a></li>
+                <li class="opL"><a href="#"><i class="far fa-comments"></i></a></li>
                 <!-- <li><a href="#"><i class="far fa-folder"></i>file manager</a></li> -->
                 <!-- <li><a href="#"><i class="far fa-address-book"></i>portfolio</a></li> -->
-                <li class="opL"><a href="#"><i class="fas fa-heart"></i>Favoritos</a></li>
-                <li class="opL"><a href="#"><i class="fas fa-cogs"></i>Ajustes</a></li>
-                <li class="opL"><a href="./inicioSesionForm/cerrarSesion.php"><i class='fas fa-sign-out-alt'></i>Salir</a></li>
+                <li class="opL"><a href="#"><i class="fas fa-heart"></i></a></li>
+                <li class="opL"><a href="#"><i class="fas fa-cogs"></i></a></li>
+                <li class="opL"><a href="./inicioSesionForm/cerrarSesion.php"><i class='fas fa-sign-out-alt'></i></a></li>
             </ul>
         </div>
     </aside>
@@ -53,10 +53,17 @@ $variable_php = 'valor';
         <div class="persona">
             <div class="imagen"><img src="./avatares/img/HpeloCastañoOjosAzules.png" alt=""></div>
             <div class="datos" id="datos">
-                <h3>Datos</h3>
+                <ul>
+                    <li>Nombre: <div class="valor">Marcos</div>
+                    </li>
+                    <li>Curso: <div class="valor">DAM</div></li>
+                    <li>Amistad buscada:<br>
+                        <div class="valor">Lo que surja</div>
+                    </li>
+                </ul>
             </div>
             <div class="botones">
-                <div class="perfil"><button class="ver-perfil">Ver perfil</button></div>
+                <div class="perfil"><button class="btnPerfil">Ver perfil</button></div>
                 <?php
                 include "./elementos/btnFavorito.php";
                 ?>
