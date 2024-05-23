@@ -309,27 +309,27 @@ p {
 }
 
 @media (min-width:100px){
-  body {
+  /* body {
     background-image:url(../img/fondoFormMovil.png);
     background-size: cover;
-  }
+  } */
   
 }
 
 @media (min-width:450px){
-  body {
+  /* body {
     background-image:url(../img/fondoFormTablet.png);
     background-size: cover;
-  }
+  } */
   
 }
 
 @media (min-width:1000px){
-  body{
+  /* body{
     background-image:url(../img/fondoFormOrdenador.png);
     background-size: cover;
     background-repeat: no-repeat;
-  }
+  } */
   .container {
     width: 25%;
     height: 620px;

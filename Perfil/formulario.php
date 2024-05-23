@@ -1,4 +1,5 @@
 <?php
+error_reporting(0); //Funcion para ocultar las advertencias del programa
 $carpetaPerfil = "../datosRegistros";
 //---------------------------------------------------------------------------------
 session_start(); //Iniciar una sesión
@@ -12,6 +13,7 @@ $_SESSION['usuario'] = $_GET['usuario'];
 $usuario = $_GET['usuario'];
 
 if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
+
     echo ("el nombre esta puesto : ") . $_POST['nombre'];
     $id_usuarioForm = $_POST['id'];
     $nombreUsuario = $_POST['usuario'];
@@ -44,7 +46,8 @@ if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
     $definicionTotal .= $definicion1;
     $definicionTotal .= "/" . $definicion2;
     $definicionTotal .= "/" . $definicion3;
-
+    $conexion = new \modelo\DBperfil();
+    $img=$conexion->ponerImg($id_usuarioForm,$colorPelo,$colorOjos,$genero);
     //-----------------------------------------------------
     $datos_del_usuario = array(
         "nombre" => $nombre,
@@ -64,6 +67,7 @@ if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
         "definicion_1" => $definicion1,
         "definicion_2" => $definicion2,
         "definicion_3" => $definicion3,
+        "ruta_img"=>$img,
         "id_usuario_relacionado" => $id_usuarioForm
     );
     // convierte los datos del usuario introducidos en el formulario en un json
@@ -92,8 +96,7 @@ if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
     // mete el contenido en un archivo
     file_put_contents($file, $new_data_json);
     //----------------------------------------------------
-    $conexion = new \modelo\DBperfil();
-    $conexion->create($nombre, $apellido, $fechaNacimiento, $curso, $genero, $colorPelo, $colorOjos, $estiloMusica, $fumador, $personalidad, $tipoAmistad, $planes, $hobbie, $definicionTotal, $instagram, $id_usuarioForm);
+    $conexion->create($nombre, $apellido, $fechaNacimiento, $curso, $genero, $colorPelo, $colorOjos, $estiloMusica, $fumador, $personalidad, $tipoAmistad, $planes, $hobbie, $definicionTotal, $instagram,$img,$id_usuarioForm);
     echo $nombre;
 }
 
@@ -219,11 +222,10 @@ if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
                         </select>
                     </div>
                     <div class="field">
-                        <label for="sexo">Género</label>
+                        <label for="sexo">Sexo</label>
                         <select name="genero" id="sexo">
-                            <option value="M">Masculino</option>
-                            <option value="F">Femenino</option>
-                            <option value="O">Otro</option>
+                            <option value="H">Hombre</option>
+                            <option value="M">Mujer</option>
                         </select>
                     </div>
                     <div class="campoMultiple">

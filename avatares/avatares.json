@@ -42,6 +42,12 @@
         "color-pelo":"P"
     },
     {
+        "ruta":"img/HpeloPelirojoOjosAzules.png",
+        "sexo":"H",
+        "color-ojos":"A",
+        "color-pelo":"P"
+    },
+    {
         "ruta":"img/HpeloRubioOjosAzules.png",
         "sexo":"H",
         "color-ojos":"A",
