@@ -42,7 +42,14 @@ class DBusuario
             header("location: ../indexRegistrado.php?usuario=$user"); //Lo redirigimos al index registrado
         } else {
             // header("location: ../inicioSesionForm/inicioSesion.php");
-            echo "<script type='text/javascript'>alert('$message');</script>";
+            echo "<script>
+            document.addEventListener('DOMContentLoaded', function() {
+                let correccion = document.getElementById('correccion');
+                correccion.innerHTML = 'Usuario o contraseña incorrectos';
+                correccion.style.color = 'red';
+                correccion.style.borderRadius = '10px';
+            });
+            </script>";
         }
     }
     public function create($correo, $password)

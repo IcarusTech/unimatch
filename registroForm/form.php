@@ -24,6 +24,7 @@ if (isset($_POST['inputCorreo']) && isset($_POST['inputPassword']) && $aceptarDo
 </head>
 
 <body>
+    
 
     <form id="formRegistrar" action="form.php" method="post">
 

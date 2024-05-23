@@ -9,17 +9,6 @@ if (isset($_POST['nombre']) && isset($_POST['inputPassword'])) {
     $conexion->login($user, $password);
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-
     <!DOCTYPE html>
     <html lang="en">
 
@@ -31,10 +20,11 @@ if (isset($_POST['nombre']) && isset($_POST['inputPassword'])) {
     </head>
 
     <body>
-
+    
         <form action="inicioSesion.php" method="post">
 
             <h2>Inicio de sesion</h2>
+            <p id="correccion"></p>
 
             <div class="input-group">
                 <label for="nombre">Nombre de usuario</label>
@@ -56,6 +46,5 @@ if (isset($_POST['nombre']) && isset($_POST['inputPassword'])) {
 
     </html>
 
-</body>
 
-</html>
+
