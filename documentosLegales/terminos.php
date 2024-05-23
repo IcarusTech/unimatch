@@ -250,7 +250,7 @@
 
             <h2 class="subtitulo">SECTION 20: INFORMACIÓN DE CONTACTO</h2>
 
-            <p>Las preguntas sobre los Términos del servicio se deben enviar a correo electrónico corporativo.</p>
+            <p>Las preguntas sobre los Términos del servicio se deben enviar a <div class="correoCorporativo" >icarusTech.spain@gmail.com</div></p>
 
         </div>
     </div>

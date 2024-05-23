@@ -50,7 +50,7 @@ class DBperfil
         
         foreach ($data as $avatar){
            if($avatar['sexo']==$sexo && $avatar['color-ojos']==$colorOjos && $avatar['color-pelo']==$colorPelo){
-           $img="../avatares/".$avatar['ruta'];
+           $img="../unimatch/avatares/".$avatar['ruta'];
            }
         }
         

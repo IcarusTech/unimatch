@@ -34,3 +34,7 @@ a{
     text-decoration: underline;
     color: rgb(242, 58, 138);
 }
+.correoCorporativo{
+    display: inline-block;
+    color: rgb(225, 73, 73);
+}

@@ -52,11 +52,11 @@
 
             <div class="footer-links">
 
-                <h4>Algun enlace por la cara</h4>
+                <h4>Enlaces de interés</h4>
 
                 <ul>
-                    <li><a href="../documentosLegales/privacidad.php">Politica de privacidad</a></li>
-                    <li><a href="../documentosLegales/terminos.php">Terminos y condiciones</a></li>
+                    <li><a href="../unimatch/documentosLegales/privacidad.php"target="_blank">Politica de privacidad</a></li>
+                    <li><a href="../unimatch/documentosLegales/terminos.php"target="_blank">Terminos y condiciones</a></li>
                 </ul>
             </div>
 
