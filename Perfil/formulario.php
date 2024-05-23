@@ -66,15 +66,18 @@ if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
         "definicion 3" => $definicion3,
         "id usuario relacionado" => $id_usuarioForm
     );
-
+    // convierte los datos del usuario introducidos en el formulario en un json
     $json = json_encode($datos_del_usuario, JSON_PRETTY_PRINT);
     $ruta_json = $carpetaPerfil . "/json" . date('YmdHis') . '.json';
+    // pone ese contenido en la carpeta que se le indica
     file_put_contents($ruta_json, $json, FILE_APPEND);
     //--------------------------------------------------------
     $file = '../datosRegistros/datos.json';
+    // lee los datos del archivo json
     $current_data = file_get_contents($file);
+    // convierte el json en php
     $data_array = json_decode($current_data, true);
-
+    // array con datos del usuario
     $new_object = array(
 
         'id usuario asociado' => $id_usuarioForm,
@@ -82,9 +85,11 @@ if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
         "url" => $ruta_json
 
     );
-
+    // lo mete en una variable
     $data_array[] = $new_object;
+    // lo pasa a json
     $new_data_json = json_encode($data_array, JSON_PRETTY_PRINT);
+    // mete el contenido en un archivo
     file_put_contents($file, $new_data_json);
     //----------------------------------------------------
     $conexion = new \modelo\DBperfil();
