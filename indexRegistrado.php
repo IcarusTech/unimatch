@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+
 session_start();
 if (!isset($_SESSION['usuario'])) {
     //Si no se ha iniciado sesion previamente,el código nos redirigirá al login para iniciar sesión

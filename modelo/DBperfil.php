@@ -59,12 +59,14 @@ class DBperfil
         return $img;
     }
     public function editarFavoritos($nuevoIdFavorito,$id_propio){
+        echo "\n llega a la funcion editarFavoritos";
         $select=mysqli_query($this->conexion,"SELECT lista_favoritos FROM $this->table WHERE id_usuario =$id_propio");
         $row=mysqli_fetch_assoc($select);
         $antiguaListaFavoritos = $row['lista_favoritos'];
         $arraLista=explode(",", $antiguaListaFavoritos);
         $arraLista[]=$nuevoIdFavorito;
-        $favortiosActualizados = implode(",", $arraLista);
-        $update=mysqli_query($this->conexion,"UPDATE $this->table SET lista_favoritos=$favortiosActualizados WHERE id_usuario=$id_propio");
+        $favoritosActualizados = implode(",", $arraLista);
+        $update=mysqli_query($this->conexion,"UPDATE perfil SET lista_favoritos='$favoritosActualizados' WHERE id_usuario=$id_propio");
+
     }
 }

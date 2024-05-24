@@ -99,7 +99,8 @@ function obtenerId(idCogido) {
         type: "POST",
         //Especificamos en data las variable que queremos pasar por POST y cual es su valor
         data: {
-            idFavorito: idCogido
+            idFavorito: idCogido,
+            idPropio : idUsuario
         },
         success: function (response) {
             // Aquí puedes manejar la respuesta del servidor
