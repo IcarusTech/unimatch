@@ -211,13 +211,13 @@ if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
                     <div class="field">
                         <label for="curso">Curso</label>
                         <select name="curso" id="curso">
-                            <option value="Comercio-internacional">Comercio internacional</option>
-                            <option value="Marketing-y-publicidad">Márketing y publicidad</option>
-                            <option value="Administracion-y-finanzas">Administración y finanzas</option>
-                            <option value="Desarrollo-de-aplicaciones-multiplataforma">Desarrollo de aplicaciones
+                            <option value="Comercio">Comercio internacional</option>
+                            <option value="Marketing">Márketing y publicidad</option>
+                            <option value="AFI">Administración y finanzas</option>
+                            <option value="DAM">Desarrollo de aplicaciones
                                 multiplataforma</option>
-                            <option value="Desarrollo-de-aplicaciones-web">Desarrollo de aplicaciones web</option>
-                            <option value="Administración-de-sistemas-informáticos-en-red">Administración de Sistemas
+                            <option value="DAW">Desarrollo de aplicaciones web</option>
+                            <option value="ASIR">Administración de Sistemas
                                 Informáticos en Red</option>
                         </select>
                     </div>
