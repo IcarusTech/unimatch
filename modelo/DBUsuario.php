@@ -31,11 +31,16 @@ class DBusuario
         $query->execute();
         $result = $query->get_result();
         $num = $result->num_rows;
+        $idUsuario = $this->conexion->prepare("SELECT id_usuario FROM $this->table WHERE nombre_usuario = ? AND contrasena = ?");
+        $idUsuario->bind_param("ss", $user, $password);
+        $idUsuario->execute();
+        $idUsuarioResult = $idUsuario->get_result();
         
         if ($num == 1) {
             session_start(); //iniciar sesion o continuarla
+            $id_usuario = $idUsuarioResult->fetch_row();
             $_SESSION['usuario'] = $user; //El nombre de la sesión es igual al nombre del usuario
-            header("location: ../indexRegistrado.php?usuario=$user"); //Lo redirigimos al index registrado
+            header("location: ../indexRegistrado.php?usuario=$user&id_usuario=$id_usuario[0]"); //Lo redirigimos al index registrado
         } else {
             echo "<script>
             document.addEventListener('DOMContentLoaded', function() {

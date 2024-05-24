@@ -1,6 +1,10 @@
 //declaramos variables y constantes
 let resultadosPerfiles = document.getElementById('resultadosPerfiles');
+//----------------------------------------------------------------------------
 
+console.log(idUsuario);
+console.log(nombre);
+//----------------------------------------------------------------------------
 //Le decimos al sistema que al cargar ejecute automáticamente la funcion de abajo
 window.addEventListener('load', recogerDatosPerfiles);
 
@@ -49,7 +53,7 @@ function generarPerfiles(resultados) {
     for (let i = 0; i < resultados.length; i++) {
         let curso = resultados[i].curso.replaceAll("-", " ");
         let amistad = resultados[i].tipo_de_amistad_buscada.replaceAll("-", " ");
-        
+
         console.log(resultados[i].ruta_img);
         textoRes += ""
             + "<div class='persona'>"
@@ -63,13 +67,14 @@ function generarPerfiles(resultados) {
             + "</div>"
             + "<div class='botones'>"
             + "<div class='perfil'><button class='btnPerfil' onclick='' >Ver perfil</button></div>"
-            + "<div id='btnFavoritoContainer' class='btnFavorito'></div>"
+            + "<div id='btnFavoritoContainer' class='btnFavorito' onclick='obtenerId(" + resultados[i].id_usuario_relacionado + ")'></div>"
             + "</div>"
             + "</div>";
 
         // Cargar contenido del archivo PHP en el contenedor
         $.get('./elementos/btnFavorito.php', function (data) {
             $('.btnFavorito').html(data);
+
         });
         //+ "<li><button id='ficha' onclick='mostrarFicha(" + allPokemons[i].id + ")'>Ver ficha</button></li></ul></div>";
     }
@@ -77,4 +82,32 @@ function generarPerfiles(resultados) {
     resultadosPerfiles.innerHTML += textoRes;
 
 
+}
+// function recogerIdFavorito(id_usuarioFavorito) {
+//     console.log("El id del usuario seleccionado es:"+id_usuarioFavorito);
+//     window.location.href = "perfil/agregarFavorito.php?idFavorito=" + id_usuarioFavorito;
+// }
+
+function obtenerId(idCogido) {
+    console.log(idCogido);
+    //window.location.href = "perfil/agregarFavorito.php?idFavorito=" + idCogido;
+
+    $.ajax({  //Hacemos una petición ajax para enviar la id
+        //Especificamos la url a la que queremos enviar la variable
+        url: "perfil/agregarFavorito.php",
+        //Definimos el método por el que queremos enviarla
+        type: "POST",
+        //Especificamos en data las variable que queremos pasar por POST y cual es su valor
+        data: {
+            idFavorito: idCogido
+        },
+        success: function (response) {
+            // Aquí puedes manejar la respuesta del servidor
+            console.log(response);
+        },
+        error: function (xhr, status, error) {
+            // Aquí puedes manejar los errores de la solicitud AJAX
+            console.error(error);
+        }
+    });
 }
