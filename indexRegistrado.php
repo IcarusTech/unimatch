@@ -34,43 +34,29 @@ $variable_php = 'valor';
             <img src="img/iconoUser.png" alt="">
         </div>
     </header>
-    <aside>
-        <div class="menuLateral">
-            <ul>
-                <!-- <li><a href="#"><i class="fas fa-tv"></i>dashboard</a></li> -->
-                <li class="opL"><a href="#"><i class='fa-solid fa-house'></i></a></li>
-                <li class="opL"><a href="#"><i class="far fa-user"></i></a></li>
-                <!-- <li><a href="#"><i class="fab fa-gripfire"></i>trending</a></li> -->
-                <li class="opL"><a href="#"><i class="far fa-comments"></i></a></li>
-                <!-- <li><a href="#"><i class="far fa-folder"></i>file manager</a></li> -->
-                <!-- <li><a href="#"><i class="far fa-address-book"></i>portfolio</a></li> -->
-                <li class="opL"><a href="#"><i class="fas fa-heart"></i></a></li>
-                <li class="opL"><a href="#"><i class="fas fa-cogs"></i></a></li>
-                <li class="opL"><a href="./inicioSesionForm/cerrarSesion.php"><i class='fas fa-sign-out-alt'></i></a></li>
-            </ul>
-        </div>
-    </aside>
-    <section id="resultadosPerfiles">
-        <!-- <div class="persona">
-            <div class="imagen"><img src="./avatares/img/HpeloCastañoOjosAzules.png" alt=""></div>
-            <div class="datos" id="cajaDatos">
+    <main id="cuerpo">
+        <aside id="menuLat">
+            <div class="menuLateral">
                 <ul>
-                    <li>Nombre: <div class="valor">Marcos</div>
-                    </li>
-                    <li>Curso: <div class="valor">DAM</div></li>
-                    <li>Amistad buscada:<br>
-                        <div class="valor">Lo que surja</div>
-                    </li>
+                    <!-- <li><a href="#"><i class="fas fa-tv"></i>dashboard</a></li> -->
+                    <li class="opL"><a href="#"><i class='fa-solid fa-house'></i></a></li>
+                    <li class="opL"><a href="#"><i class="far fa-user"></i></a></li>
+                    <!-- <li><a href="#"><i class="fab fa-gripfire"></i>trending</a></li> -->
+                    <li class="opL"><a href="#"><i class="far fa-comments"></i></a></li>
+                    <!-- <li><a href="#"><i class="far fa-folder"></i>file manager</a></li> -->
+                    <!-- <li><a href="#"><i class="far fa-address-book"></i>portfolio</a></li> -->
+                    <li class="opL"><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li class="opL"><a href="#"><i class="fas fa-cogs"></i></a></li>
+                    <li class="opL"><a href="./inicioSesionForm/cerrarSesion.php"><i class='fas fa-sign-out-alt'></i></a></li>
                 </ul>
             </div>
-            <div class="botones">
-                <div class="perfil"><button class="btnPerfil">Ver perfil</button></div>
-                
-            </div>
-        </div> -->
-        
-    </section>
-
+        </aside>
+        <section id="resultadosPerfiles">
+            
+            
+        </section>
+    </main>
+    
     <?php
 
     include "./elementos/footerBlanco.php";

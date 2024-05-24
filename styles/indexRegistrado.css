@@ -24,7 +24,19 @@ header .perfil img{
     width: 25px;
     height: 22px;
 }
-/* FINAL DEL HEADER */
+/*  FINAL DEL HEADER */
+
+/*  EMPIEZA EL MAIN QUE CONTIENE EL ASIDE Y SECTION     */
+
+#cuerpo{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
 /*  EMPIEZA EL MENÚ LATERAL PERMANENTE */
 aside {
     float: left;
@@ -39,38 +51,50 @@ aside .menuLateral {
 /* EMPIEZA LAS TARJETAS DE USUARIO */
 section {
     padding: 5px;
-    width: calc(90vw);
     /* ancho del section elemento será el 100% de la pantalla menos el ancho del menu lateral*/
-    float: right;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 330px));
+    gap: 20px;
     /* envolver elementos en varias líneas */
 }
 
 
 section .persona {
-    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
     border-radius: 3%;
-    box-shadow: 0 0  10px rgb(210,217,225);
+    box-shadow: 0 0  10px rgb(140, 143, 146);
     padding: 10px;
+    margin: auto;
     overflow: hidden;
-    margin: 5px;
-    scale: 1.;
     transition: 0.8s;
+    margin-bottom: 20px;
 }
 .persona:hover{
     scale: 1.02;
     transition: 0.8s;
 }
 
+section .persona .imagen{
+    width: 90%;
+}
+
 section .persona .datos {
+    width: 90%;
     text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
 }
 section .persona .datos ul {
     list-style: none;
     line-height: 30px;
-    margin-left: -20px;
+    padding: 0;
     font-family: "Reef";
 }
 @font-face {
@@ -83,6 +107,7 @@ section .persona .datos ul .valor {
     
 }
 section .persona .imagen img{
+    width: 100%;
     border-radius: 10px;
 }
 section .persona  .botones{
