@@ -6,6 +6,10 @@ if (!isset($_SESSION['usuario'])) {
     header("Location: inicioSesionForm/inicioSesion.php");
     exit();
 }
+$id_usuario=$_GET['id_usuario'];
+$nombre=$_GET['usuario'];
+
+
 //-----------------
 $variable_php = 'valor';
 ?>
@@ -21,8 +25,12 @@ $variable_php = 'valor';
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css?v=<?php echo time(); ?>">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="./logicaGeneral/llegadaDatosPerfiles.js?v=<?php echo time(); ?>" defer></script>
+    <script>
+        const idUsuario = "<?php echo $id_usuario ?>";
+        const nombre = "<?php echo $nombre ?>";
     </script>
+    <script src="./logicaGeneral/llegadaDatosPerfiles.js?v=<?php echo time(); ?>" defer></script>
+    
 </head>
 
 <body>
