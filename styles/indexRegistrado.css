@@ -26,17 +26,6 @@ header .perfil img{
 }
 /*  FINAL DEL HEADER */
 
-/*  EMPIEZA EL MAIN QUE CONTIENE EL ASIDE Y SECTION     */
-
-#cuerpo{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-
 /*  EMPIEZA EL MENÚ LATERAL PERMANENTE */
 aside {
     float: left;
@@ -180,11 +169,11 @@ section .persona  .botones{
         border-radius: 10px;
     }
 
-    aside .menuLateral ul .opL:hover a {
-        color: #fff;
-        background-color: red;
+    aside .menuLateral ul .opL:hover i{
+        /* color: #fff;
+        background-color: red; */
+        filter: drop-shadow(0 0 0.85rem rgb(110, 111, 113));
     }
-
     aside .menuLateral ul li a i {
         width: 40px;
         text-align: center;
