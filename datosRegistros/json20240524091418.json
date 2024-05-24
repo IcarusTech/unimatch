@@ -1,0 +1,21 @@
+{
+    "nombre": "Carla",
+    "apellido": "Saez",
+    "fecha_de_nacimiento": "2005-03-24",
+    "curso": "Comercio-internacional",
+    "genero": "M",
+    "color_de_pelo": "R",
+    "color_de_ojos": "V",
+    "estilo_de_musica": "bachata",
+    "fumador": "false",
+    "tipo_de_personalidad": "E",
+    "tipo_de_amistad_buscada": "lo-que-surja",
+    "planes": "salirDeFiesta",
+    "hobbie": "bailar",
+    "instagram": "megaCarla69",
+    "definicion_1": "Divertida",
+    "definicion_2": "Maja",
+    "definicion_3": "Alocada",
+    "ruta_img": "..\/unimatch\/avatares\/img\/MpeloRubioOjosVerdes.png",
+    "id_usuario_relacionado": "14"
+}

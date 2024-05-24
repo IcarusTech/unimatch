@@ -51,7 +51,7 @@ $variable_php = 'valor';
         </div>
     </aside>
     <section id="resultadosPerfiles">
-        <div class="persona">
+        <!-- <div class="persona">
             <div class="imagen"><img src="./avatares/img/HpeloCastañoOjosAzules.png" alt=""></div>
             <div class="datos" id="cajaDatos">
                 <ul>
@@ -65,11 +65,9 @@ $variable_php = 'valor';
             </div>
             <div class="botones">
                 <div class="perfil"><button class="btnPerfil">Ver perfil</button></div>
-                <?php
-                include "./elementos/btnFavorito.php";
-                ?>
+                
             </div>
-        </div>
+        </div> -->
         
     </section>
 

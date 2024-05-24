@@ -2,7 +2,7 @@
 let resultadosPerfiles = document.getElementById('resultadosPerfiles');
 
 //Le decimos al sistema que al cargar ejecute automáticamente la funcion de abajo
-document.addEventListener('DOMContentLoaded', recogerDatosPerfiles);
+window.addEventListener('load', recogerDatosPerfiles);
 
 //Esta funcion se encarga de llamar por fetch a un archivo en la carpeta datosRegistros
 //para pasarlos tratarlos y llamar a la funcion buscarDatosPerfiles()

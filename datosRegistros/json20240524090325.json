@@ -1,0 +1,21 @@
+{
+    "nombre": "Paco",
+    "apellido": "Solana",
+    "fecha_de_nacimiento": "2003-04-22",
+    "curso": "Desarrollo-de-aplicaciones-multiplataforma",
+    "genero": "H",
+    "color_de_pelo": "M",
+    "color_de_ojos": "M",
+    "estilo_de_musica": "techno",
+    "fumador": "false",
+    "tipo_de_personalidad": "E",
+    "tipo_de_amistad_buscada": "lo-que-surja",
+    "planes": "senderismo",
+    "hobbie": "dormir",
+    "instagram": "gsas",
+    "definicion_1": "gracioso",
+    "definicion_2": "sgassd",
+    "definicion_3": "seafa",
+    "ruta_img": "..\/unimatch\/avatares\/img\/HpeloMorenoOjosMarrones.png",
+    "id_usuario_relacionado": "13"
+}
