@@ -1,3 +1,14 @@
+<?php 
+
+$id_usuario = $_GET['id_usuario'];
+
+require_once("../modelo/DBperfil.php");
+$conexion = new \modelo\DBperfil;
+$arrayFavoritos = $conexion->consultarFavoritos($id_usuario);
+echo $arrayFavoritos;
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,10 +17,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Favoritos</title>
     <link rel="stylesheet" href="../styles/indexRegistrado.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href="./styles/scrollbar.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../styles/scrollbar.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css?v=<?php echo time(); ?>">
+        <script>
+        const arrayFavoritos = "<?php echo $arrayFavoritos ?>";
+    </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="imprimirPerfiles.js?v=<?php echo time(); ?>" defer></script>
     
 </head>
 

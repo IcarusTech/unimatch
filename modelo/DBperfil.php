@@ -86,4 +86,14 @@ class DBperfil
         $nuevaListaFavoritos = implode(",", $antiguaListaFavoritos);
         $update = mysqli_query($this->conexion, "UPDATE perfil SET lista_favoritos='$nuevaListaFavoritos' WHERE id_usuario=$id_propio");
     }
+
+    public function consultarFavoritos($id_usuario){
+
+        $select = mysqli_query($this->conexion, "SELECT lista_favoritos FROM $this->table WHERE id_usuario =$id_usuario");
+        $row = mysqli_fetch_assoc($select);
+        $antiguaListaFavoritos = $row['lista_favoritos'];
+        $arrayLista = explode(",", $antiguaListaFavoritos);
+
+        return $antiguaListaFavoritos;
+    }
 }

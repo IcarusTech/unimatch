@@ -1,0 +1,1 @@
+console.log("ESta es mi lista de favoritos: "+ arrayFavoritos);
