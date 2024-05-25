@@ -17,7 +17,7 @@
             <li class="opL"><a href="#"><i class="far fa-comments"></i></a></li>
             <!-- <li><a href="#"><i class="far fa-folder"></i>file manager</a></li> -->
             <!-- <li><a href="#"><i class="far fa-address-book"></i>portfolio</a></li> -->
-            <li class="opL"><a href="#"><i class="fas fa-heart"></i></a></li>
+            <li class="opL"><a href="favoritos.php"><i class="fas fa-heart"></i></a></li>
             <li class="opL"><a href="#"><i class="fas fa-cogs"></i></a></li>
             <li class="opL"><a href="#"><i class='fas fa-sign-out-alt'></i></a></li>
         </ul>
