@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Favoritos</title>
-    <link rel="stylesheet" href="./styles/indexRegistrado.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../styles/indexRegistrado.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="./styles/scrollbar.css?v=<?php echo time(); ?>">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css?v=<?php echo time(); ?>">
@@ -17,10 +17,10 @@
     <header>
         <!-- include con el menu desplegable para movil (visible solo en movil) -->
         <?php
-        include "./elementos/barraLateral.php";
+        include "../elementos/barraLateral.php";
         ?>
         <div class="perfil">
-            <img src="img/iconoUser.png" alt="">
+            <img src="../img/iconoUser.png" alt="">
         </div>
     </header>
 
@@ -49,7 +49,7 @@
 
     <?php
 
-    include "./elementos/footerBlanco.php";
+    include "../elementos/footerBlanco.php";
 
     ?>
 
