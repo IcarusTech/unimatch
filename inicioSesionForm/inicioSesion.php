@@ -17,6 +17,7 @@ if (isset($_POST['nombre']) && isset($_POST['inputPassword'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link rel="stylesheet" href="styles.css?v=<?php echo time(); ?>">
+        <script src="logicaInicioSesion.js?v=<?php echo time(); ?>" defer></script>
     </head>
 
     <body>
@@ -30,8 +31,10 @@ if (isset($_POST['nombre']) && isset($_POST['inputPassword'])) {
                 <label for="nombre">Nombre de usuario</label>
                 <input type="text" name="nombre" id="name" placeholder="tu correo de nebrija sin el @alumnos...">
                 <label for="inputPassword">Contraseña</label>
+                <div class="inputPass">
                 <input type="password" name="inputPassword" id="password" placeholder="Introduce tu contraseña">
-
+                <img src="../img/eye-open.png" id="mostrarPassword">
+                </div>
                 <div class="form-txt">
                     <a href="../documentosLegales/privacidad.php">Politica de privacidad</a>
                     <a href="../documentosLegales/terminos.php">Terminos y condiciones</a>

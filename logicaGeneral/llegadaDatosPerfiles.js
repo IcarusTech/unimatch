@@ -51,64 +51,92 @@ function buscarDatosPerfiles(array) {
 function generarPerfiles(resultados) {
     let textoRes = "";
     for (let i = 0; i < resultados.length; i++) {
-        let curso = resultados[i].curso.replaceAll("-", " ");
-        let amistad = resultados[i].tipo_de_amistad_buscada.replaceAll("-", " ");
+        if (resultados[i].id_usuario_relacionado != idUsuario) {
 
-        console.log(resultados[i].ruta_img);
-        textoRes += ""
-            + "<div class='persona'>"
-            + "<div class='imagen'><img src='" + resultados[i].ruta_img + "' alt='" + resultados[i].nombre + "'></div>"
-            + "<div class ='datos' id='cajaDatos'>"
-            + "<ul>"
-            + "<li>Nombre: <div class='valor'>" + resultados[i].nombre + "</div></li>"
-            + "<li>Curso: <div class='valor'>" + curso + "</div></li>"
-            + "<li>Amistad buscada: <div class='valor'>" + amistad + "</div></li>"
-            + "</ul>"
-            + "</div>"
-            + "<div class='botones'>"
-            + "<div class='perfil'><button class='btnPerfil' onclick='' >Ver perfil</button></div>"
-            + "<div id='btnFavoritoContainer' class='btnFavorito' onclick='obtenerId(" + resultados[i].id_usuario_relacionado + ")'></div>"
-            + "</div>"
-            + "</div>";
 
-        // Cargar contenido del archivo PHP en el contenedor
-        $.get('./elementos/btnFavorito.php', function (data) {
-            $('.btnFavorito').html(data);
+            let curso = resultados[i].curso.replaceAll("-", " ");
+            let amistad = resultados[i].tipo_de_amistad_buscada.replaceAll("-", " ");
 
-        });
-        //+ "<li><button id='ficha' onclick='mostrarFicha(" + allPokemons[i].id + ")'>Ver ficha</button></li></ul></div>";
+            console.log(resultados[i].ruta_img);
+            textoRes += ""
+                + "<div class='persona'>"
+                + "<div class='imagen'><img src='" + resultados[i].ruta_img + "' alt='" + resultados[i].nombre + "'></div>"
+                + "<div class ='datos' id='cajaDatos'>"
+                + "<ul>"
+                + "<li>Nombre: <div class='valor'>" + resultados[i].nombre + "</div></li>"
+                + "<li>Curso: <div class='valor'>" + curso + "</div></li>"
+                + "<li>Amistad buscada: <div class='valor'>" + amistad + "</div></li>"
+                + "</ul>"
+                + "</div>"
+                + "<div class='botones'>"
+                + "<div class='perfil'><button class='btnPerfil' onclick='' >Ver perfil</button></div>"
+                + "<div id='btnFavoritoContainer' class='btnFavorito' onclick='obtenerId(" + resultados[i].id_usuario_relacionado + ")'></div>"
+                + "</div>"
+                + "</div>";
+
+            // Cargar contenido del archivo PHP en el contenedor
+            $.get('./elementos/btnFavorito.php', function (data) {
+                $('.btnFavorito').html(data);
+            });
+        }
     }
 
     resultadosPerfiles.innerHTML += textoRes;
 
 
 }
-// function recogerIdFavorito(id_usuarioFavorito) {
-//     console.log("El id del usuario seleccionado es:"+id_usuarioFavorito);
-//     window.location.href = "perfil/agregarFavorito.php?idFavorito=" + id_usuarioFavorito;
-// }
+/* function recogerIdFavorito(id_usuarioFavorito) {
+    console.log("El id del usuario seleccionado es:"+id_usuarioFavorito);
+    window.location.href = "perfil/agregarFavorito.php?idFavorito=" + id_usuarioFavorito;
+} */
 
 function obtenerId(idCogido) {
     console.log(idCogido);
     //window.location.href = "perfil/agregarFavorito.php?idFavorito=" + idCogido;
+    let heartContainer = document.querySelector('.heart-container');
 
-    $.ajax({  //Hacemos una petición ajax para enviar la id
-        //Especificamos la url a la que queremos enviar la variable
-        url: "perfil/agregarFavorito.php",
-        //Definimos el método por el que queremos enviarla
-        type: "POST",
-        //Especificamos en data las variable que queremos pasar por POST y cual es su valor
-        data: {
-            idFavorito: idCogido,
-            idPropio : idUsuario
-        },
-        success: function (response) {
-            // Aquí puedes manejar la respuesta del servidor
-            console.log(response);
-        },
-        error: function (xhr, status, error) {
-            // Aquí puedes manejar los errores de la solicitud AJAX
-            console.error(error);
-        }
-    });
+    // Obtener el input dentro del div por su clase
+    let inputFavorito = heartContainer.querySelector('.checkbox');
+    if (inputFavorito && inputFavorito.checked) {
+        $.ajax({  //Hacemos una petición ajax para enviar la id
+            //Especificamos la url a la que queremos enviar la variable
+            url: "perfil/agregarFavorito.php",
+            //Definimos el método por el que queremos enviarla
+            type: "POST",
+            //Especificamos en data las variable que queremos pasar por POST y cual es su valor
+            data: {
+                idFavorito: idCogido,
+                idPropio: idUsuario
+            },
+            success: function (response) {
+                // Aquí puedes manejar la respuesta del servidor
+                console.log(response);
+            },
+            error: function (xhr, status, error) {
+                // Aquí puedes manejar los errores de la solicitud AJAX
+                console.error(error);
+            }
+        });
+    }
+    else {
+        $.ajax({  //Hacemos una petición ajax para enviar la id
+            //Especificamos la url a la que queremos enviar la variable
+            url: "perfil/eliminarFavorito.php",
+            //Definimos el método por el que queremos enviarla
+            type: "POST",
+            //Especificamos en data las variable que queremos pasar por POST y cual es su valor
+            data: {
+                idFavorito: idCogido,
+                idPropio: idUsuario
+            },
+            success: function (response) {
+                // Aquí puedes manejar la respuesta del servidor
+                console.log(response);
+            },
+            error: function (xhr, status, error) {
+                // Aquí puedes manejar los errores de la solicitud AJAX
+                console.error(error);
+            }
+        });
+    }
 }
