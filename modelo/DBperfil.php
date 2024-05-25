@@ -29,7 +29,7 @@ class DBperfil
         $num = mysqli_num_rows($query);
         //$_SESSION['usuario'] = $nombre;
         if ($num == '1') {
-            
+
             header("location: ../inicioSesionForm/inicioSesion.php");
             session_destroy();
             exit();
@@ -39,7 +39,7 @@ class DBperfil
     }
     public function ponerImg($id_usuario, $colorPelo, $colorOjos, $sexo)
     {
-        $img="";
+        $img = "";
         // URL o ruta al archivo JSON
         $jsonFile = '../avatares/avatares.json';
 
@@ -49,27 +49,41 @@ class DBperfil
         // Decodificar el JSON a un array asociativo
         $data = json_decode($jsonData, true);
 
-        
-        foreach ($data as $avatar){
-           if($avatar['sexo']==$sexo && $avatar['color-ojos']==$colorOjos && $avatar['color-pelo']==$colorPelo){
-           $img="../unimatch/avatares/".$avatar['ruta'];
-           }
+
+        foreach ($data as $avatar) {
+            if ($avatar['sexo'] == $sexo && $avatar['color-ojos'] == $colorOjos && $avatar['color-pelo'] == $colorPelo) {
+                $img = "../unimatch/avatares/" . $avatar['ruta'];
+            }
         }
-        
+
         return $img;
     }
-    public function agregarFavoritos($nuevoIdFavorito,$id_propio){
+    public function agregarFavoritos($nuevoIdFavorito, $id_propio)
+    {
         echo "\n llega a la funcion editarFavoritos";
-        $select=mysqli_query($this->conexion,"SELECT lista_favoritos FROM $this->table WHERE id_usuario =$id_propio");
-        $row=mysqli_fetch_assoc($select);
+        $select = mysqli_query($this->conexion, "SELECT lista_favoritos FROM $this->table WHERE id_usuario =$id_propio");
+        $row = mysqli_fetch_assoc($select);
         $antiguaListaFavoritos = $row['lista_favoritos'];
-        $arraLista=explode(",", $antiguaListaFavoritos);
-        $arraLista[]=$nuevoIdFavorito;
+        $arraLista = explode(",", $antiguaListaFavoritos);
+        $arraLista[] = $nuevoIdFavorito;
         $favoritosActualizados = implode(",", $arraLista);
-        $update=mysqli_query($this->conexion,"UPDATE perfil SET lista_favoritos='$favoritosActualizados' WHERE id_usuario=$id_propio");
-
+        $update = mysqli_query($this->conexion, "UPDATE perfil SET lista_favoritos='$favoritosActualizados' WHERE id_usuario=$id_propio");
     }
-    public function eliminarFavorito(){
-        
+    public function eliminarFavorito($viejoIdFavorito, $id_propio)
+    {
+        echo "\n llega a la funcion editarFavoritos";
+        $select = mysqli_query($this->conexion, "SELECT lista_favoritos FROM $this->table WHERE id_usuario =$id_propio");
+        $row = mysqli_fetch_assoc($select);
+        $antiguaListaFavoritos = explode(",", $row['lista_favoritos']);
+
+        for ($i = 0; $i < count($antiguaListaFavoritos); $i++) {
+            if ($antiguaListaFavoritos[$i] == $viejoIdFavorito) {
+                array_splice($antiguaListaFavoritos, $i, 1); // Elimina el elemento en la posición $i
+                break; // Salir del bucle una vez que se encuentra y elimina el elemento
+            }
+        }
+
+        $nuevaListaFavoritos = implode(",", $antiguaListaFavoritos);
+        $update = mysqli_query($this->conexion, "UPDATE perfil SET lista_favoritos='$nuevaListaFavoritos' WHERE id_usuario=$id_propio");
     }
 }

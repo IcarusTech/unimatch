@@ -92,15 +92,16 @@ function generarPerfiles(resultados) {
 
 function obtenerId(idCogido) {
     console.log(idCogido);
-    //window.location.href = "perfil/agregarFavorito.php?idFavorito=" + idCogido;
     let heartContainer = document.querySelector('.heart-container');
 
     // Obtener el input dentro del div por su clase
     let inputFavorito = heartContainer.querySelector('.checkbox');
+    /*  heartContainer.forEach((button => {
+     })); */
     if (inputFavorito && inputFavorito.checked) {
         $.ajax({  //Hacemos una petición ajax para enviar la id
             //Especificamos la url a la que queremos enviar la variable
-            url: "perfil/agregarFavorito.php",
+            url: "favoritos/agregarFavorito.php",
             //Definimos el método por el que queremos enviarla
             type: "POST",
             //Especificamos en data las variable que queremos pasar por POST y cual es su valor
@@ -121,7 +122,7 @@ function obtenerId(idCogido) {
     else {
         $.ajax({  //Hacemos una petición ajax para enviar la id
             //Especificamos la url a la que queremos enviar la variable
-            url: "perfil/eliminarFavorito.php",
+            url: "favoritos/eliminarFavorito.php",
             //Definimos el método por el que queremos enviarla
             type: "POST",
             //Especificamos en data las variable que queremos pasar por POST y cual es su valor
