@@ -1,11 +1,11 @@
 <?php 
 
 $id_usuario = $_GET['id_usuario'];
+$nombreUsuario = $_GET['nombre'];
 
 require_once("../modelo/DBperfil.php");
 $conexion = new \modelo\DBperfil;
-$arrayFavoritos = $conexion->consultarFavoritos($id_usuario);
-echo $arrayFavoritos;
+$stringFavoritos = $conexion->consultarFavoritos($id_usuario);
 ?>
 
 
@@ -20,7 +20,7 @@ echo $arrayFavoritos;
     <link rel="stylesheet" href="../styles/scrollbar.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css?v=<?php echo time(); ?>">
         <script>
-        const arrayFavoritos = "<?php echo $arrayFavoritos ?>";
+        const stringFavoritos = "<?php echo $stringFavoritos ?>";
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="imprimirPerfiles.js?v=<?php echo time(); ?>" defer></script>
@@ -42,15 +42,15 @@ echo $arrayFavoritos;
         <div class="menuLateral">
             <ul>
                 <!-- <li><a href="#"><i class="fas fa-tv"></i>dashboard</a></li> -->
-                <li class="opL"><a href="#"><i class='fa-solid fa-house'></i></a></li>
+                <li class="opL"><a href="../indexRegistrado.php?id_usuario=<?php echo $id_usuario ?>&usuario=<?php echo $nombreUsuario ?>"><i class='fa-solid fa-house'></i></a></li>
                 <li class="opL"><a href="#"><i class="far fa-user"></i></a></li>
                 <!-- <li><a href="#"><i class="fab fa-gripfire"></i>trending</a></li> -->
                 <li class="opL"><a href="#"><i class="far fa-comments"></i></a></li>
                 <!-- <li><a href="#"><i class="far fa-folder"></i>file manager</a></li> -->
                 <!-- <li><a href="#"><i class="far fa-address-book"></i>portfolio</a></li> -->
-                <li class="opL"><a href="#"><i class="fas fa-heart"></i></a></li>
+                <li class="opL"><a href="favoritos.php?id_usuario=<?php echo $id_usuario ?>&nombre=<?php echo $nombreUsuario ?>"><i class="fas fa-heart"></i></a></li>
                 <li class="opL"><a href="#"><i class="fas fa-cogs"></i></a></li>
-                <li class="opL"><a href="./inicioSesionForm/cerrarSesion.php"><i class='fas fa-sign-out-alt'></i></a>
+                <li class="opL"><a href="../inicioSesionForm/cerrarSesion.php"><i class='fas fa-sign-out-alt'></i></a>
                 </li>
             </ul>
         </div>

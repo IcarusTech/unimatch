@@ -79,7 +79,7 @@ class DBperfil
         for ($i = 0; $i < count($antiguaListaFavoritos); $i++) {
             if ($antiguaListaFavoritos[$i] == $viejoIdFavorito) {
                 array_splice($antiguaListaFavoritos, $i, 1); // Elimina el elemento en la posición $i
-                break; // Salir del bucle una vez que se encuentra y elimina el elemento
+                
             }
         }
 
@@ -91,9 +91,8 @@ class DBperfil
 
         $select = mysqli_query($this->conexion, "SELECT lista_favoritos FROM $this->table WHERE id_usuario =$id_usuario");
         $row = mysqli_fetch_assoc($select);
-        $antiguaListaFavoritos = $row['lista_favoritos'];
-        $arrayLista = explode(",", $antiguaListaFavoritos);
+        $listaFavoritos = $row['lista_favoritos'];
 
-        return $antiguaListaFavoritos;
+        return $listaFavoritos;
     }
 }
