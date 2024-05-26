@@ -2,10 +2,9 @@
 
 $id_usuario = $_GET['id_usuario'];
 $nombreUsuario = $_GET['nombre'];
-
-require_once("../modelo/DBperfil.php");
-$conexion = new \modelo\DBperfil;
-$stringFavoritos = $conexion->consultarFavoritos($id_usuario);
+/* require_once("../modelo/DBnotificacion.php");
+$conexion = new \modelo\DBnotificacion;
+$conexion->enviarNotificacionUsuarioNuevo($id_usuario); */
 ?>
 
 
@@ -45,10 +44,10 @@ $stringFavoritos = $conexion->consultarFavoritos($id_usuario);
                 <li class="opL"><a href="../indexRegistrado.php?id_usuario=<?php echo $id_usuario ?>&usuario=<?php echo $nombreUsuario ?>"><i class='fa-solid fa-house'></i></a></li>
                 <li class="opL"><a href="#"><i class="far fa-user"></i></a></li>
                 <!-- <li><a href="#"><i class="fab fa-gripfire"></i>trending</a></li> -->
-                <li class="opL"><a href="../notificaciones/paginaNotificaciones.php?id_usuario=<?php echo $id_usuario ?>&nombre=<?php echo $nombreUsuario ?>"><i class="far fa-comments"></i></a></li>
+                <li class="opL"><a href="paginaNotificaciones.php?id_usuario=<?php echo $id_usuario ?>&nombre=<?php echo $nombreUsuario ?>"><i class="far fa-comments"></i></a></li>
                 <!-- <li><a href="#"><i class="far fa-folder"></i>file manager</a></li> -->
                 <!-- <li><a href="#"><i class="far fa-address-book"></i>portfolio</a></li> -->
-                <li class="opL"><a href="favoritos.php?id_usuario=<?php echo $id_usuario ?>&nombre=<?php echo $nombreUsuario ?>"><i class="fas fa-heart"></i></a></li>
+                <li class="opL"><a href="../favoritos/favoritos.php?id_usuario=<?php echo $id_usuario ?>&nombre=<?php echo $nombreUsuario ?>"><i class="fas fa-heart"></i></a></li>
                 <li class="opL"><a href="#"><i class="fas fa-cogs"></i></a></li>
                 <li class="opL"><a href="../inicioSesionForm/cerrarSesion.php"><i class='fas fa-sign-out-alt'></i></a>
                 </li>

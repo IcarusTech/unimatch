@@ -19,8 +19,10 @@ class DBnotificacion{
 
    }
      //metodo por completar
-   public function enviarNotificacionUsuarioNuevo($id_receptor,$titulo, $contenido,$fecha){
-
+   public function enviarNotificacionUsuarioNuevo($id_receptor){
+       $titulo="Bienvenido a nuestra comunidad";
+       $contenido="";
+       $fecha="";
         $insertar = "INSERT INTO notificaciones (titulo,contenido, fecha, id_usuario_receptor) VALUES ('$titulo','$contenido', '$fecha','$id_receptor')";
        
         if (mysqli_query($this->conexion, $insertar)) {
@@ -38,6 +40,3 @@ class DBnotificacion{
    }
 
 }
-
-
-?>

@@ -45,6 +45,9 @@ function generarPerfiles(resultados) {
     let textoRes = "";
 
     for (let i = 0; i < resultados.length; i++) {
+        //Comprobamos que el resultado temporal del bucle coincida con una de las posiciones del array
+        //,si es asi significa que es un perfil en favoritos y se imprimirá
+        
         if (arrayFavoritos.includes(resultados[i].id_usuario_relacionado)) {
 
             let curso = resultados[i].curso.replaceAll("-", " ");
