@@ -2,7 +2,6 @@
 
 $id_usuario = $_GET['id_usuario'];
 $nombreUsuario = $_GET['nombre'];
-
 require_once("../modelo/DBperfil.php");
 $conexion = new \modelo\DBperfil;
 $stringFavoritos = $conexion->consultarFavoritos($id_usuario);

@@ -2,9 +2,10 @@
 
 $id_usuario = $_GET['id_usuario'];
 $nombreUsuario = $_GET['nombre'];
-/* require_once("../modelo/DBnotificacion.php");
-$conexion = new \modelo\DBnotificacion;
-$conexion->enviarNotificacionUsuarioNuevo($id_usuario); */
+require_once("../modelo/DBnotificacion.php");
+$conexion = new DBnotificacion();
+$conexion->enviarNotificacionUsuarioNuevo($id_usuario);
+
 ?>
 
 
@@ -18,11 +19,9 @@ $conexion->enviarNotificacionUsuarioNuevo($id_usuario); */
     <link rel="stylesheet" href="../styles/indexRegistrado.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../styles/scrollbar.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css?v=<?php echo time(); ?>">
-        <script>
-        const stringFavoritos = "<?php echo $stringFavoritos ?>";
-    </script>
+        
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="imprimirPerfiles.js?v=<?php echo time(); ?>" defer></script>
+    
     
 </head>
 
