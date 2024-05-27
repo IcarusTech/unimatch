@@ -42,7 +42,7 @@
                     <a href="https://www.youtube.com/@IcarusTech-qh9fj" target="_blank" onclick>
                         <i class="fab fa-youtube"></i>
                     </a>
-                    <a href="https://github.com/orgs/IcarusTech/people" target="_blank" onclick>
+                    <a href="linktr.ee/unicovaguada" target="_blank" onclick>
                         <i class="fab fa-github"></i>
                     </a>
                 </div>
