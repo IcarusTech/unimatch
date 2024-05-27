@@ -35,13 +35,13 @@
 
                 <p class="escribenos">¡Escribenos!</p>
                 <div class="social-link">
-                    <a href="#" target="_blank" onclick>
+                    <a href="https://www.facebook.com/profile.php?id=61560461661300" target="_blank" onclick>
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="#" target="_blank" onclick>
+                    <a href="https://www.instagram.com/unimatch2/" target="_blank" onclick>
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="#" target="_blank" onclick>
+                    <a href="https://www.youtube.com/@IcarusTech-qh9fj" target="_blank" onclick>
                         <i class="fab fa-youtube"></i>
                     </a>
                     <a href="https://github.com/orgs/IcarusTech/people" target="_blank" onclick>
