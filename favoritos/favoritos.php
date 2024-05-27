@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $id_usuario = $_GET['id_usuario'];
 $nombreUsuario = $_GET['nombre'];
@@ -16,14 +16,17 @@ $stringFavoritos = $conexion->consultarFavoritos($id_usuario);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Favoritos</title>
     <link rel="stylesheet" href="../styles/indexRegistrado.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="campoMultiple.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../styles/scrollbar.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css?v=<?php echo time(); ?>">
-        <script>
+    <script>
         const stringFavoritos = "<?php echo $stringFavoritos ?>";
+        const id_usuario="<?php echo $id_usuario ?>";
+        const nombre="<?php echo $nombreUsuario ?>";
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="imprimirPerfiles.js?v=<?php echo time(); ?>" defer></script>
-    
+
 </head>
 
 <body>
@@ -36,6 +39,18 @@ $stringFavoritos = $conexion->consultarFavoritos($id_usuario);
             <img src="../img/iconoUser.png" alt="">
         </div>
     </header>
+    <div class="campoMultiple">
+        <div class="radio-inputs">
+            <label class="radio" id="labelIdioma">
+                <input id="inputFavo" type="radio" name="opcion" value="favoritos" checked="">
+                <span class="name">Favoritos</span>
+            </label>
+            <label class="radio" id="labelIdioma">
+                <input id="inputNoti" type="radio" name="opcion" value="notificaciones">
+                <span class="name">Notificaciones</span>
+            </label>
+        </div>
+    </div>
 
     <aside id="menuLat">
         <div class="menuLateral">
@@ -44,7 +59,7 @@ $stringFavoritos = $conexion->consultarFavoritos($id_usuario);
                 <li class="opL"><a href="../indexRegistrado.php?id_usuario=<?php echo $id_usuario ?>&usuario=<?php echo $nombreUsuario ?>"><i class='fa-solid fa-house'></i></a></li>
                 <li class="opL"><a href="#"><i class="far fa-user"></i></a></li>
                 <!-- <li><a href="#"><i class="fab fa-gripfire"></i>trending</a></li> -->
-                <li class="opL"><a href="../notificaciones/paginaNotificaciones.php?id_usuario=<?php echo $id_usuario ?>&nombre=<?php echo $nombreUsuario ?>"><i class="far fa-comments"></i></a></li>
+                <li class="opL"><a href="#"><i class="far fa-comments"></i></a></li>
                 <!-- <li><a href="#"><i class="far fa-folder"></i>file manager</a></li> -->
                 <!-- <li><a href="#"><i class="far fa-address-book"></i>portfolio</a></li> -->
                 <li class="opL"><a href="favoritos.php?id_usuario=<?php echo $id_usuario ?>&nombre=<?php echo $nombreUsuario ?>"><i class="fas fa-heart"></i></a></li>
@@ -55,7 +70,6 @@ $stringFavoritos = $conexion->consultarFavoritos($id_usuario);
         </div>
     </aside>
     <section id="resultadosPerfiles">
-
 
     </section>
 

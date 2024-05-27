@@ -1,9 +1,22 @@
 console.log("ESta es mi lista de favoritos: " + stringFavoritos);
 let arrayFavoritos = stringFavoritos.split(",");
 console.log(arrayFavoritos);
+console.log(nombre);
+console.log(id_usuario);
 //-----------------------------------------------------------
 window.addEventListener('load', recogerDatosPerfiles);
 let resultadosPerfiles = document.getElementById('resultadosPerfiles');
+
+let inputNoti= document.getElementById('inputNoti');
+
+inputNoti.addEventListener('click',mandarNoti);
+
+function mandarNoti(){
+    let urlNotificaciones = "../notificaciones/paginaNotificaciones.php?id_usuario=" + id_usuario + "&nombre=" + nombre;
+
+    // Redirige a la nueva URL
+    window.location.href = urlNotificaciones;
+}
 //Esta funcion se encarga de llamar por fetch a un archivo en la carpeta datosRegistros
 //para pasarlos tratarlos y llamar a la funcion buscarDatosPerfiles()
 function recogerDatosPerfiles() {
