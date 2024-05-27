@@ -1,5 +1,8 @@
 //declaramos variables y constantes
 let resultadosPerfiles = document.getElementById('resultadosPerfiles');
+console.log("ESta es mi lista de favoritos: " + stringFavoritos);
+let arrayFavoritos = stringFavoritos.split(",");
+console.log(arrayFavoritos);
 //----------------------------------------------------------------------------
 
 console.log(idUsuario);
@@ -51,7 +54,7 @@ function buscarDatosPerfiles(array) {
 function generarPerfiles(resultados) {
     let textoRes = "";
     for (let i = 0; i < resultados.length; i++) {
-        if (resultados[i].id_usuario_relacionado != idUsuario) {
+        if (resultados[i].id_usuario_relacionado != idUsuario && !arrayFavoritos.includes(resultados[i].id_usuario_relacionado)) {
 
 
             let curso = resultados[i].curso.replaceAll("-", " ");
@@ -70,7 +73,7 @@ function generarPerfiles(resultados) {
                 + "</div>"
                 + "<div class='botones'>"
                 + "<div class='perfil'><button class='btnPerfil' onclick='' >Ver perfil</button></div>"
-                + "<div id='btnFavoritoContainer' class='btnFavorito' onclick='obtenerId(" + resultados[i].id_usuario_relacionado + ")'></div>"
+                + "<div id='btnFavoritoContainer"+i+"' class='btnFavorito' onclick='obtenerId(" + resultados[i].id_usuario_relacionado+"," + i + ")'></div>"
                 + "</div>"
                 + "</div>";
 
@@ -90,14 +93,15 @@ function generarPerfiles(resultados) {
     window.location.href = "perfil/agregarFavorito.php?idFavorito=" + id_usuarioFavorito;
 } */
 
-function obtenerId(idCogido) {
+function obtenerId(idCogido, idDiv) {
     console.log(idCogido);
-    let heartContainer = document.querySelector('.heart-container');
-
+    let divCorazon=document.getElementById('btnFavoritoContainer'+idDiv);
+    let heartContainer = divCorazon.querySelector('.heart-container');
     // Obtener el input dentro del div por su clase
     let inputFavorito = heartContainer.querySelector('.checkbox');
     /*  heartContainer.forEach((button => {
      })); */
+     console.log(inputFavorito)
     if (inputFavorito && inputFavorito.checked) {
         $.ajax({  //Hacemos una petición ajax para enviar la id
             //Especificamos la url a la que queremos enviar la variable

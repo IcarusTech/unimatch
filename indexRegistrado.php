@@ -8,7 +8,9 @@ if (!isset($_SESSION['usuario'])) {
 }
 $id_usuario=$_GET['id_usuario'];
 $nombre=$_GET['usuario'];
-
+require_once("./modelo/DBperfil.php");
+$conexion = new \modelo\DBperfil;
+$stringFavoritos = $conexion->consultarFavoritos($id_usuario);
 
 //-----------------
 $variable_php = 'valor';
@@ -28,6 +30,7 @@ $variable_php = 'valor';
     <script>
         const idUsuario = "<?php echo $id_usuario ?>";
         const nombre = "<?php echo $nombre ?>";
+        const stringFavoritos = "<?php echo $stringFavoritos ?>";
     </script>
     <script src="./logicaGeneral/llegadaDatosPerfiles.js?v=<?php echo time(); ?>" defer></script>
     

@@ -1,10 +1,10 @@
-<?php 
+<?php
 
 $id_usuario = $_GET['id_usuario'];
 $nombreUsuario = $_GET['nombre'];
 require_once("../modelo/DBnotificacion.php");
 $conexion = new DBnotificacion();
-$conexion->enviarNotificacionUsuarioNuevo($id_usuario);
+// $conexion->enviarNotificacionUsuarioNuevo($id_usuario);
 
 ?>
 
@@ -16,13 +16,13 @@ $conexion->enviarNotificacionUsuarioNuevo($id_usuario);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Favoritos</title>
-    <link rel="stylesheet" href="../styles/indexRegistrado.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="estilosNotificaciones.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="checkbox.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../styles/scrollbar.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css?v=<?php echo time(); ?>">
-        
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
-    
+
+
 </head>
 
 <body>
@@ -53,8 +53,29 @@ $conexion->enviarNotificacionUsuarioNuevo($id_usuario);
             </ul>
         </div>
     </aside>
-    <section id="resultadosPerfiles">
-
+    <section id="resultadosNotificaciones">
+        <div class="notificacionContainer">
+            <div class="titulo">
+                <h2 id="titulo">Titulo de la notificación</h2>
+            </div>
+            <div class="contenido">
+                <p>Este es contenido: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio ea
+                    quibusdam eligendi minus quo nisi praesentium, hic vel rem deserunt distinctio sequi
+                    sapiente reprehenderit exercitationem officiis qui perspiciatis tenetur est.</p>
+            </div>
+            <div class="abajo">
+                <div class="fecha">
+                    <p>2024/05/27</p>
+                </div>
+                <div class="checkbox">
+                    <label class="container" for="aceptar">
+                        <input id="aceptar" type="checkbox" name="leido">
+                        <div class="checkmark"></div>
+                    </label>
+                    <label>Leido</label>
+                </div>
+            </div>
+        </div>
 
     </section>
 

@@ -20,28 +20,42 @@ class DBnotificacion
     }
     //metodo por completar
     public function enviarNotificacionUsuarioNuevo($id_receptor)
-    {
+    {    
+        $leido=false;
         $titulo = "Bienvenido a nuestra comunidad";
         $contenido = "Este es el contenido";
         $fecha = date('Y-m-d');
         $insertar = mysqli_query($this->conexion, "INSERT INTO notificaciones (titulo,contenido, fecha, id_usuario_receptor) VALUES ('$titulo','$contenido', '$fecha','$id_receptor')");
-        $carpeta = "../datosRegistros/notificaciones/usuario-".$id_receptor;
-        if (!file_exists($carpeta)) {
-            mkdir($carpeta, 0777, true);
+        
+        //------------------------------------
+        $file = '../datosRegistros/notificaciones/usuario-'.$id_receptor.'.json';
+        if (!file_exists($file)) {
+            // Si no existe, crea un array vacío
+            $data = array();
+        
+            // Codifica el array en formato JSON
+            $json_data = json_encode($data, JSON_PRETTY_PRINT);
+        
+            // Escribe el contenido JSON en el archivo
+            file_put_contents($file, $json_data);
         }
         //------------------------------------
-        $file = '../datosRegistros/notificaciones/usuario-'.$id_receptor.'/mensajeBienvenida.json';
         // lee los datos del archivo json
-        
+       $current_data = file_get_contents($file);
+       // convierte el json en php
+      $data_array = json_decode($current_data, true);
         // array con datos del usuario
-        $data_array = array(
+        $new_object = array(
 
             'id usuario asociado' => $id_receptor,
             "titulo" => $titulo,
             "contenido" => $contenido,
-            "fecha" => $fecha
+            "fecha" => $fecha,
+            "leido"=> $leido
 
         );
+        // lo mete en una variable
+        $data_array[] = $new_object;
         // lo pasa a json
         $new_data_json = json_encode($data_array, JSON_PRETTY_PRINT);
         // mete el contenido en un archivo

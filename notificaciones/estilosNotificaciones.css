@@ -1,0 +1,148 @@
+body {
+    background-color: #ffffff;
+}
+/* INICIO DEL HEADER */
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+header .toggle {
+    order: 1;
+}
+
+header .perfil {
+    margin-right: 3%;
+    padding: 4px;
+    border-radius: 50%;
+    border: 4px solid #e11d48;
+    order: 2;
+}
+header .perfil img{
+    width: 25px;
+    height: 22px;
+}
+/*  FINAL DEL HEADER */
+
+/*  EMPIEZA EL MENÚ LATERAL PERMANENTE */
+aside {
+    float: left;
+}
+
+aside .menuLateral {
+    display: none;
+    
+}
+/* FINAL DEL MENÚ PERMANENTE */
+
+/* EMPIEZA LAS TARJETAS DE USUARIO */
+section {
+    padding: 5px;
+    /* ancho del section elemento será el 100% de la pantalla menos el ancho del menu lateral*/
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(250px, 330px)); */
+    gap: 20px;
+    /* envolver elementos en varias líneas */
+}
+
+
+section .notificacionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80vw;
+    height: fit-content;
+    border-radius:5px;
+    box-shadow: 0 0  10px rgb(140, 143, 146);
+    padding: 20px;
+    margin: auto;
+    font-family: "Reef";
+}
+section .notificacionContainer .titulo{
+    text-align: center;
+}
+section .notificacionContainer .abajo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+section .notificacionContainer .abajo .fecha{
+    order: 1;
+}
+section .notificacionContainer .abajo .checkbox{
+    order: 2;
+}
+@font-face {
+    font-family: "Reef";
+    src: url("../tipografias/Reef.ttf");
+}
+
+
+@media (min-width: 650px) {
+    header {
+        display: flex;
+        justify-content: flex-end;
+    }
+    aside {
+        position: sticky;
+        top:20px;
+    }
+    aside .menuLateral{
+        display: block;
+        border-radius: 15px;
+        height: 500px;
+        display: flex;
+        box-shadow: 0 0  10px rgb(210,217,225); 
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+    }
+    
+
+    aside .menuLateral ul {
+        line-height: 50px;
+        font-size: 25px;
+        margin-left: -40px;
+    }
+
+    aside .menuLateral ul li {
+        list-style: none;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    aside .menuLateral ul li a {
+        color: #000000;
+        font-weight: 500;
+        padding: 5px 5px;
+        display: block;
+        text-transform: capitalize;
+        text-decoration: none;
+        transition: 0.2s ease-out;
+        border-radius: 10px;
+    }
+
+    aside .menuLateral ul .opL:hover i{
+        /* color: #fff;
+        background-color: red; */
+        filter: drop-shadow(0 0 0.85rem rgb(110, 111, 113));
+    }
+    aside .menuLateral ul li a i {
+        width: 40px;
+        text-align: center;
+
+    }
+    section{
+        width: calc(100vw - 150px); 
+    }
+    section .notificacionContainer {
+        width: 50vw;
+    }
+    section .notificacionContainer .contenido{
+        font-size: large;
+        margin: auto;
+        width: 80%;
+    }
+}
