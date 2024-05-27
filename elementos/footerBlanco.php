@@ -35,9 +35,7 @@
 
                 <p class="escribenos">¡Escribenos!</p>
                 <div class="social-link">
-                    <a href="https://www.facebook.com/profile.php?id=61560461661300" target="_blank" onclick>
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
+                    
                     <a href="https://www.instagram.com/unimatch2/" target="_blank" onclick>
                         <i class="fab fa-instagram"></i>
                     </a>
