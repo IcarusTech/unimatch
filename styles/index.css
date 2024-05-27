@@ -167,6 +167,13 @@ body {
 
 
 /* ACABA EL ROADMAP */
-
+/*Estilos include grafica cantidad de usuarios registrados*/
+.cant-usuarios{
+  margin: auto;
+  width: fit-content;
+}
+.cant-usuarios .loader{
+  margin: auto;
+}
 /* ESTILOS EN EL FOOTER */
 

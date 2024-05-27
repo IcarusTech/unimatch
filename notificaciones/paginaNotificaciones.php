@@ -69,28 +69,7 @@ $nombreUsuario = $_GET['nombre'];
         </div>
     </aside>
     <section id="resultadosNotificaciones">
-        <!-- <div class="notificacionContainer">
-            <div class="titulo">
-                <h2 id="titulo">Titulo de la notificación</h2>
-            </div>
-            <div class="contenido">
-                <p>Este es contenido: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio ea
-                    quibusdam eligendi minus quo nisi praesentium, hic vel rem deserunt distinctio sequi
-                    sapiente reprehenderit exercitationem officiis qui perspiciatis tenetur est.</p>
-            </div>
-            <div class="abajo">
-                <div class="fecha">
-                    <p>2024/05/27</p>
-                </div>
-                <div class="checkbox">
-                    <label class="container" for="aceptar">
-                        <input id="aceptar" type="checkbox" name="leido">
-                        <div class="checkmark"></div>
-                    </label>
-                    <label>Leido</label>
-                </div>
-            </div>
-        </div> -->
+        
 
     </section>
 
