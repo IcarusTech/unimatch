@@ -79,14 +79,70 @@ function generarPerfiles(resultados) {
                 + "</div>"
                 + "<div class='botones'>"
                 + "<div class='perfil'><button class='btnPerfil' onclick='' >Ver perfil</button></div>"
+                + "<div id='btnFavoritoContainer"+i+"' class='btnFavorito' onclick='obtenerId(" + resultados[i].id_usuario_relacionado+"," + i + ")'></div>"
                 + "</div>"
                 + "</div>";
-
-            
+                // Cargar contenido del archivo PHP en el contenedor
+                $.get('../elementos/btnFavoritoPulsado.php', function (data) {
+                    $('.btnFavorito').html(data);
+                
+            });
         }
     }
 
     resultadosPerfiles.innerHTML += textoRes;
 
 
+}
+function obtenerId(idCogido, idDiv) {
+    console.log(idCogido);
+    let divCorazon=document.getElementById('btnFavoritoContainer'+idDiv);
+    let heartContainer = divCorazon.querySelector('.heart-container');
+    // Obtener el input dentro del div por su clase
+    let inputFavorito = heartContainer.querySelector('.checkbox');
+    /*  heartContainer.forEach((button => {
+     })); */
+     console.log(inputFavorito)
+    if (inputFavorito && inputFavorito.checked) {
+        $.ajax({  //Hacemos una petición ajax para enviar la id
+            //Especificamos la url a la que queremos enviar la variable
+            url: "agregarFavorito.php",
+            //Definimos el método por el que queremos enviarla
+            type: "POST",
+            //Especificamos en data las variable que queremos pasar por POST y cual es su valor
+            data: {
+                idFavorito: idCogido,
+                idPropio: id_usuario
+            },
+            success: function (response) {
+                // Aquí puedes manejar la respuesta del servidor
+                console.log(response);
+            },
+            error: function (xhr, status, error) {
+                // Aquí puedes manejar los errores de la solicitud AJAX
+                console.error(error);
+            }
+        });
+    }
+    else {
+        $.ajax({  //Hacemos una petición ajax para enviar la id
+            //Especificamos la url a la que queremos enviar la variable
+            url: "eliminarFavorito.php",
+            //Definimos el método por el que queremos enviarla
+            type: "POST",
+            //Especificamos en data las variable que queremos pasar por POST y cual es su valor
+            data: {
+                idFavorito: idCogido,
+                idPropio: id_usuario
+            },
+            success: function (response) {
+                // Aquí puedes manejar la respuesta del servidor
+                console.log(response);
+            },
+            error: function (xhr, status, error) {
+                // Aquí puedes manejar los errores de la solicitud AJAX
+                console.error(error);
+            }
+        });
+    }
 }
