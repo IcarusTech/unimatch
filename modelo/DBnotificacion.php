@@ -23,7 +23,7 @@ class DBnotificacion
     {    
         $leido=false;
         $titulo = "Bienvenido a nuestra comunidad";
-        $contenido = "Este es el contenido";
+        $contenido = "Muchas gracias por unirte a nuestra comunidad...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
         $fecha = date('Y-m-d');
         $insertar = mysqli_query($this->conexion, "INSERT INTO notificaciones (titulo,contenido, fecha, id_usuario_receptor) VALUES ('$titulo','$contenido', '$fecha','$id_receptor')");
         
@@ -60,15 +60,6 @@ class DBnotificacion
         $new_data_json = json_encode($data_array, JSON_PRETTY_PRINT);
         // mete el contenido en un archivo
         file_put_contents($file, $new_data_json);
-        /* if (mysqli_query($this->conexion, $insertar)) {
-            echo "
-            <h1>$titulo</h1>
-            <p>$contenido<p/>
-            <p>$fecha</p>
-            ";
-            exit();
-        } else {
-            echo "Error: " .mysqli_error($this->conexion);
-        } */
+       
     }
 }
