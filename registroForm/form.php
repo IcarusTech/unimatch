@@ -7,8 +7,8 @@ if (isset($_POST['inputCorreo']) && isset($_POST['inputPassword']) && $aceptarDo
     //Comprobamos que el correo, la contraseña esten puestos y que los terminos y privacidad esten seleccionados
     $correo = $_POST['inputCorreo'];
     $password = $_POST['inputPassword'];
-    $conexion= new \modelo\DBusuario();
-    $conexion->create($correo,$password);
+    $conexion = new \modelo\DBusuario();
+    $conexion->create($correo, $password);
 }
 ?>
 <!DOCTYPE html>
@@ -24,7 +24,7 @@ if (isset($_POST['inputCorreo']) && isset($_POST['inputPassword']) && $aceptarDo
 </head>
 
 <body>
-    
+
 
     <form id="formRegistrar" action="form.php" method="post">
 
@@ -39,9 +39,9 @@ if (isset($_POST['inputCorreo']) && isset($_POST['inputPassword']) && $aceptarDo
             </div>
 
             <div class="campo">
-                <label for="inputPassword">Contraseña <img class="info" id="iconoInfo" src="../img/iconoInfo.png"alt="iconoInfo"></label>
+                <label for="inputPassword">Contraseña <img class="info" id="iconoInfo" src="../img/iconoInfo.png" alt="iconoInfo"></label>
                 <div class="inputPass">
-                    <input type="password" name="inputPassword" id="password" placeholder="Introduce una contraseña"  pattern=".{6,12}" required>
+                    <input type="password" name="inputPassword" id="password" placeholder="Introduce una contraseña" pattern=".{6,12}" required>
                     <img src="../img/eye-open.png" id="mostrarPassword">
                 </div>
                 <p id="error2" class="error"></p>
@@ -49,7 +49,7 @@ if (isset($_POST['inputCorreo']) && isset($_POST['inputPassword']) && $aceptarDo
 
             <div class="checkbox">
                 <label class="container" for="aceptar">
-                    <input id="aceptar" type="checkbox" name="aceptarDocumentos" checked="" >
+                    <input id="aceptar" type="checkbox" name="aceptarDocumentos" checked="">
                     <div class="checkmark"></div>
                 </label>
                 <label>Acepto las condiciones</label>

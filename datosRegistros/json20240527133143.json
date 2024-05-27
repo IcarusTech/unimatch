@@ -1,0 +1,21 @@
+{
+    "nombre": "Laura",
+    "apellido": "Sanchez",
+    "fecha_de_nacimiento": "2005-06-23",
+    "curso": "Comercio",
+    "genero": "M",
+    "color_de_pelo": "P",
+    "color_de_ojos": "V",
+    "estilo_de_musica": "pop",
+    "fumador": "true",
+    "tipo_de_personalidad": "E",
+    "tipo_de_amistad_buscada": "mejor-amigo",
+    "planes": "cine",
+    "hobbie": "bailar",
+    "instagram": "laurita_22",
+    "definicion_1": "Divertida",
+    "definicion_2": "Fiestera",
+    "definicion_3": "Alocada",
+    "ruta_img": "..\/unimatch\/avatares\/img\/MpeloPelirojoOjosVerdes.png",
+    "id_usuario_relacionado": "15"
+}

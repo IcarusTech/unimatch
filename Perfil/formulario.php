@@ -5,6 +5,7 @@ $carpetaPerfil = "../datosRegistros";
 session_start(); //Iniciar una sesión
 
 require_once("../modelo/DBperfil.php");
+require_once("../modelo/DBnotificacion.php");
 
 
 //Si no se ha iniciado sesion previamente, el código nos redirigirá al login para iniciar sesión
@@ -13,10 +14,11 @@ $_SESSION['usuario'] = $_GET['usuario'];
 $usuario = $_GET['usuario'];
 
 if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
-
     echo ("el nombre esta puesto : ") . $_POST['nombre'];
     $id_usuarioForm = $_POST['id'];
     $nombreUsuario = $_POST['usuario'];
+    $conexionNoti = new DBnotificacion();
+    $conexionNoti->enviarNotificacionUsuarioNuevo($id_usuarioForm);
     echo ("el nombre del usuario esta puesto : ") . $nombreUsuario;
     echo ("el nombre id del usuario esta puesto : ") . $id_usuarioForm;
     // 1º página

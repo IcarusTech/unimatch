@@ -2,9 +2,6 @@
 
 $id_usuario = $_GET['id_usuario'];
 $nombreUsuario = $_GET['nombre'];
-require_once("../modelo/DBnotificacion.php");
-$conexion = new DBnotificacion();
-//$conexion->enviarNotificacionUsuarioNuevo($id_usuario);
 
 ?>
 

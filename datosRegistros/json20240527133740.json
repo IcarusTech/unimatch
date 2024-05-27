@@ -1,0 +1,21 @@
+{
+    "nombre": "Ana",
+    "apellido": "Manterola",
+    "fecha_de_nacimiento": "2005-03-22",
+    "curso": "DAM",
+    "genero": "M",
+    "color_de_pelo": "M",
+    "color_de_ojos": "M",
+    "estilo_de_musica": "reguet\u00f3n",
+    "fumador": "true",
+    "tipo_de_personalidad": "E",
+    "tipo_de_amistad_buscada": "amigo-de-fiesta",
+    "planes": "salirDeFiesta",
+    "hobbie": "bailar",
+    "instagram": "anita_33",
+    "definicion_1": "Divertida",
+    "definicion_2": "Fiestera",
+    "definicion_3": "Alocada",
+    "ruta_img": "..\/unimatch\/avatares\/img\/MpeloMorenoOjosMarrones.png",
+    "id_usuario_relacionado": "16"
+}
