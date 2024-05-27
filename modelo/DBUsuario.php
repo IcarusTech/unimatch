@@ -12,7 +12,7 @@ class DBusuario
     private $dbname = "unimatch";
     private $table = "usuarios";
     private $conexion;
-    
+
     public function __construct()
     {
         $this->conexion = new mysqli($this->dbhost, $this->dbuser, $this->dbpassword, $this->dbname);
@@ -35,7 +35,7 @@ class DBusuario
         $idUsuario->bind_param("ss", $user, $password);
         $idUsuario->execute();
         $idUsuarioResult = $idUsuario->get_result();
-        
+
         if ($num == 1) {
             session_start(); //iniciar sesion o continuarla
             $id_usuario = $idUsuarioResult->fetch_row();
@@ -65,12 +65,12 @@ class DBusuario
         $query->bind_param("ss", $nombreUsuario, $password);
         $query->execute();
         $result = $query->get_result();
-        
+
         $idUsuario = $this->conexion->prepare("SELECT id_usuario FROM $this->table WHERE nombre_usuario = ? AND contrasena = ?");
         $idUsuario->bind_param("ss", $nombreUsuario, $password);
         $idUsuario->execute();
         $idUsuarioResult = $idUsuario->get_result();
-        
+
         $num = $result->num_rows;
         if ($num == 1) {
             session_start(); //iniciar sesion o continuarla
@@ -87,7 +87,7 @@ class DBusuario
         $query->bind_param("ss", $user, $password);
         $query->execute();
         $result = $query->get_result();
-        
+
         $num = $result->num_rows;
         if ($num == 1 && $confirmacion) {
             $delete = $this->conexion->prepare("DELETE FROM $this->table WHERE nombre_usuario = ? AND contrasena = ?");
@@ -102,7 +102,7 @@ class DBusuario
         $query->bind_param("s", $user);
         $query->execute();
         $result = $query->get_result();
-        
+
         $num = $result->num_rows;
         if ($num == 1 && $confirmacion) {
             $update = $this->conexion->prepare("UPDATE $this->table SET $campo = ? WHERE nombre_usuario = ?");
@@ -110,5 +110,13 @@ class DBusuario
             $update->execute();
         }
     }
+
+    public function contarUsuarios()
+    {
+        $query = mysqli_query($this->conexion, "SELECT * FROM usuarios");
+        //Comprobamos que se ha recuperado al menus un registro del usuario
+        $num = mysqli_num_rows($query);
+        echo ("<div class='total'><h1>+".$num."</h1></div>");
+    }
+
 }
-?>
