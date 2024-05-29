@@ -36,12 +36,15 @@
                 <p class="escribenos">¡Escribenos!</p>
                 <div class="social-link">
                     
+                    <!-- Enlace LinkTre Instagram -->
                     <a href="https://www.instagram.com/unimatch2/" target="_blank" onclick>
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="https://www.youtube.com/@IcarusTech-qh9fj" target="_blank" onclick>
+                    <!-- Enlace LinkTre Linkedln -->
+                    <a href="#" target="_blank" onclick>
                         <i class="fab fa-youtube"></i>
                     </a>
+                    <!-- Enlace LinkTre GitHub -->
                     <a href="linktr.ee/unicovaguada" target="_blank" onclick>
                         <i class="fab fa-github"></i>
                     </a>
@@ -66,28 +69,33 @@
 
 </footer>
 <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    
     footer {
+        width: 100%;
+        height: fit-content;
         clear: both;
         position: relative;
         top: auto;
         height: fit-content;
-        padding: 20px 0;
+        padding: 15px 0;
         font-family: Arial, Helvetica, sans-serif;
         background-color: #2e2e2e;
+        margin: 0 auto;
     }
 
     footer * {
         list-style: none;
     }
 
-    .footer {
-        margin: 0 auto;
-    }
-
     .footer-row {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        margin: 0 0 0 10px;
     }
 
     .footer-links {
@@ -99,10 +107,9 @@
         width: 280px;
         font-size: 20px;
         color: #ffffff;
-        margin-bottom: 25px;
         font-weight: 500;
         font-size: 20px;
-        margin-bottom: 10px;
+        margin: 0 0 10px 0;
         /* Puedes ajustar el espaciado según sea necesario */
         font-weight: 500;
         display: inline-block;
@@ -126,11 +133,11 @@
     }
 
     .footer-links ul li a {
-        font-size: 18px;
+        font-size: 16px;
         text-decoration: none;
         color: #ef4a75;
         display: block;
-        margin-bottom: 15px;
+        line-height: 30px;
         transition: all .3s ease;
     }
 

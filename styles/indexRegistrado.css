@@ -42,7 +42,7 @@ section {
     padding: 5px;
     /* ancho del section elemento será el 100% de la pantalla menos el ancho del menu lateral*/
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 330px));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 330px));
     gap: 20px;
     /* envolver elementos en varias líneas */
 }
@@ -132,31 +132,31 @@ section .persona  .botones{
     }
     aside {
         position: sticky;
-        top:20px;
+        top: 20px;
     }
     aside .menuLateral{
         display: block;
         border-radius: 15px;
-        height: 550px;
+        height: 500px;
         display: flex;
         background-color:#2e2e2e;
         /* box-shadow: 0 0  10px rgb(210,217,225);  */
         justify-content: center;
         align-items: center;
         width: 100px;
+        margin: 10px;
     }
     
 
     aside .menuLateral ul {
         line-height: 50px;
         font-size: 25px;
-        margin-left: -40px;
     }
 
     aside .menuLateral ul li {
         list-style: none;
         width: 100%;
-        margin-bottom: 5px;
+        
     }
 
     aside .menuLateral ul li a {
@@ -173,7 +173,6 @@ section .persona  .botones{
         width: 90px;
         border-radius: 20px;
         scale: 1;
-        
     }
     aside .menuLateral ul li img:hover{
         scale: 1.40;
@@ -186,7 +185,7 @@ section .persona  .botones{
     }
     
     aside .menuLateral ul .opL:hover i{
-        color: red; 
+        color:#fe3c72; 
     }
     aside .menuLateral ul li a i {
         width: 75px;
