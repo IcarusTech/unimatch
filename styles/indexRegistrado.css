@@ -137,9 +137,10 @@ section .persona  .botones{
     aside .menuLateral{
         display: block;
         border-radius: 15px;
-        height: 500px;
+        height: 550px;
         display: flex;
-        box-shadow: 0 0  10px rgb(210,217,225); 
+        background-color:#2e2e2e;
+        /* box-shadow: 0 0  10px rgb(210,217,225);  */
         justify-content: center;
         align-items: center;
         width: 100px;
@@ -159,23 +160,36 @@ section .persona  .botones{
     }
 
     aside .menuLateral ul li a {
-        color: #000000;
         font-weight: 500;
         padding: 5px 5px;
         display: block;
         text-transform: capitalize;
         text-decoration: none;
         transition: 0.2s ease-out;
+        color: #ffffff;
         border-radius: 10px;
     }
+    aside .menuLateral ul li img{
+        width: 90px;
+        border-radius: 20px;
+        scale: 1;
+        
+    }
+    aside .menuLateral ul li img:hover{
+        scale: 1.40;
+        transition: 0.4s;
+    }
 
+    aside .menuLateral ul li a:hover {
+        scale: 1.10;
+        transition: 0.8s;
+    }
+    
     aside .menuLateral ul .opL:hover i{
-        /* color: #fff;
-        background-color: red; */
-        filter: drop-shadow(0 0 0.85rem rgb(110, 111, 113));
+        color: red; 
     }
     aside .menuLateral ul li a i {
-        width: 40px;
+        width: 75px;
         text-align: center;
 
     }

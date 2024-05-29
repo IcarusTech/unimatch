@@ -73,6 +73,7 @@
         height: fit-content;
         padding: 20px 0;
         font-family: Arial, Helvetica, sans-serif;
+        background-color: #2e2e2e;
     }
 
     footer * {
@@ -97,7 +98,7 @@
     .footer-links h4 {
         width: 280px;
         font-size: 20px;
-        color: red;
+        color: #ffffff;
         margin-bottom: 25px;
         font-weight: 500;
         font-size: 20px;
@@ -112,7 +113,7 @@
     }
 
     .escribenos {
-        color: black;
+        color: #ef4a75;
         margin-bottom: 5%;
     }
 
@@ -127,14 +128,14 @@
     .footer-links ul li a {
         font-size: 18px;
         text-decoration: none;
-        color: black;
+        color: #ef4a75;
         display: block;
         margin-bottom: 15px;
         transition: all .3s ease;
     }
 
     .footer-links ul li a:hover {
-        color: red;
+        color: #ef4a75;
         padding-left: 6px;
     }
 
@@ -147,7 +148,7 @@
         text-align: center;
         line-height: 40px;
         border-radius: 50%;
-        color: black;
+        color: #ffffff;
         transition: all .5s ease;
     }
 
