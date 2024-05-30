@@ -43,7 +43,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(90deg, transparent 45%, #fff, transparent 55%);
+  background: linear-gradient(90deg, transparent 45%, #ffffff, transparent 55%);
   order: 2;
   text-align: center;
   color: #fff;
@@ -75,14 +75,12 @@ body {
   padding-left: 10px;
   border-radius: 5px;
   box-shadow: 5px 5px black;
-  background: #fff;
+  background: #ffffff;
   transition: all .6s ease;
   margin-bottom: 3%;
 }
 
-.info:hover {
-  background: bisque;
-}
+
 
 .info h2 {
   margin: 0;
