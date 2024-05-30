@@ -1,7 +1,7 @@
 <?
 if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'admin') {
     // Si no hay sesión o el usuario no es admin, redirigir a login o mostrar mensaje de error
-    header("Location: inicioSesionForm/inicioSesion.php");
+    header("Location: ../inicioSesionForm/inicioSesion.php");
     exit;
 }
 ?>

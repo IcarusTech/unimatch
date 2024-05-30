@@ -46,7 +46,7 @@ class DBusuario
             if ($booleanAdministrador) {
                 $id_usuario = $idUsuarioResult->fetch_row();
                 $_SESSION['user_type'] = 'admin';
-                header("location: ../indexAdmin.php?usuario=$user&id_usuario=$id_usuario[0]"); //Lo redirigimos al index registrado
+                header("location: ../indexAdmin/indexAdmin.php?usuario=$user&id_usuario=$id_usuario[0]"); //Lo redirigimos al index registrado
             } else {
                 session_start(); //iniciar sesion o continuarla
                 $id_usuario = $idUsuarioResult->fetch_row();
