@@ -106,7 +106,34 @@ class DBusuario
             $delete->bind_param("ss", $user, $password);
             $delete->execute();
         }
+        $json_file = 'datos.json';
+
+        // Leer el contenido del archivo JSON
+        $json_data = file_get_contents($json_file);
+
+        // Decodificar el JSON en un array asociativo de PHP
+        $data = json_decode($json_data, true);
+
+        // ID del usuario a eliminar, este ID debería provenir de tu base de datos
+        $user_id_to_delete = 12;
+
+        // Verificar y eliminar la entrada del array correspondiente al ID del usuario
+        foreach ($data as $key => $user) {
+            if (isset($user['id']) && $user['id'] == $user_id_to_delete) {
+                unset($data[$key]);
+                break;
+            }
+        }
+
+        // Codificar el array de nuevo a JSON
+        $json_data = json_encode($data, JSON_PRETTY_PRINT);
+
+        // Escribir el JSON de nuevo en el archivo
+        file_put_contents($json_file, $json_data);
+
+        echo "Posición eliminada con éxito.";
     }
+
 
     public function update($user, $confirmacion, $campo, $valor)
     {
