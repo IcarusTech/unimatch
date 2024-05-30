@@ -45,7 +45,7 @@
                         <i class="fab fa-youtube"></i>
                     </a>
                     <!-- Enlace LinkTre GitHub -->
-                    <a href="linktr.ee/unicovaguada" target="_blank" onclick>
+                    <a href="https://linktr.ee/unicovaguada" target="_blank" onclick>
                         <i class="fab fa-github"></i>
                     </a>
                 </div>

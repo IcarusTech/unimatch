@@ -46,7 +46,7 @@ $stringFavoritos = $conexion->consultarFavoritos($id_usuario);
     <ul>
         <!-- <li><a href="#"><i class="fas fa-tv"></i>dashboard</a></li> --> 
         <li class="opL"><a href="../indexRegistrado.php?id_usuario=<?php echo $id_usuario ?>&usuario=<?php echo $nombreUsuario ?>"><i class='fa-solid fa-house'></i></a></li>
-                <li class="opL"><a href="#"><i class="far fa-user"></i></a></li>
+                <li class="opL"><a href="#"><i class="fa fa-search"></i></a></li>
                 <!-- <li><a href="#"><i class="fab fa-gripfire"></i>trending</a></li> -->
                 <li class="opL"><a href="#"><i class="far fa-comments"></i></a></li>
                 <!-- <li><a href="#"><i class="far fa-folder"></i>file manager</a></li> -->
@@ -79,7 +79,7 @@ $stringFavoritos = $conexion->consultarFavoritos($id_usuario);
             <ul>
                 <!-- <li><a href="#"><i class="fas fa-tv"></i>dashboard</a></li> -->
                 <li class="opL"><a href="../indexRegistrado.php?id_usuario=<?php echo $id_usuario ?>&usuario=<?php echo $nombreUsuario ?>"><i class='fa-solid fa-house'></i></a></li>
-                <li class="opL"><a href="#"><i class="far fa-user"></i></a></li>
+                <li class="opL"><a href="#"><i class="fa fa-search"></i></a></li>
                 <!-- <li><a href="#"><i class="fab fa-gripfire"></i>trending</a></li> -->
                 <li class="opL"><a href="#"><i class="far fa-comments"></i></a></li>
                 <!-- <li><a href="#"><i class="far fa-folder"></i>file manager</a></li> -->
