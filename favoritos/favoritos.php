@@ -32,9 +32,31 @@ $stringFavoritos = $conexion->consultarFavoritos($id_usuario);
 <body>
     <header>
         <!-- include con el menu desplegable para movil (visible solo en movil) -->
-        <?php
-        include "../elementos/barraLateral.php";
-        ?>
+        <!-- Barra lateral -->
+<label class="lateral">
+
+<input type="checkbox" class="input-barraLateral">
+<div class="toggle">
+    <span class="top_line common"></span>
+    <span class="middle_line common"></span>
+    <span class="bottom_line common"></span>
+</div>
+
+<div class="slide">
+    <ul>
+        <!-- <li><a href="#"><i class="fas fa-tv"></i>dashboard</a></li> --> 
+        <li class="opL"><a href="../indexRegistrado.php?id_usuario=<?php echo $id_usuario ?>&usuario=<?php echo $nombreUsuario ?>"><i class='fa-solid fa-house'></i></a></li>
+                <li class="opL"><a href="#"><i class="far fa-user"></i></a></li>
+                <!-- <li><a href="#"><i class="fab fa-gripfire"></i>trending</a></li> -->
+                <li class="opL"><a href="#"><i class="far fa-comments"></i></a></li>
+                <!-- <li><a href="#"><i class="far fa-folder"></i>file manager</a></li> -->
+                <!-- <li><a href="#"><i class="far fa-address-book"></i>portfolio</a></li> -->
+                <li class="opL"><a href="favoritos.php?id_usuario=<?php echo $id_usuario ?>&nombre=<?php echo $nombreUsuario ?>"><i class="fas fa-heart"></i></a></li>
+                <li class="opL"><a href="#"><i class="fas fa-cogs"></i></a></li>
+                <li class="opL"><a href="../inicioSesionForm/cerrarSesion.php"><i class='fas fa-sign-out-alt'></i></a>
+    </ul>
+</div>
+</label>
         <div class="perfil">
             <img src="../img/iconoUser.png" alt="">
         </div>

@@ -54,7 +54,7 @@ function buscarDatosPerfiles(array) {
 function generarPerfiles(resultados) {
     let textoRes = "";
     for (let i = 0; i < resultados.length; i++) {
-        if (resultados[i].id_usuario_relacionado != idUsuario && !arrayFavoritos.includes(resultados[i].id_usuario_relacionado)) {
+        if (resultados[i].id_usuario_relacionado != idUsuario /* && !arrayFavoritos.includes(resultados[i].id_usuario_relacionado) */) {
 
 
             let curso = resultados[i].curso.replaceAll("-", " ");

@@ -1,6 +1,7 @@
 body {
     background-color: #ffffff;
 }
+
 /* INICIO DEL HEADER */
 header {
     display: flex;
@@ -20,10 +21,181 @@ header .perfil {
     border: 4px solid #e11d48;
     order: 2;
 }
-header .perfil img{
+
+header .perfil img {
     width: 25px;
     height: 22px;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+.slide {
+    border-radius: 5px;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 0%;
+    position: absolute;
+    background-color: #2e2e2e;
+    transition: 0.5s ease;
+    transform: translateX(-580px);
+    z-index: 1;
+}
+
+.slide ul li {
+    list-style: none;
+    line-height: 80px;
+    margin-left: auto;
+}
+
+.slide ul li a {
+
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    padding: 5px 5px;
+    display: block;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: 0.2s ease-out;
+    border-radius: 10px;
+    scale: 1;
+}
+
+.slide ul .opL:hover a {
+    color: #fe3c72;
+    transition: 0.2s ease-out;
+    scale: 1.2;
+}
+
+.slide ul li a i {
+    width: 40px;
+    text-align: center;
+
+}
+
+.input-barraLateral {
+    display: none;
+    visibility: hidden;
+
+}
+
+.toggle {
+    position: sticky;
+    height: 40px;
+    width: 40px;
+    top: 20px;
+    left: 25px;
+    margin-left: 10px;
+    z-index: 10;
+    cursor: pointer;
+    border-radius: 3px;
+    background-color: #2e2e2e;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.toggle .common {
+    position: absolute;
+    height: 2px;
+    width: 20px;
+    background-color: #fe3c72;
+    border-radius: 50px;
+    transition: 0.3s ease;
+}
+
+.toggle .top_line {
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.toggle .middle_line {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.toggle .bottom_line {
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.lateral input:checked~.toggle .top_line {
+    left: 8px;
+    top: 18px;
+    width: 25px;
+    transform: rotate(45deg);
+}
+
+
+.lateral input:checked~.toggle .bottom_line {
+    left: 8px;
+    top: 18px;
+    width: 25px;
+    transform: rotate(-45deg);
+}
+
+
+.lateral input:checked~.toggle .middle_line {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+.lateral input:checked~.slide {
+    transform: translateX(0);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ACABA LA BARRA LATERAL */
+
+/* AQUI EMPIEZA MEDIA PARA LA BARRA LATERAL */
+
+@media (max-width: 650px) {
+
+    .slide {
+        margin-left: 10px;
+        width: 20%;
+        /* Ancho completo */
+        display: flex;
+        flex-direction: column;
+        /* Configura flexbox para la columna */
+        justify-content: center;
+        /* Centra verticalmente */
+        align-items: center;
+        /* Centra horizontalmente */
+        font-size: 30px;
+    }
+
+    .slide ul li {
+        width: fit-content;
+        /* Ancho completo de cada elemento de la lista */
+        text-align: center;
+        /* Centra horizontalmente el texto */
+    }
+
+    nav {
+        display: none;
+    }
+
+}
+
+@media (min-width: 650px) {
+    .toggle {
+        display: none;
+    }
+
+    .lateral {
+        display: none;
+    }
+
+}
+/* Acaba la barra lateral desplegable */
 /*  FINAL DEL HEADER */
 
 /*  EMPIEZA EL MENÚ LATERAL PERMANENTE */
@@ -33,8 +205,9 @@ aside {
 
 aside .menuLateral {
     display: none;
-    
+
 }
+
 /* FINAL DEL MENÚ PERMANENTE */
 
 /* EMPIEZA LAS TARJETAS DE USUARIO */
@@ -44,6 +217,7 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 330px));
     gap: 20px;
+    margin-left: 15%;
     /* envolver elementos en varias líneas */
 }
 
@@ -56,19 +230,20 @@ section .persona {
     width: 250px;
     height: 456px;
     border-radius: 3%;
-    box-shadow: 0 0  10px rgb(140, 143, 146);
+    box-shadow: 0 0 10px rgb(140, 143, 146);
     padding: 10px;
     margin: auto;
     overflow: hidden;
     transition: 0.8s;
     margin-bottom: 20px;
 }
-.persona:hover{
+
+.persona:hover {
     scale: 1.02;
     transition: 0.8s;
 }
 
-section .persona .imagen{
+section .persona .imagen {
     width: 90%;
 }
 
@@ -81,44 +256,51 @@ section .persona .datos {
     justify-content: left;
     align-items: center;
 }
+
 section .persona .datos ul {
     list-style: none;
     line-height: 30px;
     padding: 0;
     font-family: "Reef";
 }
+
 @font-face {
     font-family: "Reef";
     src: url("../tipografias/Reef.ttf");
 }
+
 section .persona .datos ul .valor {
     display: inline-block;
     color: #424242;
-    
+
 }
-section .persona .imagen img{
+
+section .persona .imagen img {
     width: 100%;
     border-radius: 10px;
 }
-section .persona  .botones{
+
+section .persona .botones {
     display: flex;
     flex-direction: row;
-    justify-content: center; /* Centra los elementos horizontalmente */
-    align-items: center; /* Centra los elementos verticalmente */
+    justify-content: center;
+    /* Centra los elementos horizontalmente */
+    align-items: center;
+    /* Centra los elementos verticalmente */
     width: 100%;
     border-radius: 5px;
     gap: 10px;
 }
 
-.perfil{
+.perfil {
     text-align: center;
-    
+
 }
 
-.btnPerfil{
+.btnPerfil {
     width: 100px;
     height: 25px;
-    background-color: #fd5564; 
+    background-color: #fd5564;
     border: none;
     color: black;
     border-radius: 10px;
@@ -130,23 +312,25 @@ section .persona  .botones{
         display: flex;
         justify-content: flex-end;
     }
+
     aside {
         position: sticky;
         top: 20px;
     }
-    aside .menuLateral{
+
+    aside .menuLateral {
         display: block;
         border-radius: 15px;
         height: 500px;
         display: flex;
-        background-color:#2e2e2e;
+        background-color: #2e2e2e;
         /* box-shadow: 0 0  10px rgb(210,217,225);  */
         justify-content: center;
         align-items: center;
         width: 100px;
         margin: 10px;
     }
-    
+
 
     aside .menuLateral ul {
         line-height: 50px;
@@ -156,7 +340,7 @@ section .persona  .botones{
     aside .menuLateral ul li {
         list-style: none;
         width: 100%;
-        
+
     }
 
     aside .menuLateral ul li a {
@@ -169,13 +353,16 @@ section .persona  .botones{
         color: #ffffff;
         border-radius: 10px;
     }
-    aside .menuLateral ul li img{
+
+    aside .menuLateral ul li img {
         width: 90px;
         border-radius: 20px;
         scale: 1;
+        transition: 0.4s;
     }
-    aside .menuLateral ul li img:hover{
-        scale: 1.40;
+
+    aside .menuLateral ul li img:hover {
+        scale: 1.20;
         transition: 0.4s;
     }
 
@@ -183,16 +370,19 @@ section .persona  .botones{
         scale: 1.10;
         transition: 0.8s;
     }
-    
-    aside .menuLateral ul .opL:hover i{
-        color:#fe3c72; 
+
+    aside .menuLateral ul .opL:hover i {
+        color: #fe3c72;
     }
+
     aside .menuLateral ul li a i {
         width: 75px;
         text-align: center;
 
     }
-    section{
-        width: calc(100vw - 150px); 
+
+    section {
+        width: calc(100vw - 150px);
+        margin-left: 0%;
     }
 }

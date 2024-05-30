@@ -10,16 +10,16 @@
 
     <div class="slide">
         <ul>
-            <!-- <li><a href="#"><i class="fas fa-tv"></i>dashboard</a></li> -->
-            <li class="opL"><a href="#"><i class='fa-solid fa-house'></i></a></li>
+            <!-- <li><a href="#"><i class="fas fa-tv"></i>dashboard</a></li> --> 
+            <li class="opL"><a href="../indexRegistrado.php?id_usuario=<?php echo $id_usuario ?>&usuario=<?php echo $nombre ?>"><i class='fa-solid fa-house'></i></a></li>
             <li class="opL"><a href="#"><i class="far fa-user"></i></a></li>
             <!-- <li><a href="#"><i class="fab fa-gripfire"></i>trending</a></li> -->
             <li class="opL"><a href="#"><i class="far fa-comments"></i></a></li>
             <!-- <li><a href="#"><i class="far fa-folder"></i>file manager</a></li> -->
             <!-- <li><a href="#"><i class="far fa-address-book"></i>portfolio</a></li> -->
-            <li class="opL"><a href="favoritos.php"><i class="fas fa-heart"></i></a></li>
-            <li class="opL"><a href="#"><i class="fas fa-cogs"></i></a></li>
-            <li class="opL"><a href="#"><i class='fas fa-sign-out-alt'></i></a></li>
+            <li class="opL"><a href="../unimatch/favoritos/favoritos.php?id_usuario=<?php echo $id_usuario ?>&nombre=<?php echo $nombre ?>"><i class="fas fa-heart"></i></a></li>
+            <li class="opL"><a href="../unimatch/settingsUser/indexConfig.php?id_usuario=<?php echo $id_usuario ?>&usuario=<?php echo $nombre ?>"><i class="fas fa-cogs"></i></a></li>
+            <li class="opL"><a href="../unimatch/inicioSesionForm/cerrarSesion.php"><i class='fas fa-sign-out-alt'></i></a></li>
         </ul>
     </div>
 </label>

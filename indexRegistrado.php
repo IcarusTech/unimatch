@@ -6,8 +6,8 @@ if (!isset($_SESSION['usuario'])) {
     header("Location: inicioSesionForm/inicioSesion.php");
     exit();
 }
-$id_usuario=$_GET['id_usuario'];
-$nombre=$_GET['usuario'];
+$id_usuario = $_GET['id_usuario'];
+$nombre = $_GET['usuario'];
 require_once("./modelo/DBperfil.php");
 $conexion = new \modelo\DBperfil;
 $stringFavoritos = $conexion->consultarFavoritos($id_usuario);
@@ -24,8 +24,7 @@ $variable_php = 'valor';
     <title>Index Registrado</title>
     <link rel="stylesheet" href="./styles/indexRegistrado.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="./styles/scrollbar.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css?v=<?php echo time(); ?>">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         const idUsuario = "<?php echo $id_usuario ?>";
@@ -33,15 +32,36 @@ $variable_php = 'valor';
         const stringFavoritos = "<?php echo $stringFavoritos ?>";
     </script>
     <script src="./logicaGeneral/llegadaDatosPerfiles.js?v=<?php echo time(); ?>" defer></script>
-    
+
 </head>
 
 <body>
     <header>
-        <!-- include con el menu desplegable para movil (visible solo en movil) -->
-        <?php
-        include "./elementos/barraLateral.php";
-        ?>
+        <!--el menu desplegable para movil (visible solo en movil) -->
+        <label class="lateral">
+
+            <input type="checkbox" class="input-barraLateral">
+            <div class="toggle">
+                <span class="top_line common"></span>
+                <span class="middle_line common"></span>
+                <span class="bottom_line common"></span>
+            </div>
+
+            <div class="slide">
+                <ul>
+                    <!-- <li><a href="#"><i class="fas fa-tv"></i>dashboard</a></li> -->
+                    <li class="opL"><a href="../indexRegistrado.php?id_usuario=<?php echo $id_usuario ?>&usuario=<?php echo $nombre ?>"><i class='fa-solid fa-house'></i></a></li>
+                    <li class="opL"><a href="#"><i class="far fa-user"></i></a></li>
+                    <!-- <li><a href="#"><i class="fab fa-gripfire"></i>trending</a></li> -->
+                    <li class="opL"><a href="#"><i class="far fa-comments"></i></a></li>
+                    <!-- <li><a href="#"><i class="far fa-folder"></i>file manager</a></li> -->
+                    <!-- <li><a href="#"><i class="far fa-address-book"></i>portfolio</a></li> -->
+                    <li class="opL"><a href="../unimatch/favoritos/favoritos.php?id_usuario=<?php echo $id_usuario ?>&nombre=<?php echo $nombre ?>"><i class="fas fa-heart"></i></a></li>
+                    <li class="opL"><a href="../unimatch/settingsUser/indexConfig.php?id_usuario=<?php echo $id_usuario ?>&usuario=<?php echo $nombre ?>"><i class="fas fa-cogs"></i></a></li>
+                    <li class="opL"><a href="../unimatch/inicioSesionForm/cerrarSesion.php"><i class='fas fa-sign-out-alt'></i></a></li>
+                </ul>
+            </div>
+        </label>
         <div class="perfil">
             <img src="img/iconoUser.png" alt="">
         </div>
@@ -50,7 +70,7 @@ $variable_php = 'valor';
     <aside id="menuLat">
         <div class="menuLateral">
             <ul>
-            <li class="opL" ><img src="../unimatch/img/logotipoSinFondo2.png" alt=""></li>
+                <li class="opL"><img src="../unimatch/img/logotipoSinFondo2.png" alt="logo"></li>
                 <!-- <li><a href="#"><i class="fas fa-tv"></i>dashboard</a></li> -->
                 <li class="opL"><a href="../unimatch/indexRegistrado.php?id_usuario=<?php echo $id_usuario ?>&usuario=<?php echo $nombre ?>"><i class='fa-solid fa-house'></i></a></li>
                 <li class="opL"><a href="#"><i class="far fa-user"></i></a></li>
