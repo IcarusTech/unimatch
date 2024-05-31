@@ -1,6 +1,5 @@
 body {
     background-color: #ffffff;
-    min-height: 100%;
 }
 
 /* INICIO DEL HEADER */
@@ -196,7 +195,6 @@ header .perfil img {
     }
 
 }
-
 /* Acaba la barra lateral desplegable */
 /*  FINAL DEL HEADER */
 
@@ -308,45 +306,7 @@ section .persona .botones {
     border-radius: 10px;
     font-size: 15px;
 }
-#perfilContainer {
-    font-family: Arial, Helvetica, sans-serif;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: 130;
-    top: 0;
-    bottom: 0;
-    align-items: center;
-    justify-content: center;
-    display: none;
-    background-color: rgba(117, 114, 114, 0.7);
-}
 
-#fichaPefil {
-    font-family: "Audiowide", sans-serif;
-    width: 40%;
-    height: 65%;
-    position: fixed;
-    z-index: 130;
-    top: 20%;
-    left: 30%;
-    display: none;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    align-content: space-around;
-    background-color: rgb(214, 210, 205);
-    border: 1px solid black;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 5px 5px 0px black;
-}
-.graficoContainer{
-    width: 300px;
-    height: 300px;
-    margin: auto;
-}
 @media (min-width: 650px) {
     header {
         display: flex;
@@ -373,6 +333,8 @@ section .persona .botones {
 
 
     aside .menuLateral ul {
+        align-self: center;
+        margin-left: -30px;
         line-height: 50px;
         font-size: 25px;
     }
@@ -380,7 +342,6 @@ section .persona .botones {
     aside .menuLateral ul li {
         list-style: none;
         width: 100%;
-
     }
 
     aside .menuLateral ul li a {

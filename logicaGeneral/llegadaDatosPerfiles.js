@@ -1,5 +1,8 @@
 //declaramos variables y constantes
 let resultadosPerfiles = document.getElementById('resultadosPerfiles');
+let fichaPerfil = document.getElementById('fichaPerfil');
+document.getElementById("fichaPerfil").style.display = "none";
+let perfilContainer = document.getElementById('perfilContainer');
 console.log("ESta es mi lista de favoritos: " + stringFavoritos);
 let arrayFavoritos = stringFavoritos.split(",");
 console.log(arrayFavoritos);
@@ -72,8 +75,8 @@ function generarPerfiles(resultados) {
                 + "</ul>"
                 + "</div>"
                 + "<div class='botones'>"
-                + "<div class='perfil'><button class='btnPerfil' onclick='' >Ver perfil</button></div>"
-                + "<div id='btnFavoritoContainer"+i+"' class='btnFavorito' onclick='obtenerId(" + resultados[i].id_usuario_relacionado+"," + i + ")'></div>"
+                + "<div class='perfil'><button class='btnPerfil' onclick='mostrarPerfil(" + JSON.stringify(resultados[i]) + ")' >Ver perfil</button></div>"
+                + "<div id='btnFavoritoContainer" + i + "' class='btnFavorito' onclick='obtenerId(" + resultados[i].id_usuario_relacionado + "," + i + ")'></div>"
                 + "</div>"
                 + "</div>";
 
@@ -95,13 +98,13 @@ function generarPerfiles(resultados) {
 
 function obtenerId(idCogido, idDiv) {
     console.log(idCogido);
-    let divCorazon=document.getElementById('btnFavoritoContainer'+idDiv);
+    let divCorazon = document.getElementById('btnFavoritoContainer' + idDiv);
     let heartContainer = divCorazon.querySelector('.heart-container');
     // Obtener el input dentro del div por su clase
     let inputFavorito = heartContainer.querySelector('.checkbox');
     /*  heartContainer.forEach((button => {
      })); */
-     console.log(inputFavorito)
+    console.log(inputFavorito)
     if (inputFavorito && inputFavorito.checked) {
         $.ajax({  //Hacemos una petición ajax para enviar la id
             //Especificamos la url a la que queremos enviar la variable
@@ -144,4 +147,40 @@ function obtenerId(idCogido, idDiv) {
             }
         });
     }
+}
+function mostrarPerfil(datosPerfil) {
+    let datos = "";
+    console.log(datosPerfil);
+    datos += "<div id='fotoPerfil' >"
+     +"<img src='" + datosPerfil.ruta_img + "' alt='" + datosPerfil.nombre + "'></div>"
+        +"<div id='textoA'><ul>"
+        + "<li>Nombre: " + datosPerfil.nombre + "</li>"
+        + "<li>Apellido: " + datosPerfil.apellido + "</li>"
+        + "<li>Fecha de nacimiento: " + datosPerfil.fecha_de_nacimiento + "</li>"
+        + "<li>Curso: " + datosPerfil.curso + "</li>"
+        + "<li>Genero: " + datosPerfil.genero + "</li>"
+        + "<li>Fumador: " + datosPerfil.fumador + "</li>"
+        + "<li>Instagram: " + datosPerfil.instagram + "</li>"
+        + "</ul></div>"
+        + "<div id='textoB'><ul>"
+        + "<li>Personalidad: " + datosPerfil.nombre + "</li>"
+        + "<li>Amistad buscada: " + datosPerfil.apellido + "</li>"
+        + "<li>Planes: " + datosPerfil.fecha_de_nacimiento + "</li>"
+        + "<li>Hobbie: " + datosPerfil.curso + "</li>"
+        + "<li>Definición: " + datosPerfil.genero + "</li>"
+        + "<li>Estilo de musica: " + datosPerfil.estilo_de_musica + "</li>"
+        + "</ul></div>"
+        + "";
+        datos += "</li></ul><button id='cerrarVentana' onclick='cerrarFicha()'>Cerrar ventana</button>";
+    fichaPerfil.innerHTML = datos;
+    //fondoEstadisticas es una section en el html donde se pondra el div con la tabla y demás
+    fichaPerfil.style.display = "flex";
+    perfilContainer.style.display = "flex";
+    perfilContainer.style.backdropFilter = "blur(5px)";
+}
+function cerrarFicha(){
+    fichaPerfil.style.display = "none";
+    perfilContainer.style.display = "none";
+    perfilContainer.style.backdropFilter = "none";
+
 }
