@@ -25,6 +25,7 @@ class DBusuario
 
     public function login($user, $password)
     {
+        error_reporting(0); //Funcion para ocultar las advertencias del programa
         $message = "Usuario o contraseña incorrecto";
         $query = $this->conexion->prepare("SELECT * FROM $this->table WHERE nombre_usuario = ? AND contrasena = ?");
         $query->bind_param("ss", $user, $password);
@@ -35,12 +36,23 @@ class DBusuario
         $idUsuario->bind_param("ss", $user, $password);
         $idUsuario->execute();
         $idUsuarioResult = $idUsuario->get_result();
-
+        $permisoUsuario = $this->conexion->prepare("SELECT administrador FROM $this->table WHERE nombre_usuario = ? AND contrasena = ?");
+        $permisoUsuario->bind_param("ss", $user, $password);
+        $permisoUsuario->execute();
+        $result = $permisoUsuario->get_result();
+        $row = $result->fetch_assoc();
+        $booleanAdministrador = (bool) $row['administrador'];
         if ($num == 1) {
-            session_start(); //iniciar sesion o continuarla
-            $id_usuario = $idUsuarioResult->fetch_row();
-            $_SESSION['usuario'] = $user; //El nombre de la sesión es igual al nombre del usuario
-            header("location: ../indexRegistrado.php?usuario=$user&id_usuario=$id_usuario[0]"); //Lo redirigimos al index registrado
+            if ($booleanAdministrador) {
+                $id_usuario = $idUsuarioResult->fetch_row();
+                $_SESSION['user_type'] = 'admin';
+                header("location: ../indexAdmin/indexAdmin.php?usuario=$user&id_usuario=$id_usuario[0]"); //Lo redirigimos al index registrado
+            } else {
+                session_start(); //iniciar sesion o continuarla
+                $id_usuario = $idUsuarioResult->fetch_row();
+                $_SESSION['usuario'] = $user; //El nombre de la sesión es igual al nombre del usuario
+                header("location: ../indexRegistrado.php?usuario=$user&id_usuario=$id_usuario[0]"); //Lo redirigimos al index registrado
+            }
         } else {
             echo "<script>
             document.addEventListener('DOMContentLoaded', function() {
@@ -94,7 +106,16 @@ class DBusuario
             $delete->bind_param("ss", $user, $password);
             $delete->execute();
         }
+
+        $json = 'datos.json';
+
+        $jsonArray = json_decode($json, true); // Decodifica a array asociativo
+
+        unset($jsonArray[$user]); // Elimina la posición 2
+
+        $jsonArray = array_values($jsonArray); // Reindexa el array
     }
+
 
     public function update($user, $confirmacion, $campo, $valor)
     {
@@ -116,7 +137,6 @@ class DBusuario
         $query = mysqli_query($this->conexion, "SELECT * FROM usuarios");
         //Comprobamos que se ha recuperado al menus un registro del usuario
         $num = mysqli_num_rows($query);
-        echo ("<div class='total'><h1>+".$num."</h1></div>");
+        echo ("<div class='total'><h1>+" . $num . "</h1></div>");
     }
-
 }
