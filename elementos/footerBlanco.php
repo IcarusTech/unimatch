@@ -174,7 +174,10 @@
             margin-bottom: 30px;
         }
 
-
+        body{
+            margin: 0;
+            padding: 0;
+        }
 
     }
 </style>

@@ -1,4 +1,5 @@
 <?php
+error_reporting(0); //Funcion para ocultar las advertencias del programa
 $id_usuario = $_GET['id_usuario'];
 $nombre = $_GET['usuario'];
 ?>
@@ -21,7 +22,7 @@ $nombre = $_GET['usuario'];
         const stringFavoritos = "<?php echo $stringFavoritos ?>";
     </script>
     <script src="./logicaGeneral/llegadaDatosPerfiles.js?v=<?php echo time(); ?>" defer></script>
-    <title>Document</title>
+    <title>Configuracion</title>
 </head>
 
 <body>
@@ -89,15 +90,17 @@ $nombre = $_GET['usuario'];
     <main>
 
         <form action="registro.php" method="post">
-    
-            <div class="profile-header">
-                <img src="profile_picture.jpg" alt="Profile Picture" class="profile-IMG">
+        <div class="profile-header">
+        <div class="photo"><img src="../img/iconoUser.png" alt="Profile Picture" class="profile-IMG"></div>
+            
+                   
                 <div class="profile-info">
                     <ul>
                         <li>pablo1324</li>
-                        <li>Pablo</li>
+                        <li class="nombre">Pablo</li>
                     </ul>
                 </div>
+                
                 <button class="profile-button">Cambiar foto</button>
             </div>
 
@@ -117,6 +120,7 @@ $nombre = $_GET['usuario'];
                 </div>
                 <p id="error-definicion" class="error"></p>
             </div>
+
             <input class="btn" type="submit" value="Guardar">
             </div>
         </form>
