@@ -322,30 +322,60 @@ section .persona .botones {
     background-color: rgba(117, 114, 114, 0.7);
 }
 
-#fichaPefil {
-    font-family: "Audiowide", sans-serif;
-    width: 40%;
-    height: 65%;
-    position: fixed;
-    z-index: 130;
-    top: 20%;
-    left: 30%;
+#fichaPerfil {
     display: none;
     flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    align-content: space-around;
-    background-color: rgb(214, 210, 205);
+    overflow: hidden;
+    position: fixed;
+    z-index: 130;
+    margin: auto;
+    font-family: "Audiowide", sans-serif;
+    width: 50%;
+    height: 85%;
+    padding-left: 30px;
+    background-color: rgb(252, 252, 252);
     border: 1px solid black;
     border-radius: 15px;
+    box-shadow: 5px 5px 0px rgb(223, 56, 104);
+}
+
+#fichaPerfil .seccion {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
     overflow: hidden;
-    box-shadow: 5px 5px 0px black;
+    width: 40%;
+    height: 37%;
+    border: 2px solid black;
+    padding: 10px; /* Espacio entre el borde y el contenido */
+    margin: 10px; /* Espacio entre las secciones */
+    order: 1; /* Establece el orden de las secciones */
+}
+#fichaPerfil .seccion ul {
+    color: #f43343;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+#fichaPerfil .seccion img {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+}
+#fichaPerfil #btnCerrarVentana{
+    width: 100%;
+    height: 40px;
+    order: 2; /* Establece el orden del botón */
 }
 .graficoContainer{
     width: 300px;
     height: 300px;
     margin: auto;
+    z-index: 130;
+    display: none;
 }
 @media (min-width: 650px) {
     header {

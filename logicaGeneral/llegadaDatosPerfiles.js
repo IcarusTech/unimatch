@@ -1,7 +1,9 @@
 //declaramos variables y constantes
 let resultadosPerfiles = document.getElementById('resultadosPerfiles');
 let fichaPerfil = document.getElementById('fichaPerfil');
+let cajaGráfica = document.getElementById("cajaGrafica");
 document.getElementById("fichaPerfil").style.display = "none";
+document.getElementById("cajaGrafica").style.display = "none";
 let perfilContainer = document.getElementById('perfilContainer');
 console.log("ESta es mi lista de favoritos: " + stringFavoritos);
 let arrayFavoritos = stringFavoritos.split(",");
@@ -151,9 +153,9 @@ function obtenerId(idCogido, idDiv) {
 function mostrarPerfil(datosPerfil) {
     let datos = "";
     console.log(datosPerfil);
-    datos += "<div id='fotoPerfil' >"
-     +"<img src='" + datosPerfil.ruta_img + "' alt='" + datosPerfil.nombre + "'></div>"
-        +"<div id='textoA'><ul>"
+    datos += "<div id='fotoPerfil'class='seccion' >"
+        + "<img src='" + datosPerfil.ruta_img + "' alt='" + datosPerfil.nombre + "'></div>"
+        + "<div id='textoA'class='seccion'><ul>"
         + "<li>Nombre: " + datosPerfil.nombre + "</li>"
         + "<li>Apellido: " + datosPerfil.apellido + "</li>"
         + "<li>Fecha de nacimiento: " + datosPerfil.fecha_de_nacimiento + "</li>"
@@ -162,7 +164,7 @@ function mostrarPerfil(datosPerfil) {
         + "<li>Fumador: " + datosPerfil.fumador + "</li>"
         + "<li>Instagram: " + datosPerfil.instagram + "</li>"
         + "</ul></div>"
-        + "<div id='textoB'><ul>"
+        + "<div id='textoB' class='seccion'><ul>"
         + "<li>Personalidad: " + datosPerfil.nombre + "</li>"
         + "<li>Amistad buscada: " + datosPerfil.apellido + "</li>"
         + "<li>Planes: " + datosPerfil.fecha_de_nacimiento + "</li>"
@@ -170,17 +172,19 @@ function mostrarPerfil(datosPerfil) {
         + "<li>Definición: " + datosPerfil.genero + "</li>"
         + "<li>Estilo de musica: " + datosPerfil.estilo_de_musica + "</li>"
         + "</ul></div>"
-        + "";
-        datos += "</li></ul><button id='cerrarVentana' onclick='cerrarFicha()'>Cerrar ventana</button>";
+        + "<div class='seccion'>"
+        + "</div>"
+        + "<button id='btnCerrarVentana' onclick='cerrarFicha()'>Cerrar ventana</button>";
     fichaPerfil.innerHTML = datos;
     //fondoEstadisticas es una section en el html donde se pondra el div con la tabla y demás
     fichaPerfil.style.display = "flex";
     perfilContainer.style.display = "flex";
     perfilContainer.style.backdropFilter = "blur(5px)";
 }
-function cerrarFicha(){
+function cerrarFicha() {
     fichaPerfil.style.display = "none";
     perfilContainer.style.display = "none";
+
     perfilContainer.style.backdropFilter = "none";
 
 }

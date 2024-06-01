@@ -31,6 +31,7 @@ $variable_php = 'valor';
         const nombre = "<?php echo $nombre ?>";
         const stringFavoritos = "<?php echo $stringFavoritos ?>";
     </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js?v=<?php echo time(); ?>"></script>
     <script src="./logicaGeneral/llegadaDatosPerfiles.js?v=<?php echo time(); ?>" defer></script>
     <script src="./logicaGeneral/graficaCompatibilidad.js?v=<?php echo time(); ?>" defer></script>
 
@@ -86,16 +87,15 @@ $variable_php = 'valor';
             </ul>
         </div>
     </aside>
+    <div class="graficoContainer" id="cajaGrafica">
+        <canvas id="grafico"></canvas>
+    </div>
     <div id="perfilContainer">
-            <div id="fichaPerfil">
-
-                <div class="graficoContainer">
-                    <canvas id="grafico"></canvas>
-                </div>
-            </div>
+        <div id="fichaPerfil">
         </div>
+    </div>
     <section id="resultadosPerfiles">
-        
+
     </section>
 
 
