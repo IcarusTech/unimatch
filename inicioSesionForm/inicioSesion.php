@@ -15,7 +15,7 @@ if (isset($_POST['nombre']) && isset($_POST['inputPassword'])) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Inicio de sesion</title>
         <link rel="stylesheet" href="styles.css?v=<?php echo time(); ?>">
         <script src="logicaInicioSesion.js?v=<?php echo time(); ?>" defer></script>
     </head>
