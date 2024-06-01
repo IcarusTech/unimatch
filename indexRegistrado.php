@@ -87,11 +87,19 @@ $variable_php = 'valor';
             </ul>
         </div>
     </aside>
-    <div class="graficoContainer" id="cajaGrafica">
-        <canvas id="grafico"></canvas>
-    </div>
     <div id="perfilContainer">
         <div id="fichaPerfil">
+            <div id="fotoPerfil" class="seccion">
+            </div>
+            <div id="textoA" class="seccion">
+            </div>
+            <div id="textoB" class="seccion">
+            </div>
+            <div class="seccion" id="grafica">
+                <canvas id="grafico"></canvas>
+            </div>
+            <div id="btnCerrarVentana">
+            </div>
         </div>
     </div>
     <section id="resultadosPerfiles">

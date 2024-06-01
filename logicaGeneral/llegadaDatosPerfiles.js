@@ -1,9 +1,13 @@
+let containerTextoA = document.getElementById('textoA');
+let containerTextoB = document.getElementById('textoB');
+let containerFotoPerfil = document.getElementById('fotoPerfil');
+let containerBotonFicha = document.getElementById('btnCerrarVentana');
+let containerGrafica = document.getElementById('grafica');
+
 //declaramos variables y constantes
 let resultadosPerfiles = document.getElementById('resultadosPerfiles');
-let fichaPerfil = document.getElementById('fichaPerfil');
 let cajaGráfica = document.getElementById("cajaGrafica");
 document.getElementById("fichaPerfil").style.display = "none";
-document.getElementById("cajaGrafica").style.display = "none";
 let perfilContainer = document.getElementById('perfilContainer');
 console.log("ESta es mi lista de favoritos: " + stringFavoritos);
 let arrayFavoritos = stringFavoritos.split(",");
@@ -151,11 +155,14 @@ function obtenerId(idCogido, idDiv) {
     }
 }
 function mostrarPerfil(datosPerfil) {
-    let datos = "";
+    let textoA = "";
+    let textoB = "";
+    let foto = "";
+    let boton = "";
+    let grafica = "";
     console.log(datosPerfil);
-    datos += "<div id='fotoPerfil'class='seccion' >"
-        + "<img src='" + datosPerfil.ruta_img + "' alt='" + datosPerfil.nombre + "'></div>"
-        + "<div id='textoA'class='seccion'><ul>"
+    foto += "<img src='" + datosPerfil.ruta_img + "' alt='" + datosPerfil.nombre + "'>";
+    textoA += "<ul>"
         + "<li>Nombre: " + datosPerfil.nombre + "</li>"
         + "<li>Apellido: " + datosPerfil.apellido + "</li>"
         + "<li>Fecha de nacimiento: " + datosPerfil.fecha_de_nacimiento + "</li>"
@@ -163,19 +170,20 @@ function mostrarPerfil(datosPerfil) {
         + "<li>Genero: " + datosPerfil.genero + "</li>"
         + "<li>Fumador: " + datosPerfil.fumador + "</li>"
         + "<li>Instagram: " + datosPerfil.instagram + "</li>"
-        + "</ul></div>"
-        + "<div id='textoB' class='seccion'><ul>"
-        + "<li>Personalidad: " + datosPerfil.nombre + "</li>"
-        + "<li>Amistad buscada: " + datosPerfil.apellido + "</li>"
-        + "<li>Planes: " + datosPerfil.fecha_de_nacimiento + "</li>"
-        + "<li>Hobbie: " + datosPerfil.curso + "</li>"
-        + "<li>Definición: " + datosPerfil.genero + "</li>"
+        + "</ul>";
+    textoB += "<ul>"
+        + "<li>Personalidad: " + datosPerfil.tipo_de_personalidad + "</li>"
+        + "<li>Amistad buscada: " + datosPerfil.tipo_de_amistad_buscada + "</li>"
+        + "<li>Planes: " + datosPerfil.planes + "</li>"
+        + "<li>Hobbie: " + datosPerfil.hobbie + "</li>"
+        + "<li>Definición: " + datosPerfil.definicion_1 + "</li>"
         + "<li>Estilo de musica: " + datosPerfil.estilo_de_musica + "</li>"
-        + "</ul></div>"
-        + "<div class='seccion'>"
-        + "</div>"
-        + "<button id='btnCerrarVentana' onclick='cerrarFicha()'>Cerrar ventana</button>";
-    fichaPerfil.innerHTML = datos;
+        + "</ul>";
+    boton += "<button id='btn' onclick='cerrarFicha()'>Cerrar ventana</button>";
+    containerFotoPerfil.innerHTML = foto;
+    containerTextoA.innerHTML = textoA;
+    containerTextoB.innerHTML = textoB;
+    containerBotonFicha.innerHTML = boton;
     //fondoEstadisticas es una section en el html donde se pondra el div con la tabla y demás
     fichaPerfil.style.display = "flex";
     perfilContainer.style.display = "flex";

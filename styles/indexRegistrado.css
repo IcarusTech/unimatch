@@ -325,13 +325,12 @@ section .persona .botones {
 #fichaPerfil {
     display: none;
     flex-wrap: wrap;
-    overflow: hidden;
     position: fixed;
     z-index: 130;
     margin: auto;
     font-family: "Audiowide", sans-serif;
-    width: 50%;
-    height: 85%;
+    width: 90%;
+    height: fit-content;
     padding-left: 30px;
     background-color: rgb(252, 252, 252);
     border: 1px solid black;
@@ -347,35 +346,44 @@ section .persona .botones {
     justify-content: space-between;
     margin: auto;
     overflow: hidden;
-    width: 40%;
-    height: 37%;
-    border: 2px solid black;
+    width: 100%;
+    height: fit-content;
     padding: 10px; /* Espacio entre el borde y el contenido */
     margin: 10px; /* Espacio entre las secciones */
     order: 1; /* Establece el orden de las secciones */
 }
 #fichaPerfil .seccion ul {
+    list-style: none;
     color: #f43343;
     font-size: 20px;
-    line-height: 28px;
+    line-height: 29px;
 }
 
 #fichaPerfil .seccion img {
+    border-radius: 20px;
     width: 200px;
     height: 200px;
     margin: auto;
+    box-shadow: 0px 0px 5px rgb(223, 56, 104);
 }
 #fichaPerfil #btnCerrarVentana{
-    width: 100%;
+    width: 90%;
     height: 40px;
     order: 2; /* Establece el orden del botón */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
 }
-.graficoContainer{
-    width: 300px;
-    height: 300px;
-    margin: auto;
-    z-index: 130;
-    display: none;
+#fichaPerfil #btnCerrarVentana #btn{
+    color: white;
+    border: none;
+    font-size: 20px;
+    width: 150px;
+    height: 100%;
+    border-radius: 20px;
+    background-color: #fd5564;
+    box-shadow: 5px 5px 0px rgb(230, 174, 190);
 }
 @media (min-width: 650px) {
     header {
@@ -454,5 +462,13 @@ section .persona .botones {
     section {
         width: calc(100vw - 150px);
         margin-left: 0%;
+    }
+    #fichaPerfil {
+        width: 50%;
+        height: 85%;
+    }
+    #fichaPerfil .seccion {
+        width: 40%;
+        height: 38%;
     }
 }
