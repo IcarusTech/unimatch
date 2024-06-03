@@ -245,6 +245,7 @@ function compararPerfiles(datosPerfil, datosPropios) {
         totalPuntuacion += 20;
     }
     console.log(totalPuntuacion);
+    //Llamamos a la funcion imprimirGrafica que esta en el archivo graficaCompatibilidad.js y le pasamos la compatibilidad
     imprimirGrafica(totalPuntuacion);
 }
 

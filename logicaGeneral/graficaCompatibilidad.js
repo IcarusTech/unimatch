@@ -1,6 +1,7 @@
 function imprimirGrafica(compatibilidad) {
   //Etiquetas a comparar
   console.log("La compatibilidad es de "+compatibilidad);
+  //A partir de la compatibilidad en tanto por 100 podemos obtener el porcentaje y mostrarlo 
   let total=100;
   let diferencia=total-compatibilidad;
   const etiquetas = ['Compatible', 'No compatible'];
@@ -8,9 +9,9 @@ function imprimirGrafica(compatibilidad) {
   const colors = ['#fe3c72', 'rgba(255, 255, 255, 0)'];
   //Seleccionamos el canvas
   const migrafico = document.getElementById('grafico');
-
+  //Creamos una variable que almacene la antigua gráfica unida a un elemento en el html por ID
   const graficoantiguo = Chart.getChart('grafico');
-  if (graficoantiguo) {
+  if (graficoantiguo) { //Si existe la antigua y otra actualizada, destruimos la antigua para que se muestra la actualizada
     graficoantiguo.destroy();
   }
 
@@ -26,6 +27,7 @@ function imprimirGrafica(compatibilidad) {
   };
   Chart.register( // Registrar el plugin personalizado
     {
+      //Creo un campo a mano para el config donde se muestre un texto en el medio de la gráfica
       id: 'centerText',
       beforeDraw: function (chart) {
         const width = chart.width,
