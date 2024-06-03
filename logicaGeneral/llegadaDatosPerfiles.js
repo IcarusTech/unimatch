@@ -63,13 +63,13 @@ function buscarDatosPerfiles(array) {
 function generarPerfiles(resultados) {
     let textoRes = "";
     let arrayPerfilPropio = null;
-    for (let i = 0; i < resultados.length; i++){
+    for (let i = 0; i < resultados.length; i++) {
         if (resultados[i].id_usuario_relacionado == idUsuario) {
             arrayPerfilPropio = resultados[i];
         }
     }
     for (let i = 0; i < resultados.length; i++)
-         if (resultados[i].id_usuario_relacionado != idUsuario /* && !arrayFavoritos.includes(resultados[i].id_usuario_relacionado) */) {
+        if (resultados[i].id_usuario_relacionado != idUsuario /* && !arrayFavoritos.includes(resultados[i].id_usuario_relacionado) */) {
 
             let curso = resultados[i].curso.replaceAll("-", " ");
             let amistad = resultados[i].tipo_de_amistad_buscada.replaceAll("-", " ");
@@ -160,29 +160,45 @@ function obtenerId(idCogido, idDiv) {
     }
 }
 function mostrarPerfil(datosPerfil, datosPropios) {
-    //compararPerfiles(datosPerfil, datosPropios);
     let textoA = "";
     let textoB = "";
     let foto = "";
     let boton = "";
+    let fumador="";
+    let personalidad="";
+    if(datosPerfil.genero==="H"){
+        datosPerfil.genero="hombre"
+    }else{
+        datosPerfil.genero="mujer"
+    }
+    if(datosPerfil.fumador=="false"){
+       fumador="no";
+    }else{
+        fumador="si";
+    }
+    if(datosPerfil.tipo_de_personalidad=="E"){
+        personalidad="extrovertida";
+    }else{
+        personalidad="introvertida";
+    }
     console.log(datosPerfil);
     console.log(datosPropios);
     foto += "<img src='" + datosPerfil.ruta_img + "' alt='" + datosPerfil.nombre + "'>";
     textoA += "<ul>"
         + "<li>Nombre: " + datosPerfil.nombre + "</li>"
         + "<li>Apellido: " + datosPerfil.apellido + "</li>"
-        + "<li>Fecha de nacimiento: " + datosPerfil.fecha_de_nacimiento + "</li>"
+        + "<li>Fecha de nacimiento: " + datosPerfil.fecha_de_nacimiento.replaceAll("-", "/") + "</li>"
         + "<li>Curso: " + datosPerfil.curso + "</li>"
         + "<li>Genero: " + datosPerfil.genero + "</li>"
-        + "<li>Fumador: " + datosPerfil.fumador + "</li>"
+        + "<li>Fumador: " + fumador + "</li>"
         + "<li>Instagram: " + datosPerfil.instagram + "</li>"
         + "</ul>";
     textoB += "<ul>"
-        + "<li>Personalidad: " + datosPerfil.tipo_de_personalidad + "</li>"
-        + "<li>Amistad buscada: " + datosPerfil.tipo_de_amistad_buscada + "</li>"
-        + "<li>Planes: " + datosPerfil.planes + "</li>"
+        + "<li>Personalidad: " + personalidad + "</li>"
+        + "<li>Amistad buscada: " + datosPerfil.tipo_de_amistad_buscada.replaceAll("-", " ") + "</li>"
+        + "<li>Planes: " + datosPerfil.planes.replaceAll("-", " ") + "</li>"
         + "<li>Hobbie: " + datosPerfil.hobbie + "</li>"
-        + "<li>Definición: " + datosPerfil.definicion_1 + "</li>"
+        + "<li>Definición: " + datosPerfil.definicion_1+", "+datosPerfil.definicion_2+", "+datosPerfil.definicion_3 + "</li>"
         + "<li>Estilo de musica: " + datosPerfil.estilo_de_musica + "</li>"
         + "</ul>";
     boton += "<button id='btn' onclick='cerrarFicha()'>Cerrar ventana</button>";
@@ -210,29 +226,25 @@ function compararPerfiles(datosPerfil, datosPropios) {
         console.log("No es un array");
 
     }
-    let campoFumadorAjeno = datosPerfil.fumador;
-    let campoFumadorPropio = datosPropios.fumador;
-    console.log(campoFumadorAjeno);
-    console.log(campoFumadorPropio);
-    if (campoFumadorAjeno === campoFumadorPropio) {
+    if (datosPerfil.fumador === datosPropios.fumador) {
         totalPuntuacion += 20;
     }
-    /*     if (datosPerfil.tipo_de_personalidad == datosPropios.tipo_de_personalidad) {
-            totalPuntuacion += 20;
-        }
-        if (datosPerfil.planes == datosPropios.planes) {
-            totalPuntuacion += 10;
-        }
-        if (datosPerfil.tipo_de_amistad_buscada == datosPropios.tipo_de_amistad_buscada) {
-            totalPuntuacion += 10;
-        }
-        if (datosPerfil.hobbie == datosPropios.hobbie) {
-            totalPuntuacion += 20;
-        }
-        if (datosPerfil.estilo_de_musica == datosPropios.estilo_de_musica) {
-            totalPuntuacion += 20;
-        } */
+    if (datosPerfil.tipo_de_personalidad == datosPropios.tipo_de_personalidad) {
+        totalPuntuacion += 20;
+    }
+    if (datosPerfil.planes == datosPropios.planes) {
+        totalPuntuacion += 10;
+    }
+    if (datosPerfil.tipo_de_amistad_buscada == datosPropios.tipo_de_amistad_buscada) {
+        totalPuntuacion += 10;
+    }
+    if (datosPerfil.hobbie == datosPropios.hobbie) {
+        totalPuntuacion += 20;
+    }
+    if (datosPerfil.estilo_de_musica == datosPropios.estilo_de_musica) {
+        totalPuntuacion += 20;
+    }
     console.log(totalPuntuacion);
-    return 20;
+    imprimirGrafica(totalPuntuacion);
 }
 

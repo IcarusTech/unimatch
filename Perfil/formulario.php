@@ -373,7 +373,7 @@ if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
                         <label for="estiloPlan">Planes</label>
                         <select name="planes" id="estiloPlan">
                             <option value="senderismo">Senderismo</option>
-                            <option value="salirDeFiesta">Salir de fiesta</option>
+                            <option value="salir-de-fiesta">Salir de fiesta</option>
                             <option value="cine">Cine</option>
                             <option value="restaurantes">Restaurantes</option>
                             <option value="paseo">Paseo</option>
@@ -403,7 +403,7 @@ if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
                             <option value="dormir">Hacer ejercicio</option>
                             <option value="leer">Leer</option>
                             <option value="viajar">Viajar</option>
-                            <option value="deportesExtremos">Deportes extremos</option>
+                            <option value="deportes-extremos">Deportes extremos</option>
                             <option value="dibujar">Dibujar</option>
                             <option value="jugar-videojuegos">Jugar videojuegos</option>
                             <option value="bailar">Bailar</option>
