@@ -62,9 +62,14 @@ function buscarDatosPerfiles(array) {
 }
 function generarPerfiles(resultados) {
     let textoRes = "";
-    for (let i = 0; i < resultados.length; i++) {
-        if (resultados[i].id_usuario_relacionado != idUsuario /* && !arrayFavoritos.includes(resultados[i].id_usuario_relacionado) */) {
-
+    let arrayPerfilPropio = null;
+    for (let i = 0; i < resultados.length; i++){
+        if (resultados[i].id_usuario_relacionado == idUsuario) {
+            arrayPerfilPropio = resultados[i];
+        }
+    }
+    for (let i = 0; i < resultados.length; i++)
+         if (resultados[i].id_usuario_relacionado != idUsuario /* && !arrayFavoritos.includes(resultados[i].id_usuario_relacionado) */) {
 
             let curso = resultados[i].curso.replaceAll("-", " ");
             let amistad = resultados[i].tipo_de_amistad_buscada.replaceAll("-", " ");
@@ -81,7 +86,7 @@ function generarPerfiles(resultados) {
                 + "</ul>"
                 + "</div>"
                 + "<div class='botones'>"
-                + "<div class='perfil'><button class='btnPerfil' onclick='mostrarPerfil(" + JSON.stringify(resultados[i]) + ")' >Ver perfil</button></div>"
+                + "<div class='perfil'><button class='btnPerfil' onclick='mostrarPerfil(" + JSON.stringify(resultados[i]) + "," + JSON.stringify(arrayPerfilPropio) + ");compararPerfiles(" + JSON.stringify(resultados[i]) + "," + JSON.stringify(arrayPerfilPropio) + ")' >Ver perfil</button></div>"
                 + "<div id='btnFavoritoContainer" + i + "' class='btnFavorito' onclick='obtenerId(" + resultados[i].id_usuario_relacionado + "," + i + ")'></div>"
                 + "</div>"
                 + "</div>";
@@ -91,7 +96,7 @@ function generarPerfiles(resultados) {
                 $('.btnFavorito').html(data);
             });
         }
-    }
+
 
     resultadosPerfiles.innerHTML += textoRes;
 
@@ -154,13 +159,14 @@ function obtenerId(idCogido, idDiv) {
         });
     }
 }
-function mostrarPerfil(datosPerfil) {
+function mostrarPerfil(datosPerfil, datosPropios) {
+    //compararPerfiles(datosPerfil, datosPropios);
     let textoA = "";
     let textoB = "";
     let foto = "";
     let boton = "";
-    let grafica = "";
     console.log(datosPerfil);
+    console.log(datosPropios);
     foto += "<img src='" + datosPerfil.ruta_img + "' alt='" + datosPerfil.nombre + "'>";
     textoA += "<ul>"
         + "<li>Nombre: " + datosPerfil.nombre + "</li>"
@@ -196,3 +202,37 @@ function cerrarFicha() {
     perfilContainer.style.backdropFilter = "none";
 
 }
+function compararPerfiles(datosPerfil, datosPropios) {
+    let totalPuntuacion = 0;
+    if (Array.isArray(datosPerfil)) {
+        console.log("Es un array");
+    } else {
+        console.log("No es un array");
+
+    }
+    let campoFumadorAjeno = datosPerfil.fumador;
+    let campoFumadorPropio = datosPropios.fumador;
+    console.log(campoFumadorAjeno);
+    console.log(campoFumadorPropio);
+    if (campoFumadorAjeno === campoFumadorPropio) {
+        totalPuntuacion += 20;
+    }
+    /*     if (datosPerfil.tipo_de_personalidad == datosPropios.tipo_de_personalidad) {
+            totalPuntuacion += 20;
+        }
+        if (datosPerfil.planes == datosPropios.planes) {
+            totalPuntuacion += 10;
+        }
+        if (datosPerfil.tipo_de_amistad_buscada == datosPropios.tipo_de_amistad_buscada) {
+            totalPuntuacion += 10;
+        }
+        if (datosPerfil.hobbie == datosPropios.hobbie) {
+            totalPuntuacion += 20;
+        }
+        if (datosPerfil.estilo_de_musica == datosPropios.estilo_de_musica) {
+            totalPuntuacion += 20;
+        } */
+    console.log(totalPuntuacion);
+    return 20;
+}
+

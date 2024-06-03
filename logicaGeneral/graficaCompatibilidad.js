@@ -1,6 +1,7 @@
 //Etiquetas a comparar
-let compatibilidad=3;
-let total=4;
+let compatibilidad=compararPerfiles();
+console.log("La compatibilidad es de "+compatibilidad);
+let total=100;
 let diferencia=total-compatibilidad;
 const etiquetas = ['Compatible', 'No compatible'];
 //Array de colores
