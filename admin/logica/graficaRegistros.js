@@ -2,7 +2,7 @@ const btnGeneral = document.getElementById('btnGeneral');
 const btnSexos = document.getElementById('btnSexos');
 btnGeneral.addEventListener('click', fetchGeneral);
 btnSexos.addEventListener('click', fetchPorSexos);
-document.addEventListener("DOMContentLoaded",fetchGeneral);
+document.addEventListener("DOMContentLoaded", fetchGeneral);
 let graficoActual;
 function fetchGeneral() {
     fetch("../datosRegistros/datos.json")
@@ -57,7 +57,7 @@ function contarFechaRegistro(resultados) {
     const etiquetas = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
     //Seleccionamos el canvas
     const migrafico = document.getElementById('grafico');
-    
+
     //Datos
     const datos1 = {
         label: "Personas registradas",
@@ -155,14 +155,14 @@ function contarFechaRegistroSexo(resultados) {
     let arrayDiasChicas = [];
 
     for (let i = 0; i < resultados.length; i++) {
-        if(resultados[i].genero=="H"){
+        if (resultados[i].genero == "H") {
             let diaRegistro = resultados[i].dia_registro - 1;
             if (!arrayDiasChicos[diaRegistro]) {
                 arrayDiasChicos[diaRegistro] = 0;
             }
             arrayDiasChicos[diaRegistro]++;
         }
-        else{
+        else {
             let diaRegistro = resultados[i].dia_registro - 1;
             if (!arrayDiasChicas[diaRegistro]) {
                 arrayDiasChicas[diaRegistro] = 0;
@@ -170,14 +170,29 @@ function contarFechaRegistroSexo(resultados) {
             arrayDiasChicas[diaRegistro]++;
         }
     }
+    //Para que los dos array tengan la misma longitud si o si declaramos una variable que tome el valor másimo de ambos
+    const maxLength = Math.max(arrayDiasChicas.length, arrayDiasChicos.length);
+    //Verificamos si un es mas corto
+    if (arrayDiasChicas.length < maxLength) {
+        //Lo igualamos a la long max si es más corto
+        arrayDiasChicas.length = maxLength;
+        //Rellenamos lso huecos generados con ceros ya que se debe mostrar en la gráfica el valor
+        arrayDiasChicas.fill(0, arrayDiasChicas.length - (maxLength - arrayDiasChicas.length));
+    }
+
+    if (arrayDiasChicos.length < maxLength) {
+        arrayDiasChicos.length = maxLength;
+        arrayDiasChicos.fill(0, arrayDiasChicos.length - (maxLength - arrayDiasChicos.length));
+    }
+    //Como hay huecos vacios en ambos arrays recorro ambos y rellono los espacios vacios con 0
     for (let i = 0; i < arrayDiasChicos.length; i++) {
-        if(!arrayDiasChicos[i]){
-            arrayDiasChicos[i]=0;
+        if (!arrayDiasChicos[i]) {
+            arrayDiasChicos[i] = 0;
         }
     }
     for (let i = 0; i < arrayDiasChicas.length; i++) {
-        if(!arrayDiasChicas[i]){
-            arrayDiasChicas[i]=0;
+        if (!arrayDiasChicas[i]) {
+            arrayDiasChicas[i] = 0;
         }
     }
     console.log(arrayDiasChicas);
@@ -189,24 +204,24 @@ function contarFechaRegistroSexo(resultados) {
 
     //Datos
     const datos1 = {
-        label: "Personas registradas",
+        label: "Chicos registrados",
         data: [arrayDiasChicos[0], arrayDiasChicos[1], arrayDiasChicos[2], arrayDiasChicos[3], arrayDiasChicos[4]],
         /* pointRadius: 0, */
         borderColor: 'blue',
-        fill: true,
+        fill: false,
         tension: 0.3
     };
     const datos2 = {
-        label: "Personas registradas",
+        label: "Chicas registradas",
         data: [arrayDiasChicas[0], arrayDiasChicas[1], arrayDiasChicas[2], arrayDiasChicas[3], arrayDiasChicas[4]],
         /* pointRadius: 0, */
         borderColor: 'red',
-        fill: true,
+        fill: false,
         tension: 0.3
     };
     const datos = {
         labels: etiquetas,
-        datasets: [datos1,datos2]
+        datasets: [datos1, datos2]
     };
     //Configuracion del tipo de gráfico
     const config = {
