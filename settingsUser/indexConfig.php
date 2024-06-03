@@ -1,4 +1,4 @@
-<?php
+<div?php
 error_reporting(0); //Funcion para ocultar las advertencias del programa
 $id_usuario = $_GET['id_usuario'];
 $nombre = $_GET['usuario'];
@@ -107,8 +107,9 @@ $nombre = $_GET['usuario'];
             <div class="input-group">
                 <label for="name">Nombre</label>
                 <input type="text" name="nombre" id="name" placeholder="Nombre">
+                </div>
                 <label for="phone">Contraseña</label>
-                <input type="password" name="contrasena" id="phone" placeholder="Contraseña">
+                <input type="password" name="contrasena" id="phone" value="">
             </div>
 
             <div class="field">

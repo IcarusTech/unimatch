@@ -6,6 +6,7 @@ use mysqli;
 
 class DBusuario
 {
+
     private $dbhost = "localhost";
     private $dbuser = "marcos";
     private $dbpassword = "1234";
@@ -130,6 +131,12 @@ class DBusuario
             $update->bind_param("ss", $valor, $user);
             $update->execute();
         }
+    }
+
+    public function mostrarContrasena($id_usuario){
+        
+        $select = mysqli_query($this->conexion, "SELECT * FROM $this->table WHERE contrasena = $id_usuario");
+        return $select;
     }
 
     public function contarUsuarios()
