@@ -15,6 +15,7 @@ $usuario = $_GET['usuario'];
 
 if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
     echo ("el nombre esta puesto : ") . $_POST['nombre'];
+    $diaRegistro = date('d');
     $id_usuarioForm = $_POST['id'];
     $nombreUsuario = $_POST['usuario'];
     $conexionNoti = new DBnotificacion();
@@ -70,6 +71,7 @@ if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
         "definicion_2" => $definicion2,
         "definicion_3" => $definicion3,
         "ruta_img"=>$img,
+        "dia_registro"=>$diaRegistro,
         "id_usuario_relacionado" => $id_usuarioForm
     );
     // convierte los datos del usuario introducidos en el formulario en un json

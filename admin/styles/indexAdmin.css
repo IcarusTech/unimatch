@@ -195,12 +195,17 @@ header .perfil img {
     }
 
 }
+
 /* Acaba la barra lateral desplegable */
 /*  FINAL DEL HEADER */
 
 /*  EMPIEZA EL MENÚ LATERAL PERMANENTE */
 aside {
     float: left;
+}
+
+section {
+    float: right;
 }
 
 aside .menuLateral {
@@ -383,7 +388,32 @@ section .persona .botones {
     }
 
     section {
-        width: calc(100vw - 150px);
+        width: calc(100vw - 250px);
         margin-left: 0%;
+    }
+
+    #grafica {
+        width: 80vw;
+        height: 350px;
+    }
+
+    #grafica #btnGraficoRegistro {
+        margin: auto;
+        height: 50px;
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #grafica #btnGraficoRegistro .opcion {
+        border-radius: 30px;
+        height: 100%;
+        width: 150px;
+        background-color: #fe3c72;
+        color: white;
+        font-size: 20px;
+        border: none;
     }
 }

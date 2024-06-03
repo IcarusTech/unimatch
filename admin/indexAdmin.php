@@ -7,15 +7,19 @@ if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'admin') {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./styles/indexAdmin.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css?v=<?php echo time(); ?>">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js?v=<?php echo time(); ?>"></script>
+    <script src="./logica/graficaRegistros.js?v=<?php echo time(); ?>" defer></script>
 </head>
+
 <body>
-<header>
+    <header>
         <!--el menu desplegable para movil (visible solo en movil) -->
         <label class="lateral">
 
@@ -64,5 +68,16 @@ if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'admin') {
             </ul>
         </div>
     </aside>
+    <section>
+
+        <div id="grafica">
+            <canvas id="grafico"></canvas>
+            <div id="btnGraficoRegistro">
+                <button class="opcion" id="btnGeneral">Datos generales</button>
+                <button class="opcion" id="btnSexos">Dividir por sexo</button>
+            </div>
+        </div>
+    </section>
 </body>
+
 </html>
