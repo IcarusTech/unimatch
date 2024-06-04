@@ -468,13 +468,8 @@ section .persona .botones {
     }
 
     #fichaPerfil {
-       /* width: 50%;
+        width: 50%;
         height: 85%;
-        */
-    }
-
-    #fichaPerfil .seccion {
-        width: 40%;
-        height: 38%;
+        
     }
 }
