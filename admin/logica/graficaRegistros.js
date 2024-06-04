@@ -52,9 +52,14 @@ function contarFechaRegistro(resultados) {
         }
         arrayDias[diaRegistro]++;
     }
+    const maxLength = Math.max(arrayDias.length);
+    let datosDias = new Array(maxLength);
+    for(let i=0;i<maxLength;i++){
+     datosDias[i]=i+1;
+    }
     console.log(arrayDias);
     //Etiquetas a comparar
-    const etiquetas = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
+    let etiquetas = datosDias.map((value) => value);
     //Seleccionamos el canvas
     const migrafico = document.getElementById('grafico');
 
@@ -195,28 +200,32 @@ function contarFechaRegistroSexo(resultados) {
             arrayDiasChicas[i] = 0;
         }
     }
+    let datosDias = new Array(maxLength);
+    for(let i=0;i<maxLength;i++){
+     datosDias[i]=i+1;
+    }
     console.log(arrayDiasChicas);
     console.log(arrayDiasChicos);
     //Etiquetas a comparar
-    const etiquetas = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
+    let etiquetas = datosDias.map((value) => value);
     //Seleccionamos el canvas
     const migrafico = document.getElementById('grafico');
 
     //Datos
     const datos1 = {
         label: "Chicos registrados",
-        data: [arrayDiasChicos[0], arrayDiasChicos[1], arrayDiasChicos[2], arrayDiasChicos[3], arrayDiasChicos[4]],
+        data: arrayDiasChicos.map((value) => value),
         /* pointRadius: 0, */
-        borderColor: 'blue',
-        fill: false,
+        borderColor: 'black',
+        fill: 1,
         tension: 0.3
     };
     const datos2 = {
         label: "Chicas registradas",
-        data: [arrayDiasChicas[0], arrayDiasChicas[1], arrayDiasChicas[2], arrayDiasChicas[3], arrayDiasChicas[4]],
+        data: arrayDiasChicas.map((value) => value),
         /* pointRadius: 0, */
         borderColor: 'red',
-        fill: false,
+        fill: 1,
         tension: 0.3
     };
     const datos = {
