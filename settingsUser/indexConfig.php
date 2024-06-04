@@ -1,7 +1,16 @@
-<div?php
-error_reporting(0); //Funcion para ocultar las advertencias del programa
+<?php
 $id_usuario = $_GET['id_usuario'];
-$nombre = $_GET['usuario'];
+$nombreUsuario=$_POST['nombre'];
+require_once("../modelo/DBusuario.php");
+require_once("../modelo/DBperfil.php");
+$conexion = new \modelo\DBusuario();
+$conexionPerfil = new \modelo\DBperfil();
+$cogerDefinicion = $conexionPerfil->mostrarDefiniciones($id_usuario);
+$ArrayDefiniciones = explode("/",$cogerDefinicion);
+$contrasena=$conexion->mostrarContrasena($id_usuario);
+$mostrarNombre = $conexionPerfil->mostrarNombre($id_usuario);
+$mostrarApellido = $conexionPerfil->mostrarApellido($id_usuario);
+$urlFoto = $conexionPerfil->mostrarFoto($id_usuario);
 ?>
 
 <!DOCTYPE html>
@@ -12,16 +21,18 @@ $nombre = $_GET['usuario'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/indexRegistrado.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../styles/scrollbar.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="btnMostrar.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../styles/formConfig.css?v=<?php echo time(); ?>">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css?v=<?php echo time(); ?>">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         const idUsuario = "<?php echo $id_usuario ?>";
-        const nombre = "<?php echo $nombre ?>";
-        const stringFavoritos = "<?php echo $stringFavoritos ?>";
+        const nombre = "<?php echo $_GET['usuario'] ?>";
+        const urlImagen="<?php echo $urlFoto?>";
+        
     </script>
-    <script src="./logicaGeneral/llegadaDatosPerfiles.js?v=<?php echo time(); ?>" defer></script>
+    <script src="logicaSettings.js?v=<?php echo time(); ?>" defer></script>
     <title>Configuracion</title>
 </head>
 
@@ -88,16 +99,16 @@ $nombre = $_GET['usuario'];
 
     </aside>
     <main>
-
         <form action="registro.php" method="post">
         <div class="profile-header">
-        <div class="photo"><img src="../img/iconoUser.png" alt="Profile Picture" class="profile-IMG"></div>
+        <div class="photo"><img src="#" alt="Profile Picture" class="profile-IMG" id="fotoPerfil"></div>
             
                    
                 <div class="profile-info">
                     <ul>
-                        <li>pablo1324</li>
-                        <li class="nombre">Pablo</li>
+                        <li class="nombre"><?php echo $mostrarNombre ?></li>
+                        <br>
+                        <li class="nombre"><?php echo $mostrarApellido ?></li>
                     </ul>
                 </div>
                 
@@ -105,19 +116,22 @@ $nombre = $_GET['usuario'];
             </div>
 
             <div class="input-group">
-                <label for="name">Nombre</label>
-                <input type="text" name="nombre" id="name" placeholder="Nombre">
+                <label for="name">Nombre de usuario</label>
+                <input type="text" name="nombre" id="name" value="<?php echo $_GET['usuario']?>">
                 </div>
                 <label for="phone">Contraseña</label>
-                <input type="password" name="contrasena" id="phone" value="">
+                <div class="inputPass">
+                <input type="password" name="contrasena" id="password" value="<?php echo $contrasena?>">
+                <img src="../img/eye-open.png" id="mostrarPassword">
+                </div>
             </div>
 
             <div class="field">
                 <label>Definite con tres palabras</label>
                 <div class="definicion">
-                    <input type="text" name="definicion1" id="input-definicion1 def" required>
-                    <input type="text" name="definicion2" id="input-definicion2 def" required>
-                    <input type="text" name="definicion3" id="input-definicion3 def" required>
+                    <input type="text" name="definicion1" id="input-definicion1 def "value="<?php echo $ArrayDefiniciones[0]?>">
+                    <input type="text" name="definicion2" id="input-definicion2 def" value="<?php echo $ArrayDefiniciones[1]?>">
+                    <input type="text" name="definicion3" id="input-definicion3 def" value="<?php echo $ArrayDefiniciones[2]?>">
                 </div>
                 <p id="error-definicion" class="error"></p>
             </div>

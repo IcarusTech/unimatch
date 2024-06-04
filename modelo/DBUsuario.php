@@ -135,9 +135,13 @@ class DBusuario
 
     public function mostrarContrasena($id_usuario){
         
-        $select = mysqli_query($this->conexion, "SELECT * FROM $this->table WHERE contrasena = $id_usuario");
-        return $select;
+        $select = mysqli_query($this->conexion, "SELECT * FROM $this->table WHERE id_usuario = $id_usuario");
+        $row = mysqli_fetch_assoc($select);
+        $contrasena = $row['contrasena'];
+        return $contrasena;
     }
+
+    
 
     public function contarUsuarios()
     {

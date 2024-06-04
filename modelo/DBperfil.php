@@ -95,4 +95,41 @@ class DBperfil
 
         return $listaFavoritos;
     }
+
+    public function mostrarDefiniciones($id_usuario){
+
+        $select = mysqli_query($this->conexion, "SELECT * FROM $this->table WHERE id_usuario =$id_usuario");
+        $row = mysqli_fetch_assoc($select);
+        $definiciones = $row['definicion_personal'];
+        return $definiciones;
+
+    }
+
+    public function mostrarNombre($id_usuario){
+
+        $select = mysqli_query($this->conexion, "SELECT * FROM $this->table WHERE id_usuario =$id_usuario");
+        $row = mysqli_fetch_assoc($select);
+        $nombre = $row['nombre'];
+        return $nombre;
+
+    }
+
+    public function mostrarApellido($id_usuario){
+
+        $select = mysqli_query($this->conexion, "SELECT * FROM $this->table WHERE id_usuario =$id_usuario");
+        $row = mysqli_fetch_assoc($select);
+        $apellido = $row['apellido'];
+        return $apellido;
+
+    }
+
+    public function mostrarFoto($id_usuario){
+
+        $select = mysqli_query($this->conexion, "SELECT * FROM $this->table WHERE id_usuario =$id_usuario");
+        $row = mysqli_fetch_assoc($select);
+        $imagen = $row['imagen'];
+        return $imagen;
+
+    }
+
 }

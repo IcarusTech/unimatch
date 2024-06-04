@@ -1,0 +1,25 @@
+.input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.inputPass{
+    display: flex;
+    align-items: center;
+}
+
+.inputPass input{
+    width: 100%;
+    
+
+}
+
+.inputPass img{
+    width: 25px;
+    float: right;
+    margin-left: -25px;
+    margin-top: -15px;
+    left: -15px;
+    position: relative;
+    z-index: 2;
+}
