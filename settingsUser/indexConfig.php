@@ -1,6 +1,5 @@
 <?php
 $id_usuario = $_GET['id_usuario'];
-$nombreUsuario=$_POST['nombre'];
 require_once("../modelo/DBusuario.php");
 require_once("../modelo/DBperfil.php");
 $conexion = new \modelo\DBusuario();
@@ -11,6 +10,8 @@ $contrasena=$conexion->mostrarContrasena($id_usuario);
 $mostrarNombre = $conexionPerfil->mostrarNombre($id_usuario);
 $mostrarApellido = $conexionPerfil->mostrarApellido($id_usuario);
 $urlFoto = $conexionPerfil->mostrarFoto($id_usuario);
+//LLegada de datos del formulario al guardar
+
 ?>
 
 <!DOCTYPE html>
@@ -99,7 +100,11 @@ $urlFoto = $conexionPerfil->mostrarFoto($id_usuario);
 
     </aside>
     <main>
-        <form action="registro.php" method="post">
+        <form action="actualizarDatos.php" method="post">
+            <div class="datosEscondidos">
+                <input type="number" name="id_usuario" value="<?php echo $_GET['id_usuario']?>">
+                <input type="text" name="nombreUsuarioAntiguo" id="name" value="<?php echo $_GET['usuario']?>">
+            </div>
         <div class="profile-header">
         <div class="photo"><img src="#" alt="Profile Picture" class="profile-IMG" id="fotoPerfil"></div>
             

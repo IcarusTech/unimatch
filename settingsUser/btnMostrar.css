@@ -23,3 +23,6 @@
     position: relative;
     z-index: 2;
 }
+.datosEscondidos{
+    display: none;
+}

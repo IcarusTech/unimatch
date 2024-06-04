@@ -37,6 +37,20 @@ class DBperfil
             header("Location: ../perfil/formulario.php");
         }
     }
+    public function update($id_usuario, $campo, $valor)
+    {
+        $query = $this->conexion->prepare("SELECT * FROM $this->table WHERE id_usuario = ?");
+        $query->bind_param("s", $id_usuario);
+        $query->execute();
+        $result = $query->get_result();
+
+        $num = $result->num_rows;
+        if ($num == 1) {
+            $update = $this->conexion->prepare("UPDATE $this->table SET $campo = ? WHERE id_usuario = ?");
+            $update->bind_param("ss", $valor, $id_usuario);
+            $update->execute();
+        }
+    }
     public function ponerImg($id_usuario, $colorPelo, $colorOjos, $sexo)
     {
         $img = "";

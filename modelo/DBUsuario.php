@@ -118,7 +118,7 @@ class DBusuario
     }
 
 
-    public function update($user, $confirmacion, $campo, $valor)
+    public function update($user, $campo, $valor)
     {
         $query = $this->conexion->prepare("SELECT * FROM $this->table WHERE nombre_usuario = ?");
         $query->bind_param("s", $user);
@@ -126,7 +126,7 @@ class DBusuario
         $result = $query->get_result();
 
         $num = $result->num_rows;
-        if ($num == 1 && $confirmacion) {
+        if ($num == 1) {
             $update = $this->conexion->prepare("UPDATE $this->table SET $campo = ? WHERE nombre_usuario = ?");
             $update->bind_param("ss", $valor, $user);
             $update->execute();
