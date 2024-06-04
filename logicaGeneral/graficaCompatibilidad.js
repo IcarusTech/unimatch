@@ -43,7 +43,7 @@ function imprimirGrafica(compatibilidad) {
 
         const text = chart.options.plugins.centerText.text,
         textX = width / 2, // Centrar horizontalmente
-        textY = height / 1.6; // Centrar verticalmente
+        textY = height / 1.65; // Centrar verticalmente
 
         ctx.fillText(text, textX, textY);
         ctx.save();

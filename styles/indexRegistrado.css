@@ -329,7 +329,7 @@ section .persona .botones {
     z-index: 130;
     margin: auto;
     font-family: "Audiowide", sans-serif;
-    width: 90%;
+    width: 70%;
     height: fit-content;
     padding-left: 30px;
     background-color: rgb(252, 252, 252);
