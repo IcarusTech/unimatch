@@ -80,17 +80,17 @@ $urlFoto = $conexionPerfil->mostrarFoto($id_usuario);
                 <li class="opL"><img src="../img/logotipoSinFondo.png" alt=""></li>
 
                 <li class="opL"><a
-                        href="../indexRegistrado.php?id_usuario=<?php echo $id_usuario ?>&usuario=<?php echo $nombre ?>"><i
+                        href="../indexRegistrado.php?id_usuario=<?php echo $_GET['id_usuario'] ?>&usuario=<?php echo $_GET['usuario'] ?>"><i
                             class='fa-solid fa-house'></i></a></li>
                 <li class="opL"><a href="#"><i class="fa fa-search"></i></a></li>
                 <!-- <li><a href="#"><i class="fab fa-gripfire"></i>trending</a></li> -->
                 <li class="opL"><a
-                        href="../notificaciones/paginaNotificaciones.php?id_usuario=<?php echo $id_usuario ?>&nombre=<?php echo $nombre ?>"><i
+                        href="../notificaciones/paginaNotificaciones.php?id_usuario=<?php echo $_GET['id_usuario'] ?>&nombre=<?php echo $_GET['usuario'] ?>"><i
                             class="far fa-comments"></i></a></li>
                 <!-- <li><a href="#"><i class="far fa-folder"></i>file manager</a></li> -->
                 <!-- <li><a href="#"><i class="far fa-address-book"></i>portfolio</a></li> -->
                 <li class="opL"><a
-                        href="../favoritos/favoritos.php?id_usuario=<?php echo $id_usuario ?>&nombre=<?php echo $nombre ?>"><i
+                        href="../favoritos/favoritos.php?id_usuario=<?php echo $_GET['id_usuario'] ?>&nombre=<?php echo $_GET['usuario'] ?>"><i
                             class="fas fa-heart"></i></a></li>
                 <li class="opL"><a href="../settingsUser/indexConfig.php"><i class="fas fa-cogs"></i></a></li>
                 <li class="opL"><a href="../inicioSesionForm/cerrarSesion.php"><i class='fas fa-sign-out-alt'></i></a>
