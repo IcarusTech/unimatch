@@ -27,7 +27,7 @@ $filePerfil =$url;
 if (file_exists($filePerfil)) {
     unlink($filePerfil);
 }
-$fileNotificacion="../datosRegistros/notificaciones/usuario-$id_usuario";
+$fileNotificacion="../datosRegistros/notificaciones/usuario-$id_usuario.json";
 if(file_exists($fileNotificacion)){
     unlink($fileNotificacion);
 }

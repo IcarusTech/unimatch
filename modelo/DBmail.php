@@ -31,9 +31,11 @@ class DBmail
         Estos son tus datos personales, no los pierdas ;)
         ------------------------
         Correo: ' . $correo . '
-        Contraseña: ' . $contrasena . '
+        Clave: ' . $contrasena . '
         ------------------------
         '; 
+        $imagen = '<img src="../img/logotipoSinFondo2.png" alt="imagenAplicacion">';
+        $message = $message . $imagen;
         // Aqui se incluye la URL para ir al mensaje
 
         $headers = 'From:fernandemarcos11@gmail.com' . "\r\n"; // Colocar el encabezado
@@ -41,11 +43,10 @@ class DBmail
 
         $select = mysqli_query($this->conexion, "SELECT * FROM usuarios WHERE correo = '$correo' AND contrasena = '$contrasena'");
         $row = mysqli_fetch_assoc($select);
-        $id_usuario = $row['id_usuario'];{
-
+        $id_usuario = $row['id_usuario'];
+        if($id_usuario){
+            $insertar = mysqli_query($this->conexion, "INSERT INTO $this->table (asunto,fecha,id_usuario_receptor) VALUES ('$subject,$fecha,$id_usuario')");
         }
-        if($id_usuario)
-        $insertar = mysqli_query($this->conexion, "INSERT INTO $this->table (asunto,fecha,id_usuario_receptor) VALUES ('$subject,$fecha,$id_usuario')");
         
     }
 }
