@@ -57,6 +57,11 @@ function contarFechaRegistro(resultados) {
     for(let i=0;i<maxLength;i++){
      datosDias[i]=i+1;
     }
+    for (let i = 0; i < arrayDias.length; i++) {
+        if (!arrayDias[i]) {
+            arrayDias[i] = 0;
+        }
+    }
     console.log(arrayDias);
     //Etiquetas a comparar
     let etiquetas = datosDias.map((value) => value);
@@ -66,7 +71,7 @@ function contarFechaRegistro(resultados) {
     //Datos
     const datos1 = {
         label: "Personas registradas",
-        data: [arrayDias[0], arrayDias[1], arrayDias[2], arrayDias[3], arrayDias[4]],
+        data: arrayDias.map((value) => value),
         /* pointRadius: 0, */
         borderColor: '#fe3c72',
         fill: true,
