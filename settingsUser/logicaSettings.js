@@ -15,3 +15,40 @@ function mostrarPassword() {
         mostrar.src = "../img/eye-open.png";
     }
 }
+//---------------------------------------------------------------------------
+//Parte de la lógica para el formulario delete
+let formDelete = document.getElementById('formDelete');
+let condiciónCumplida = false;
+window.addEventListener('load', imprimirBtnDelete);
+formDelete.addEventListener('submit', function (event) {
+    // Prevenir el evento submit
+    event.preventDefault();
+});
+function imprimirBtnDelete() {
+    formDelete.innerHTML = "";
+    let contenido = "";
+    contenido += "<div class='input-group' id='btnDeleteContainer'>"
+        + "<h2 class='tituloPeligro'>Area de peligro</h2>"
+        + "<label for= 'name'> Eliminar usuario </label >"
+        + "<div id='btnEliminarPrevio' class='btnEliminarPrevio' onclick='mostrarConfirmacion()'></div>"
+        + "</div > ";
+    $.get('../elementos/btnEliminar.php', function (data) {
+        $('.btnEliminarPrevio').html(data);
+    });
+    formDelete.innerHTML = contenido;
+}
+function mostrarConfirmacion() {
+    formDelete.innerHTML = "";
+    let contenido = "";
+    contenido +="<h2 class='tituloPeligro'>Area de peligro</h2>"
+        + "<div class='containerConfirmacion'>"
+
+        + "</div > ";
+    $.get('../elementos/confirmacionEliminar.php', function (data) {
+        $('.containerConfirmacion').html(data);
+    });
+    formDelete.innerHTML = contenido;
+}
+function permitirSubmit() {
+    formDelete.submit();
+}

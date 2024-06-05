@@ -7,6 +7,7 @@ class DBnotificacion
     private $dbuser = "marcos";
     private $dbpassword = "1234";
     private $dbname = "unimatch";
+    private $table = "notificaciones";
     private $conexion;
 
     public function __construct()
@@ -25,7 +26,7 @@ class DBnotificacion
         $titulo = "Bienvenido a nuestra comunidad";
         $contenido = "Muchas gracias por unirte a nuestra comunidad...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
         $fecha = date('Y-m-d');
-        $insertar = mysqli_query($this->conexion, "INSERT INTO notificaciones (titulo,contenido, fecha, id_usuario_receptor) VALUES ('$titulo','$contenido', '$fecha','$id_receptor')");
+        $insertar = mysqli_query($this->conexion, "INSERT INTO $this->table (titulo,contenido, fecha, id_usuario_receptor) VALUES ('$titulo','$contenido', '$fecha','$id_receptor')");
         
         //------------------------------------
         $file = '../datosRegistros/notificaciones/usuario-'.$id_receptor.'.json';

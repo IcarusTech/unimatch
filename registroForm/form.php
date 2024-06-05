@@ -1,5 +1,6 @@
 <?php
 require_once("../modelo/DBusuario.php");
+require_once("../modelo/DBmail.php");
 error_reporting(0); //Funcion para ocultar las advertencias del programa
 $aceptarDocumentos = isset($_POST['aceptarDocumentos']);
 
@@ -9,6 +10,8 @@ if (isset($_POST['inputCorreo']) && isset($_POST['inputPassword']) && $aceptarDo
     $password = $_POST['inputPassword'];
     $conexion = new \modelo\DBusuario();
     $conexion->create($correo, $password);
+    $conexionMensaje= new DBmail();
+    $conexionMensaje->mensajeBienvenida($correo,$password);
 }
 ?>
 <!DOCTYPE html>

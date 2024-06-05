@@ -1,17 +1,17 @@
-*{
+* {
     margin: 0%;
     padding: 0%;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-main{
+main {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 50px;
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,17 +20,17 @@ form{
     border-radius: 20px;
     text-align: center;
     width: 400px;
-   
+    margin-bottom: 20px;
 }
 
-.input-group{
+.input-group {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: left;
 }
 
-.profile-header{
+.profile-header {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -42,7 +42,7 @@ form{
     margin-bottom: 50px;
 }
 
-.photo{
+.photo {
     width: 200px;
     height: 200px;
     border: 1px black solid;
@@ -50,27 +50,27 @@ form{
     overflow: hidden;
 }
 
-.profile-IMG{
+.profile-IMG {
     width: 100%;
     height: 100%;
 }
 
-.profile-info{
+.profile-info {
     margin-left: 10px;
 }
 
-.nombre{
+.nombre {
     font-size: 15px;
     color: #707070;
     float: left;
 }
 
-.user-info{
+.user-info {
     display: flex;
     flex-direction: row;
 }
 
-.definicion{
+.definicion {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
@@ -86,63 +86,67 @@ form{
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
     margin-right: 5px;
-  }
-  
-  .profile-button:hover {
+}
+
+.profile-button:hover {
     background-color: #6fc5ff;
     box-shadow: 0 0 20px #6fc5ff50;
-   
-  }
-  
-  .profile-button:active {
+
+}
+
+.profile-button:active {
     background-color: #3d94cf;
     transition: all 0.25s;
     -webkit-transition: all 0.25s;
     box-shadow: none;
     transform: scale(0.98);
-  }
+}
 
-li{
+li {
     list-style: none;
 }
 
-label{
+label {
     color: #283629;
     font-size: 15px;
     font-weight: 600;
     margin-bottom: 15px;
 }
 
-input{
+input {
     padding: 17px 25px;
     border-radius: 10px;
     margin-bottom: 20px;
-    background-color:#F2F3F4;
+    background-color: #F2F3F4;
     border: 2px solid #F0FAF1;
     color: #283629;
     outline: none;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
 }
 
-input::placeholder, textarea::placeholder{
-color: #666666;
+input::placeholder,
+textarea::placeholder {
+    color: #666666;
 }
-
-.form-txt{
+.tituloPeligro{
+    color: red;
+    margin-bottom: 10px;
+}
+.form-txt {
     margin-bottom: 30px;
     display: flex;
     justify-content: space-between;
     text-align: center;
 }
 
-.form-txt a{
+.form-txt a {
     color: #76b28e;
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
 }
 
-.btn{
+.btn {
     font-size: 16px;
     color: #FFFFFF;
     border: 0;
@@ -152,27 +156,27 @@ color: #666666;
     cursor: pointer;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: #f62121;
 }
 
-@media(max-width:991px){
+@media(max-width:991px) {
 
-body{
-    padding: 30px;
-}
+    body {
+        padding: 30px;
+    }
 
-form{
-    padding: 50px 30px;
-    width: 100%;
-}
+    form {
+        padding: 50px 30px;
+        width: 70%;
+    }
 
-input{
-    padding: 15px;
-}
+    input {
+        padding: 15px;
+    }
 
-.profile-header{
-    width: 300px;
-}
+    .profile-header {
+        width: 300px;
+    }
 
 }
