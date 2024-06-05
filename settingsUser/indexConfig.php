@@ -52,14 +52,14 @@ $urlFoto = $conexionPerfil->mostrarFoto($id_usuario);
             <div class="slide">
                 <ul>
                     <!-- <li><a href="#"><i class="fas fa-tv"></i>dashboard</a></li> -->
-                    <li class="opL"><a href="../indexRegistrado.php?id_usuario=<?php echo $id_usuario ?>&usuario=<?php echo $nombre ?>"><i class='fa-solid fa-house'></i></a></li>
+                    <li class="opL"><a href="../indexRegistrado.php?id_usuario=<?php echo $_GET['id_usuario'] ?>&usuario=<?php echo $_GET['usuario'] ?>"><i class='fa-solid fa-house'></i></a></li>
                     <li class="opL"><a href="#"><i class="fa fa-search"></i></a></li>
                     <!-- <li><a href="#"><i class="fab fa-gripfire"></i>trending</a></li> -->
                     <li class="opL"><a href="../notificaciones/paginaNotificaciones.php?id_usuario=<?php echo $id_usuario ?>&nombre=<?php echo $nombre ?>"><i class="far fa-comments"></i></a></li>
                     <!-- <li><a href="#"><i class="far fa-folder"></i>file manager</a></li> -->
                     <!-- <li><a href="#"><i class="far fa-address-book"></i>portfolio</a></li> -->
                     <li class="opL"><a href="../favoritos/favoritos.php?id_usuario=<?php echo $id_usuario ?>&nombre=<?php echo $nombre ?>"><i class="fas fa-heart"></i></a></li>
-                    <li class="opL"><a href="../settingsUser/indexConfig.php"><i class="fas fa-cogs"></i></a></li>
+                    <li class="opL"><a href="../settingsUser/indexConfig.php?id_usuario=<?php echo $_GET['id_usuario'] ?>&usuario=<?php echo $_GET['usuario'] ?>"><i class="fas fa-cogs"></i></a></li>
                     <li class="opL"><a href="../inicioSesionForm/cerrarSesion.php"><i class='fas fa-sign-out-alt'></i></a>
                 </ul>
             </div>
@@ -78,7 +78,7 @@ $urlFoto = $conexionPerfil->mostrarFoto($id_usuario);
                 <!-- <li><a href="#"><i class="far fa-folder"></i>file manager</a></li> -->
                 <!-- <li><a href="#"><i class="far fa-address-book"></i>portfolio</a></li> -->
                 <li class="opL"><a href="../favoritos/favoritos.php?id_usuario=<?php echo $_GET['id_usuario'] ?>&nombre=<?php echo $_GET['usuario'] ?>"><i class="fas fa-heart"></i></a></li>
-                <li class="opL"><a href="../settingsUser/indexConfig.php"><i class="fas fa-cogs"></i></a></li>
+                <li class="opL"><a href="../settingsUser/indexConfig.php?id_usuario=<?php echo $_GET['id_usuario'] ?>&usuario=<?php echo $_GET['usuario'] ?>"><i class="fas fa-cogs"></i></a></li>
                 <li class="opL"><a href="../inicioSesionForm/cerrarSesion.php"><i class='fas fa-sign-out-alt'></i></a>
                 </li>
             </ul>
@@ -87,7 +87,7 @@ $urlFoto = $conexionPerfil->mostrarFoto($id_usuario);
     </aside>
     <main>
         <!-- Formulario para la imagen del perfil-->
-        <form action="">
+        <form action="" method="post" id="formImagen">
 
             <div class="profile-header">
                 <div class="photo"><img src="#" alt="Profile Picture" class="profile-IMG" id="fotoPerfil"></div>
@@ -105,7 +105,7 @@ $urlFoto = $conexionPerfil->mostrarFoto($id_usuario);
             </div>
         </form>
         <!-- Formulario de los datos tipo texto -->
-        <form action="actualizarDatos.php" method="post">
+        <form action="actualizarDatos.php" method="post" id="formDatosTexto">
             <div class="datosEscondidos">
                 <input type="number" name="id_usuario" value="<?php echo $_GET['id_usuario'] ?>">
                 <input type="text" name="nombreUsuarioAntiguo" id="nameAntiguo" value="<?php echo $_GET['usuario'] ?>">
@@ -137,7 +137,15 @@ $urlFoto = $conexionPerfil->mostrarFoto($id_usuario);
         </form>
         <!-- Formulario para eliminar el usuario -->
         <form action="eliminarUsuario.php" method="post" id="formDelete">
-         
+            <div class="datosEscondidos">
+            <input type="password" name="contrasena" id="password2" value="<?php echo $contrasena ?>">
+                <input type="number" name="id_usuario" value="<?php echo $_GET['id_usuario'] ?>">
+                <input type="text" name="nombreUsuario" id="usuario" value="<?php echo $_GET['usuario'] ?>">
+            </div>
+            <div id="containerFormDelete">
+
+            </div>
+
         </form>
     </main>
     <?php

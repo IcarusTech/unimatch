@@ -5,9 +5,15 @@
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: auto;
+    width: 85%;
+    display: grid;
+    grid-template-columns:100px 1fr 1fr ;
+    grid-template-rows: 50px 1fr 300px;
+    grid-template-areas: 
+    ". . ."
+    ". formImagen formTexto"
+    ". formDelete .";
     margin-bottom: 50px;
 }
 
@@ -20,9 +26,18 @@ form {
     border-radius: 20px;
     text-align: center;
     width: 400px;
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
+#formDelete{
+    grid-area: formDelete;
+}
+#formDatosTexto{
+    grid-area: formTexto;
+}
+#formImagen{
+    grid-area: formImagen;
 
+}
 .input-group {
     display: flex;
     flex-direction: column;
@@ -32,6 +47,7 @@ form {
 
 .profile-header {
     display: flex;
+    height: 60%;
     flex-direction: column;
     gap: 10px;
     width: 400px;
@@ -39,7 +55,7 @@ form {
     margin-bottom: 20px;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 50px;
+    margin: auto;
 }
 
 .photo {
@@ -91,7 +107,7 @@ form {
 .profile-button:hover {
     background-color: #6fc5ff;
     box-shadow: 0 0 20px #6fc5ff50;
-
+    
 }
 
 .profile-button:active {
@@ -160,23 +176,29 @@ textarea::placeholder {
     background-color: #f62121;
 }
 
-@media(max-width:991px) {
-
+@media(max-width:1200px) {
+    
     body {
         padding: 30px;
     }
-
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+    
     form {
         padding: 50px 30px;
         width: 70%;
     }
-
+    
     input {
         padding: 15px;
     }
-
+    
     .profile-header {
         width: 300px;
     }
-
+    
 }

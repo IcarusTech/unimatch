@@ -1,10 +1,5 @@
 [
     {
-        "id usuario asociado": "10",
-        "nombre del usuario": "rafillaElPiratilla",
-        "url": "..\/datosRegistros\/json20240523170831.json"
-    },
-    {
         "id usuario asociado": "11",
         "nombre del usuario": "juanito",
         "url": "..\/datosRegistros\/json20240523173516.json"
@@ -30,8 +25,8 @@
         "url": "..\/datosRegistros\/json20240527133143.json"
     },
     {
-        "id usuario asociado": "16",
-        "nombre del usuario": "anaM_22",
-        "url": "..\/datosRegistros\/json20240527133740.json"
+        "id usuario asociado": "18",
+        "nombre del usuario": "rmontesj",
+        "url": "..\/datosRegistros\/json20240605171445.json"
     }
 ]

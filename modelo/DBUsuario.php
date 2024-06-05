@@ -94,7 +94,7 @@ class DBusuario
         }
     }
 
-    public function delete($user, $password, $confirmacion)
+    public function delete($user, $password)
     {
         $query = $this->conexion->prepare("SELECT * FROM $this->table WHERE nombre_usuario = ? AND contrasena = ?");
         $query->bind_param("ss", $user, $password);
@@ -102,19 +102,11 @@ class DBusuario
         $result = $query->get_result();
 
         $num = $result->num_rows;
-        if ($num == 1 && $confirmacion) {
+        if ($num == 1) {
             $delete = $this->conexion->prepare("DELETE FROM $this->table WHERE nombre_usuario = ? AND contrasena = ?");
             $delete->bind_param("ss", $user, $password);
             $delete->execute();
         }
-
-        $json = 'datos.json';
-
-        $jsonArray = json_decode($json, true); // Decodifica a array asociativo
-
-        unset($jsonArray[$user]); // Elimina la posición 2
-
-        $jsonArray = array_values($jsonArray); // Reindexa el array
     }
 
 

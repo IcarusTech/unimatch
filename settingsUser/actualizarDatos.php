@@ -29,7 +29,7 @@ foreach($data as $clave => $valor) {
         if($clave2=="id usuario asociado" && $valor2==$id_usuario){
             $url = $valor["url"]; //Cogemos el valor de la url para ir al archivo específico del usuario
             //Cambiomas el valor del nombre del usuario para que concuerde con el nuevo nombre del input
-            $data[$clave]["nombre del usuario"]=$nombreUsuario;$valor["nombre del usuario"]=$nombreUsuario;
+            $data[$clave]["nombre del usuario"]=$nombreUsuario;
         }
     }
 }

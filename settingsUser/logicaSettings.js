@@ -1,4 +1,4 @@
-console.log("mene mene");
+
 console.log(urlImagen);
 let mostrar = document.getElementById('mostrarPassword');
 let fotoPerfil = document.getElementById('fotoPerfil');
@@ -18,6 +18,7 @@ function mostrarPassword() {
 //---------------------------------------------------------------------------
 //Parte de la lógica para el formulario delete
 let formDelete = document.getElementById('formDelete');
+let containerContenido=document.getElementById('containerFormDelete');
 let condiciónCumplida = false;
 window.addEventListener('load', imprimirBtnDelete);
 formDelete.addEventListener('submit', function (event) {
@@ -25,7 +26,7 @@ formDelete.addEventListener('submit', function (event) {
     event.preventDefault();
 });
 function imprimirBtnDelete() {
-    formDelete.innerHTML = "";
+    containerContenido.innerHTML = "";
     let contenido = "";
     contenido += "<div class='input-group' id='btnDeleteContainer'>"
         + "<h2 class='tituloPeligro'>Area de peligro</h2>"
@@ -35,10 +36,10 @@ function imprimirBtnDelete() {
     $.get('../elementos/btnEliminar.php', function (data) {
         $('.btnEliminarPrevio').html(data);
     });
-    formDelete.innerHTML = contenido;
+    containerContenido.innerHTML = contenido;
 }
 function mostrarConfirmacion() {
-    formDelete.innerHTML = "";
+    containerContenido.innerHTML = "";
     let contenido = "";
     contenido +="<h2 class='tituloPeligro'>Area de peligro</h2>"
         + "<div class='containerConfirmacion'>"
@@ -47,7 +48,7 @@ function mostrarConfirmacion() {
     $.get('../elementos/confirmacionEliminar.php', function (data) {
         $('.containerConfirmacion').html(data);
     });
-    formDelete.innerHTML = contenido;
+    containerContenido.innerHTML = contenido;
 }
 function permitirSubmit() {
     formDelete.submit();
