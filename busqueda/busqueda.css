@@ -1,0 +1,99 @@
+*{
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.buscar {
+	height: 50px;
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	justify-content: center;
+    z-index: 10;
+}
+
+.subselect {
+	display: none;
+	position: absolute;
+	top: 40px; /* Ajusta este valor según la altura de tu select principal */
+	background: #fff;
+	border: 1px solid #ccc;
+	padding: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	width: 20%;
+}
+
+#subselects-container{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+#desplegable{
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+
+#cursos-subselect{
+border-radius: 15px;
+}
+
+#color-pelo-subselect{
+	border-radius: 15px;
+}
+
+#color-ojos-subselect{
+	border-radius: 15px;
+}
+
+#fumador-subselect{
+	border-radius: 15px;
+}
+
+#tipo-personalidad-subselect{
+	border-radius: 15px;
+}
+
+#estilo-musica-subselect{
+	border-radius: 15px;
+}
+
+#planes-subselect{
+	border-radius: 15px;
+}
+
+#ejercicio-subselect{
+	border-radius: 15px;
+}
+
+#amistad-deseada-subselect{
+	border-radius: 15px;
+}
+
+#hobbies-subselect{
+	border-radius: 15px;
+}
+
+#sexo-subselect{
+	border-radius: 15px;
+}
+
+#buscar-texto{
+	width: 300px;
+}
+
+#boton-buscar{
+	width: 150px;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+	background-color: #ef4a75;
+	border: 1px black solid;
+}
+
+#boton-buscar:hover{
+	background-color: #FE3C72;
+}

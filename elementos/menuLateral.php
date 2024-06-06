@@ -70,7 +70,7 @@
     .input-barraLateral {
         display: none;
         visibility: hidden;
-        
+
     }
 
     .toggle {
@@ -147,7 +147,7 @@
     /* AQUI EMPIEZA MEDIA PARA LA BARRA LATERAL */
 
     @media (max-width: 650px) {
-    
+
         .slide {
             width: 100%;
             /* Ancho completo */
