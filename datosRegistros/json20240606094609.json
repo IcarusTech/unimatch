@@ -1,0 +1,22 @@
+{
+    "nombre": "Maria",
+    "apellido": "Dolores",
+    "fecha_de_nacimiento": "2003-02-22",
+    "curso": "Comercio",
+    "genero": "M",
+    "color_de_pelo": "C",
+    "color_de_ojos": "A",
+    "estilo_de_musica": "reguet\u00f3n",
+    "fumador": "false",
+    "tipo_de_personalidad": "E",
+    "tipo_de_amistad_buscada": "amigo-de-fiesta",
+    "planes": "salir-de-fiesta",
+    "hobbie": "bailar",
+    "instagram": "maria_33",
+    "definicion_1": "atrevida",
+    "definicion_2": "sencilla",
+    "definicion_3": "alocada",
+    "ruta_img": "..\/unimatch\/avatares\/img\/MpeloCastanoOjosAzules.png",
+    "dia_registro": "06",
+    "id_usuario_relacionado": "23"
+}

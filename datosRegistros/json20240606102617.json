@@ -1,0 +1,22 @@
+{
+    "nombre": "Elena",
+    "apellido": "Martinez",
+    "fecha_de_nacimiento": "2004-04-21",
+    "curso": "Marketing",
+    "genero": "M",
+    "color_de_pelo": "R",
+    "color_de_ojos": "V",
+    "estilo_de_musica": "rap",
+    "fumador": "false",
+    "tipo_de_personalidad": "E",
+    "tipo_de_amistad_buscada": "amigo-de-fiesta",
+    "planes": "salir-de-fiesta",
+    "hobbie": "bailar",
+    "instagram": "Dalena@21",
+    "definicion_1": "aventurera",
+    "definicion_2": "inconformista",
+    "definicion_3": "fuerte",
+    "ruta_img": "..\/unimatch\/avatares\/img\/MpeloRubioOjosVerdes.png",
+    "dia_registro": "06",
+    "id_usuario_relacionado": "26"
+}

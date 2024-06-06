@@ -1,12 +1,12 @@
 [
     {
-        "ruta":"img/HpeloCastañoOjosAzules.png",
+        "ruta":"img/HpeloCastanoOjosAzules.png",
         "sexo":"H",
         "color-ojos":"A",
         "color-pelo":"C"
     },
     {
-        "ruta":"img/HpeloCastañoOjosVerdes.png",
+        "ruta":"img/HpeloCastanoOjosVerdes.png",
         "sexo":"H",
         "color-ojos":"V",
         "color-pelo":"C"
@@ -66,25 +66,25 @@
         "color-pelo":"R"
     },
     {
-        "ruta":"img/HpeloCastañoOjosMarrones.png",
+        "ruta":"img/HpeloCastanoOjosMarrones.png",
         "sexo":"H",
         "color-ojos":"M",
         "color-pelo":"C"
     },
     {
-        "ruta":"img/MpeloCastañoOjosAzules.png",
+        "ruta":"img/MpeloCastanoOjosAzules.png",
         "sexo":"M",
         "color-ojos":"A",
         "color-pelo":"C"
     },
     {
-        "ruta":"img/MpeloCastañoOjosMarrones.png",
+        "ruta":"img/MpeloCastanoOjosMarrones.png",
         "sexo":"M",
         "color-ojos":"M",
         "color-pelo":"C"
     },
     {
-        "ruta":"img/MpeloCastañoOjosVerdes.png",
+        "ruta":"img/MpeloCastanoOjosVerdes.png",
         "sexo":"M",
         "color-ojos":"V",
         "color-pelo":"C"

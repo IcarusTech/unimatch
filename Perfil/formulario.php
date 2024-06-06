@@ -1,4 +1,7 @@
 <?php
+
+use modelo\DBusuario;
+
 error_reporting(0); //Funcion para ocultar las advertencias del programa
 $carpetaPerfil = "../datosRegistros";
 //---------------------------------------------------------------------------------
@@ -7,14 +10,12 @@ session_start(); //Iniciar una sesión
 require_once("../modelo/DBperfil.php");
 require_once("../modelo/DBnotificacion.php");
 
-
 //Si no se ha iniciado sesion previamente, el código nos redirigirá al login para iniciar sesión
 $id_usuario = $_GET['id_usuario'];
 $_SESSION['usuario'] = $_GET['usuario'];
 $usuario = $_GET['usuario'];
 
 if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
-    echo ("el nombre esta puesto : ") . $_POST['nombre'];
     $diaRegistro = date('d');
     $id_usuarioForm = $_POST['id'];
     $nombreUsuario = $_POST['usuario'];
@@ -50,7 +51,7 @@ if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
     $definicionTotal .= "/" . $definicion2;
     $definicionTotal .= "/" . $definicion3;
     $conexion = new \modelo\DBperfil();
-    $img=$conexion->ponerImg($id_usuarioForm,$colorPelo,$colorOjos,$genero);
+    $img = $conexion->ponerImg($id_usuarioForm, $colorPelo, $colorOjos, $genero);
     //-----------------------------------------------------
     $datos_del_usuario = array(
         "nombre" => $nombre,
@@ -70,8 +71,8 @@ if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
         "definicion_1" => $definicion1,
         "definicion_2" => $definicion2,
         "definicion_3" => $definicion3,
-        "ruta_img"=>$img,
-        "dia_registro"=>$diaRegistro,
+        "ruta_img" => $img,
+        "dia_registro" => $diaRegistro,
         "id_usuario_relacionado" => $id_usuarioForm
     );
     // convierte los datos del usuario introducidos en el formulario en un json
@@ -100,7 +101,9 @@ if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
     // mete el contenido en un archivo
     file_put_contents($file, $new_data_json);
     //----------------------------------------------------
-    $conexion->create($nombre, $apellido, $fechaNacimiento, $curso, $genero, $colorPelo, $colorOjos, $estiloMusica, $fumador, $personalidad, $tipoAmistad, $planes, $hobbie, $definicionTotal, $instagram,$img,$id_usuarioForm);
+    $palabra_a_quitar = "/unimatch";
+    $resultadoImg = str_replace($palabra_a_quitar, '', $img);
+    $conexion->create($nombre, $apellido, $fechaNacimiento, $curso, $genero, $colorPelo, $colorOjos, $estiloMusica, $fumador, $personalidad, $tipoAmistad, $planes, $hobbie, $definicionTotal, $instagram, $resultadoImg, $id_usuarioForm);
     echo $nombre;
 }
 

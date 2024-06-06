@@ -1,0 +1,22 @@
+{
+    "nombre": "Paco",
+    "apellido": "Solana",
+    "fecha_de_nacimiento": "2000-11-11",
+    "curso": "DAM",
+    "genero": "H",
+    "color_de_pelo": "P",
+    "color_de_ojos": "M",
+    "estilo_de_musica": "techno",
+    "fumador": "false",
+    "tipo_de_personalidad": "E",
+    "tipo_de_amistad_buscada": "mejor-amigo",
+    "planes": "paseo",
+    "hobbie": "deportes-extremos",
+    "instagram": "@pacoadn",
+    "definicion_1": "Peonza",
+    "definicion_2": "foca",
+    "definicion_3": "vaca",
+    "ruta_img": "..\/unimatch\/avatares\/img\/HpeloPelirojoOjosMarrones.png",
+    "dia_registro": "06",
+    "id_usuario_relacionado": "22"
+}
