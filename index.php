@@ -57,11 +57,10 @@
                 <h2>Guía de uso</h2>
                 <br>
                 <ol class="useGuide">
-                    <li><strong>Resgistrate con el correo institucional</strong></li>
+                    <li><strong>Registrate con el correo institucional</strong></li>
                     <li><strong>Crea tu perfil</strong></li>
-                    <li><strong>Elige tu centro y busca gente nueva</strong></li>
+                    <li><strong>Busca gente nueva</strong></li>
                 </ol>
-
             </div>
         </div>
 
@@ -72,7 +71,6 @@
 
                 <!-- <span><i class="fa fa-star"></i></span> -->
                 <span><img src="img/movil2.0.png" alt=""></span>
-
 
             </div>
             <div class="info">
