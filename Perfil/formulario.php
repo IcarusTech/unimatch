@@ -297,7 +297,7 @@ if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
                             <option value="dembow">dembow</option>
                             <option value="pop">Pop</option>
                             <option value="rap">Rap</option>
-                            <option value="reguetón">Reguetón</option>
+                            <option value="regueton">Reguetón</option>
                             <option value="techno">Techno</option>
                             <option value="hipHop">Hip-Hop</option>
                             <option value="bachata">Bachata</option>
@@ -405,7 +405,7 @@ if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
                     <div class="field">
                         <label for="hobbie">Hobbies</label>
                         <select name="hobbie" id="hobbie">
-                            <option value="dormir">Hacer ejercicio</option>
+                            <option value="dormir">Dormir</option>
                             <option value="leer">Leer</option>
                             <option value="viajar">Viajar</option>
                             <option value="deportes-extremos">Deportes extremos</option>

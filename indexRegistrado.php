@@ -75,7 +75,7 @@ $variable_php = 'valor';
                 <li class="opL"><img src="../unimatch/img/logotipoSinFondo2.png" alt="logo"></li>
                 <!-- <li><a href="#"><i class="fas fa-tv"></i>dashboard</a></li> -->
                 <li class="opL"><a href="../unimatch/indexRegistrado.php?id_usuario=<?php echo $id_usuario ?>&usuario=<?php echo $nombre ?>"><i class='fa-solid fa-house'></i></a></li>
-                <li class="opL"><a href="./busqueda/busqueda.php"><i class="fa fa-search"></i></a></li>
+                <li class="opL"><a href="./busqueda/busqueda.php?id_usuario=<?php echo $id_usuario ?>&usuario=<?php echo $nombre ?>"><i class="fa fa-search"></i></a></li>
                 <!-- <li><a href="#"><i class="fab fa-gripfire"></i>trending</a></li> -->
                 <li class="opL"><a href="#"><i class="far fa-comments"></i></a></li>
                 <!-- <li><a href="#"><i class="far fa-folder"></i>file manager</a></li> -->
