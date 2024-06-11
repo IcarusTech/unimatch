@@ -13,7 +13,7 @@ foreach ($data as $clave => $valor) {
     foreach ($valor as $clave2 => $valor2) {
         if ($clave2 == "id usuario asociado" && $valor2 == $id_usuario) {
             $url = $valor["url"]; //Cogemos el valor de la url para ir al archivo específico del usuario
-            //Cambiomas el valor del nombre del usuario para que concuerde con el nuevo nombre del input
+            //Cambiamos el valor del nombre del usuario para que concuerde con el nuevo nombre del input
             unset($data[$clave]); //eliminamos la posicion del array del perteneciente al perfil
         }
     }
